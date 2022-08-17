@@ -18,10 +18,10 @@ public class SceneController : Singleton<SceneController>
     }
 
     public void LoadLocalCoop(){
-        SceneManager.LoadScene("Local Play Prototype");
+        SceneManager.LoadScene(1);
     }
     public void LoadMenu(){
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene(0);
     }
     public void QuitGame(){
         Application.Quit();

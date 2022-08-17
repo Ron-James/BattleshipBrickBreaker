@@ -6,18 +6,24 @@ public class PowerUpManager : MonoBehaviour
 {
     [SerializeField] GameObject paddle;
     [SerializeField] GameObject ball;
+    [SerializeField] GameObject bigBoat;
+    [SerializeField] GameObject regBoat;
+    [SerializeField] BoxCollider coll;
+    [SerializeField] GameObject slimeBall;
     public bool catcher;
 
     [Header("power Up numbers")]
     [SerializeField] float paddleLengthUpgrade = 1.25f;
     [SerializeField] float ballSpdIncrease = 1.35f;
     [SerializeField] float ballSizeUpgrade;
-    
+    [SerializeField] float colliderLargeSize = 1.67f;
+
     float paddleLength;
     // Start is called before the first frame update
     void Start()
     {
-        paddleLength = paddle.transform.localScale.z;
+        paddleLength = coll.gameObject.transform.localScale.z;
+        ResetPowerUp();
     }
 
     // Update is called once per frame
@@ -26,17 +32,20 @@ public class PowerUpManager : MonoBehaviour
 
     }
 
-    public void IncreasePaddleLength(float percent)
+    public void IncreasePaddleLength()
     {
-        float newLength = percent * paddleLength;
-        Vector3 paddleScale = new Vector3(paddle.transform.localScale.x, paddle.transform.localScale.y, newLength);
-        paddle.transform.localScale = paddleScale;
+        regBoat.SetActive(false);
+        bigBoat.SetActive(true);
+        coll.gameObject.transform.localScale = new Vector3(1, 1, colliderLargeSize);
+        
     }
 
     public void ResetPaddleLength()
     {
-        Vector3 paddleScale = new Vector3(paddle.transform.localScale.x, paddle.transform.localScale.y, paddleLength);
-        paddle.transform.localScale = paddleScale;
+        coll.gameObject.transform.localScale = new Vector3(1, 1, paddleLength);
+        regBoat.SetActive(true);
+        bigBoat.SetActive(false);
+
     }
 
     public void ApplyPowerUp(int powerUp)
@@ -44,7 +53,7 @@ public class PowerUpManager : MonoBehaviour
         switch (powerUp)
         {
             case 0: //longer paddle
-                IncreasePaddleLength(paddleLengthUpgrade);
+                IncreasePaddleLength();
                 break;
             case 1://speed up ball
                 ball.GetComponent<BallPhysics>().IncreaseVelocity(ballSpdIncrease);
@@ -54,12 +63,13 @@ public class PowerUpManager : MonoBehaviour
                 break;
             case 3: // catch ball;
                 catcher = true;
+                slimeBall.SetActive(true);
                 break;
-            case 4: //split balls
-
+            case 4: //bomb
+                GetComponent<BombLauncher>().GiveBomb();
                 break;
             case 5: //increase ball damage
-                ball.GetComponent<BallPhysics>().FlameOn();
+                //ball.GetComponent<BallPhysics>().FlameOn();
                 break;
             default:
                 return;
@@ -71,7 +81,7 @@ public class PowerUpManager : MonoBehaviour
         ResetPaddleLength();
         ball.GetComponent<BallPhysics>().ResetSize();
         catcher = false;
-        ball.GetComponent<BallPhysics>().FlameOff();
+        slimeBall.SetActive(false);
     }
 
 

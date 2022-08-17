@@ -5,24 +5,27 @@ using UnityEngine.UI;
 
 public class AimArrow : MonoBehaviour
 {
-    [SerializeField] bool rightSided;
+    [SerializeField] bool player1;
     [SerializeField] Transform ballPos;
     [SerializeField] Transform aimPoint;
     [SerializeField] GameObject backboard;
+    [SerializeField] Collider paddleCollider;
 
     [Header("Aiming angles and speed")]
     [SerializeField] float maxAngle = 85f;
     [SerializeField] float aimPeriod = 0.8f;
     [SerializeField] float maxTapDistance = 10f;
-    [SerializeField] float initialPower = 10f;
+
     [SerializeField] GameObject ball;
 
     [Header("Out Penalty Time")]
     [SerializeField] float outPenaltyTime = 1f;
     [SerializeField] float outPenaltyIncrease = 0.25f;
-    bool aiming;
-    bool canFire;
+    [SerializeField] bool aiming;
+    [SerializeField] bool canFire;
+    bool canHit;
     int sign;
+    public Vector3 lastAimDirection;
     Coroutine oscillator;
     Touch lastTouchInField;
     Vector3 touchPoint;
@@ -30,18 +33,20 @@ public class AimArrow : MonoBehaviour
 
     public bool Aiming { get => aiming; set => aiming = value; }
     public bool CanFire { get => canFire; set => canFire = value; }
+    public bool CanHit { get => canHit; set => canHit = value; }
 
     // Start is called before the first frame update
     void Start()
     {
-
+        lastAimDirection = Vector3.zero;
+        CanHit = false;
         arrow = GetComponent<Image>();
-        maxTapDistance = backboard.transform.localScale.z/2;
-        if(rightSided){
-            sign = 1;
+        //maxTapDistance = backboard.transform.localScale.z/2;
+        if(player1){
+            sign = -1;
         }
         else{
-            sign = -1;
+            sign = 1;
         }
         aiming = true;
         canFire = true;
@@ -53,7 +58,7 @@ public class AimArrow : MonoBehaviour
     void Update()
     {
         if(canFire && aiming && oscillator == null){
-            oscillator = StartCoroutine(Oscillate(aimPeriod));
+            oscillator = StartCoroutine(Oscillate(aimPeriod, CanHit));
         }
 
         
@@ -61,7 +66,7 @@ public class AimArrow : MonoBehaviour
 
     public void ResetRotation(){
         float straight = 180;
-        if(rightSided) {
+        if(player1) {
             straight = 0;
         }
         else{
@@ -76,7 +81,7 @@ public class AimArrow : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             Vector3 hitPos = hit.point;
-            if (rightSided)
+            if (player1)
             {
                 if (Mathf.Abs(hitPos.x) < Mathf.Abs(transform.position.x) && hitPos.x >= (ball.transform.position.x - (sign * maxTapDistance)))
                 {
@@ -109,63 +114,8 @@ public class AimArrow : MonoBehaviour
             return false;
         }
     }
-    public bool TouchInField(out int touchIndex, out Vector3 position)
-    {
-        touchIndex = -1;
-        position = Vector3.zero;
-        if (Input.touches.Length == 0)
-        {
-            position = Vector3.zero;
-            touchIndex = -1;
-            return false;
-        }
-        else
-        {
-            for (int loop = 0; loop < Input.touchCount; loop++)
-            {
-                Ray ray = Camera.main.ScreenPointToRay(Input.touches[loop].position);
-                RaycastHit hit;
-                if (Physics.Raycast(ray, out hit))
-                {
-                    if (rightSided)
-                    {
-                        if (Mathf.Abs(hit.point.x) < Mathf.Abs(ball.transform.position.x) && hit.point.x >= (ball.transform.position.x - (sign * maxTapDistance)))
-                        {
-                            touchIndex = loop;
-                            touchPoint = hit.point;
-                            lastTouchInField = Input.touches[loop];
-                            position = hit.point;
-                            return true;
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-                    else{
-                        if (Mathf.Abs(hit.point.x) < Mathf.Abs(ball.transform.position.x) && hit.point.x <= (ball.transform.position.x - (sign * maxTapDistance)))
-                        {
-                            touchIndex = loop;
-                            touchPoint = hit.point;
-                            lastTouchInField = Input.touches[loop];
-                            position = hit.point;
-                            return true;
-                        }
-                        else
-                        {
-                            continue;
-                        }
-                    }
-
-                }
-                else
-                {
-                    continue;
-                }
-            }
-            return false;
-        }
-    }
+    
+    
 
     public void StartLaunchPenalty(){
         StartCoroutine(LaunchPenalty(outPenaltyTime));
@@ -174,14 +124,18 @@ public class AimArrow : MonoBehaviour
 
     IEnumerator LaunchPenalty(float period){
         CanFire = false;
+        CanHit = false;
         float time = 0;
         GetComponentInParent<PaddleController>().Slider.interactable = false;
+        paddleCollider.enabled = false;
         while(true){
             time += Time.deltaTime;
             if(time >= period){
                 CanFire = true;
                 GetComponentInParent<Artillery>().CanFire = true;
                 GetComponentInParent<PaddleController>().Slider.interactable = true;
+                paddleCollider.enabled = true;
+                
                 break;
             }
             else{
@@ -189,8 +143,10 @@ public class AimArrow : MonoBehaviour
             }
         }
     }
-    IEnumerator Oscillate(float period){
+    IEnumerator Oscillate(float period, bool canHit){
         arrow.enabled = true;
+        transform.position = GetComponentInParent<PaddleController>().Ball.transform.position;
+        GetComponentInParent<PaddleController>().PaddleCollider.isTrigger = true;
         float time = 0;
         float w = (1/period) * 2 * Mathf.PI;
         float straight = 180;
@@ -198,20 +154,36 @@ public class AimArrow : MonoBehaviour
         Vector3 touchPos;
         GetComponentInParent<PaddleController>().Slider.interactable = false;
         Vector3 direction = (aimPoint.position - GetComponent<RectTransform>().position).normalized;
-        if(rightSided) {
+        if(player1) {
             straight = 0;
         }
         else{
             straight = 180;
         }
+        if(canHit){
+            GetComponentInParent<PaddleController>().PaddleCollider.isTrigger = true;
+        }
+        else{
+            GetComponentInParent<PaddleController>().PaddleCollider.isTrigger = false;
+        }
         while(true){
-            if((ClickInField() && Input.GetMouseButtonDown(0)) || (TouchInField(out touchIndex, out touchPos))){
+            if((ClickInField() && Input.GetMouseButtonDown(0)) || GameManager.instance.TouchInField(out touchIndex, out touchPos, player1)){
                 direction = (aimPoint.position - GetComponent<RectTransform>().position).normalized;
-                ball.GetComponent<BallPhysics>().Fire(initialPower, sign * -direction);
+                //lastAimDirection = sign * direction;
+                //Debug.Log(lastAimDirection + " Last aim directions");
+                if(GetComponentInParent<PowerUpManager>().catcher && ball.GetComponent<BallPhysics>().LastVelocity.magnitude > 0){
+                    ball.GetComponent<BallPhysics>().Fire(ball.GetComponent<BallPhysics>().LastVelocity.magnitude, sign * direction);
+                }
+                else{
+                    ball.GetComponent<BallPhysics>().Fire(GameManager.instance.InitialVelocity, sign * direction);
+                }
+                
                 arrow.enabled = false;
                 aiming = false;
                 oscillator = null;
-                GetComponentInParent<PaddleController>().Slider.interactable = true;;
+                CanHit = true;
+                GetComponentInParent<PaddleController>().Slider.interactable = true;
+                GetComponentInParent<PaddleController>().PaddleCollider.isTrigger = false;
                 break;
             }
             else{
@@ -220,8 +192,8 @@ public class AimArrow : MonoBehaviour
                 angles.z = zRot;
                 transform.eulerAngles = angles;
                 direction = (aimPoint.position - GetComponent<RectTransform>().position).normalized;
-                time += Time.deltaTime;
-                yield return null;
+                time += Time.fixedDeltaTime;
+                yield return new WaitForFixedUpdate();
             }
         }
     }

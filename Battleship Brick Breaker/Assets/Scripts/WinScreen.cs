@@ -36,17 +36,17 @@ public class WinScreen : MonoBehaviour
         {
             winner.text = "Player 2 (Left) Wins!";
         }
-        bricksBroken[0].text = GameManager.instance.BricksBroken[0].ToString();
-        bricksBroken[1].text = GameManager.instance.BricksBroken[1].ToString();
+        bricksBroken[0].text = StatsManager.instance.bricksBroken[0].ToString();
+        bricksBroken[1].text = StatsManager.instance.bricksBroken[1].ToString();
 
-        objBricks[0].text = GameManager.instance.ObjBroken[0].ToString();
-        objBricks[1].text = GameManager.instance.ObjBroken[1].ToString();
+        objBricks[0].text = StatsManager.instance.objBroken[0].ToString();
+        objBricks[1].text = StatsManager.instance.objBroken[1].ToString();
 
-        shotsHit[0].text = GameManager.instance.ShotsHit[0].ToString();
-        shotsHit[1].text = GameManager.instance.ShotsHit[1].ToString();
+        shotsHit[0].text = StatsManager.instance.shotsHit[0].ToString();
+        shotsHit[1].text = StatsManager.instance.shotsHit[1].ToString();
 
-        missed[0].text = GameManager.instance.Missed[0].ToString();
-        missed[1].text = GameManager.instance.Missed[1].ToString();
+        missed[0].text = StatsManager.instance.missed[0].ToString();
+        missed[1].text = StatsManager.instance.missed[1].ToString();
 
         UpdateTime();
     }
@@ -71,8 +71,8 @@ public class WinScreen : MonoBehaviour
 
     public void UpdateTime()
     {
-        int mins = (int)GameManager.instance.TimeElapsed / 60;
-        int seconds = (int)GameManager.instance.TimeElapsed % 60;
+        int mins = (int)StatsManager.instance.timeElapsed / 60;
+        int seconds = (int)StatsManager.instance.timeElapsed % 60;
         if(mins > 9 && seconds > 9){
             elapsedTime.text = mins.ToString() + ":" + seconds.ToString();
         }

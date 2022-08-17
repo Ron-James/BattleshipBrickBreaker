@@ -19,12 +19,10 @@ public class PaddleController : MonoBehaviour
     [SerializeField] float hitPenalty = 5f;
     [SerializeField] Transform backboard;
     [SerializeField] BallPhysics ball;
+    [SerializeField] Collider paddleCollider;
 
     AimArrow ballAim;
-
-    [Header("Materials")]
-    [SerializeField] Material mainMaterial;
-    [SerializeField] Material hitMaterial;
+    
 
     float currentSliderValue;
     float paddleWidth;
@@ -37,6 +35,9 @@ public class PaddleController : MonoBehaviour
     public bool IsStopped { get => isStopped; set => isStopped = value; }
     public Slider Slider { get => slider; set => slider = value; }
     public bool Player1 { get => player1; set => player1 = value; }
+    public BallPhysics Ball { get => ball; set => ball = value; }
+    public Transform BallPosition { get => ballPosition; set => ballPosition = value; }
+    public Collider PaddleCollider { get => paddleCollider; set => paddleCollider = value; }
 
 
 
@@ -49,7 +50,7 @@ public class PaddleController : MonoBehaviour
         currentSliderValue = slider.value;
         backboardOffset = backboard.position.z;
         Hit = false;
-        GetComponentInChildren<MeshRenderer>().material = mainMaterial;
+        //GetComponentInChildren<MeshRenderer>().material = mainMaterial;
 
 
     }
@@ -78,15 +79,19 @@ public class PaddleController : MonoBehaviour
     }
     public void StartHitPenalty()
     {
-        StartCoroutine(HitPenalty(hitPenalty));
+        GetComponentInChildren<BoatMotion>().SinkShip(GameManager.instance.CannonballHitPenalty);
+        StartCoroutine(PenaltyPeriod(GameManager.instance.CannonballHitPenalty));
     }
-    IEnumerator HitPenalty(float time)
+    public void StartBombPenalty(){
+        GetComponentInChildren<BoatMotion>().SinkShip(GameManager.instance.BombHitPenalty);
+        StartCoroutine(PenaltyPeriod(GameManager.instance.BombHitPenalty));
+    }
+    IEnumerator PenaltyPeriod(float time)
     {
         float t = 0;
         GetComponent<Artillery>().CanFire = false;
-        Collider collider = GetComponentInChildren<Collider>();
-        collider.enabled = false;
-        GetComponentInChildren<MeshRenderer>().material = hitMaterial;
+        paddleCollider.isTrigger = true;
+        //GetComponentInChildren<MeshRenderer>().material = hitMaterial;
         if (GetComponentInChildren<AimArrow>().Aiming && GetComponentInChildren<AimArrow>().CanFire)
         {
             GetComponentInChildren<AimArrow>().CanFire = false;
@@ -105,11 +110,11 @@ public class PaddleController : MonoBehaviour
                 }
                 else
                 {
-                    GetComponent<BallAim>().CanFire = true;
+                    GetComponentInChildren<AimArrow>().CanFire = true;
                     GetComponent<Artillery>().CanFire = true;
                 }
-                GetComponentInChildren<MeshRenderer>().material = mainMaterial;
-                collider.enabled = true;
+                //GetComponentInChildren<MeshRenderer>().material = mainMaterial;
+                paddleCollider.isTrigger = false;
                 IsStopped = false;
                 Hit = false;
                 slider.interactable = true;
@@ -126,11 +131,13 @@ public class PaddleController : MonoBehaviour
     {
         transform.position = defaultPos;
         slider.value = 0;
+        ballAim.CanHit = false;
         ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
         ball.BindToPaddle();
         ballAim.CanFire = false;
         ballAim.Aiming = true;
         GetComponent<Artillery>().CanFire = false;
+        GetComponent<BombLauncher>().ResetBombLauncher();
 
         ballAim.StartLaunchPenalty();
 

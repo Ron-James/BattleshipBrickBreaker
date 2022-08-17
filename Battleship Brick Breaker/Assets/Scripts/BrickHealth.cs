@@ -14,14 +14,19 @@ public class BrickHealth : MonoBehaviour
     public float currentHealth;
 
     public bool isBroken = false;
+    [Header("Audio")]
+    AudioSource audioSource;
+    [SerializeField] AudioClip hitSound;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         currentHealth = maxHealth;
-        if(crack != null){
+        if (crack != null)
+        {
             crack.SetActive(false);
         }
-        
+
     }
 
     // Update is called once per frame
@@ -34,16 +39,7 @@ public class BrickHealth : MonoBehaviour
         switch (other.collider.tag)
         {
             case "Ball":
-
-                if (other.gameObject.GetComponent<BallPhysics>().onFire)
-                {
-                    TakeDamge(other.gameObject.GetComponent<BallPhysics>().fireDamage, (int) other.gameObject.GetComponent<PlayerTracker>().CurrentOwner1);
-                }
-                else
-                {
-                    TakeDamge(1, (int) other.gameObject.GetComponent<PlayerTracker>().CurrentOwner1);
-                }
-
+                PlayHitSound();
                 break;
         }
     }
@@ -51,7 +47,7 @@ public class BrickHealth : MonoBehaviour
     public void TakeDamge(float amount, int player)
     {
         currentHealth -= amount;
-        Debug.Log("damage take by player" + player);
+        //Debug.Log("damage take by player" + player);
         if (currentHealth == 1 && crack != null)
         {
             crack.SetActive(true);
@@ -61,51 +57,75 @@ public class BrickHealth : MonoBehaviour
             Break(player);
         }
     }
-    
+
 
     public void Break(int player)
     {
         GetComponent<Collider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
-        if(crack != null){
+        if (crack != null)
+        {
             crack.SetActive(false);
         }
-        
+
         isBroken = true;
-        if (!objective)
+        if (!objective && !ammo)
         {
             if (player == 1)
             {
-                GameManager.instance.BricksBroken[0]++;
+                StatsManager.instance.bricksBroken[0]++;
             }
-            else if(player == 2)
+            else if (player == 2)
             {
-                GameManager.instance.BricksBroken[1]++;
+                StatsManager.instance.bricksBroken[0]++;
+            }
+            if (!ammo && !powerUp)
+            {
+                int random = Random.Range(0, GameManager.instance.PowerUpDropRate);
+                //Debug.Log(random + " Random number");
+                if (random == 0)
+                {
+                    if (player == 1)
+                    {
+                        Vector3 position = transform.position;
+                        position.y = 1;
+                        GameManager.instance.SpawnPowerup(position, true);
+                    }
+                    else
+                    {
+                        Vector3 position = transform.position;
+                        position.y = 1;
+                        GameManager.instance.SpawnPowerup(position, false);
+                    }
+                }
+            }
+            else if(powerUp){
+                if (player == 1)
+                    {
+                        Vector3 position = transform.position;
+                        position.y = 1;
+                        GameManager.instance.SpawnPowerup(position, true);
+                    }
+                    else
+                    {
+                        Vector3 position = transform.position;
+                        position.y = 1;
+                        GameManager.instance.SpawnPowerup(position, false);
+                    }
             }
         }
-        if (objective)
+        else if (objective)
         {
             if (player == 1)
             {
                 GameManager.instance.AddScore(1);
-                GameManager.instance.ObjBroken[0]++;
+                StatsManager.instance.objBroken[0]++;
             }
-            else if(player == 2)
+            else if (player == 2)
             {
                 GameManager.instance.AddScore(2);
-                GameManager.instance.ObjBroken[1]++;
+                StatsManager.instance.objBroken[0]++;
             }
-        }
-        else if (powerUp)
-        {
-            if (player == 1)
-            {
-                GameManager.instance.SpawnPowerup(transform.position, true);
-            }
-            else{
-                GameManager.instance.SpawnPowerup(transform.position, false);
-            }
-
         }
         else if (ammo)
         {
@@ -133,5 +153,9 @@ public class BrickHealth : MonoBehaviour
         pos.x *= -1;
 
         transform.position = pos;
+    }
+    public void PlayHitSound(){
+        audioSource.clip = hitSound;
+        audioSource.Play();
     }
 }

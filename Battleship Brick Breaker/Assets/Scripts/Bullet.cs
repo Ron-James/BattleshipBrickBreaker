@@ -28,23 +28,25 @@ public class Bullet : MonoBehaviour
         switch (other.tag)
         {
             case "Paddle":
-                if (other != GetComponent<Collider>())
+                Debug.Log("Hit boat");
+                
+                if (other.GetComponentInParent<PaddleController>() != null)
                 {
                     
-                    DisableBullet();
-                    if(other.GetComponentInParent<PaddleController>() != null){
-                        other.GetComponentInParent<PaddleController>().StartHitPenalty();
-                    }
-                    
-                    if (player1)
-                    {
-                        GameManager.instance.ShotsHit[0]++;
-                    }
-                    else
-                    {
-                        GameManager.instance.ShotsHit[1]++;
-                    }
+                    PaddleController paddle = other.GetComponentInParent<PaddleController>();
+                    paddle.StartHitPenalty();
+
                 }
+
+                if (player1)
+                {
+                    //GameManager.instance.ShotsHit[0]++;
+                }
+                else
+                {
+                    //GameManager.instance.ShotsHit[1]++;
+                }
+                DisableBullet();
                 //
                 break;
             case "BulletDespawn":
