@@ -42,12 +42,15 @@ public class BoatMotion : MonoBehaviour
     public void SinkShip(float duration){
         StartCoroutine(Sink(duration, sinkSpeed));
     }
-
+    
+    private void OnDisable() {
+        StopAllCoroutines();
+    }
     IEnumerator Sink(float duration, float speed){
         float time = 0;
         Vector3 startPos = transform.position;
         Vector3 target = transform.position;
-        target.y -= transform.position.y - 10;
+        target.y -= 20;
         while(true){
             if(time >= duration){
                 transform.position = startPos;
@@ -55,7 +58,8 @@ public class BoatMotion : MonoBehaviour
                 break;
             }
             else{
-                transform.position = Vector3.Lerp(transform.position, target, speed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+                time += Time.deltaTime;
                 yield return null;
             }
         }

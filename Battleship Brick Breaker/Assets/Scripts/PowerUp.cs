@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 public enum Power
 {
-    longer,
-    speed,
-    sizeUp,
-    catcher,
-    bomb,
-    fire
+    longer = 0,
+    speed = 1,
+    sizeUp = 2,
+    catcher = 3,
+    bomb = 4,
+    fire = 5
 
 
 }
@@ -37,7 +37,7 @@ public class PowerUp : MonoBehaviour
     {
         if (!isStopped && !target.Equals(Vector3.zero))
         {
-            transform.position = Vector3.MoveTowards(transform.position, target, moveSpeed);
+            transform.position = Vector3.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -63,7 +63,13 @@ public class PowerUp : MonoBehaviour
             Debug.Log("power up index out of bounds");
             return;
         }
-        power = (Power)powerUp;
+        if(powerUp == 5){
+            power = (Power)4;
+        }
+        else{
+            power = (Power)powerUp;
+        }
+        
         UpdateText((int)power);
         transform.SetParent(actives);
         if (RightSided)

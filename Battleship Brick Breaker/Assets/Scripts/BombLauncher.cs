@@ -145,7 +145,10 @@ public class BombLauncher : MonoBehaviour
             }
         }
     }
-
+    private void OnDisable() {
+        StopAllCoroutines();
+    }
+    
     IEnumerator BombLaunchCountDown(float duration){
         float time = duration;
         powerUpBar.fillAmount = 1;

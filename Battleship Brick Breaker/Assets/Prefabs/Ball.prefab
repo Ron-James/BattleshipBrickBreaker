@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5703676189701985221}
   - component: {fileID: 5703676189701985226}
   - component: {fileID: 2056922785459137483}
+  - component: {fileID: 4528959823049472435}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -130,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81bb5bf8d85d80441b4977fc6e0d665e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.5
+  radius: 0.7
   paddle: {fileID: 0}
   bounciness: 1.007
   aimLineLength: 3
@@ -159,6 +160,18 @@ MonoBehaviour:
   currentOwner: 0
   player1Material: {fileID: 2100000, guid: 6b9752a185a2f384086e9cbc241e0de6, type: 2}
   player2Material: {fileID: 2100000, guid: 66896bec796ec2a46894ebf9e77b853e, type: 2}
+--- !u!114 &4528959823049472435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5703676189701985220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ee8b453cc016a41a783e65972603b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8993593549358243778
 GameObject:
   m_ObjectHideFlags: 0

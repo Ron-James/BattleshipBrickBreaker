@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 1475275683854668725, guid: 6cb226225a379bb4a9d4d14d15edfee5,
         type: 3}
       propertyPath: m_Name
-      value: Basic Brick [2]
+      value: Basic Brick [2] Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5535610842768684486, guid: 6cb226225a379bb4a9d4d14d15edfee5,
         type: 3}
@@ -72,10 +72,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7719518380441849734, guid: 6cb226225a379bb4a9d4d14d15edfee5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8027417510556843166, guid: 6cb226225a379bb4a9d4d14d15edfee5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3772da2f670088649b96153837b236e2, type: 2}
+    - target: {fileID: 8390929846623734518, guid: 6cb226225a379bb4a9d4d14d15edfee5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: aeaef1260a6a7d841ac722a836439e53, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cb226225a379bb4a9d4d14d15edfee5, type: 3}

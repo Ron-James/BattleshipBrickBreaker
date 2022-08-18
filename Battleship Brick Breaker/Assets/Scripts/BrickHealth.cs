@@ -10,6 +10,8 @@ public class BrickHealth : MonoBehaviour
     [SerializeField] bool powerUp = false;
 
     [SerializeField] GameObject crack;
+    [SerializeField] GameObject feedbackOverlay;
+
 
     public float currentHealth;
 
@@ -55,6 +57,9 @@ public class BrickHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             Break(player);
+        }
+        else{
+            StartCoroutine(FlashOverlay(0.3f));
         }
     }
 
@@ -157,5 +162,23 @@ public class BrickHealth : MonoBehaviour
     public void PlayHitSound(){
         audioSource.clip = hitSound;
         audioSource.Play();
+    }
+    IEnumerator FlashOverlay(float duration){
+        float time = 0;
+        feedbackOverlay.SetActive(true);
+        while(true){
+            if(time >= duration){
+                feedbackOverlay.SetActive(false);
+                break;
+            }
+            else{
+                time += Time.deltaTime;
+                yield return null;
+
+            }
+        }
+    }
+    private void OnDisable() {
+        StopAllCoroutines();
     }
 }

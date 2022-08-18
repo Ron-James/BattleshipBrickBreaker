@@ -39,11 +39,12 @@ public class BallPhysics : MonoBehaviour
     public bool CurrentPlayer1 { get => currentPlayer1; set => currentPlayer1 = value; }
     public Vector3 LastVelocity { get => lastVelocity; set => lastVelocity = value; }
 
-    
 
-    
+
+
     void Start()
     {
+        Radius = transform.localScale.x / 2;
         IsOut = false;
         rb = GetComponent<Rigidbody>();
 
@@ -56,7 +57,7 @@ public class BallPhysics : MonoBehaviour
             inwardSign = 1;
         }
         BindToPaddle();
-        Radius = transform.localScale.x / 2;
+
     }
     private void FixedUpdate()
     {
@@ -79,20 +80,23 @@ public class BallPhysics : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        /*
         if (lastVelocity.magnitude < oldVelocity.magnitude)
         {
             if (transform.parent == null && !rb.velocity.Equals(Vector3.zero) && oldVelocity.magnitude > 0)
             {
                 Debug.Log("maintain velocity");
-                //SetVelocityMagnitude(oldVelocity.magnitude);
+                Vector3 newVelocity = lastVelocity.normalized * oldVelocity.magnitude;
+                //GameManager.instance.ApplyForceToVelocity(rb, newVelocity, 1000);
             }
         }
+
+        */
 
         if (transform.parent == null && rb.velocity.magnitude == 0)
         {
             //Debug.Log("what is happening");
-            rb.velocity = paddle.GetComponentInChildren<AimArrow>().lastAimDirection * GameManager.instance.InitialVelocity;
+            rb.velocity = lastVelocity;
             /*
             
             if(lastVelocity.magnitude == 0){
@@ -146,12 +150,15 @@ public class BallPhysics : MonoBehaviour
 
                     if (!other.collider.GetComponentInChildren<AimArrow>().Aiming)
                     {
-                        PaddleCatch();
-                        Debug.Log("Catch");
+                        if(other.GetContact(0).normal == (Vector3.right * inwardSign)){
+                            PaddleCatch();
+                            Debug.Log("Catch");
+                        }
+                        
                     }
 
                 }
-
+                IncreaseVelocity(bounciness);
                 break;
             case "Ball":
                 //Debug.Log("hit ball");
@@ -198,6 +205,9 @@ public class BallPhysics : MonoBehaviour
         rb.velocity = reflected;
         IncreaseVelocity(percent);
     }
+    private void OnDisable() {
+        StopAllCoroutines();
+    }
     public void IncreaseVelocity(float percent)
     {
         Vector3 direction = rb.velocity.normalized;
@@ -226,34 +236,21 @@ public class BallPhysics : MonoBehaviour
     public void PaddleCatch()
     {
         paddle.GetComponentInChildren<AimArrow>().CanHit = true;
-        rb.isKinematic = true;
+        StartCoroutine(SetKinematic(1));
         transform.SetParent(paddle.transform);
         paddle.GetComponentInChildren<AimArrow>().Aiming = true;
     }
 
-    public void RandomReturn()
-    {
-        Vector3 position = Vector3.zero;
-        position.x = paddle.transform.position.x;
-        int sign = 1;
-        if (paddle.GetComponent<PaddleController>().Player1)
-        {
-            sign = -1;
-        }
-        else
-        {
-            sign = 1;
-        }
-        position.x += (sign * GameManager.instance.RandomReturnDistance);
-        transform.position = position;
-
-        Vector3 direction = Vector3.zero;
-        direction.z = Random.Range(-1, 2);
-        direction.x = -sign;
+    IEnumerator SetKinematic(int frames){
+        rb.isKinematic = true;
         rb.velocity = Vector3.zero;
-        Fire(GameManager.instance.InitialVelocity * 2, direction.normalized);
+        for (int loop = 0; loop < frames; loop++){
+            yield return null;
+        }
+        rb.isKinematic = false;
     }
-    public void Fire(float power, Vector3 direction)
+    
+    public void Launch(float power, Vector3 direction)
     {
         if (rb.isKinematic)
         {
@@ -306,18 +303,20 @@ public class BallPhysics : MonoBehaviour
 
     IEnumerator RandomReturn(int framesStop, float velocity, Transform point)
     {
-        transform.position = point.position;
+        rb.velocity = Vector3.zero;
         //rb.velocity = Vector3.zero;
+        rb.isKinematic = true;
         for (int s = 0; s < framesStop; s++)
         {
-            rb.isKinematic = true;
             yield return null;
         }
-
+        transform.position = point.position;
         rb.isKinematic = false;
-        Vector3 direction = point.forward;
-        direction = RotateVector(direction, Random.Range(-15, 15));
-        Fire(velocity, direction);
+        Vector3 direction = inwardSign * Vector3.left;
+    
+        
+        //direction = RotateVector(direction, Random.Range(-5, 5));
+        GameManager.instance.ApplyForceToVelocity(rb, direction * velocity, 10000);
 
     }
 

@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actives: {fileID: 0}
   inactives: {fileID: 0}
-  explosionRadius: 0.5
+  explosionRadius: 1
   brickDamage: 1
   explosion: {fileID: 6766102260138896533}
   explosionSound: {fileID: 8300000, guid: 43762d9b0f7daad48b95ab36daabf461, type: 3}

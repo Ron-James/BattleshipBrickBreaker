@@ -10,14 +10,14 @@ public class CameraZoom : MonoBehaviour
     void Start()
     {
         float screenRatio = (float)Screen.width / (float)Screen.height;
-        float targetRatio = target.localScale.x / target.localScale.z;
+        float targetRatio = target.GetComponent<BoxCollider>().bounds.size.x / target.GetComponent<BoxCollider>().bounds.size.z;
 
         if(screenRatio >= targetRatio){
-            GetComponent<Camera>().orthographicSize = target.localScale.z / 2;
+            GetComponent<Camera>().orthographicSize = target.GetComponent<BoxCollider>().bounds.size.z / 2;
         }
         else{
             float diffInSize = targetRatio / screenRatio;
-            GetComponent<Camera>().orthographicSize = (target.localScale.z / 2) * diffInSize;
+            GetComponent<Camera>().orthographicSize = (target.GetComponent<BoxCollider>().bounds.size.z / 2) * diffInSize;
         }
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -12,9 +13,10 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] GameObject p2Indicators;
     [SerializeField] GameObject inactivePowerups;
     [SerializeField] GameObject activePowerups;
-    
+     
 
     [SerializeField] WinScreen winScreen;
+    [SerializeField] TextMeshProUGUI countDownTime;
 
     [Header("Objective Indicators")]
     public ObjBrickIndicator[] p1ObjIndicators;
@@ -72,6 +74,7 @@ public class GameManager : Singleton<GameManager>
         TurnOffAllObjIndicators();
         p1ObjIndicators = p1Indicators.GetComponentsInChildren<ObjBrickIndicator>();
         p2ObjIndicators = p2Indicators.GetComponentsInChildren<ObjBrickIndicator>();
+        StartCoroutine(StartSequence());
 
     }
 
@@ -184,7 +187,14 @@ public class GameManager : Singleton<GameManager>
             return false;
         }
     }
-
+    public PaddleController GetPaddle(bool player1){
+        if(player1){
+            return paddle1.GetComponent<PaddleController>();
+        }
+        else{
+            return paddle2.GetComponent<PaddleController>();
+        }
+    }
     public void ApplyForceToVelocity(Rigidbody rigidbody, Vector3 velocity, float force = 1, ForceMode mode = ForceMode.Force)
     {
         //Debug.Log(velocity.magnitude + " Increase to velocity");
@@ -203,7 +213,7 @@ public class GameManager : Singleton<GameManager>
             var velocityProjectedtoTarget = (velocity.normalized * Vector3.Dot(velocity, rigidbody.velocity) / velocity.magnitude);
             rigidbody.AddForce((velocity - velocityProjectedtoTarget) * force, mode);
         }
-
+        Debug.Log("direction of force " + velocity.normalized.magnitude);
 
     }
     public void UpdateObjIndicators(int player)
@@ -301,5 +311,24 @@ public class GameManager : Singleton<GameManager>
                 powers[loop].DisablePowerUp();
             }
         }
+    }
+
+    IEnumerator StartSequence(){
+        countDownTime.gameObject.SetActive(true);
+        int time = 4;
+        PauseManager.PauseGameplay();
+        for (int loop = 0; loop <= 4; loop++){
+            if(time == 0){
+                countDownTime.text = "Battle!";
+                PauseManager.ResumeGameplay();
+                
+            }
+            else{
+                countDownTime.text = time.ToString();
+            }
+            time--;
+            yield return new WaitForSecondsRealtime(1);
+        }
+        countDownTime.gameObject.SetActive(false);
     }
 }

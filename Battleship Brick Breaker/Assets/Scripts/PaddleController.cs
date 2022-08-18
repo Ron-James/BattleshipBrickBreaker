@@ -136,8 +136,11 @@ public class PaddleController : MonoBehaviour
         ball.BindToPaddle();
         ballAim.CanFire = false;
         ballAim.Aiming = true;
+        ball.GetComponent<CollisionVelocityControl>().LargestMagnitude = 0;
+
         GetComponent<Artillery>().CanFire = false;
         GetComponent<BombLauncher>().ResetBombLauncher();
+        GetComponent<PowerUpManager>().ResetPowerUp();
 
         ballAim.StartLaunchPenalty();
 

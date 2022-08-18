@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 577732273106080975}
   player1: 1
-  maxBounceAngle: 75
+  maxBounceAngle: 55
 --- !u!114 &1274090856306955005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -956,13 +956,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76bf8af17d819ee49888d49d77036268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deltaRotationX: 7
-  deltaRotationZ: 5
+  deltaRotationX: 10
+  deltaRotationZ: 7
   rockPeriodX: 10
   rockPeriodZ: 5
   isStopped: 0
   restoreZSpeed: 1
-  sinkSpeed: 1
+  sinkSpeed: 5
 --- !u!1 &9137109070682356259
 GameObject:
   m_ObjectHideFlags: 0

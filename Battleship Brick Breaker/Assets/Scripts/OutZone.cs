@@ -35,7 +35,7 @@ public class OutZone : MonoBehaviour
                     paddle1.GoneOut();
                 }
                 else{
-                    ball.StartRandomReturn(ball.LastVelocity.magnitude, returnPoint);
+                    ball.StartRandomReturn(Mathf.Abs(ball.GetComponent<CollisionVelocityControl>().LargestMagnitude), returnPoint);
                 }
             }
             else{
@@ -43,7 +43,7 @@ public class OutZone : MonoBehaviour
                     paddle2.GoneOut();
                 }
                 else{
-                    ball.StartRandomReturn(GameManager.instance.InitialVelocity, returnPoint);
+                    ball.StartRandomReturn(Mathf.Abs(ball.GetComponent<CollisionVelocityControl>().LargestMagnitude), returnPoint);
 
                 }
             }

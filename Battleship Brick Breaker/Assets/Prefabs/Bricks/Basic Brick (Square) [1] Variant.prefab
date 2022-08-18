@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1475275683854668725, guid: 6cb226225a379bb4a9d4d14d15edfee5,
         type: 3}
       propertyPath: m_Name
-      value: Basic Brick (Square) [1]
+      value: Basic Brick (Square) [1] Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5535610842768684486, guid: 6cb226225a379bb4a9d4d14d15edfee5,
         type: 3}
@@ -70,6 +70,11 @@ PrefabInstance:
     - target: {fileID: 5535610842768684486, guid: 6cb226225a379bb4a9d4d14d15edfee5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7719518380441849734, guid: 6cb226225a379bb4a9d4d14d15edfee5,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

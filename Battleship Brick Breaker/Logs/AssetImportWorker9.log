@@ -9,13 +9,13 @@ D:\Unity Editors\2021.3.6f1\Editor\Unity.exe
 -batchMode
 -noUpm
 -name
-AssetImportWorker3
+AssetImportWorker9
 -projectPath
 D:/Unity Projects/BattleshipBrickBreaker/BattleshipBrickBreaker/Battleship Brick Breaker
 -logFile
-Logs/AssetImportWorker3.log
+Logs/AssetImportWorker9.log
 -srvPort
-50177
+3969
 Successfully changed project path to: D:/Unity Projects/BattleshipBrickBreaker/BattleshipBrickBreaker/Battleship Brick Breaker
 D:/Unity Projects/BattleshipBrickBreaker/BattleshipBrickBreaker/Battleship Brick Breaker
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ D:/Unity Projects/BattleshipBrickBreaker/BattleshipBrickBreaker/Battleship Brick
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 124.83 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 150.50 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.6f1 (7da38d85baf6)
 [Subsystems] Discovering subsystems at path D:/Unity Editors/2021.3.6f1/Editor/Data/Resources/UnitySubsystems
@@ -63,92 +63,92 @@ Initialize mono
 Mono path[0] = 'D:/Unity Editors/2021.3.6f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity Editors/2021.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Unity Editors/2021.3.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56236
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56688
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity Editors/2021.3.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: D:/Unity Editors/2021.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003670 seconds.
+Registered in 0.004021 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 110.64 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 109.27 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
 - Completed reload, in  0.749 seconds
 Domain Reload Profiling:
-	ReloadAssembly (750ms)
-		BeginReloadAssembly (97ms)
+	ReloadAssembly (749ms)
+		BeginReloadAssembly (124ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (538ms)
-			LoadAssemblies (98ms)
+		EndReloadAssembly (511ms)
+			LoadAssemblies (123ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
 			SetupTypeCache (130ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (28ms)
-			SetupLoadedEditorAssemblies (329ms)
+			RebuildScriptCaches (26ms)
+			SetupLoadedEditorAssemblies (307ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (60ms)
+				InitializePlatformSupportModulesInManaged (55ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (111ms)
+				RefreshPlugins (109ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (107ms)
-				ProcessInitializeOnLoadMethodAttributes (50ms)
+				ProcessInitializeOnLoadAttributes (95ms)
+				ProcessInitializeOnLoadMethodAttributes (46ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006690 seconds.
+Registered in 0.006299 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.66 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.77 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.297 seconds
+- Completed reload, in  1.318 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1299ms)
-		BeginReloadAssembly (241ms)
+	ReloadAssembly (1319ms)
+		BeginReloadAssembly (231ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (133ms)
-		EndReloadAssembly (943ms)
-			LoadAssemblies (115ms)
+			CreateAndSetChildDomain (122ms)
+		EndReloadAssembly (978ms)
+			LoadAssemblies (114ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (300ms)
+			SetupTypeCache (292ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (55ms)
-			SetupLoadedEditorAssemblies (417ms)
+			RebuildScriptCaches (54ms)
+			SetupLoadedEditorAssemblies (494ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (13ms)
+				InitializePlatformSupportModulesInManaged (12ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (98ms)
-				ProcessInitializeOnLoadAttributes (251ms)
-				ProcessInitializeOnLoadMethodAttributes (50ms)
-				AfterProcessingInitializeOnLoad (5ms)
+				BeforeProcessingInitializeOnLoad (96ms)
+				ProcessInitializeOnLoadAttributes (339ms)
+				ProcessInitializeOnLoadMethodAttributes (42ms)
+				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (18ms)
+			AwakeInstancesAfterBackupRestoration (10ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.93 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3664 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 45 unused Assets / (346.6 KB). Loaded Objects now: 4125.
-Memory consumption went from 210.8 MB to 210.5 MB.
-Total: 5.350300 ms (FindLiveObjects: 0.512900 ms CreateObjectMapping: 0.363400 ms MarkObjects: 4.273000 ms  DeleteObjects: 0.199700 ms)
+Unloading 3668 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 45 unused Assets / (347.0 KB). Loaded Objects now: 4129.
+Memory consumption went from 211.0 MB to 210.6 MB.
+Total: 3.942300 ms (FindLiveObjects: 0.292800 ms CreateObjectMapping: 0.192700 ms MarkObjects: 3.280900 ms  DeleteObjects: 0.174900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -164,49 +164,49 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.006777 seconds.
+Registered in 0.006386 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.71 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.236 seconds
+- Completed reload, in  1.213 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1236ms)
-		BeginReloadAssembly (178ms)
+	ReloadAssembly (1213ms)
+		BeginReloadAssembly (167ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (10ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (43ms)
-		EndReloadAssembly (959ms)
-			LoadAssemblies (136ms)
+			CreateAndSetChildDomain (40ms)
+		EndReloadAssembly (917ms)
+			LoadAssemblies (141ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (373ms)
+			SetupTypeCache (349ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (42ms)
-			SetupLoadedEditorAssemblies (384ms)
+			RebuildScriptCaches (50ms)
+			SetupLoadedEditorAssemblies (357ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (26ms)
+				InitializePlatformSupportModulesInManaged (23ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (70ms)
-				ProcessInitializeOnLoadAttributes (249ms)
+				BeforeProcessingInitializeOnLoad (79ms)
+				ProcessInitializeOnLoadAttributes (216ms)
 				ProcessInitializeOnLoadMethodAttributes (35ms)
 				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (10ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 3.19 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.82 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3616 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (314.2 KB). Loaded Objects now: 4128.
-Memory consumption went from 206.5 MB to 206.2 MB.
-Total: 4.041400 ms (FindLiveObjects: 0.370100 ms CreateObjectMapping: 0.307400 ms MarkObjects: 3.022700 ms  DeleteObjects: 0.339700 ms)
+Unloading 3620 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 34 unused Assets / (314.4 KB). Loaded Objects now: 4132.
+Memory consumption went from 206.7 MB to 206.3 MB.
+Total: 4.052700 ms (FindLiveObjects: 0.402500 ms CreateObjectMapping: 0.178400 ms MarkObjects: 3.277000 ms  DeleteObjects: 0.193200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -221,80 +221,123 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 5956.936205 seconds.
-  path: Assets/Prefabs/Bricks/Basic Brick (Square) [1] Variant.prefab
-  artifactKey: Guid(3d89e0883409975469e6a137f4102df7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bricks/Basic Brick (Square) [1] Variant.prefab using Guid(3d89e0883409975469e6a137f4102df7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eef43fe0c6edfb3cc6731f9d2bfb38ff') in 0.197462 seconds 
+  Time since last request: 28463.479794 seconds.
+  path: Assets/Prefabs/Bricks/Powerup Brick Variant.prefab
+  artifactKey: Guid(0ee3ab5b00e63e247ae20649f36d6608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Powerup Brick Variant.prefab using Guid(0ee3ab5b00e63e247ae20649f36d6608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b454a7e67b433f44f854daa61a063b6d') in 0.152114 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000036 seconds.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Prefabs/Middle Brick Group.prefab
+  artifactKey: Guid(f81e650ccdaddbc40b2051a3f12366d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Middle Brick Group.prefab using Guid(f81e650ccdaddbc40b2051a3f12366d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4dedc1ecada4c9e0878b386b544b9db7') in 0.036449 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [3] (Small Square) Variant.prefab
+  artifactKey: Guid(8f48e9a960a8fac478efda8cfc29d4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [3] (Small Square) Variant.prefab using Guid(8f48e9a960a8fac478efda8cfc29d4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1a99a2eca3cbb2841a442b66367f633') in 0.027983 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [2] (Small Square) Variant.prefab
+  artifactKey: Guid(54012e7ac0a169547a8703428e3b86cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [2] (Small Square) Variant.prefab using Guid(54012e7ac0a169547a8703428e3b86cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bafe807ee9b42de5d668c6715e41338') in 0.022882 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Prefabs/Brick Group (5).prefab
+  artifactKey: Guid(1ab1d3b840c33cc45aa35cbe3537bfea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Brick Group (5).prefab using Guid(1ab1d3b840c33cc45aa35cbe3537bfea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c465f0ce60eedd1d5576ecca663c1e9') in 0.025071 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [1].prefab
+  artifactKey: Guid(6cb226225a379bb4a9d4d14d15edfee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [1].prefab using Guid(6cb226225a379bb4a9d4d14d15edfee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '058016bfac7bc38a3bc1d2cad457c7b6') in 0.016430 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
   path: Assets/Prefabs/Bricks/Basic Brick [2] Variant.prefab
   artifactKey: Guid(e52fbc2591a14a14c94545396b386be8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bricks/Basic Brick [2] Variant.prefab using Guid(e52fbc2591a14a14c94545396b386be8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e13087ee9211f0f30edc886556b85487') in 0.029103 seconds 
+Start importing Assets/Prefabs/Bricks/Basic Brick [2] Variant.prefab using Guid(e52fbc2591a14a14c94545396b386be8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f876995e17e924c916b596c08f10c67') in 0.022603 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Prefabs/Brick Double Pyramid.prefab
+  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad6eeb65fdaaaf79ac162fcebe43f0dc') in 0.084330 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [3] Variant.prefab
+  artifactKey: Guid(30b5215efaf75994e9c6e981e4aab438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [3] Variant.prefab using Guid(30b5215efaf75994e9c6e981e4aab438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd71f63a6150b94222c7429ddf996878') in 0.024035 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Prefabs/Brick Group [2].prefab
+  artifactKey: Guid(df9cce6ced42c85449aee33215874f13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Brick Group [2].prefab using Guid(df9cce6ced42c85449aee33215874f13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef41fa10cc3b1328863d001610ca64e6') in 0.039605 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Prefabs/Paddle.prefab
+  artifactKey: Guid(07fc1662e60853f4ab877e60d0e634ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Paddle.prefab using Guid(07fc1662e60853f4ab877e60d0e634ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
+ -> (artifact id: 'e3c92336bff1bf7cded472a33341b080') in 1.976800 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000054 seconds.
-  path: Assets/Prefabs/Bricks/Objective Brick.prefab
-  artifactKey: Guid(8bcb087656ddcb049989c4f745a293f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bricks/Objective Brick.prefab using Guid(8bcb087656ddcb049989c4f745a293f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44e3274cbf69e70a9af929e19e26fedb') in 0.019262 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/Prefabs/Bricks/Ammo Brick.prefab
-  artifactKey: Guid(bf06a3c79f21abf4986f47edc536c652) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bricks/Ammo Brick.prefab using Guid(bf06a3c79f21abf4986f47edc536c652) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7042ee7511ede403e85baff5bcb8aba') in 0.015826 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Prefabs/Bricks/Basic Brick [3] (Small Square) Variant.prefab
-  artifactKey: Guid(8f48e9a960a8fac478efda8cfc29d4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Bricks/Basic Brick [3] (Small Square) Variant.prefab using Guid(8f48e9a960a8fac478efda8cfc29d4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a72d12d27fd169a6ba3b302d2013544') in 0.020631 seconds 
+  path: Assets/Prefabs/Bricks/Basic Brick [2] Square Variant.prefab
+  artifactKey: Guid(4684c8077a0150c479bbc1cdbf1327e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [2] Square Variant.prefab using Guid(4684c8077a0150c479bbc1cdbf1327e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36621263fdd0d6c5e948f726525d4790') in 0.038446 seconds 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.009344 seconds.
+Registered in 0.007971 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.78 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.70 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.345 seconds
+- Completed reload, in  1.339 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1345ms)
-		BeginReloadAssembly (189ms)
+	ReloadAssembly (1340ms)
+		BeginReloadAssembly (195ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (9ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (49ms)
-		EndReloadAssembly (1059ms)
-			LoadAssemblies (142ms)
+			CreateAndSetChildDomain (52ms)
+		EndReloadAssembly (1024ms)
+			LoadAssemblies (140ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (317ms)
+			SetupTypeCache (347ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (61ms)
-			SetupLoadedEditorAssemblies (520ms)
+			RebuildScriptCaches (60ms)
+			SetupLoadedEditorAssemblies (438ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (21ms)
-				SetLoadedEditorAssemblies (1ms)
+				InitializePlatformSupportModulesInManaged (20ms)
+				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (77ms)
-				ProcessInitializeOnLoadAttributes (359ms)
-				ProcessInitializeOnLoadMethodAttributes (57ms)
+				BeforeProcessingInitializeOnLoad (82ms)
+				ProcessInitializeOnLoadAttributes (275ms)
+				ProcessInitializeOnLoadMethodAttributes (56ms)
 				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (15ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 4.75 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.64 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3616 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (313.9 KB). Loaded Objects now: 4138.
-Memory consumption went from 210.9 MB to 210.6 MB.
-Total: 5.908500 ms (FindLiveObjects: 0.335000 ms CreateObjectMapping: 0.258000 ms MarkObjects: 5.065900 ms  DeleteObjects: 0.248500 ms)
+Unloading 3620 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 34 unused Assets / (314.4 KB). Loaded Objects now: 4146.
+Memory consumption went from 212.0 MB to 211.7 MB.
+Total: 7.087100 ms (FindLiveObjects: 0.587000 ms CreateObjectMapping: 0.738900 ms MarkObjects: 5.581900 ms  DeleteObjects: 0.178000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 

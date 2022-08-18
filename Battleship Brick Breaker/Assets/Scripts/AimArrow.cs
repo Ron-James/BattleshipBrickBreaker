@@ -23,7 +23,7 @@ public class AimArrow : MonoBehaviour
     [SerializeField] float outPenaltyIncrease = 0.25f;
     [SerializeField] bool aiming;
     [SerializeField] bool canFire;
-    bool canHit;
+    [SerializeField] bool canHit;
     int sign;
     public Vector3 lastAimDirection;
     Coroutine oscillator;
@@ -143,10 +143,13 @@ public class AimArrow : MonoBehaviour
             }
         }
     }
+    private void OnDisable() {
+        StopAllCoroutines();
+    }
     IEnumerator Oscillate(float period, bool canHit){
         arrow.enabled = true;
         transform.position = GetComponentInParent<PaddleController>().Ball.transform.position;
-        GetComponentInParent<PaddleController>().PaddleCollider.isTrigger = true;
+        paddleCollider.enabled = false;
         float time = 0;
         float w = (1/period) * 2 * Mathf.PI;
         float straight = 180;
@@ -161,10 +164,10 @@ public class AimArrow : MonoBehaviour
             straight = 180;
         }
         if(canHit){
-            GetComponentInParent<PaddleController>().PaddleCollider.isTrigger = true;
+            paddleCollider.enabled = true;
         }
         else{
-            GetComponentInParent<PaddleController>().PaddleCollider.isTrigger = false;
+            paddleCollider.enabled = false;
         }
         while(true){
             if((ClickInField() && Input.GetMouseButtonDown(0)) || GameManager.instance.TouchInField(out touchIndex, out touchPos, player1)){
@@ -172,10 +175,12 @@ public class AimArrow : MonoBehaviour
                 //lastAimDirection = sign * direction;
                 //Debug.Log(lastAimDirection + " Last aim directions");
                 if(GetComponentInParent<PowerUpManager>().catcher && ball.GetComponent<BallPhysics>().LastVelocity.magnitude > 0){
-                    ball.GetComponent<BallPhysics>().Fire(ball.GetComponent<BallPhysics>().LastVelocity.magnitude, sign * direction);
+                    ball.GetComponent<BallPhysics>().Launch(ball.GetComponent<CollisionVelocityControl>().LastVelocity.magnitude, sign * direction);
+                    Debug.Log("Catcher launch");
                 }
                 else{
-                    ball.GetComponent<BallPhysics>().Fire(GameManager.instance.InitialVelocity, sign * direction);
+                    ball.GetComponent<BallPhysics>().Launch(GameManager.instance.InitialVelocity, sign * direction);
+                    Debug.Log(sign * direction + " what direction I am launching");
                 }
                 
                 arrow.enabled = false;
@@ -183,7 +188,12 @@ public class AimArrow : MonoBehaviour
                 oscillator = null;
                 CanHit = true;
                 GetComponentInParent<PaddleController>().Slider.interactable = true;
-                GetComponentInParent<PaddleController>().PaddleCollider.isTrigger = false;
+                paddleCollider.enabled = true;
+                break;
+            }
+            else if(!canFire){
+                arrow.enabled = false;
+                oscillator = null;
                 break;
             }
             else{

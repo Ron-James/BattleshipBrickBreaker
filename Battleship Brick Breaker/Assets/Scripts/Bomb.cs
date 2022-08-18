@@ -37,6 +37,7 @@ public class Bomb : MonoBehaviour
         //Gizmos.DrawSphere(transform.position, explosionRadius);
         Debug.Log("explosion");
         PlayExplosionSound();
+        isActive = false;
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
         foreach (Collider item in colliders)
         {
@@ -45,6 +46,7 @@ public class Bomb : MonoBehaviour
                 if (player1)
                 {
                     item.GetComponent<BrickHealth>().TakeDamge(brickDamage, 1);
+                    Debug.Log("Bomb Brick Damage");
                 }
                 else
                 {
@@ -58,6 +60,9 @@ public class Bomb : MonoBehaviour
             }
         }
         StartCoroutine(ExplosionEffect());
+    }
+    private void OnDisable() {
+        StopAllCoroutines();
     }
     public void EnableBomb(Vector3 position)
     {
@@ -121,7 +126,17 @@ public class Bomb : MonoBehaviour
             case "Paddle":
                 if (isActive)
                 {
-                    Explode();
+                    if(player1){
+                        if(!other.gameObject.GetComponentInParent<PaddleController>().Player1){
+                            Explode();
+                        }
+                    }
+                    else{
+                        if(other.gameObject.GetComponentInParent<PaddleController>().Player1){
+                            Explode();
+                        }
+                    }
+                    
                 }
                 break;
         }

@@ -1,0 +1,479 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.6f1 (7da38d85baf6) revision 8233869'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19044) 64bit Core' Language: 'en' Physical Memory: 16177 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+D:\Unity Editors\2021.3.6f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+D:/Unity Projects/BattleshipBrickBreaker/BattleshipBrickBreaker/Battleship Brick Breaker
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+3969
+Successfully changed project path to: D:/Unity Projects/BattleshipBrickBreaker/BattleshipBrickBreaker/Battleship Brick Breaker
+D:/Unity Projects/BattleshipBrickBreaker/BattleshipBrickBreaker/Battleship Brick Breaker
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 125.35 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.6f1 (7da38d85baf6)
+[Subsystems] Discovering subsystems at path D:/Unity Editors/2021.3.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Unity Projects/BattleshipBrickBreaker/BattleshipBrickBreaker/Battleship Brick Breaker/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1050 Ti (ID=0x1c8c)
+    Vendor:   NVIDIA
+    VRAM:     4019 MB
+    Driver:   30.0.15.1215
+Initialize mono
+Mono path[0] = 'D:/Unity Editors/2021.3.6f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity Editors/2021.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/Unity Editors/2021.3.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56108
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity Editors/2021.3.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: D:/Unity Editors/2021.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003599 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 166.74 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.914 seconds
+Domain Reload Profiling:
+	ReloadAssembly (915ms)
+		BeginReloadAssembly (111ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (660ms)
+			LoadAssemblies (111ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (123ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (27ms)
+			SetupLoadedEditorAssemblies (452ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (70ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (167ms)
+				BeforeProcessingInitializeOnLoad (3ms)
+				ProcessInitializeOnLoadAttributes (145ms)
+				ProcessInitializeOnLoadMethodAttributes (66ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.010170 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.71 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.406 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1407ms)
+		BeginReloadAssembly (319ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (143ms)
+		EndReloadAssembly (955ms)
+			LoadAssemblies (173ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (342ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (58ms)
+			SetupLoadedEditorAssemblies (403ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (13ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (105ms)
+				ProcessInitializeOnLoadAttributes (247ms)
+				ProcessInitializeOnLoadMethodAttributes (33ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.13 seconds
+Refreshing native plugins compatible for Editor in 1.05 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3667 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 45 unused Assets / (346.7 KB). Loaded Objects now: 4128.
+Memory consumption went from 210.9 MB to 210.6 MB.
+Total: 3.916200 ms (FindLiveObjects: 0.456900 ms CreateObjectMapping: 0.261500 ms MarkObjects: 3.026000 ms  DeleteObjects: 0.170200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 26023.726860 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab
+  artifactKey: Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab using Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '734bc1ae0119d01d50291e3a8d58f856') in 0.167543 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [3] Variant.prefab
+  artifactKey: Guid(30b5215efaf75994e9c6e981e4aab438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [3] Variant.prefab using Guid(30b5215efaf75994e9c6e981e4aab438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afa71b05e4ffc5f61868e7db73e3ab57') in 0.044114 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.202005 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab
+  artifactKey: Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab using Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34df83d8d86945e93732c24e43fe3674') in 0.042964 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [2] Variant.prefab
+  artifactKey: Guid(e52fbc2591a14a14c94545396b386be8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [2] Variant.prefab using Guid(e52fbc2591a14a14c94545396b386be8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '402016b716a9f4b9dbdd08bfdbcf2095') in 0.024124 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [3] (Small Square) Variant.prefab
+  artifactKey: Guid(8f48e9a960a8fac478efda8cfc29d4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [3] (Small Square) Variant.prefab using Guid(8f48e9a960a8fac478efda8cfc29d4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30252062f3decdeb2c196453085f0c75') in 0.024556 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.921926 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab
+  artifactKey: Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab using Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d8644f6d2efae57eb470d86724cb694') in 0.021555 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [2] Variant.prefab
+  artifactKey: Guid(e52fbc2591a14a14c94545396b386be8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [2] Variant.prefab using Guid(e52fbc2591a14a14c94545396b386be8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb2f026dab358f70a75be67d1be2a84e') in 0.017043 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [3] (Small Square) Variant.prefab
+  artifactKey: Guid(8f48e9a960a8fac478efda8cfc29d4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [3] (Small Square) Variant.prefab using Guid(8f48e9a960a8fac478efda8cfc29d4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '186859cd3b1cac6971d9bf201c6d3087') in 0.020783 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.501747 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab
+  artifactKey: Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab using Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1acffa1f0aa0fdabdeb8e83cb9f6fc29') in 0.028167 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [2] (Small Square) Variant.prefab
+  artifactKey: Guid(54012e7ac0a169547a8703428e3b86cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [2] (Small Square) Variant.prefab using Guid(54012e7ac0a169547a8703428e3b86cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d62351b90ea87027bd852d69df8b6db') in 0.029608 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [3] Variant.prefab
+  artifactKey: Guid(30b5215efaf75994e9c6e981e4aab438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [3] Variant.prefab using Guid(30b5215efaf75994e9c6e981e4aab438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd75b49d3ed4ba6fdd2ff2702cf3a06dd') in 0.040104 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.228139 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab
+  artifactKey: Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab using Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '327be7e744e08bf147734639b7b5aa23') in 0.037456 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Prefabs/Bricks/Powerup Brick Variant.prefab
+  artifactKey: Guid(0ee3ab5b00e63e247ae20649f36d6608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Powerup Brick Variant.prefab using Guid(0ee3ab5b00e63e247ae20649f36d6608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8949e29d6cd8310b27dbc785c92e1a92') in 0.032004 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [3] Variant.prefab
+  artifactKey: Guid(30b5215efaf75994e9c6e981e4aab438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [3] Variant.prefab using Guid(30b5215efaf75994e9c6e981e4aab438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48c4f3ae938df5bd45a316aba9970dff') in 0.034239 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [3] (Small Square) Variant.prefab
+  artifactKey: Guid(8f48e9a960a8fac478efda8cfc29d4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [3] (Small Square) Variant.prefab using Guid(8f48e9a960a8fac478efda8cfc29d4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a048959d71486b93db839dd7bf66446d') in 0.018703 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.728786 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab
+  artifactKey: Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab using Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19120aa9ae3178bd9764a88cf8b3724a') in 0.036079 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000137 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [2] (Small Square) Variant.prefab
+  artifactKey: Guid(54012e7ac0a169547a8703428e3b86cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [2] (Small Square) Variant.prefab using Guid(54012e7ac0a169547a8703428e3b86cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ba9197710fba935f68ede09ccbcbaf8') in 0.031406 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000083 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [2] Square Variant.prefab
+  artifactKey: Guid(4684c8077a0150c479bbc1cdbf1327e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [2] Square Variant.prefab using Guid(4684c8077a0150c479bbc1cdbf1327e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de86922b8049dd9c37344ac6d7fe3da5') in 0.022007 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.782270 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab
+  artifactKey: Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab using Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bad1049614f4cadd19611fa589bfc5b') in 0.034671 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [2] Variant.prefab
+  artifactKey: Guid(e52fbc2591a14a14c94545396b386be8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [2] Variant.prefab using Guid(e52fbc2591a14a14c94545396b386be8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01759c7266632a794cdd0ac81435a322') in 0.033797 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [3] (Small Square) Variant.prefab
+  artifactKey: Guid(8f48e9a960a8fac478efda8cfc29d4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [3] (Small Square) Variant.prefab using Guid(8f48e9a960a8fac478efda8cfc29d4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1172f9c92091980ce1f3207c711ed1f') in 0.032588 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 22.171222 seconds.
+  path: Assets/Materials/Brick Materials
+  artifactKey: Guid(37fd8b221f9c9404ba279365c333cd10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials using Guid(37fd8b221f9c9404ba279365c333cd10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce7bb50cf63d7d7b2926543034aa1af9') in 0.005688 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 36.227205 seconds.
+  path: Assets/Materials/Brick Materials/Feedback
+  artifactKey: Guid(b22ccde9f46974646b69baff3c009104) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Feedback using Guid(b22ccde9f46974646b69baff3c009104) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e83888c208eda007106a2987f2a2276') in 0.005494 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.827464 seconds.
+  path: Assets/Materials/Brick Materials/Feedback/Basic Brick Feedback.mat
+  artifactKey: Guid(6f695e0205a108c46923c2116cd0ac40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Feedback/Basic Brick Feedback.mat using Guid(6f695e0205a108c46923c2116cd0ac40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cef24d68801d2e1a1ab7819843919759') in 0.056945 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 102.403381 seconds.
+  path: Assets/Prefabs/Brick Double Pyramid.prefab
+  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e2673568354e3e7926d8919b6c915ae') in 0.083981 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.825263 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab
+  artifactKey: Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab using Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7762a67887e69bf783914d161881b766') in 0.022722 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Prefabs/Bricks/Powerup Brick Variant.prefab
+  artifactKey: Guid(0ee3ab5b00e63e247ae20649f36d6608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Powerup Brick Variant.prefab using Guid(0ee3ab5b00e63e247ae20649f36d6608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ac25c74c6cb83a9cb337647b93c8622') in 0.021203 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [1].prefab
+  artifactKey: Guid(6cb226225a379bb4a9d4d14d15edfee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [1].prefab using Guid(6cb226225a379bb4a9d4d14d15edfee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c17cfa65ccc617bf05184a1e724c750') in 0.023703 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [3] Variant.prefab
+  artifactKey: Guid(30b5215efaf75994e9c6e981e4aab438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [3] Variant.prefab using Guid(30b5215efaf75994e9c6e981e4aab438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40878f22d326a3f022377da37dc32821') in 0.016476 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [3] (Small Square) Variant.prefab
+  artifactKey: Guid(8f48e9a960a8fac478efda8cfc29d4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [3] (Small Square) Variant.prefab using Guid(8f48e9a960a8fac478efda8cfc29d4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5f5f3bc252e770d8f693b5ffdb7e1f8') in 0.023577 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.291366 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab
+  artifactKey: Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab using Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a7b5cc1d378f5a2fa4c94dd42992b55') in 0.030807 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Prefabs/Bricks/Powerup Brick Variant.prefab
+  artifactKey: Guid(0ee3ab5b00e63e247ae20649f36d6608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Powerup Brick Variant.prefab using Guid(0ee3ab5b00e63e247ae20649f36d6608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c50b5241e2439f627ea235a5161bdee') in 0.034108 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [2] Variant.prefab
+  artifactKey: Guid(e52fbc2591a14a14c94545396b386be8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [2] Variant.prefab using Guid(e52fbc2591a14a14c94545396b386be8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7df9f998d6fe2bc25430f5b1d37533d2') in 0.032465 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000146 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [2] Square Variant.prefab
+  artifactKey: Guid(4684c8077a0150c479bbc1cdbf1327e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [2] Square Variant.prefab using Guid(4684c8077a0150c479bbc1cdbf1327e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbc896fec3721f6f2233d563d360ddfd') in 0.029188 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.503267 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab
+  artifactKey: Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab using Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3793316226a5eb965c4ffcf95b8a6539') in 0.044853 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Prefabs/Bricks/Powerup Brick Variant.prefab
+  artifactKey: Guid(0ee3ab5b00e63e247ae20649f36d6608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Powerup Brick Variant.prefab using Guid(0ee3ab5b00e63e247ae20649f36d6608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '863ba4260188c87c580c63e8ee09ca6d') in 0.030843 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [3] Variant.prefab
+  artifactKey: Guid(30b5215efaf75994e9c6e981e4aab438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [3] Variant.prefab using Guid(30b5215efaf75994e9c6e981e4aab438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f9396b5e0897a7b81962df92e56e4fc') in 0.022766 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.367545 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab
+  artifactKey: Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab using Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b459f1607a8fc8826aee6ed3a5c7dc41') in 0.029533 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [2] (Small Square) Variant.prefab
+  artifactKey: Guid(54012e7ac0a169547a8703428e3b86cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [2] (Small Square) Variant.prefab using Guid(54012e7ac0a169547a8703428e3b86cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '575c5d64fa7f9d7789999ef5c9962563') in 0.024040 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [2] Square Variant.prefab
+  artifactKey: Guid(4684c8077a0150c479bbc1cdbf1327e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [2] Square Variant.prefab using Guid(4684c8077a0150c479bbc1cdbf1327e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3188f2afbb50a181d06940a0288a67b0') in 0.026059 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.305511 seconds.
+  path: Assets/Materials/Brick Materials/Feedback/Basic Brick Feedback.mat
+  artifactKey: Guid(6f695e0205a108c46923c2116cd0ac40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Feedback/Basic Brick Feedback.mat using Guid(6f695e0205a108c46923c2116cd0ac40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3a92441b67d3be3b73bbe93b018fdb6') in 0.015391 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 117.422047 seconds.
+  path: Assets/Materials/Brick Materials/Feedback/Basic Brick Feedback 1.mat
+  artifactKey: Guid(83aa801ee2021ba43a7bb06a10801891) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Feedback/Basic Brick Feedback 1.mat using Guid(83aa801ee2021ba43a7bb06a10801891) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4527e3658c1fecb6b78c7fb0e9c1b58e') in 0.038499 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.068516 seconds.
+  path: Assets/Materials/Brick Materials/Feedback/Basic Brick Feedback [2].mat
+  artifactKey: Guid(83aa801ee2021ba43a7bb06a10801891) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Feedback/Basic Brick Feedback [2].mat using Guid(83aa801ee2021ba43a7bb06a10801891) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed8791d43e56d223df0d2846d5309ba3') in 0.016673 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.641095 seconds.
+  path: Assets/Materials/Brick Materials/Feedback/Basic Brick Feedback [2] 1.mat
+  artifactKey: Guid(9af0e12b88a76d54684af61118d17bba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Feedback/Basic Brick Feedback [2] 1.mat using Guid(9af0e12b88a76d54684af61118d17bba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc618462f8f3623cf454d9d200b780ca') in 0.018225 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.973890 seconds.
+  path: Assets/Materials/Brick Materials/Feedback/Basic Brick Feedback [3].mat
+  artifactKey: Guid(9af0e12b88a76d54684af61118d17bba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Feedback/Basic Brick Feedback [3].mat using Guid(9af0e12b88a76d54684af61118d17bba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '821cd2a48bc313e53137a27587d1dc25') in 0.017725 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.684240 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab
+  artifactKey: Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab using Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fef3ac89c5ae3b78c13f38b7413909d') in 0.021891 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Prefabs/Bricks/Powerup Brick Variant.prefab
+  artifactKey: Guid(0ee3ab5b00e63e247ae20649f36d6608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Powerup Brick Variant.prefab using Guid(0ee3ab5b00e63e247ae20649f36d6608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed42859b8b084c58eaf4ecb9e24c1eae') in 0.022623 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [2] Variant.prefab
+  artifactKey: Guid(e52fbc2591a14a14c94545396b386be8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [2] Variant.prefab using Guid(e52fbc2591a14a14c94545396b386be8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b4185383a0c62a00355664e7058408e') in 0.021202 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [2] Square Variant.prefab
+  artifactKey: Guid(4684c8077a0150c479bbc1cdbf1327e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [2] Square Variant.prefab using Guid(4684c8077a0150c479bbc1cdbf1327e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '050ea46ae869cb3a2c3c3d7e2b10979a') in 0.022824 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [3] (Small Square) Variant.prefab
+  artifactKey: Guid(8f48e9a960a8fac478efda8cfc29d4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [3] (Small Square) Variant.prefab using Guid(8f48e9a960a8fac478efda8cfc29d4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9583e2dcab2322f06aab32c927e23a90') in 0.020030 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.849635 seconds.
+  path: Assets/Prefabs/Bricks/Basic Brick [2] Square Variant.prefab
+  artifactKey: Guid(4684c8077a0150c479bbc1cdbf1327e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Bricks/Basic Brick [2] Square Variant.prefab using Guid(4684c8077a0150c479bbc1cdbf1327e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c7329e5d11ce2658f983c96185f8c2c') in 0.036009 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.965386 seconds.
+  path: Assets/Prefabs/Brick Group [2].prefab
+  artifactKey: Guid(df9cce6ced42c85449aee33215874f13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Brick Group [2].prefab using Guid(df9cce6ced42c85449aee33215874f13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '607a7d04594c17a072b474a6e8616781') in 0.027902 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

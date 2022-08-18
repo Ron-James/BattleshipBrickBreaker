@@ -40,7 +40,7 @@ public class Artillery : MonoBehaviour
     {
         ammoIndicator = ammoUI.GetComponentInChildren<TextMeshProUGUI>();
         //ammo = 99;
-        AddAmmo(0);
+        AddAmmo(3);
         UpdateAmmo();
 
     }
@@ -104,6 +104,9 @@ public class Artillery : MonoBehaviour
 
         }
 
+    }
+    private void OnDisable() {
+        StopAllCoroutines();
     }
     public void UpdateAmmo()
     {
