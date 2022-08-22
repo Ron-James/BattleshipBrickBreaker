@@ -795,7 +795,7 @@ MonoBehaviour:
   ammo: 0
   player1: 1
   aim: {fileID: 708519051436734366}
-  paddleSoundBox: {fileID: 0}
+  paddleSoundBox: {fileID: 8915089541948805016}
 --- !u!114 &2851118410620596682
 MonoBehaviour:
   m_ObjectHideFlags: 0

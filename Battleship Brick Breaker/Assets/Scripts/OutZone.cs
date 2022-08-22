@@ -33,7 +33,7 @@ public class OutZone : MonoBehaviour
             if(player == Player.player1){
                 if(playerTracker.GetMaintOwner() == 1){
                     paddle1.GoneOut();
-                    if(TutorialManager.instance == null){
+                    if(!TutorialManager.instance.isTutorial){
                         GameManager.instance.DisablePowerUps(true);
                     }
                     
@@ -45,7 +45,7 @@ public class OutZone : MonoBehaviour
             else{
                 if(playerTracker.GetMaintOwner() == 2){
                     paddle2.GoneOut();
-                    if(TutorialManager.instance == null){
+                    if(!TutorialManager.instance.isTutorial){
                         GameManager.instance.DisablePowerUps(false);
                     }
                     

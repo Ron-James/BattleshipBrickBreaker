@@ -55,7 +55,7 @@ public class BoatMotion : MonoBehaviour
         target.y -= 20;
         while(true){
             if(time >= duration){
-                transform.position = startPos;
+                transform.localPosition = startPos;
 
                 break;
             }

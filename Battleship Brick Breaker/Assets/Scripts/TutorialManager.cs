@@ -18,10 +18,12 @@ public class TutorialManager : Singleton<TutorialManager>
     [SerializeField] GameObject brickHolder;
     [SerializeField] GameObject clearMenu;
     public BrickHealth[] bricks;
+    public bool isTutorial = true;
     // Start is called before the first frame update
     void Start()
     {
-        clearMenu.SetActive(false);
+        if(isTutorial){
+            clearMenu.SetActive(false);
         bricks = brickHolder.GetComponentsInChildren<BrickHealth>();
         tutorialPrompts = GetComponentsInChildren<TutorialPrompt>();
         DisableAllPrompts();
@@ -30,12 +32,14 @@ public class TutorialManager : Singleton<TutorialManager>
         ammoBrick.EnableBoth();
         objBrick.EnableBoth();
         powerUpBrick.EnableBoth();
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!RemainingBricks()){
+        if(!RemainingBricks() && isTutorial){
             ClearTutorial();
         }
         if(Input.GetKeyDown(KeyCode.Escape)){

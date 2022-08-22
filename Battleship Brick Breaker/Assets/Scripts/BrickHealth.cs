@@ -111,7 +111,7 @@ public class BrickHealth : MonoBehaviour
 
                 if (player == 1)
                 {
-                    if (TutorialManager.instance != null)
+                    if (TutorialManager.instance.isTutorial)
                     {
                         TutorialManager.instance.powerUpBrick.ClosePrompt(true);
                         TutorialManager.instance.powerUpCollect.OpenPrompt(true);
@@ -129,7 +129,7 @@ public class BrickHealth : MonoBehaviour
                 }
                 else
                 {
-                    if (TutorialManager.instance != null)
+                    if (TutorialManager.instance.isTutorial)
                     {
                         TutorialManager.instance.powerUpBrick.ClosePrompt(false);
                         TutorialManager.instance.powerUpCollect.OpenPrompt(false);
@@ -152,7 +152,7 @@ public class BrickHealth : MonoBehaviour
         {
             if (player == 1)
             {
-                if (TutorialManager.instance != null)
+                if (TutorialManager.instance.isTutorial)
                 {
                     TutorialManager.instance.objBrick.ClosePrompt(true);
                 }
@@ -161,7 +161,7 @@ public class BrickHealth : MonoBehaviour
             }
             else if (player == 2)
             {
-                if (TutorialManager.instance != null)
+                if (TutorialManager.instance.isTutorial)
                 {
                     TutorialManager.instance.objBrick.ClosePrompt(false);
                 }
@@ -175,7 +175,7 @@ public class BrickHealth : MonoBehaviour
         {
             if (player == 1)
             {
-                if (TutorialManager.instance != null)
+                if (TutorialManager.instance.isTutorial)
                 {
                     TutorialManager.instance.ammoBrick.ClosePrompt(true);
                     TutorialManager.instance.cannonLaunch.OpenPrompt(true);
@@ -184,7 +184,7 @@ public class BrickHealth : MonoBehaviour
             }
             else
             {
-                if (TutorialManager.instance != null)
+                if (TutorialManager.instance.isTutorial)
                 {
                     TutorialManager.instance.ammoBrick.ClosePrompt(false);
                     TutorialManager.instance.cannonLaunch.OpenPrompt(false);

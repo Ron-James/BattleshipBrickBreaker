@@ -73,7 +73,7 @@ public class PowerUpManager : MonoBehaviour
                 break;
             case 4: //bomb
                 paddleSoundBox.powerUpSound.PlayOnce();
-                if(TutorialManager.instance != false){
+                if(TutorialManager.instance.isTutorial){
                     TutorialManager.instance.bombPowerUp.OpenPrompt(GetComponent<PaddleController>().Player1);
                 }
                 GetComponent<BombLauncher>().GiveBomb();

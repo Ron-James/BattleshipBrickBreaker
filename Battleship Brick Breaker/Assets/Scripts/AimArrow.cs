@@ -175,7 +175,7 @@ public class AimArrow : MonoBehaviour
         while(true){
             if((ClickInField() && Input.GetMouseButtonDown(0)) || GameManager.instance.TouchInField(out touchIndex, out touchPos, player1)){
                 
-                if(TutorialManager.instance != null){
+                if(TutorialManager.instance.isTutorial){
                     TutorialManager.instance.ballLaunch.ClosePrompt(player1);
                 }
                 

@@ -59,7 +59,7 @@ MonoBehaviour:
   p2ObjIndicators: []
   paddle1: {fileID: 0}
   paddle2: {fileID: 0}
-  powerUpDropRate: 5
+  powerUpDropRate: 7
   doubleTapTime: 0.2
   maxTapDistance: 50
   cannonballHitPenalty: 6
