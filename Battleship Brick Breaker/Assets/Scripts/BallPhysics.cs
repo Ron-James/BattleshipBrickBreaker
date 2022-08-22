@@ -287,7 +287,7 @@ public class BallPhysics : MonoBehaviour
         {
             case "OutZone":
                 IsOut = true;
-                GameManager.instance.DisablePowerUps(rightSide);
+                //GameManager.instance.DisablePowerUps(rightSide);
                 if (!paddle.GetComponent<PaddleController>().Hit)
                 {
                     //paddle.GetComponent<PaddleController>().GoneOut();

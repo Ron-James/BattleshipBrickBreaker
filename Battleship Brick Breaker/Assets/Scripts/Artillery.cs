@@ -104,6 +104,9 @@ public class Artillery : MonoBehaviour
             bullet.Launch(bulletHeight, target, bulletGravity, player1);
             AddAmmo(-1);
             paddleSoundBox.cannonSound.PlayOnce();
+            if(TutorialManager.instance != null){
+                TutorialManager.instance.cannonLaunch.ClosePrompt(player1);
+            }
 
         }
 

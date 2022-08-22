@@ -109,6 +109,10 @@ public class BombLauncher : MonoBehaviour
     }
     IEnumerator BombLaunchSequence(float period)
     {
+        if(TutorialManager.instance != null){
+            TutorialManager.instance.bombPowerUp.ClosePrompt(player1);
+            TutorialManager.instance.bombThrow.OpenPrompt(player1);
+        }
         targetMarker.gameObject.SetActive(true);
         powerUpBar.fillAmount = 0;
         float time = 0;
@@ -132,6 +136,10 @@ public class BombLauncher : MonoBehaviour
         {
             if (!GameManager.instance.TouchInField(out touchIndex, out touchPos, player1))
             {
+                if(TutorialManager.instance != null){
+                    TutorialManager.instance.bombThrow.ClosePrompt(player1);
+                    
+                }
                 Debug.Log(target + " Target Position");
                 SetTargetMarkerPosition(target);
                 currentBomb.LaunchBomb(target, bombHeight, player1);
@@ -145,6 +153,9 @@ public class BombLauncher : MonoBehaviour
             }
             else if (time >= (period / 2) || Mathf.Sin(time * w) < 0)
             {
+                if(TutorialManager.instance != null){
+                    TutorialManager.instance.bombThrow.ClosePrompt(player1);
+                }
                 float d = GameManager.instance.MinBombLaunchDistance + (diff * Mathf.Sin(time * w));
                 target = firePoint.position;
                 target.x += (sign * d);

@@ -33,6 +33,10 @@ public class OutZone : MonoBehaviour
             if(player == Player.player1){
                 if(playerTracker.GetMaintOwner() == 1){
                     paddle1.GoneOut();
+                    if(TutorialManager.instance == null){
+                        GameManager.instance.DisablePowerUps(true);
+                    }
+                    
                 }
                 else{
                     ball.StartRandomReturn(ball.GetComponent<CollisionVelocityControl>().LargestMagnitude, returnPoint);
@@ -41,6 +45,10 @@ public class OutZone : MonoBehaviour
             else{
                 if(playerTracker.GetMaintOwner() == 2){
                     paddle2.GoneOut();
+                    if(TutorialManager.instance == null){
+                        GameManager.instance.DisablePowerUps(false);
+                    }
+                    
                 }
                 else{
                     ball.StartRandomReturn(ball.GetComponent<CollisionVelocityControl>().LargestMagnitude, returnPoint);

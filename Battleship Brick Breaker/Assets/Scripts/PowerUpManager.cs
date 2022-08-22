@@ -73,6 +73,9 @@ public class PowerUpManager : MonoBehaviour
                 break;
             case 4: //bomb
                 paddleSoundBox.powerUpSound.PlayOnce();
+                if(TutorialManager.instance != false){
+                    TutorialManager.instance.bombPowerUp.OpenPrompt(GetComponent<PaddleController>().Player1);
+                }
                 GetComponent<BombLauncher>().GiveBomb();
                 break;
             case 5: //increase ball damage

@@ -11,7 +11,7 @@ public class BrickHealth : MonoBehaviour
 
     [SerializeField] GameObject crack;
     [SerializeField] GameObject feedbackOverlay;
-    [SerializeField] bool tutorialPowerUp;
+    [SerializeField] bool tutorial;
 
 
     public float currentHealth;
@@ -107,58 +107,88 @@ public class BrickHealth : MonoBehaviour
             }
             else if (powerUp)
             {
-                if (tutorialPowerUp)
+
+
+                if (player == 1)
                 {
-                    if (player == 1)
+                    if (TutorialManager.instance != null)
                     {
+                        TutorialManager.instance.powerUpBrick.ClosePrompt(true);
+                        TutorialManager.instance.powerUpCollect.OpenPrompt(true);
                         Vector3 position = transform.position;
                         position.y = 1;
                         GameManager.instance.SpawnPowerup(position, true, 4);
-                        return;
                     }
                     else
                     {
                         Vector3 position = transform.position;
                         position.y = 1;
-                        GameManager.instance.SpawnPowerup(position, false, 4);
-                        return;
+                        GameManager.instance.SpawnPowerup(position, true);
                     }
-                }
-                if (player == 1)
-                {
-                    Vector3 position = transform.position;
-                    position.y = 1;
-                    GameManager.instance.SpawnPowerup(position, true);
+
                 }
                 else
                 {
-                    Vector3 position = transform.position;
-                    position.y = 1;
-                    GameManager.instance.SpawnPowerup(position, false);
+                    if (TutorialManager.instance != null)
+                    {
+                        TutorialManager.instance.powerUpBrick.ClosePrompt(false);
+                        TutorialManager.instance.powerUpCollect.OpenPrompt(false);
+                        Vector3 position = transform.position;
+                        position.y = 1;
+                        GameManager.instance.SpawnPowerup(position, false, 4);
+                    }
+                    else
+                    {
+                        Vector3 position = transform.position;
+                        position.y = 1;
+                        GameManager.instance.SpawnPowerup(position, false);
+                    }
                 }
+
+
             }
         }
         else if (objective)
         {
             if (player == 1)
             {
+                if (TutorialManager.instance != null)
+                {
+                    TutorialManager.instance.objBrick.ClosePrompt(true);
+                }
                 GameManager.instance.AddScore(1);
                 StatsManager.instance.objBroken[0]++;
             }
             else if (player == 2)
             {
+                if (TutorialManager.instance != null)
+                {
+                    TutorialManager.instance.objBrick.ClosePrompt(false);
+                }
                 GameManager.instance.AddScore(2);
                 StatsManager.instance.objBroken[0]++;
             }
+
+
         }
         else if (ammo)
         {
             if (player == 1)
             {
+                if (TutorialManager.instance != null)
+                {
+                    TutorialManager.instance.ammoBrick.ClosePrompt(true);
+                    TutorialManager.instance.cannonLaunch.OpenPrompt(true);
+                }
                 GameManager.instance.paddle1.GetComponent<Artillery>().AddAmmo(1);
             }
             else
             {
+                if (TutorialManager.instance != null)
+                {
+                    TutorialManager.instance.ammoBrick.ClosePrompt(false);
+                    TutorialManager.instance.cannonLaunch.OpenPrompt(false);
+                }
                 GameManager.instance.paddle2.GetComponent<Artillery>().AddAmmo(1);
             }
         }

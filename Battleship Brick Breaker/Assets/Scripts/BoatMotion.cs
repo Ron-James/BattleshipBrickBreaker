@@ -50,8 +50,8 @@ public class BoatMotion : MonoBehaviour
     IEnumerator Sink(float duration, float speed){
         soundBox.boatSink.PlayOnce();
         float time = 0;
-        Vector3 startPos = transform.position;
-        Vector3 target = transform.position;
+        Vector3 startPos = transform.localPosition;
+        Vector3 target = transform.localPosition;
         target.y -= 20;
         while(true){
             if(time >= duration){
@@ -60,7 +60,7 @@ public class BoatMotion : MonoBehaviour
                 break;
             }
             else{
-                transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+                transform.localPosition = Vector3.MoveTowards(transform.localPosition, target, speed * Time.deltaTime);
                 time += Time.deltaTime;
                 yield return null;
             }

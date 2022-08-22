@@ -51,6 +51,9 @@ public class PowerUp : MonoBehaviour
                 DisablePowerUp();
                 break;
             case "Paddle":
+                if(TutorialManager.instance != null){
+                    TutorialManager.instance.powerUpCollect.ClosePrompt(rightSided);
+                }
                 other.gameObject.GetComponentInParent<PowerUpManager>().ApplyPowerUp((int)power);
                 DisablePowerUp();
                 break;

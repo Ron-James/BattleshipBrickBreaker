@@ -18,6 +18,13 @@ public class SceneController : Singleton<SceneController>
     }
 
     public void LoadLocalCoop(){
+        SceneManager.LoadScene(2);
+    }
+    public void RestartCurrentScene(){
+        Scene scene = SceneManager.GetActiveScene(); 
+        SceneManager.LoadScene(scene.name);
+    }
+    public void LoadTutorial(){
         SceneManager.LoadScene(1);
     }
     public void LoadMenu(){

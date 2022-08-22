@@ -174,6 +174,11 @@ public class AimArrow : MonoBehaviour
         }
         while(true){
             if((ClickInField() && Input.GetMouseButtonDown(0)) || GameManager.instance.TouchInField(out touchIndex, out touchPos, player1)){
+                
+                if(TutorialManager.instance != null){
+                    TutorialManager.instance.ballLaunch.ClosePrompt(player1);
+                }
+                
                 direction = (aimPoint.position - GetComponent<RectTransform>().position).normalized;
                 //lastAimDirection = sign * direction;
                 //Debug.Log(lastAimDirection + " Last aim directions");
