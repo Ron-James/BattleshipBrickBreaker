@@ -24,6 +24,9 @@ public class BallPhysics : MonoBehaviour
     public bool onFire = false;
     public float fireDamage = 2;
 
+    [Header("Sounds")]
+    [SerializeField] Sound generalHit;
+
 
     Rigidbody rb;
     int inwardSign;
@@ -44,6 +47,8 @@ public class BallPhysics : MonoBehaviour
 
     void Start()
     {
+        IgnoreBallCollisions();
+        generalHit.src = GetComponent<AudioSource>();
         Radius = transform.localScale.x / 2;
         IsOut = false;
         rb = GetComponent<Rigidbody>();
@@ -59,13 +64,16 @@ public class BallPhysics : MonoBehaviour
         BindToPaddle();
 
     }
-    private void FixedUpdate()
-    {
+    private void LateUpdate() {
         if (!rb.isKinematic)
         {
             oldVelocity = lastVelocity;
             lastVelocity = rb.velocity;
         }
+    }
+    private void FixedUpdate()
+    {
+        
 
         if (rb.velocity.magnitude > GameManager.instance.MaxBallVelocity)
         {
@@ -132,6 +140,13 @@ public class BallPhysics : MonoBehaviour
         transform.localScale = newRadius * Vector3.one;
     }
 
+    public void IgnoreBallCollisions(){
+        GameObject [] balls = GameObject.FindGameObjectsWithTag("Ball");
+        foreach(GameObject ball in balls){
+            Physics.IgnoreCollision(ball.GetComponent<Collider>(), this.GetComponent<Collider>(), true);
+        }
+
+    }
     private void OnCollisionEnter(Collision other)
     {
 
@@ -140,10 +155,12 @@ public class BallPhysics : MonoBehaviour
         {
 
             default:
+                generalHit.PlayOnce();
                 //Debug.Log("hit reflected");
                 Reflect(other, bounciness);
                 break;
             case "Paddle":
+                generalHit.PlayOnce();
                 Debug.Log("cacher " + other.collider.GetComponentInParent<PowerUpManager>().catcher);
                 if (other.collider.GetComponentInParent<PowerUpManager>().catcher && GetComponent<PlayerTracker>().GetMaintOwner() != 0)
                 {
@@ -162,7 +179,7 @@ public class BallPhysics : MonoBehaviour
                 break;
             case "Ball":
                 //Debug.Log("hit ball");
-                Physics.IgnoreCollision(GetComponent<Collider>(), other.collider);
+                //Physics.IgnoreCollision(other.collider, GetComponent<Collider>());
                 break;
             case "Brick":
                 Reflect(other, bounciness);
@@ -313,10 +330,14 @@ public class BallPhysics : MonoBehaviour
         transform.position = point.position;
         rb.isKinematic = false;
         Vector3 direction = inwardSign * Vector3.left;
-    
-        
+        direction = Quaternion.AngleAxis(Random.Range(-15, 16), Vector3.up) * direction;
+        direction = direction.normalized;
+        rb.velocity = Vector3.zero;
+
+        Debug.Log("velocity is " + velocity);
         //direction = RotateVector(direction, Random.Range(-5, 5));
-        GameManager.instance.ApplyForceToVelocity(rb, direction * velocity, 10000);
+        //rb.AddForce(direction * velocity, ForceMode.VelocityChange);
+        rb.velocity = direction * velocity;
 
     }
 

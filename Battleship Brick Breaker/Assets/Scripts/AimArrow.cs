@@ -8,6 +8,7 @@ public class AimArrow : MonoBehaviour
     [SerializeField] bool player1;
     [SerializeField] Transform ballPos;
     [SerializeField] Transform aimPoint;
+    
     [SerializeField] GameObject backboard;
     [SerializeField] Collider paddleCollider;
 
@@ -147,6 +148,7 @@ public class AimArrow : MonoBehaviour
         StopAllCoroutines();
     }
     IEnumerator Oscillate(float period, bool canHit){
+        
         arrow.enabled = true;
         transform.position = GetComponentInParent<PaddleController>().Ball.transform.position;
         paddleCollider.enabled = false;
@@ -156,6 +158,7 @@ public class AimArrow : MonoBehaviour
         int touchIndex;
         Vector3 touchPos;
         GetComponentInParent<PaddleController>().Slider.interactable = false;
+        GetComponentInParent<BombLauncher>().canLaunch = false;
         Vector3 direction = (aimPoint.position - GetComponent<RectTransform>().position).normalized;
         if(player1) {
             straight = 0;
@@ -182,13 +185,14 @@ public class AimArrow : MonoBehaviour
                     ball.GetComponent<BallPhysics>().Launch(GameManager.instance.InitialVelocity, sign * direction);
                     Debug.Log(sign * direction + " what direction I am launching");
                 }
-                
+                StartCoroutine(BombLauncherDelay(0.2f));
                 arrow.enabled = false;
                 aiming = false;
                 oscillator = null;
                 CanHit = true;
                 GetComponentInParent<PaddleController>().Slider.interactable = true;
                 paddleCollider.enabled = true;
+                yield return new WaitForFixedUpdate();
                 break;
             }
             else if(!canFire){
@@ -202,9 +206,15 @@ public class AimArrow : MonoBehaviour
                 angles.z = zRot;
                 transform.eulerAngles = angles;
                 direction = (aimPoint.position - GetComponent<RectTransform>().position).normalized;
-                time += Time.fixedDeltaTime;
-                yield return new WaitForFixedUpdate();
+                time += Time.deltaTime;
+                yield return null;
             }
         }
+    }
+
+    IEnumerator BombLauncherDelay(float time){
+        yield return new WaitForSeconds(time);
+        GetComponentInParent<BombLauncher>().canLaunch = true;
+        
     }
 }

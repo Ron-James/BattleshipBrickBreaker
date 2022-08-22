@@ -11,18 +11,18 @@ public class BrickHealth : MonoBehaviour
 
     [SerializeField] GameObject crack;
     [SerializeField] GameObject feedbackOverlay;
+    [SerializeField] bool tutorialPowerUp;
 
 
     public float currentHealth;
 
     public bool isBroken = false;
     [Header("Audio")]
-    AudioSource audioSource;
-    [SerializeField] AudioClip hitSound;
+    [SerializeField] Sound hitSound;
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        hitSound.src = GetComponent<AudioSource>();
         currentHealth = maxHealth;
         if (crack != null)
         {
@@ -41,7 +41,7 @@ public class BrickHealth : MonoBehaviour
         switch (other.collider.tag)
         {
             case "Ball":
-                PlayHitSound();
+                hitSound.PlayOnce();
                 break;
         }
     }
@@ -58,7 +58,8 @@ public class BrickHealth : MonoBehaviour
         {
             Break(player);
         }
-        else{
+        else
+        {
             StartCoroutine(FlashOverlay(0.3f));
         }
     }
@@ -104,19 +105,37 @@ public class BrickHealth : MonoBehaviour
                     }
                 }
             }
-            else if(powerUp){
-                if (player == 1)
+            else if (powerUp)
+            {
+                if (tutorialPowerUp)
+                {
+                    if (player == 1)
                     {
                         Vector3 position = transform.position;
                         position.y = 1;
-                        GameManager.instance.SpawnPowerup(position, true);
+                        GameManager.instance.SpawnPowerup(position, true, 4);
+                        return;
                     }
                     else
                     {
                         Vector3 position = transform.position;
                         position.y = 1;
-                        GameManager.instance.SpawnPowerup(position, false);
+                        GameManager.instance.SpawnPowerup(position, false, 4);
+                        return;
                     }
+                }
+                if (player == 1)
+                {
+                    Vector3 position = transform.position;
+                    position.y = 1;
+                    GameManager.instance.SpawnPowerup(position, true);
+                }
+                else
+                {
+                    Vector3 position = transform.position;
+                    position.y = 1;
+                    GameManager.instance.SpawnPowerup(position, false);
+                }
             }
         }
         else if (objective)
@@ -159,26 +178,28 @@ public class BrickHealth : MonoBehaviour
 
         transform.position = pos;
     }
-    public void PlayHitSound(){
-        audioSource.clip = hitSound;
-        audioSource.Play();
-    }
-    IEnumerator FlashOverlay(float duration){
+
+    IEnumerator FlashOverlay(float duration)
+    {
         float time = 0;
         feedbackOverlay.SetActive(true);
-        while(true){
-            if(time >= duration){
+        while (true)
+        {
+            if (time >= duration)
+            {
                 feedbackOverlay.SetActive(false);
                 break;
             }
-            else{
+            else
+            {
                 time += Time.deltaTime;
                 yield return null;
 
             }
         }
     }
-    private void OnDisable() {
+    private void OnDisable()
+    {
         StopAllCoroutines();
     }
 }

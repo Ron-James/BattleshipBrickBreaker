@@ -179,7 +179,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5093809056350219982}
-  m_Material: {fileID: 13400000, guid: 32b5fff0efe50f147a73a70f0fd1f9b6, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -205,7 +205,10 @@ MonoBehaviour:
   feedbackOverlay: {fileID: 7618574980520447648}
   currentHealth: 0
   isBroken: 0
-  hitSound: {fileID: 8300000, guid: 7094c65c50b92804280bf92e41b56153, type: 3}
+  hitSound:
+    clip: {fileID: 8300000, guid: 7094c65c50b92804280bf92e41b56153, type: 3}
+    src: {fileID: 0}
+    volume: 0.1
 --- !u!82 &-7863900061298784009
 AudioSource:
   m_ObjectHideFlags: 0

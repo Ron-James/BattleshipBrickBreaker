@@ -119,10 +119,12 @@ MonoBehaviour:
   powerUp: 0
   crack: {fileID: 2274248625170567146}
   feedbackOverlay: {fileID: 8206763928425918820}
-  brickFeedback: {fileID: 0}
   currentHealth: 0
   isBroken: 0
-  hitSound: {fileID: 8300000, guid: 01db32cbb13d64f4eb2daf2b438b3295, type: 3}
+  hitSound:
+    clip: {fileID: 8300000, guid: 01db32cbb13d64f4eb2daf2b438b3295, type: 3}
+    src: {fileID: 0}
+    volume: 0.1
 --- !u!82 &2857006227020834954
 AudioSource:
   m_ObjectHideFlags: 0

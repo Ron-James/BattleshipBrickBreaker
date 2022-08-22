@@ -27,6 +27,7 @@ public class Artillery : MonoBehaviour
 
     float fireDistance;
     [SerializeField] AimArrow aim;
+    [SerializeField] PaddleSoundBox paddleSoundBox;
     public Transform FirePoint { get => firePoint; set => firePoint = value; }
     public bool CanFire { get => canFire; set => canFire = value; }
     float lastTapTime;
@@ -38,6 +39,7 @@ public class Artillery : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        paddleSoundBox = GetComponentInChildren<PaddleSoundBox>();
         ammoIndicator = ammoUI.GetComponentInChildren<TextMeshProUGUI>();
         //ammo = 99;
         AddAmmo(3);
@@ -97,10 +99,11 @@ public class Artillery : MonoBehaviour
         {
             Bullet bullet = inactiveBullets.GetComponentsInChildren<Bullet>()[0];
             bullet.player1 = player1;
-            bullet.EnableBullet(firePoint.position);
+            bullet.EnableBullet(firePoint.position, player1);
             Vector3 target = new Vector3(oppPaddle.position.x, transform.position.y, transform.position.z);
-            bullet.Launch(bulletHeight, target, bulletGravity);
+            bullet.Launch(bulletHeight, target, bulletGravity, player1);
             AddAmmo(-1);
+            paddleSoundBox.cannonSound.PlayOnce();
 
         }
 

@@ -87,6 +87,16 @@ public class GameManager : Singleton<GameManager>
             AddScore(1);
         }
     }
+
+    public void ChangeAllBalls(bool player1){
+        GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
+        foreach(GameObject ball in balls){
+            if(ball.transform.parent == null){
+                ball.GetComponent<PlayerTracker>().SetCurrentOwner(player1);
+            }
+            
+        }
+    }
     public bool TouchInField(out int index)
     {
         index = -1;
@@ -297,6 +307,7 @@ public class GameManager : Singleton<GameManager>
         int rand = Random.Range(0, Power.GetNames(typeof(Power)).Length);
         inactivePowerups.GetComponentsInChildren<PowerUp>()[0].EnablePowerUp(position, rand, side);
     }
+    
     public void SpawnPowerup(Vector3 position, bool side, int type)
     {
         inactivePowerups.GetComponentsInChildren<PowerUp>()[0].EnablePowerUp(position, type, side);
@@ -312,12 +323,16 @@ public class GameManager : Singleton<GameManager>
             }
         }
     }
-
+    [SerializeField] Sound countDownSound;
     IEnumerator StartSequence(){
         countDownTime.gameObject.SetActive(true);
-        int time = 4;
+        
+        int time = 3;
+        countDownTime.text = time.ToString();
         PauseManager.PauseGameplay();
-        for (int loop = 0; loop <= 4; loop++){
+        countDownSound.PlayOnce();
+        yield return new WaitForSecondsRealtime(1);
+        for (int loop = 0; loop <= 3; loop++){
             if(time == 0){
                 countDownTime.text = "Battle!";
                 PauseManager.ResumeGameplay();
@@ -325,9 +340,11 @@ public class GameManager : Singleton<GameManager>
             }
             else{
                 countDownTime.text = time.ToString();
+                countDownSound.PlayOnce();
             }
-            time--;
             yield return new WaitForSecondsRealtime(1);
+            time--;
+            
         }
         countDownTime.gameObject.SetActive(false);
     }

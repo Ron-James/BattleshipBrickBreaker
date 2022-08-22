@@ -9,8 +9,9 @@ public class Bomb : MonoBehaviour
     [SerializeField] float explosionRadius = 5;
     [SerializeField] float brickDamage = 2;
     [SerializeField] ParticleSystem explosion;
-    AudioSource src;
-    [SerializeField] AudioClip explosionSound;
+    [SerializeField] ParticleSystem fuseBurn;
+    [SerializeField] Sound explosionSound;
+    [SerializeField] Sound fuseSound;
     bool isActive;
     bool player1 = true;
     Rigidbody rb;
@@ -19,13 +20,10 @@ public class Bomb : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         DisableBomb();
-        src = GetComponent<AudioSource>();
 
+        explosionSound.src = GetComponent<AudioSource>();
     }
-    public void PlayExplosionSound(){
-        src.clip = explosionSound;
-        src.Play();
-    }
+    
     // Update is called once per frame
     void Update()
     {
@@ -36,7 +34,9 @@ public class Bomb : MonoBehaviour
         //Gizmos.color = Color.red;
         //Gizmos.DrawSphere(transform.position, explosionRadius);
         Debug.Log("explosion");
-        PlayExplosionSound();
+        fuseBurn.Stop();
+        fuseSound.StopSource();
+        explosionSound.PlayOnce();
         isActive = false;
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
         foreach (Collider item in colliders)
@@ -56,7 +56,8 @@ public class Bomb : MonoBehaviour
             }
             else if (item.GetComponentInParent<PaddleController>() != null)
             {
-                item.GetComponentInParent<PaddleController>().StartBombPenalty();
+                item.GetComponentInParent<PaddleController>().StartHitPenalty();
+                GameManager.instance.ChangeAllBalls(player1);
             }
         }
         StartCoroutine(ExplosionEffect());
@@ -66,6 +67,8 @@ public class Bomb : MonoBehaviour
     }
     public void EnableBomb(Vector3 position)
     {
+        fuseBurn.Play();
+        fuseSound.PlayLoop();
         transform.position = position;
         GetComponent<Collider>().enabled = true;
         GetComponent<MeshRenderer>().enabled = true;
@@ -97,6 +100,7 @@ public class Bomb : MonoBehaviour
 
     public void LaunchBomb(Vector3 target, float height, bool Player1)
     {
+        
         Debug.Log(target + " Bomb Target");
         player1 = Player1;
         isActive = true;

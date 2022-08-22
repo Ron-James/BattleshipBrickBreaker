@@ -11,6 +11,7 @@ public class BoatMotion : MonoBehaviour
     [SerializeField] bool isStopped;
     [SerializeField] float restoreZSpeed = 1f;
     [SerializeField] float sinkSpeed = 0.1f;
+    [SerializeField] PaddleSoundBox soundBox;
     Vector3 defaultRotation;
     Vector3 defaulPosition;
     Coroutine rock;
@@ -47,6 +48,7 @@ public class BoatMotion : MonoBehaviour
         StopAllCoroutines();
     }
     IEnumerator Sink(float duration, float speed){
+        soundBox.boatSink.PlayOnce();
         float time = 0;
         Vector3 startPos = transform.position;
         Vector3 target = transform.position;

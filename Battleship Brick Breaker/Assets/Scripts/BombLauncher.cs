@@ -9,10 +9,15 @@ public class BombLauncher : MonoBehaviour
     [SerializeField] GameObject bombLauncherUI;
     [SerializeField] Image powerUpBar;
     [SerializeField] GameObject inactiveBombs;
+    
     [SerializeField] float bombHeight = 12f;
     [SerializeField] Transform firePoint;
     [SerializeField] bool hasBomb;
     [SerializeField] Bomb currentBomb;
+    [SerializeField] PaddleSoundBox paddleSoundBox;
+    [SerializeField] Transform targetMarker;
+    [SerializeField] float targetMarkerDelayTime = 1f;
+    public bool canLaunch;
     Touch lastTouch;
     int touchIndex;
     Vector3 touchPos;
@@ -22,6 +27,7 @@ public class BombLauncher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        paddleSoundBox = GetComponentInChildren<PaddleSoundBox>();
         ResetBombLauncher();
         DisablePowerUpBar();
     }
@@ -42,7 +48,7 @@ public class BombLauncher : MonoBehaviour
         }
         if (GameManager.instance.TouchInField(out touchIndex, out touchPos, player1) && hasBomb && launchSequence == null && !GetComponentInChildren<AimArrow>().Aiming && Input.touches[touchIndex].phase == TouchPhase.Began)
         {
-            if (currentBomb != null)
+            if (currentBomb != null && canLaunch)
             {
                 lastTouch = Input.touches[touchIndex];
                 launchSequence = StartCoroutine(BombLaunchSequence(GameManager.instance.BombPowerUpTime));
@@ -85,18 +91,37 @@ public class BombLauncher : MonoBehaviour
         hasBomb = true;
     }
 
+    public void SetTargetMarkerPosition(Vector3 position){
+        Vector3 newPos = position;
+        newPos.y = 2f;
+        targetMarker.position = newPos;
+    }
 
+    IEnumerator TargetMarkerDelay(float time){
+        yield return new WaitForSeconds(time);
+        targetMarker.gameObject.SetActive(false);
+        targetMarker.SetParent(this.transform);
+    }
+
+    public void DisableTargetMarker(){
+        targetMarker.SetParent(null);
+        StartCoroutine(TargetMarkerDelay(targetMarkerDelayTime));
+    }
     IEnumerator BombLaunchSequence(float period)
     {
+        targetMarker.gameObject.SetActive(true);
         powerUpBar.fillAmount = 0;
         float time = 0;
+        bool soundSwitched = false;
         float xDifference = GameManager.instance.paddle1.transform.position.x - GameManager.instance.paddle2.transform.position.x;
         xDifference = Mathf.Abs(xDifference);
         Vector3 target = firePoint.position;
         int sign = -1;
         float diff = xDifference - GameManager.instance.MinBombLaunchDistance;
+        SetTargetMarkerPosition(target);
         //Debug.Log(xDifference + " Xdifference" + diff + " difference ");
         float w = 2 * Mathf.PI * (1 / period);
+        paddleSoundBox.bombPowerUp.PlayOnce();
         if (!player1)
         {
             sign = 1;
@@ -108,12 +133,14 @@ public class BombLauncher : MonoBehaviour
             if (!GameManager.instance.TouchInField(out touchIndex, out touchPos, player1))
             {
                 Debug.Log(target + " Target Position");
+                SetTargetMarkerPosition(target);
                 currentBomb.LaunchBomb(target, bombHeight, player1);
+                paddleSoundBox.bombThrow.PlayOnce();
                 launchSequence = null;
                 currentBomb = null;
                 DisablePowerUpBar();
                 hasBomb = false;
-                
+                DisableTargetMarker();
                 break;
             }
             else if (time >= (period / 2) || Mathf.Sin(time * w) < 0)
@@ -121,14 +148,18 @@ public class BombLauncher : MonoBehaviour
                 float d = GameManager.instance.MinBombLaunchDistance + (diff * Mathf.Sin(time * w));
                 target = firePoint.position;
                 target.x += (sign * d);
+                SetTargetMarkerPosition(target);
                 currentBomb.LaunchBomb(target, bombHeight, player1);
                 launchSequence = null;
                 ResetBombLauncher();
                 Debug.Log(target + " Target Position");
+                paddleSoundBox.bombThrow.PlayOnce();
+                DisableTargetMarker();
                 break;
             }
             else if (currentBomb == null)
             {
+                targetMarker.gameObject.SetActive(false);
                 launchSequence = null;
                 ResetBombLauncher();
                 break;
@@ -138,10 +169,15 @@ public class BombLauncher : MonoBehaviour
                 float d = GameManager.instance.MinBombLaunchDistance + (diff * Mathf.Sin(time * w));
                 target = firePoint.position;
                 target.x += (sign * d);
+                SetTargetMarkerPosition(target);
                 time += Time.deltaTime;
                 powerUpBar.fillAmount = Mathf.Sin(time * w);
 
                 yield return null;
+            }
+            if(time >= period / 4 && !soundSwitched){
+                paddleSoundBox.bombPowerUp.StopSource();
+                soundSwitched = true;
             }
         }
     }

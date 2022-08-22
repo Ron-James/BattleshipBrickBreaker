@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 public enum Power
 {
     longer = 0,
@@ -21,7 +23,7 @@ public class PowerUp : MonoBehaviour
     [SerializeField] Transform actives;
     [SerializeField] Transform inactives;
     [SerializeField] Power power;
-    [SerializeField] GameObject[] text = new GameObject[6];
+    [SerializeField] TextMeshPro powerUpText;
     bool rightSided = true;
     Vector3 target = Vector3.zero;
 
@@ -63,13 +65,15 @@ public class PowerUp : MonoBehaviour
             Debug.Log("power up index out of bounds");
             return;
         }
-        if(powerUp == 5){
+        if (powerUp == 5)
+        {
             power = (Power)4;
         }
-        else{
+        else
+        {
             power = (Power)powerUp;
         }
-        
+
         UpdateText((int)power);
         transform.SetParent(actives);
         if (RightSided)
@@ -96,16 +100,34 @@ public class PowerUp : MonoBehaviour
 
     public void UpdateText(int index)
     {
-        for (int loop = 0; loop < text.Length; loop++)
+
+        switch ((int)power)
         {
-            if (loop == index)
-            {
-                text[loop].SetActive(true);
-            }
-            else
-            {
-                text[loop].SetActive(false);
-            }
+            default:
+                powerUpText.text = "none";
+                break;
+            case 0:
+                powerUpText.text = "Long Paddle";
+                break;
+            case 1:
+                powerUpText.text = "Speed Up";
+                break;
+            case 2:
+                powerUpText.text = "Large Ball";
+                break;
+            case 3:
+                powerUpText.text = "Catcher";
+                break;
+            case 4:
+                powerUpText.text = "Bomb";
+                break;
+            case 5:
+                powerUpText.text = "Fire";
+                break;
+            case 6:
+                powerUpText.text = "New";
+                break;
+
         }
     }
 

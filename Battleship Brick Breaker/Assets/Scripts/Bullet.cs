@@ -30,17 +30,19 @@ public class Bullet : MonoBehaviour
             case "Paddle":
                 Debug.Log("Hit boat");
                 
-                if (other.GetComponentInParent<PaddleController>() != null)
+                if (other.GetComponentInParent<PaddleController>() != null && player1 != other.GetComponentInParent<PaddleController>().Player1)
                 {
                     
                     PaddleController paddle = other.GetComponentInParent<PaddleController>();
                     paddle.StartHitPenalty();
+                    paddle.gameObject.GetComponentInChildren<PaddleSoundBox>().boatHit.PlayOnce();
+                    GameManager.instance.ChangeAllBalls(player1);
 
                 }
 
                 if (player1)
                 {
-                    //GameManager.instance.ShotsHit[0]++;
+                    //StatsManager.instance.ShotsHit[0]++;
                 }
                 else
                 {
@@ -55,8 +57,9 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    public void Launch(float height, Vector3 target, float gravity)
+    public void Launch(float height, Vector3 target, float gravity, bool player)
     {
+        player1 = player;
         isActive = true;
         if (gravity > 0)
         {
@@ -69,8 +72,9 @@ public class Bullet : MonoBehaviour
         GetComponent<Rigidbody>().useGravity = true;
         GetComponent<Rigidbody>().velocity = CalculateLaunchVelocity(height, target);
     }
-    public void EnableBullet(Vector3 position)
+    public void EnableBullet(Vector3 position, bool player)
     {
+        player1 = player;
         transform.position = position;
         GetComponent<Collider>().enabled = true;
         GetComponent<MeshRenderer>().enabled = true;

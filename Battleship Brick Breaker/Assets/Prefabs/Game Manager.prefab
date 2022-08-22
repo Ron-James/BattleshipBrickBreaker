@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8137897083630796162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8137897083630796188}
+  - component: {fileID: 8137897083630796163}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8137897083630796188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8137897083630796162}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 853.08136, y: 854.1025, z: -145.9424}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8137897083630796163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8137897083630796162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bee1f42b7e786d43b8c8c5bae38d4fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keepAlive: 0
+  p1Score: 0
+  p2Score: 0
+  objScore: 10
+  localMultiplayer: 0
+  p1Indicators: {fileID: 0}
+  p2Indicators: {fileID: 0}
+  inactivePowerups: {fileID: 0}
+  activePowerups: {fileID: 0}
+  winScreen: {fileID: 0}
+  countDownTime: {fileID: 0}
+  p1ObjIndicators: []
+  p2ObjIndicators: []
+  paddle1: {fileID: 0}
+  paddle2: {fileID: 0}
+  powerUpDropRate: 5
+  doubleTapTime: 0.2
+  maxTapDistance: 50
+  cannonballHitPenalty: 6
+  bombHitPenalty: 7
+  minBombLaunchDistance: 10
+  bombPowerUpTime: 7
+  bombCountDownTime: 7
+  initialVelocity: 22
+  maxBallVelocity: 45
+  randomReturnDistance: 60
+  outPenalty: 5
+  countDownSound:
+    clip: {fileID: 8300000, guid: 1af5cb5ae2d82a9459ee92a673840016, type: 3}
+    src: {fileID: 0}
+    volume: 0.2

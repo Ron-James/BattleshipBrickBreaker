@@ -85,4 +85,16 @@ public class PlayerTracker : MonoBehaviour
         }
     }
 
+    public void SetCurrentOwner(bool player1){
+        if(player1){
+            currentOwner = CurrentOwner.player1;
+            GetComponent<MeshRenderer>().material = player1Material;
+        }
+        else{
+            currentOwner = CurrentOwner.player2;
+            GetComponent<MeshRenderer>().material = player2Material;
+        }
+    }
+
+
 }

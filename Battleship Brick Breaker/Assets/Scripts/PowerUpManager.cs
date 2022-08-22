@@ -19,9 +19,11 @@ public class PowerUpManager : MonoBehaviour
     [SerializeField] float colliderLargeSize = 1.67f;
 
     float paddleLength;
+    PaddleSoundBox paddleSoundBox;
     // Start is called before the first frame update
     void Start()
     {
+        paddleSoundBox = GetComponentInChildren<PaddleSoundBox>();
         paddleLength = coll.gameObject.transform.localScale.z;
         ResetPowerUp();
     }
@@ -37,7 +39,7 @@ public class PowerUpManager : MonoBehaviour
         regBoat.SetActive(false);
         bigBoat.SetActive(true);
         coll.gameObject.transform.localScale = new Vector3(1, 1, colliderLargeSize);
-        
+
     }
 
     public void ResetPaddleLength()
@@ -54,18 +56,23 @@ public class PowerUpManager : MonoBehaviour
         {
             case 0: //longer paddle
                 IncreasePaddleLength();
+                paddleSoundBox.powerUpSound.PlayOnce();
                 break;
             case 1://speed up ball
+                paddleSoundBox.powerUpSound.PlayOnce();
                 ball.GetComponent<BallPhysics>().IncreaseVelocity(ballSpdIncrease);
                 break;
             case 2: //increase ball size
+                paddleSoundBox.powerUpSound.PlayOnce();
                 ball.GetComponent<BallPhysics>().IncreaseSize(ballSizeUpgrade);
                 break;
             case 3: // catch ball;
+                paddleSoundBox.catcherPowerup.PlayOnce();
                 catcher = true;
                 slimeBall.SetActive(true);
                 break;
             case 4: //bomb
+                paddleSoundBox.powerUpSound.PlayOnce();
                 GetComponent<BombLauncher>().GiveBomb();
                 break;
             case 5: //increase ball damage

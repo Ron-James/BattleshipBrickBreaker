@@ -7,7 +7,7 @@ public class CollisionVelocityControl : MonoBehaviour
     Vector3 lastVelocity;
     Vector3 oldVelocity;
     Vector3 lastCollVelocity;
-    float largestMagnitude;
+    public float largestMagnitude;
     Rigidbody rb;
 
     public float LargestMagnitude { get => largestMagnitude; set => largestMagnitude = value; }
@@ -34,13 +34,7 @@ public class CollisionVelocityControl : MonoBehaviour
             lastVelocity = rb.velocity;
             if (Mathf.Abs(rb.velocity.magnitude) > largestMagnitude)
             {
-                largestMagnitude = Mathf.Abs(rb.velocity.magnitude);
-            }
-            if (Mathf.Abs(lastVelocity.magnitude) < Mathf.Abs(oldVelocity.magnitude))
-            {
-                Vector3 newVelocity = largestMagnitude * lastVelocity.normalized;
-                GameManager.instance.ApplyForceToVelocity(rb, newVelocity, 10000);
-                //rb.velocity = newVelocity;
+                largestMagnitude = rb.velocity.magnitude;
             }
         }
 
