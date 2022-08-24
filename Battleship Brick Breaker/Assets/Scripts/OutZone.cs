@@ -12,7 +12,13 @@ public class OutZone : MonoBehaviour
     [SerializeField] PaddleController paddle1;
     [SerializeField] PaddleController paddle2;
     [SerializeField] Player player;
+
+    
+
     [SerializeField] Transform returnPoint;
+
+    public Player PlayerSide { get => player; set => player = value; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +38,9 @@ public class OutZone : MonoBehaviour
             PlayerTracker playerTracker = ball.gameObject.GetComponent<PlayerTracker>();
             if(player == Player.player1){
                 if(playerTracker.GetMaintOwner() == 1){
-                    paddle1.GoneOut();
+                    //paddle1.GoneOut();
                     if(!TutorialManager.instance.isTutorial){
+                        ball.IsOut = true;
                         GameManager.instance.DisablePowerUps(true);
                     }
                     
@@ -44,8 +51,9 @@ public class OutZone : MonoBehaviour
             }
             else{
                 if(playerTracker.GetMaintOwner() == 2){
-                    paddle2.GoneOut();
+                    //paddle2.GoneOut();
                     if(!TutorialManager.instance.isTutorial){
+                        ball.IsOut = true;
                         GameManager.instance.DisablePowerUps(false);
                     }
                     

@@ -196,26 +196,8 @@ public class BombLauncher : MonoBehaviour
         StopAllCoroutines();
     }
     
-    IEnumerator BombLaunchCountDown(float duration){
-        float time = duration;
-        powerUpBar.fillAmount = 1;
-        while(true){
-            if(time <= 0){
-                launchSequence = null;
-                ResetBombLauncher();
-                break;
-            }
-            if(GameManager.instance.TouchInField(out touchIndex, out touchPos, player1) && currentBomb != null){
-                launchSequence = null;
-                lastTouch = Input.touches[touchIndex];
-                launchSequence = StartCoroutine(BombLaunchSequence(GameManager.instance.BombPowerUpTime));
-                break;
-            }
-            else{
-                powerUpBar.fillAmount = time / duration;
-                time -= Time.deltaTime;
-                yield return null;
-            }
-        }
+
+    public void OnBallOut(){
+        ResetBombLauncher();
     }
 }

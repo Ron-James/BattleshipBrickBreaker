@@ -15,7 +15,7 @@ D:/Unity Projects/BattleshipBrickBreaker/BattleshipBrickBreaker/Battleship Brick
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-3409
+51716
 Successfully changed project path to: D:/Unity Projects/BattleshipBrickBreaker/BattleshipBrickBreaker/Battleship Brick Breaker
 D:/Unity Projects/BattleshipBrickBreaker/BattleshipBrickBreaker/Battleship Brick Breaker
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ D:/Unity Projects/BattleshipBrickBreaker/BattleshipBrickBreaker/Battleship Brick
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 122.45 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 154.77 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.6f1 (7da38d85baf6)
 [Subsystems] Discovering subsystems at path D:/Unity Editors/2021.3.6f1/Editor/Data/Resources/UnitySubsystems
@@ -65,79 +65,79 @@ Initialize mono
 Mono path[0] = 'D:/Unity Editors/2021.3.6f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity Editors/2021.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Unity Editors/2021.3.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56080
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56988
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity Editors/2021.3.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: D:/Unity Editors/2021.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004018 seconds.
+Registered in 0.003415 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 122.10 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 125.16 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.755 seconds
+- Completed reload, in  0.750 seconds
 Domain Reload Profiling:
-	ReloadAssembly (756ms)
-		BeginReloadAssembly (90ms)
+	ReloadAssembly (750ms)
+		BeginReloadAssembly (107ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (561ms)
-			LoadAssemblies (91ms)
+		EndReloadAssembly (533ms)
+			LoadAssemblies (108ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (118ms)
+			SetupTypeCache (125ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (38ms)
-			SetupLoadedEditorAssemblies (352ms)
+			RebuildScriptCaches (27ms)
+			SetupLoadedEditorAssemblies (331ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (80ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (122ms)
+				InitializePlatformSupportModulesInManaged (58ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (125ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (100ms)
-				ProcessInitializeOnLoadMethodAttributes (48ms)
+				ProcessInitializeOnLoadAttributes (99ms)
+				ProcessInitializeOnLoadMethodAttributes (47ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006472 seconds.
+Registered in 0.007038 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.45 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.607 seconds
+- Completed reload, in  1.531 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1608ms)
-		BeginReloadAssembly (561ms)
+	ReloadAssembly (1532ms)
+		BeginReloadAssembly (294ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (453ms)
-		EndReloadAssembly (938ms)
-			LoadAssemblies (112ms)
+			CreateAndSetChildDomain (143ms)
+		EndReloadAssembly (1116ms)
+			LoadAssemblies (311ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (331ms)
+			SetupTypeCache (311ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (57ms)
-			SetupLoadedEditorAssemblies (422ms)
+			RebuildScriptCaches (59ms)
+			SetupLoadedEditorAssemblies (448ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (13ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (100ms)
-				ProcessInitializeOnLoadAttributes (267ms)
-				ProcessInitializeOnLoadMethodAttributes (37ms)
-				AfterProcessingInitializeOnLoad (3ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (110ms)
+				ProcessInitializeOnLoadAttributes (285ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
+				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (8ms)
@@ -146,13 +146,13 @@ Platform modules already initialized, skipping
 Worker process is ready to serve import requests
 Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
 Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
+Refreshing native plugins compatible for Editor in 0.70 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3700 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 45 unused Assets / (347.1 KB). Loaded Objects now: 4162.
-Memory consumption went from 213.6 MB to 213.2 MB.
-Total: 4.036800 ms (FindLiveObjects: 0.292000 ms CreateObjectMapping: 0.213900 ms MarkObjects: 3.347800 ms  DeleteObjects: 0.182300 ms)
+Unloading 3701 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 45 unused Assets / (347.1 KB). Loaded Objects now: 4163.
+Memory consumption went from 213.6 MB to 213.3 MB.
+Total: 4.184100 ms (FindLiveObjects: 0.323500 ms CreateObjectMapping: 0.222900 ms MarkObjects: 3.427900 ms  DeleteObjects: 0.208900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -166,148 +166,9 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 47292.832084 seconds.
-  path: Assets/Prefabs/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'c3e02c47691dfb4abf71cfa7b266a3ca') in 2.454560 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 156.979100 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8f2b93cdc8a92be158e28a2c376e648') in 0.170589 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.586554 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2764821bc03c822ea1c93e63aac6d28e') in 0.067014 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.727875 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '877673adc88ef948bf3fd93401fa0fad') in 0.064830 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.335785 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '660bc5e79fe216d6f34414a34fbf26fb') in 0.118291 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.175339 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54793ab37908975d02124fd4d2978b45') in 0.059534 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 13.753460 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87a27a917b9b262882f429f3b31b266a') in 0.060894 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.312282 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '596080b2bb4b9da8a57a747db33f9d78') in 0.060626 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.387660 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0683b3cd8a7a746e706df4ad09d322d') in 0.062067 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.816544 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b39f4a0ffbb6a0ed3c4f61a7518fe87') in 0.062040 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.569917 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bc0e3b95ae9ad8645e79bb821bc5231') in 0.059946 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 20.363869 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3bda30dc2d30f2fd6eb55cc9fffa92f') in 0.058316 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.258972 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9841ae008417d8ebafc423d25cf00c05') in 0.058803 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.281493 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '728403eeee9bb76438608b6045767a62') in 0.059270 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.415916 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53a3c9eb1912d2da5f3523796a6d6340') in 0.064348 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.358787 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0134f1f31298400e9b6e7d70d82a6380') in 0.067479 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.237830 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c04844add6c68cc638911a86f874b7b') in 0.062634 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.605647 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38683316f6f64206dada8b8f0d00596c') in 0.061499 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.694141 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f42fd17f4632c1ee6e77435965a82b69') in 0.059734 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.836128 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a205abec237bd43acebc5cd4917b5a5') in 0.070165 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.855740 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ad5d455e967705367a75cc5bdce02e8') in 0.059886 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 13.956131 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab11d2156e6aa1dd1880ab9c528f7051') in 0.060495 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.212178 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d8c5432d928e92ae184dc8e893b9388') in 0.061615 seconds 
-========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.006345 seconds.
+Registered in 0.007200 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
@@ -316,29 +177,89 @@ Native extension for Android target not found
 Refreshing native plugins compatible for Editor in 0.75 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.156 seconds
+- Completed reload, in  1.121 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1156ms)
-		BeginReloadAssembly (176ms)
+	ReloadAssembly (1121ms)
+		BeginReloadAssembly (180ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (46ms)
-		EndReloadAssembly (887ms)
-			LoadAssemblies (120ms)
+			CreateAndSetChildDomain (42ms)
+		EndReloadAssembly (849ms)
+			LoadAssemblies (151ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (308ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (51ms)
-			SetupLoadedEditorAssemblies (387ms)
+			SetupTypeCache (316ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (52ms)
+			SetupLoadedEditorAssemblies (332ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (20ms)
+				InitializePlatformSupportModulesInManaged (19ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (73ms)
-				ProcessInitializeOnLoadAttributes (253ms)
-				ProcessInitializeOnLoadMethodAttributes (37ms)
+				BeforeProcessingInitializeOnLoad (67ms)
+				ProcessInitializeOnLoadAttributes (199ms)
+				ProcessInitializeOnLoadMethodAttributes (42ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 2.05 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3642 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 34 unused Assets / (314.5 KB). Loaded Objects now: 4166.
+Memory consumption went from 208.2 MB to 207.9 MB.
+Total: 3.377800 ms (FindLiveObjects: 0.307400 ms CreateObjectMapping: 0.183600 ms MarkObjects: 2.722000 ms  DeleteObjects: 0.163700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007117 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.74 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.135 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1136ms)
+		BeginReloadAssembly (174ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (42ms)
+		EndReloadAssembly (864ms)
+			LoadAssemblies (149ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (314ms)
+			ReleaseScriptCaches (4ms)
+			RebuildScriptCaches (57ms)
+			SetupLoadedEditorAssemblies (328ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (23ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (72ms)
+				ProcessInitializeOnLoadAttributes (199ms)
+				ProcessInitializeOnLoadMethodAttributes (30ms)
 				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -346,12 +267,12 @@ Domain Reload Profiling:
 Platform modules already initialized, skipping
 Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
 Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 4.36 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.12 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3641 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (314.7 KB). Loaded Objects now: 4176.
-Memory consumption went from 214.9 MB to 214.6 MB.
-Total: 8.465000 ms (FindLiveObjects: 0.532200 ms CreateObjectMapping: 0.206200 ms MarkObjects: 7.490400 ms  DeleteObjects: 0.234700 ms)
+Unloading 3642 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 34 unused Assets / (314.4 KB). Loaded Objects now: 4169.
+Memory consumption went from 208.2 MB to 207.9 MB.
+Total: 3.201400 ms (FindLiveObjects: 0.280500 ms CreateObjectMapping: 0.183300 ms MarkObjects: 2.582100 ms  DeleteObjects: 0.154800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -367,116 +288,98 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.006169 seconds.
+Registered in 0.006783 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 1.68 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.17 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.295 seconds
+- Completed reload, in  1.095 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1296ms)
-		BeginReloadAssembly (169ms)
+	ReloadAssembly (1096ms)
+		BeginReloadAssembly (177ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (48ms)
+		EndReloadAssembly (811ms)
+			LoadAssemblies (126ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (310ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (50ms)
+			SetupLoadedEditorAssemblies (320ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (19ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (72ms)
+				ProcessInitializeOnLoadAttributes (196ms)
+				ProcessInitializeOnLoadMethodAttributes (29ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 1.97 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3642 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 34 unused Assets / (314.5 KB). Loaded Objects now: 4172.
+Memory consumption went from 208.2 MB to 207.9 MB.
+Total: 3.639100 ms (FindLiveObjects: 0.416500 ms CreateObjectMapping: 0.243100 ms MarkObjects: 2.815100 ms  DeleteObjects: 0.163500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006779 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.088 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1089ms)
+		BeginReloadAssembly (167ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (49ms)
-		EndReloadAssembly (1032ms)
-			LoadAssemblies (121ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (826ms)
+			LoadAssemblies (141ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (294ms)
+			SetupTypeCache (278ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (45ms)
-			SetupLoadedEditorAssemblies (529ms)
+			RebuildScriptCaches (56ms)
+			SetupLoadedEditorAssemblies (337ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (33ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (105ms)
-				ProcessInitializeOnLoadAttributes (336ms)
-				ProcessInitializeOnLoadMethodAttributes (47ms)
-				AfterProcessingInitializeOnLoad (4ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
-Platform modules already initialized, skipping
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 5.70 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3641 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (314.6 KB). Loaded Objects now: 4179.
-Memory consumption went from 214.9 MB to 214.6 MB.
-Total: 4.086000 ms (FindLiveObjects: 0.328500 ms CreateObjectMapping: 0.417600 ms MarkObjects: 3.129800 ms  DeleteObjects: 0.208700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 570.677855 seconds.
-  path: Assets/Scenes/Tutorial.unity
-  artifactKey: Guid(20e824c52e72f4542b34634cde65b216) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Tutorial.unity using Guid(20e824c52e72f4542b34634cde65b216) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4644c6e2dfcd556b46ad81d1550c831') in 0.009611 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.067063 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd11e0a23742abe4570768f2cbf10d797') in 0.116587 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.345072 seconds.
-  path: Assets/Prefabs/Tutorial Manager.prefab
-  artifactKey: Guid(03d9a1829681557478ef027019fc8b37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Tutorial Manager.prefab using Guid(03d9a1829681557478ef027019fc8b37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1378a76557fa3e752b88a2d5425812e') in 0.050545 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007624 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.72 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.164 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1165ms)
-		BeginReloadAssembly (175ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (47ms)
-		EndReloadAssembly (868ms)
-			LoadAssemblies (139ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (346ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (41ms)
-			SetupLoadedEditorAssemblies (329ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (19ms)
+				InitializePlatformSupportModulesInManaged (21ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (69ms)
-				ProcessInitializeOnLoadAttributes (209ms)
-				ProcessInitializeOnLoadMethodAttributes (28ms)
+				BeforeProcessingInitializeOnLoad (75ms)
+				ProcessInitializeOnLoadAttributes (207ms)
+				ProcessInitializeOnLoadMethodAttributes (30ms)
 				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -484,12 +387,12 @@ Domain Reload Profiling:
 Platform modules already initialized, skipping
 Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
 Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 2.83 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.23 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3641 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (314.8 KB). Loaded Objects now: 4183.
-Memory consumption went from 215.1 MB to 214.8 MB.
-Total: 3.236200 ms (FindLiveObjects: 0.311900 ms CreateObjectMapping: 0.193100 ms MarkObjects: 2.554600 ms  DeleteObjects: 0.175700 ms)
+Unloading 3642 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 34 unused Assets / (314.6 KB). Loaded Objects now: 4175.
+Memory consumption went from 208.2 MB to 207.9 MB.
+Total: 4.040700 ms (FindLiveObjects: 0.307200 ms CreateObjectMapping: 0.249400 ms MarkObjects: 3.302700 ms  DeleteObjects: 0.180400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -503,84 +406,53 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 342.955048 seconds.
-  path: Assets/Prefabs/Tutorial Manager.prefab
-  artifactKey: Guid(03d9a1829681557478ef027019fc8b37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Tutorial Manager.prefab using Guid(03d9a1829681557478ef027019fc8b37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a383204db4f5dd686140f47eb9f89fa') in 0.089366 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 12.148703 seconds.
-  path: Assets/Prefabs/Brick Double Pyramid.prefab
-  artifactKey: Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Double Pyramid.prefab using Guid(053ce498acbcc0b468fb7b256caae604) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f625a23b0752f260242a53740f9b330') in 0.087286 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Prefabs/Brick Group.prefab
-  artifactKey: Guid(40115cd4b8ea48744a0773d5c77be40b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Brick Group.prefab using Guid(40115cd4b8ea48744a0773d5c77be40b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62fdee776097f715abae661e3a09d1fe') in 0.040316 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Prefabs/OutZones.prefab
-  artifactKey: Guid(04e189bf6709e7b4ba0b267b500f1fcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/OutZones.prefab using Guid(04e189bf6709e7b4ba0b267b500f1fcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7631ea46376900cc0a29647cff4aa454') in 0.018428 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000049 seconds.
-  path: Assets/Prefabs/Paddle.prefab
-  artifactKey: Guid(07fc1662e60853f4ab877e60d0e634ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddle.prefab using Guid(07fc1662e60853f4ab877e60d0e634ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '0745a6c6db370534986174716e0aafc5') in 1.888724 seconds 
-========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.006057 seconds.
+Registered in 0.006499 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.83 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.84 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.297 seconds
+- Completed reload, in  1.228 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1298ms)
-		BeginReloadAssembly (182ms)
+	ReloadAssembly (1229ms)
+		BeginReloadAssembly (180ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (8ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (49ms)
-		EndReloadAssembly (1011ms)
-			LoadAssemblies (136ms)
+			CreateAndSetChildDomain (41ms)
+		EndReloadAssembly (954ms)
+			LoadAssemblies (142ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (327ms)
+			SetupTypeCache (299ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (51ms)
-			SetupLoadedEditorAssemblies (472ms)
+			RebuildScriptCaches (42ms)
+			SetupLoadedEditorAssemblies (451ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (20ms)
-				SetLoadedEditorAssemblies (0ms)
+				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (81ms)
-				ProcessInitializeOnLoadAttributes (314ms)
-				ProcessInitializeOnLoadMethodAttributes (49ms)
-				AfterProcessingInitializeOnLoad (5ms)
+				BeforeProcessingInitializeOnLoad (73ms)
+				ProcessInitializeOnLoadAttributes (291ms)
+				ProcessInitializeOnLoadMethodAttributes (60ms)
+				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (15ms)
+			AwakeInstancesAfterBackupRestoration (14ms)
 Platform modules already initialized, skipping
 Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
 Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 2.73 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 3.32 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3641 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (315.2 KB). Loaded Objects now: 4186.
-Memory consumption went from 215.1 MB to 214.8 MB.
-Total: 4.133300 ms (FindLiveObjects: 0.432500 ms CreateObjectMapping: 0.291700 ms MarkObjects: 3.226700 ms  DeleteObjects: 0.181200 ms)
+Unloading 3642 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 34 unused Assets / (314.6 KB). Loaded Objects now: 4178.
+Memory consumption went from 208.2 MB to 207.9 MB.
+Total: 5.831900 ms (FindLiveObjects: 0.289700 ms CreateObjectMapping: 0.497800 ms MarkObjects: 4.840300 ms  DeleteObjects: 0.203000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -593,7 +465,3 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0

@@ -11,15 +11,15 @@ public class PaddleController : MonoBehaviour
     [SerializeField] Transform ballPosition;
     [SerializeField] bool isStopped = false;
     [SerializeField] GameObject sliderHandle;
-    [SerializeField] bool hit;
     [SerializeField] bool player1;
     [SerializeField] bool aiPlayer = false;
     [SerializeField] float outPenaltyTime = 1f;
     [SerializeField] float outPenaltyIncrease = 0.25f;
-    [SerializeField] float hitPenalty = 5f;
     [SerializeField] Transform backboard;
     [SerializeField] BallPhysics ball;
     [SerializeField] Collider paddleCollider;
+    [SerializeField] bool isHandicapped;
+    [SerializeField] float handicapTimeRemaining = 0;
 
     AimArrow ballAim;
     
@@ -30,7 +30,7 @@ public class PaddleController : MonoBehaviour
 
     Vector3 defaultPos;
 
-    public bool Hit { get => hit; set => hit = value; }
+    
     public Transform Backboard { get => backboard; set => backboard = value; }
     public bool IsStopped { get => isStopped; set => isStopped = value; }
     public Slider Slider { get => slider; set => slider = value; }
@@ -38,18 +38,19 @@ public class PaddleController : MonoBehaviour
     public BallPhysics Ball { get => ball; set => ball = value; }
     public Transform BallPosition { get => ballPosition; set => ballPosition = value; }
     public Collider PaddleCollider { get => paddleCollider; set => paddleCollider = value; }
+    public bool IsHandicapped { get => isHandicapped; set => isHandicapped = value; }
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        handicapTimeRemaining = 0;
         ballAim = GetComponentInChildren<AimArrow>();
         defaultPos = transform.position;
         paddleWidth = transform.localScale.z;
         currentSliderValue = slider.value;
         backboardOffset = backboard.position.z;
-        Hit = false;
         //GetComponentInChildren<MeshRenderer>().material = mainMaterial;
 
 
@@ -79,12 +80,43 @@ public class PaddleController : MonoBehaviour
     }
     public void StartHitPenalty()
     {
-        GetComponentInChildren<BoatMotion>().SinkShip(GameManager.instance.CannonballHitPenalty);
-        StartCoroutine(PenaltyPeriod(GameManager.instance.CannonballHitPenalty));
+        StartCoroutine(HandicapPaddle(GameManager.instance.CannonballHitPenalty));
     }
     public void StartBombPenalty(){
-        GetComponentInChildren<BoatMotion>().SinkShip(GameManager.instance.BombHitPenalty);
-        StartCoroutine(PenaltyPeriod(GameManager.instance.BombHitPenalty));
+        StartCoroutine(HandicapPaddle(GameManager.instance.BombHitPenalty));
+    }
+
+
+
+    IEnumerator HandicapPaddle(float duration){
+        float time = 0;
+        handicapTimeRemaining = duration;
+        isHandicapped = true;
+        GetComponentInChildren<BoatMotion>().SinkShip(duration);
+        GetComponent<Artillery>().CanFire = false;
+        paddleCollider.enabled = false;
+        GetComponentInChildren<AimArrow>().CanLaunch = false;
+        isStopped = true;
+        slider.interactable = false;
+        while(true){
+            if(time >= duration){
+                isHandicapped = false;
+                if(GetComponentInChildren<AimArrow>().LaunchPenalty1 == null){
+                    GetComponentInChildren<AimArrow>().CanLaunch = true;
+                    GetComponent<Artillery>().CanFire = true;
+                    isStopped = false;
+                }
+                handicapTimeRemaining = 0;
+                
+                break;
+            }
+            else{
+                handicapTimeRemaining -= Time.deltaTime;
+                time += Time.deltaTime;
+                yield return null;
+            }
+        }
+
     }
     IEnumerator PenaltyPeriod(float time)
     {
@@ -92,31 +124,29 @@ public class PaddleController : MonoBehaviour
         GetComponent<Artillery>().CanFire = false;
         paddleCollider.isTrigger = true;
         //GetComponentInChildren<MeshRenderer>().material = hitMaterial;
-        if (GetComponentInChildren<AimArrow>().Aiming && GetComponentInChildren<AimArrow>().CanFire)
+        if (GetComponentInChildren<AimArrow>().Aiming && GetComponentInChildren<AimArrow>().CanLaunch)
         {
-            GetComponentInChildren<AimArrow>().CanFire = false;
+            GetComponentInChildren<AimArrow>().CanLaunch = false;
         }
         IsStopped = true;
-        Hit = true;
         slider.interactable = false;
         while (true)
         {
             t += Time.deltaTime;
             if (t >= time)
             {
-                if (ball.IsOut)
+                if (isHandicapped)
                 {
-                    GoneOut();
+                    
                 }
                 else
                 {
-                    GetComponentInChildren<AimArrow>().CanFire = true;
+                    GetComponentInChildren<AimArrow>().CanLaunch = true;
                     GetComponent<Artillery>().CanFire = true;
                 }
                 //GetComponentInChildren<MeshRenderer>().material = mainMaterial;
                 paddleCollider.isTrigger = false;
                 IsStopped = false;
-                Hit = false;
                 slider.interactable = true;
                 break;
             }
@@ -134,7 +164,7 @@ public class PaddleController : MonoBehaviour
         ballAim.CanHit = false;
         ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
         ball.BindToPaddle();
-        ballAim.CanFire = false;
+        ballAim.CanLaunch = false;
         ballAim.Aiming = true;
         ball.GetComponent<CollisionVelocityControl>().LargestMagnitude = 0;
 
@@ -173,6 +203,18 @@ public class PaddleController : MonoBehaviour
                 yield return null;
             }
         }
+    }
+
+    public void OnBallOut(){
+        transform.position = defaultPos;
+        slider.value = 0;
+        ballAim.CanHit = false;
+        ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        ballAim.CanLaunch = false;
+        ball.GetComponent<CollisionVelocityControl>().LargestMagnitude = 0;
+
+        GetComponent<BombLauncher>().ResetBombLauncher();
+        GetComponent<PowerUpManager>().ResetPowerUp();
     }
 
 

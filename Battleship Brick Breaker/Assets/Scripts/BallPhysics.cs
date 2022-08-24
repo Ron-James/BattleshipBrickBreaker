@@ -241,7 +241,6 @@ public class BallPhysics : MonoBehaviour
     }
     public void BindToPaddle()
     {
-        IsOut = false;
         rb.velocity = Vector3.zero;
         transform.SetParent(paddle.transform);
 
@@ -269,6 +268,7 @@ public class BallPhysics : MonoBehaviour
     
     public void Launch(float power, Vector3 direction)
     {
+        isOut = false;
         if (rb.isKinematic)
         {
             rb.isKinematic = false;
@@ -286,12 +286,9 @@ public class BallPhysics : MonoBehaviour
         switch (other.tag)
         {
             case "OutZone":
-                IsOut = true;
+                //IsOut = true;
                 //GameManager.instance.DisablePowerUps(rightSide);
-                if (!paddle.GetComponent<PaddleController>().Hit)
-                {
-                    //paddle.GetComponent<PaddleController>().GoneOut();
-                }
+                
 
                 //paddle.GetComponent<PowerUpManager>().ResetPowerUp();
 
@@ -306,7 +303,9 @@ public class BallPhysics : MonoBehaviour
                 break;
         }
     }
-
+    public void OnBallOut(){
+        BindToPaddle();
+    }
     public void SwitchPlayer()
     {
         currentPlayer1 = !currentPlayer1;

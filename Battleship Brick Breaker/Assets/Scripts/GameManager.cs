@@ -38,6 +38,8 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] float initialVelocity = 21f;
     [SerializeField] float maxBallVelocity = 45f;
     [SerializeField] float randomReturnDistance = 40f;
+    [SerializeField] float initialOutPenalty;
+    [SerializeField] float outPenaltyIncrease;
 
     public GameManager(float bombHitPenalty)
     {
@@ -65,6 +67,8 @@ public class GameManager : Singleton<GameManager>
     public float BombCountDownTime { get => bombCountDownTime; set => bombCountDownTime = value; }
     public float MaxBallVelocity { get => maxBallVelocity; set => maxBallVelocity = value; }
     public float RandomReturnDistance { get => randomReturnDistance; set => randomReturnDistance = value; }
+    public float InitialOutPenalty { get => initialOutPenalty; set => initialOutPenalty = value; }
+    public float OutPenaltyIncrease { get => outPenaltyIncrease; set => outPenaltyIncrease = value; }
 
 
     // Start is called before the first frame update

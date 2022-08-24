@@ -23,22 +23,25 @@ public class AimArrow : MonoBehaviour
     [SerializeField] float outPenaltyTime = 1f;
     [SerializeField] float outPenaltyIncrease = 0.25f;
     [SerializeField] bool aiming;
-    [SerializeField] bool canFire;
+    [SerializeField] bool canLaunch;
     [SerializeField] bool canHit;
     int sign;
     public Vector3 lastAimDirection;
     Coroutine oscillator;
+    Coroutine launchPenalty;
     Touch lastTouchInField;
     Vector3 touchPoint;
     Image arrow;
 
     public bool Aiming { get => aiming; set => aiming = value; }
-    public bool CanFire { get => canFire; set => canFire = value; }
+    public bool CanLaunch { get => canLaunch; set => canLaunch = value; }
     public bool CanHit { get => canHit; set => canHit = value; }
+    public Coroutine LaunchPenalty1 { get => launchPenalty; set => launchPenalty = value; }
 
     // Start is called before the first frame update
     void Start()
     {
+        outPenaltyTime = GameManager.instance.InitialOutPenalty;
         lastAimDirection = Vector3.zero;
         CanHit = false;
         arrow = GetComponent<Image>();
@@ -50,7 +53,7 @@ public class AimArrow : MonoBehaviour
             sign = 1;
         }
         aiming = true;
-        canFire = true;
+        canLaunch = true;
         ResetRotation();
         transform.position = ballPos.position;
     }
@@ -58,7 +61,7 @@ public class AimArrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canFire && aiming && oscillator == null){
+        if(canLaunch && aiming && oscillator == null){
             oscillator = StartCoroutine(Oscillate(aimPeriod, CanHit));
         }
 
@@ -124,7 +127,7 @@ public class AimArrow : MonoBehaviour
     }
 
     IEnumerator LaunchPenalty(float period){
-        CanFire = false;
+        canLaunch = false;
         CanHit = false;
         float time = 0;
         GetComponentInParent<PaddleController>().Slider.interactable = false;
@@ -132,10 +135,13 @@ public class AimArrow : MonoBehaviour
         while(true){
             time += Time.deltaTime;
             if(time >= period){
-                CanFire = true;
-                GetComponentInParent<Artillery>().CanFire = true;
-                GetComponentInParent<PaddleController>().Slider.interactable = true;
-                paddleCollider.enabled = true;
+                launchPenalty = null;
+                if(!GetComponentInParent<PaddleController>().IsHandicapped){
+                    canLaunch = true;
+                    GetComponentInParent<Artillery>().CanFire = true;
+                    GetComponentInParent<PaddleController>().Slider.interactable = true;
+                    paddleCollider.enabled = true;
+                }
                 
                 break;
             }
@@ -200,7 +206,7 @@ public class AimArrow : MonoBehaviour
                 yield return new WaitForFixedUpdate();
                 break;
             }
-            else if(!canFire){
+            else if(!canLaunch){
                 arrow.enabled = false;
                 oscillator = null;
                 break;
@@ -221,5 +227,14 @@ public class AimArrow : MonoBehaviour
         yield return new WaitForSeconds(time);
         GetComponentInParent<BombLauncher>().canLaunch = true;
         
+    }
+
+    public void OnBallOut(){
+        aiming = true;
+        canLaunch = false;
+        canHit = false;
+        launchPenalty = StartCoroutine(LaunchPenalty(outPenaltyTime));
+        outPenaltyTime += GameManager.instance.OutPenaltyIncrease;
+
     }
 }

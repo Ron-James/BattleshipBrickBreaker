@@ -60,7 +60,7 @@ MonoBehaviour:
   paddle1: {fileID: 0}
   paddle2: {fileID: 0}
   powerUpDropRate: 7
-  doubleTapTime: 0.2
+  doubleTapTime: 0.5
   maxTapDistance: 50
   cannonballHitPenalty: 6
   bombHitPenalty: 7
