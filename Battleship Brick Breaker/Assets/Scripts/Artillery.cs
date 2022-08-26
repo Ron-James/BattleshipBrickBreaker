@@ -11,6 +11,7 @@ public class Artillery : MonoBehaviour
     [SerializeField] GameObject cannon;
     [SerializeField] float cannonRotateSpeed;
     [SerializeField] Transform firePoint;
+    [SerializeField] Transform[] firePoints = new Transform[3];
     [SerializeField] bool PC = false;
     [SerializeField] bool canFire = true;
 
@@ -36,11 +37,19 @@ public class Artillery : MonoBehaviour
     Vector3 touchPos;
     Coroutine doubleTap;
     Touch lastTouch;
+
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+        //GetComponent<PaddleController>().Ball.GetComponent<BallEvents>().OnBallOut.RemoveListener(OnBallOut);
+    }
     // Start is called before the first frame update
     void Start()
     {
+
         paddleSoundBox = GetComponentInChildren<PaddleSoundBox>();
-        ammoIndicator = ammoUI.GetComponentInChildren<TextMeshProUGUI>();
+        //ammoIndicator = ammoUI.GetComponentInChildren<TextMeshProUGUI>();
         //ammo = 99;
         AddAmmo(5);
         UpdateAmmo();
@@ -58,10 +67,10 @@ public class Artillery : MonoBehaviour
         {
             TestArtillery();
         }
-        
+
         if (GameManager.instance.TouchInField(out touchIndex, out touchPos, player1) && !aim.Aiming && !GetComponent<BombLauncher>().HasBomb && Input.touches[touchIndex].phase == TouchPhase.Began)
         {
-            
+
             float timeSinceLastTap = Time.time - lastTapTime;
             //Debug.Log("single tap" + timeSinceLastTap);
             if (timeSinceLastTap <= GameManager.instance.DoubleTapTime)
@@ -95,6 +104,23 @@ public class Artillery : MonoBehaviour
         {
             return;
         }
+        else if (GetComponent<PowerUpManager>().IsTripleCannon())
+        {
+            for (int loop = 0; loop < 3; loop++)
+            {
+                Bullet bullet = inactiveBullets.GetComponentsInChildren<Bullet>()[loop];
+                bullet.player1 = player1;
+                bullet.EnableBullet(firePoints[loop].position, player1);
+                Vector3 target = new Vector3(oppPaddle.position.x, firePoints[loop].position.y, firePoints[loop].position.z);
+                bullet.Launch(bulletHeight, target, bulletGravity, player1);
+            }
+            AddAmmo(-1);
+            if (TutorialManager.instance.isTutorial)
+            {
+                TutorialManager.instance.cannonLaunch.ClosePrompt(player1);
+            }
+
+        }
         else
         {
             Bullet bullet = inactiveBullets.GetComponentsInChildren<Bullet>()[0];
@@ -103,16 +129,15 @@ public class Artillery : MonoBehaviour
             Vector3 target = new Vector3(oppPaddle.position.x, transform.position.y, transform.position.z);
             bullet.Launch(bulletHeight, target, bulletGravity, player1);
             AddAmmo(-1);
+            UpdateFireButton();
             paddleSoundBox.cannonSound.PlayOnce();
-            if(TutorialManager.instance.isTutorial){
+            if (TutorialManager.instance.isTutorial)
+            {
                 TutorialManager.instance.cannonLaunch.ClosePrompt(player1);
             }
 
         }
 
-    }
-    private void OnDisable() {
-        StopAllCoroutines();
     }
     public void UpdateAmmo()
     {
@@ -126,11 +151,11 @@ public class Artillery : MonoBehaviour
         }
         if (player1)
         {
-            ammoIndicator.SetText("X" + ammo.ToString());
+            ammoIndicator.SetText(ammo.ToString());
         }
         else
         {
-            ammoIndicator.SetText(ammo.ToString() + "X");
+            ammoIndicator.SetText(ammo.ToString());
         }
 
     }
@@ -142,16 +167,30 @@ public class Artillery : MonoBehaviour
             ammo = 0;
         }
         UpdateAmmo();
+        UpdateFireButton();
     }
 
-    public void OnBallOut(){
+    public void OnBallOut()
+    {
         CanFire = true;
     }
 
-    
+    public void UpdateFireButton()
+    {
+        if (ammo <= 0)
+        {
+            fireButton.interactable = false;
+        }
+        else
+        {
+            fireButton.interactable = true;
+        }
+    }
 
-    
-    
+
+
+
+
 
 
 }

@@ -18,6 +18,7 @@ public class OutZone : MonoBehaviour
     [SerializeField] Transform returnPoint;
 
     public Player PlayerSide { get => player; set => player = value; }
+    public Transform ReturnPoint { get => returnPoint; set => returnPoint = value; }
 
     // Start is called before the first frame update
     void Start()
@@ -31,38 +32,5 @@ public class OutZone : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other) {
-        BallPhysics ball = other.gameObject.GetComponent<BallPhysics>();
-
-        if(ball != null){
-            PlayerTracker playerTracker = ball.gameObject.GetComponent<PlayerTracker>();
-            if(player == Player.player1){
-                if(playerTracker.GetMaintOwner() == 1){
-                    //paddle1.GoneOut();
-                    if(!TutorialManager.instance.isTutorial){
-                        ball.IsOut = true;
-                        GameManager.instance.DisablePowerUps(true);
-                    }
-                    
-                }
-                else{
-                    ball.StartRandomReturn(ball.GetComponent<CollisionVelocityControl>().LargestMagnitude, returnPoint);
-                }
-            }
-            else{
-                if(playerTracker.GetMaintOwner() == 2){
-                    //paddle2.GoneOut();
-                    if(!TutorialManager.instance.isTutorial){
-                        ball.IsOut = true;
-                        GameManager.instance.DisablePowerUps(false);
-                    }
-                    
-                }
-                else{
-                    ball.StartRandomReturn(ball.GetComponent<CollisionVelocityControl>().LargestMagnitude, returnPoint);
-
-                }
-            }
-        }
-    }
+    
 }

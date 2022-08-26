@@ -25,10 +25,12 @@ public class PlayerTracker : MonoBehaviour
     public CurrentOwner CurrentOwner1 { get => currentOwner; set => currentOwner = value; }
 
 
-    public int GetCurrentOwner(){
+    public int GetCurrentOwner()
+    {
         return (int)currentOwner;
     }
-    public int GetMaintOwner(){
+    public int GetMainOwner()
+    {
         return (int)owner;
     }
     // Start is called before the first frame update
@@ -42,31 +44,44 @@ public class PlayerTracker : MonoBehaviour
     {
 
     }
-    private void OnCollisionEnter(Collision other) {
-        switch(other.collider.tag){
+    private void OnCollisionEnter(Collision other)
+    {
+        switch (other.collider.tag)
+        {
             case "Paddle":
-                if((int) currentOwner == 1 && !other.collider.GetComponentInParent<PaddleController>().Player1){
+                if ((int)currentOwner == 1 && !other.collider.GetComponentInParent<PaddleController>().Player1)
+                {
                     SwitchCurrentOwner();
                 }
-                else if((int) currentOwner == 2 && other.collider.GetComponentInParent<PaddleController>().Player1){
+                else if ((int)currentOwner == 2 && other.collider.GetComponentInParent<PaddleController>().Player1)
+                {
                     SwitchCurrentOwner();
                 }
                 break;
         }
     }
-    private void OnTriggerEnter(Collider other) {
-        switch(other.tag){
+    private void OnTriggerEnter(Collider other)
+    {
+        switch (other.tag)
+        {
             case "OutZone":
                 ResetOwner();
                 break;
         }
     }
-    public void ResetOwner(){
+    public void ResetOwner()
+    {
+        if (GetMainOwner() == 0)
+        {
+            return;
+        }
         currentOwner = (CurrentOwner)((int)owner);
-        if(owner == Owner.player1){
+        if (owner == Owner.player1)
+        {
             GetComponent<MeshRenderer>().material = player1Material;
         }
-        else if(owner == Owner.player2){
+        else if (owner == Owner.player2)
+        {
             GetComponent<MeshRenderer>().material = player2Material;
         }
     }
@@ -85,15 +100,36 @@ public class PlayerTracker : MonoBehaviour
         }
     }
 
-    public void SetCurrentOwner(bool player1){
-        if(player1){
+    public void SetCurrentOwner(bool player1)
+    {
+        if (player1)
+        {
             currentOwner = CurrentOwner.player1;
             GetComponent<MeshRenderer>().material = player1Material;
         }
-        else{
+        else
+        {
             currentOwner = CurrentOwner.player2;
             GetComponent<MeshRenderer>().material = player2Material;
         }
+    }
+
+    public void OnBallOut()
+    {
+        ResetOwner();
+        switch (GetMainOwner())
+        {
+            case 0:
+                break;
+
+            case 1:
+                GameManager.instance.DisablePowerUps(true);
+                break;
+            case 2:
+                GameManager.instance.DisablePowerUps(false);
+                break;
+        }
+
     }
 
 

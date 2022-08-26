@@ -34,7 +34,7 @@ public class Bullet : MonoBehaviour
                 {
                     
                     PaddleController paddle = other.GetComponentInParent<PaddleController>();
-                    paddle.StartHitPenalty();
+                    paddle.GetComponent<HandicapController>().AddHandicapTime(GameManager.instance.CannonballHitPenalty);
                     paddle.gameObject.GetComponentInChildren<PaddleSoundBox>().boatHit.PlayOnce();
                     GameManager.instance.ChangeAllBalls(player1);
 

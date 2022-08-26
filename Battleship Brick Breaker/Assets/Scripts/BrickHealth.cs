@@ -8,6 +8,7 @@ public class BrickHealth : MonoBehaviour
     [SerializeField] bool objective = false;
     [SerializeField] bool ammo = false;
     [SerializeField] bool powerUp = false;
+    [SerializeField] bool split = false;
 
     [SerializeField] GameObject crack;
     [SerializeField] GameObject feedbackOverlay;
@@ -46,7 +47,7 @@ public class BrickHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamge(float amount, int player)
+    public void TakeDamge(float amount, bool player1)
     {
         currentHealth -= amount;
         //Debug.Log("damage take by player" + player);
@@ -56,7 +57,7 @@ public class BrickHealth : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
-            Break(player);
+            Break(player1);
         }
         else
         {
@@ -65,7 +66,7 @@ public class BrickHealth : MonoBehaviour
     }
 
 
-    public void Break(int player)
+    public void Break(bool player1)
     {
         GetComponent<Collider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
@@ -75,82 +76,90 @@ public class BrickHealth : MonoBehaviour
         }
 
         isBroken = true;
-        if (!objective && !ammo)
+        if (!objective && !ammo && !split)
         {
-            if (player == 1)
+            if (player1)
             {
                 StatsManager.instance.bricksBroken[0]++;
             }
-            else if (player == 2)
+            else
             {
                 StatsManager.instance.bricksBroken[0]++;
             }
-            if (!ammo && !powerUp)
+            int random = Random.Range(0, GameManager.instance.PowerUpDropRate);
+            //Debug.Log(random + " Random number");
+            if (random == 0)
             {
-                int random = Random.Range(0, GameManager.instance.PowerUpDropRate);
-                //Debug.Log(random + " Random number");
-                if (random == 0)
+                if (player1)
                 {
-                    if (player == 1)
-                    {
-                        Vector3 position = transform.position;
-                        position.y = 1;
-                        GameManager.instance.SpawnPowerup(position, true);
-                    }
-                    else
-                    {
-                        Vector3 position = transform.position;
-                        position.y = 1;
-                        GameManager.instance.SpawnPowerup(position, false);
-                    }
-                }
-            }
-            else if (powerUp)
-            {
-
-
-                if (player == 1)
-                {
-                    if (TutorialManager.instance.isTutorial)
-                    {
-                        TutorialManager.instance.powerUpBrick.ClosePrompt(true);
-                        TutorialManager.instance.powerUpCollect.OpenPrompt(true);
-                        Vector3 position = transform.position;
-                        position.y = 1;
-                        GameManager.instance.SpawnPowerup(position, true, 4);
-                    }
-                    else
-                    {
-                        Vector3 position = transform.position;
-                        position.y = 1;
-                        GameManager.instance.SpawnPowerup(position, true);
-                    }
-
+                    Vector3 position = transform.position;
+                    position.y = 1;
+                    GameManager.instance.SpawnPowerup(position, true);
                 }
                 else
                 {
-                    if (TutorialManager.instance.isTutorial)
-                    {
-                        TutorialManager.instance.powerUpBrick.ClosePrompt(false);
-                        TutorialManager.instance.powerUpCollect.OpenPrompt(false);
-                        Vector3 position = transform.position;
-                        position.y = 1;
-                        GameManager.instance.SpawnPowerup(position, false, 4);
-                    }
-                    else
-                    {
-                        Vector3 position = transform.position;
-                        position.y = 1;
-                        GameManager.instance.SpawnPowerup(position, false);
-                    }
+                    Vector3 position = transform.position;
+                    position.y = 1;
+                    GameManager.instance.SpawnPowerup(position, false);
                 }
-
-
             }
         }
+        else if (split)
+        {
+            if (player1)
+            {
+                GameManager.instance.paddle1.GetComponent<PaddleController>().Ball.GetComponent<BallSplitter>().SplitBall(2);
+            }
+            else
+            {
+                GameManager.instance.paddle2.GetComponent<PaddleController>().Ball.GetComponent<BallSplitter>().SplitBall(2);
+            }
+        }
+        else if (powerUp)
+        {
+            if (player1)
+            {
+                if (TutorialManager.instance.isTutorial)
+                {
+                    TutorialManager.instance.powerUpBrick.ClosePrompt(true);
+                    TutorialManager.instance.powerUpCollect.OpenPrompt(true);
+                    Vector3 position = transform.position;
+                    position.y = 1;
+                    GameManager.instance.SpawnPowerup(position, true, 4);
+                }
+                else
+                {
+                    Vector3 position = transform.position;
+                    position.y = 1;
+                    GameManager.instance.SpawnPowerup(position, true);
+                }
+
+            }
+
+            else
+            {
+                if (TutorialManager.instance.isTutorial)
+                {
+                    TutorialManager.instance.powerUpBrick.ClosePrompt(false);
+                    TutorialManager.instance.powerUpCollect.OpenPrompt(false);
+                    Vector3 position = transform.position;
+                    position.y = 1;
+                    GameManager.instance.SpawnPowerup(position, false, 4);
+                }
+                else
+                {
+                    Vector3 position = transform.position;
+                    position.y = 1;
+                    GameManager.instance.SpawnPowerup(position, false);
+                }
+            }
+
+
+        }
+
         else if (objective)
         {
-            if (player == 1)
+            if (player1)
             {
                 if (TutorialManager.instance.isTutorial)
                 {
@@ -159,7 +168,7 @@ public class BrickHealth : MonoBehaviour
                 GameManager.instance.AddScore(1);
                 StatsManager.instance.objBroken[0]++;
             }
-            else if (player == 2)
+            else
             {
                 if (TutorialManager.instance.isTutorial)
                 {
@@ -173,7 +182,7 @@ public class BrickHealth : MonoBehaviour
         }
         else if (ammo)
         {
-            if (player == 1)
+            if (player1)
             {
                 if (TutorialManager.instance.isTutorial)
                 {

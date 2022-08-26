@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PowerUpManager : MonoBehaviour
 {
@@ -17,17 +18,86 @@ public class PowerUpManager : MonoBehaviour
     [SerializeField] float ballSpdIncrease = 1.35f;
     [SerializeField] float ballSizeUpgrade;
     [SerializeField] float colliderLargeSize = 1.67f;
-
+    [SerializeField] bool[] currentPowerUps = new bool[6];
     float paddleLength;
     PaddleSoundBox paddleSoundBox;
+
+    public bool[] CurrentPowerUps { get => currentPowerUps; set => currentPowerUps = value; }
+
     // Start is called before the first frame update
     void Start()
     {
         paddleSoundBox = GetComponentInChildren<PaddleSoundBox>();
         paddleLength = coll.gameObject.transform.localScale.z;
         ResetPowerUp();
+        if (currentPowerUps.Length != PowerUp.NumOfPowerUps)
+        {
+            Array.Resize(ref currentPowerUps, PowerUp.NumOfPowerUps);
+        }
+
+        ResetCurrentPowerUps();
     }
 
+    public void ResetCurrentPowerUps()
+    {
+        for (int loop = 0; loop < currentPowerUps.Length; loop++)
+        {
+            currentPowerUps[loop] = false;
+        }
+    }
+
+    public int NumberOfOpenPowerUps()
+    {
+        int num = 0;
+        for (int loop = 0; loop < currentPowerUps.Length; loop++)
+        {
+            if (currentPowerUps[loop] == false)
+            {
+                num++;
+            }
+            else
+            {
+                continue;
+            }
+        }
+        return num;
+    }
+    public void ResetBombPowerUp(){
+        currentPowerUps[4] = false;
+    }
+    
+    public int IndexOfOpenPowerUp(int order)
+    {
+        if (order > NumberOfOpenPowerUps() || order > currentPowerUps.Length)
+        {
+            return -1;
+        }
+        int num = 0;
+        int count = 0;
+        for (int loop = 0; loop < currentPowerUps.Length; loop++)
+        {
+            if (currentPowerUps[loop] == false)
+            {
+                num = loop;
+                count++;
+                if (count >= order)
+                {
+                    return num;
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            else
+            {
+                continue;
+            }
+        }
+        return -1;
+    }
+
+    
     // Update is called once per frame
     void Update()
     {
@@ -49,14 +119,22 @@ public class PowerUpManager : MonoBehaviour
         bigBoat.SetActive(false);
 
     }
-
+    public bool IsTripleCannon(){
+        return currentPowerUps[6];
+    }
     public void ApplyPowerUp(int powerUp)
     {
+        if (powerUp > currentPowerUps.Length)
+        {
+            Debug.Log("Current powerups out of bounds");
+            return;
+        }
         switch (powerUp)
         {
             case 0: //longer paddle
                 IncreasePaddleLength();
                 paddleSoundBox.powerUpSound.PlayOnce();
+                currentPowerUps[powerUp] = true;
                 break;
             case 1://speed up ball
                 paddleSoundBox.powerUpSound.PlayOnce();
@@ -65,21 +143,32 @@ public class PowerUpManager : MonoBehaviour
             case 2: //increase ball size
                 paddleSoundBox.powerUpSound.PlayOnce();
                 ball.GetComponent<BallPhysics>().IncreaseSize(ballSizeUpgrade);
+                currentPowerUps[powerUp] = true;
                 break;
             case 3: // catch ball;
                 paddleSoundBox.catcherPowerup.PlayOnce();
                 catcher = true;
                 slimeBall.SetActive(true);
+                currentPowerUps[powerUp] = true;
                 break;
             case 4: //bomb
                 paddleSoundBox.powerUpSound.PlayOnce();
-                if(TutorialManager.instance.isTutorial){
+                if (TutorialManager.instance.isTutorial)
+                {
                     TutorialManager.instance.bombPowerUp.OpenPrompt(GetComponent<PaddleController>().Player1);
                 }
                 GetComponent<BombLauncher>().GiveBomb();
+                currentPowerUps[powerUp] = true;
                 break;
-            case 5: //increase ball damage
-                //ball.GetComponent<BallPhysics>().FlameOn();
+            case 5: //split
+                ball.GetComponent<BallSplitter>().SplitBall(1);
+                if (GameManager.NumberOfExtraBalls() > GameManager.instance.MaxExtraBalls)
+                {
+                    currentPowerUps[powerUp] = true;
+                }
+                break;
+            case 6:
+                currentPowerUps[powerUp] = true;
                 break;
             default:
                 return;
@@ -88,10 +177,16 @@ public class PowerUpManager : MonoBehaviour
 
     public void ResetPowerUp()
     {
+        ResetCurrentPowerUps();
         ResetPaddleLength();
         ball.GetComponent<BallPhysics>().ResetSize();
         catcher = false;
         slimeBall.SetActive(false);
+    }
+
+    public void OnBallOut()
+    {
+        ResetPowerUp();
     }
 
 

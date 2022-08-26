@@ -40,11 +40,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] float randomReturnDistance = 40f;
     [SerializeField] float initialOutPenalty;
     [SerializeField] float outPenaltyIncrease;
-
-    public GameManager(float bombHitPenalty)
-    {
-        this.BombHitPenalty = bombHitPenalty;
-    }
+    [SerializeField] float maxExtraBalls;
 
     [SerializeField] float outPenalty = 3f;
     public static bool gameOver;
@@ -69,12 +65,12 @@ public class GameManager : Singleton<GameManager>
     public float RandomReturnDistance { get => randomReturnDistance; set => randomReturnDistance = value; }
     public float InitialOutPenalty { get => initialOutPenalty; set => initialOutPenalty = value; }
     public float OutPenaltyIncrease { get => outPenaltyIncrease; set => outPenaltyIncrease = value; }
+    public float MaxExtraBalls { get => maxExtraBalls; set => maxExtraBalls = value; }
 
 
     // Start is called before the first frame update
     void Start()
     {
-
         TurnOffAllObjIndicators();
         p1ObjIndicators = p1Indicators.GetComponentsInChildren<ObjBrickIndicator>();
         p2ObjIndicators = p2Indicators.GetComponentsInChildren<ObjBrickIndicator>();
@@ -88,7 +84,7 @@ public class GameManager : Singleton<GameManager>
 
         if (Input.GetKeyDown(KeyCode.K))
         {
-            AddScore(1);
+            SpawnPowerup(Vector3.zero, true, 5);
         }
     }
 
@@ -100,6 +96,14 @@ public class GameManager : Singleton<GameManager>
             }
             
         }
+    }
+    public int RandomOpenPowerUp(PowerUpManager powerUpManager){
+        int length = powerUpManager.NumberOfOpenPowerUps();
+        int random = Random.Range(1, length + 1);
+
+        int index = powerUpManager.IndexOfOpenPowerUp(random);
+        return index;
+
     }
     public bool TouchInField(out int index)
     {
@@ -156,6 +160,24 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    public static int NumberOfExtraBalls(){
+        GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
+        int num = 0;
+        foreach(GameObject ball in balls){
+            if(ball.transform.parent == null){
+                if(ball.GetComponent<ExtraBall>() != null){
+                    num++;
+                }
+                else{
+                    continue;
+                }
+            }
+            else{
+                continue;
+            }
+        }
+        return num;
+    }
     public bool TouchInField(out int index, out Vector3 position, bool player1)
     {
         index = -1;
@@ -227,7 +249,6 @@ public class GameManager : Singleton<GameManager>
             var velocityProjectedtoTarget = (velocity.normalized * Vector3.Dot(velocity, rigidbody.velocity) / velocity.magnitude);
             rigidbody.AddForce((velocity - velocityProjectedtoTarget) * force, mode);
         }
-        Debug.Log("direction of force " + velocity.normalized.magnitude);
 
     }
     public void UpdateObjIndicators(int player)
@@ -306,15 +327,29 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    public void SpawnPowerup(Vector3 position, bool side)
+    public void SpawnPowerup(Vector3 position, bool player1)
     {
-        int rand = Random.Range(0, Power.GetNames(typeof(Power)).Length);
-        inactivePowerups.GetComponentsInChildren<PowerUp>()[0].EnablePowerUp(position, rand, side);
+        int rand = 0;
+        if(player1){
+            rand = RandomOpenPowerUp(paddle1.GetComponent<PowerUpManager>());
+        }
+        else{
+            rand = RandomOpenPowerUp(paddle2.GetComponent<PowerUpManager>());
+        }
+        inactivePowerups.GetComponentsInChildren<PowerUp>()[0].EnablePowerUp(position, rand, player1);
     }
     
     public void SpawnPowerup(Vector3 position, bool side, int type)
     {
+        if(type > PowerUp.NumOfPowerUps){
+            type = PowerUp.NumOfPowerUps;
+        }
         inactivePowerups.GetComponentsInChildren<PowerUp>()[0].EnablePowerUp(position, type, side);
+    }
+    public Vector3 RotateVector(Vector3 input, float angle)
+    {
+        Vector3 newVector = Quaternion.AngleAxis(angle, Vector3.up) * input;
+        return newVector;
     }
     public void DisablePowerUps(bool right)
     {

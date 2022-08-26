@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStopped: 1
-  moveSpeed: 5
+  moveSpeed: 8
   collectable: {fileID: 5888266688250963160}
   actives: {fileID: 0}
   inactives: {fileID: 0}

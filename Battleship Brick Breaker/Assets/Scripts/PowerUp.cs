@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public enum Power
 {
@@ -10,8 +11,8 @@ public enum Power
     sizeUp = 2,
     catcher = 3,
     bomb = 4,
-    fire = 5
-
+    split = 5,
+    tripleCannon = 6
 
 }
 public class PowerUp : MonoBehaviour
@@ -26,9 +27,13 @@ public class PowerUp : MonoBehaviour
     [SerializeField] TextMeshPro powerUpText;
     bool rightSided = true;
     Vector3 target = Vector3.zero;
+    public static int NumOfPowerUps;
 
     public bool RightSided { get => rightSided; set => rightSided = value; }
 
+    private void Awake() {
+        NumOfPowerUps = Enum.GetNames(typeof(Power)).Length;
+    }
     void Start()
     {
         DisablePowerUp();
@@ -47,7 +52,7 @@ public class PowerUp : MonoBehaviour
         switch (other.tag)
         {
             case "OutZone":
-                Debug.Log("Power up gone out");
+                //Debug.Log("Power up gone out");
                 DisablePowerUp();
                 break;
             case "Paddle":
@@ -68,15 +73,8 @@ public class PowerUp : MonoBehaviour
             Debug.Log("power up index out of bounds");
             return;
         }
-        if (powerUp == 5)
-        {
-            power = (Power)4;
-        }
-        else
-        {
-            power = (Power)powerUp;
-        }
-
+        power = (Power)powerUp;
+        powerUpText.gameObject.SetActive(true);
         UpdateText((int)power);
         transform.SetParent(actives);
         if (RightSided)
@@ -90,6 +88,7 @@ public class PowerUp : MonoBehaviour
         transform.position = new Vector3(position.x, 1.5f, position.z);
         collectable.SetActive(true);
         isStopped = false;
+        
 
     }
     public void DisablePowerUp()
@@ -99,6 +98,7 @@ public class PowerUp : MonoBehaviour
         isStopped = true;
         collectable.SetActive(false);
         transform.position = Vector3.zero;
+        powerUpText.gameObject.SetActive(false);
     }
 
     public void UpdateText(int index)
@@ -125,11 +125,12 @@ public class PowerUp : MonoBehaviour
                 powerUpText.text = "Bomb";
                 break;
             case 5:
-                powerUpText.text = "Fire";
+                powerUpText.text = "Split";
                 break;
             case 6:
-                powerUpText.text = "New";
+                powerUpText.text = "Triple Cannon";
                 break;
+            
 
         }
     }

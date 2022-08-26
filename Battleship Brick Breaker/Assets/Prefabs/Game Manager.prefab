@@ -70,6 +70,8 @@ MonoBehaviour:
   initialVelocity: 22
   maxBallVelocity: 45
   randomReturnDistance: 60
+  initialOutPenalty: 3
+  outPenaltyIncrease: 1
   outPenalty: 5
   countDownSound:
     clip: {fileID: 8300000, guid: 1af5cb5ae2d82a9459ee92a673840016, type: 3}

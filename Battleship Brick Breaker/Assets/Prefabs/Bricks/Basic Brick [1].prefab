@@ -118,8 +118,10 @@ MonoBehaviour:
   objective: 0
   ammo: 0
   powerUp: 0
+  split: 0
   crack: {fileID: 5782873998842689765}
   feedbackOverlay: {fileID: 7719518380441849734}
+  tutorial: 0
   currentHealth: 0
   isBroken: 0
   hitSound:

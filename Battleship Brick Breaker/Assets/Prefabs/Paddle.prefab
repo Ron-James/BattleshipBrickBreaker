@@ -589,6 +589,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.5, y: 2.9, z: 1.15}
   m_Center: {x: 2.35, y: -1.27, z: 0}
+--- !u!1 &2895893898506568070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6324211643525676442}
+  m_Layer: 0
+  m_Name: Cannon FirePos (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6324211643525676442
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2895893898506568070}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2, y: 0, z: 4.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4723388559241951458}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4108793954960024002
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,6 +634,7 @@ GameObject:
   - component: {fileID: 6203347444870802888}
   - component: {fileID: 2851118410620596682}
   - component: {fileID: 7793019395018041438}
+  - component: {fileID: 7724497848224312261}
   m_Layer: 0
   m_Name: Paddle
   m_TagString: Paddle
@@ -630,6 +662,8 @@ Transform:
   - {fileID: 4314174757793309113}
   - {fileID: 5455612653980252231}
   - {fileID: 2498102468201111087}
+  - {fileID: 6324211643525676442}
+  - {fileID: 2901781522588312798}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -651,15 +685,16 @@ MonoBehaviour:
   ballPosition: {fileID: 6373049539359807064}
   isStopped: 0
   sliderHandle: {fileID: 0}
-  hit: 0
   player1: 0
   aiPlayer: 0
   outPenaltyTime: 1
   outPenaltyIncrease: 0.25
-  hitPenalty: 5
   backboard: {fileID: 0}
   ball: {fileID: 0}
+  ballEvents: {fileID: 0}
   paddleCollider: {fileID: 577732273106080975}
+  isHandicapped: 0
+  handicapTimeRemaining: 0
 --- !u!120 &6638625632157264791
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -785,6 +820,10 @@ MonoBehaviour:
   cannon: {fileID: 0}
   cannonRotateSpeed: 0.5
   firePoint: {fileID: 3572879033658867875}
+  firePoints:
+  - {fileID: 3572879033658867875}
+  - {fileID: 6324211643525676442}
+  - {fileID: 2901781522588312798}
   PC: 0
   canFire: 1
   bulletGravity: -9.81
@@ -819,6 +858,7 @@ MonoBehaviour:
   ballSpdIncrease: 1.35
   ballSizeUpgrade: 1.8
   colliderLargeSize: 15
+  currentPowerUps: 000000000000
 --- !u!114 &7793019395018041438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -843,6 +883,21 @@ MonoBehaviour:
   targetMarker: {fileID: 2498102468201111087}
   targetMarkerDelayTime: 3
   canLaunch: 0
+--- !u!114 &7724497848224312261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4108793954960024002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404b87d441a3bf64d888ea7cb3bbbe35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHandicapped: 0
+  handicapTime: 0
+  paddleCollider: {fileID: 577732273106080975}
 --- !u!1 &4357272896214725369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,6 +1445,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5981019146274079744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2901781522588312798}
+  m_Layer: 0
+  m_Name: Cannon FirePos (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2901781522588312798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5981019146274079744}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2, y: 0, z: -4.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4723388559241951458}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6499159903794956569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,16 +1569,14 @@ MonoBehaviour:
   player1: 1
   ballPos: {fileID: 6373049539359807064}
   aimPoint: {fileID: 2076379241232481366}
-  backboard: {fileID: 0}
   paddleCollider: {fileID: 577732273106080975}
   maxAngle: 60
   aimPeriod: 3
   maxTapDistance: 10
   ball: {fileID: 0}
   outPenaltyTime: 1
-  outPenaltyIncrease: 0.25
   aiming: 0
-  canFire: 0
+  canLaunch: 0
   canHit: 0
   lastAimDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &7651167522258842580
@@ -2556,7 +2640,7 @@ PrefabInstance:
     - target: {fileID: 9036149285931199850, guid: a1dcd447bfbb3bc45821f8b436c031d2,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 0.35067
       objectReference: {fileID: 0}
     - target: {fileID: 9036149285931199850, guid: a1dcd447bfbb3bc45821f8b436c031d2,
         type: 3}

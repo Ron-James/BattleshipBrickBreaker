@@ -38,6 +38,12 @@ public class CollisionVelocityControl : MonoBehaviour
             }
         }
 
+        if(!GetComponent<BallPhysics>().IsOut){
+            if(rb.velocity.magnitude < largestMagnitude){
+                GameManager.instance.ApplyForceToVelocity(rb, rb.velocity.normalized * largestMagnitude, 10000);
+            }
+        }
+
     }
     private void OnCollisionExit(Collision other)
     {

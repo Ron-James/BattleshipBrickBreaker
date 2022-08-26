@@ -19,11 +19,12 @@ public class Bomb : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        isActive = false;
         DisableBomb();
 
         explosionSound.src = GetComponent<AudioSource>();
     }
-    
+
     // Update is called once per frame
     void Update()
     {
@@ -33,7 +34,7 @@ public class Bomb : MonoBehaviour
     {
         //Gizmos.color = Color.red;
         //Gizmos.DrawSphere(transform.position, explosionRadius);
-        Debug.Log("explosion");
+
         fuseBurn.Stop();
         fuseSound.StopSource();
         explosionSound.PlayOnce();
@@ -43,26 +44,20 @@ public class Bomb : MonoBehaviour
         {
             if (item.GetComponent<BrickHealth>() != null)
             {
-                if (player1)
-                {
-                    item.GetComponent<BrickHealth>().TakeDamge(brickDamage, 1);
-                    Debug.Log("Bomb Brick Damage");
-                }
-                else
-                {
-                    item.GetComponent<BrickHealth>().TakeDamge(brickDamage, 2);
-                }
+                item.GetComponent<BrickHealth>().TakeDamge(brickDamage, player1);
+
 
             }
-            else if (item.GetComponentInParent<PaddleController>() != null)
+            else if (item.GetComponentInParent<HandicapController>() != null)
             {
-                item.GetComponentInParent<PaddleController>().StartHitPenalty();
+                item.GetComponentInParent<HandicapController>().AddHandicapTime(GameManager.instance.BombHitPenalty);
                 GameManager.instance.ChangeAllBalls(player1);
             }
         }
         StartCoroutine(ExplosionEffect());
     }
-    private void OnDisable() {
+    private void OnDisable()
+    {
         StopAllCoroutines();
     }
     public void EnableBomb(Vector3 position)
@@ -82,7 +77,8 @@ public class Bomb : MonoBehaviour
         transform.localPosition = Vector3.zero;
         GetComponentInChildren<Collider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
-        
+        fuseSound.StopSource();
+
         player1 = true;
         isActive = false;
     }
@@ -100,8 +96,8 @@ public class Bomb : MonoBehaviour
 
     public void LaunchBomb(Vector3 target, float height, bool Player1)
     {
-        
-        Debug.Log(target + " Bomb Target");
+
+        //Debug.Log(target + " Bomb Target");
         player1 = Player1;
         isActive = true;
         transform.SetParent(null);
@@ -130,17 +126,21 @@ public class Bomb : MonoBehaviour
             case "Paddle":
                 if (isActive)
                 {
-                    if(player1){
-                        if(!other.gameObject.GetComponentInParent<PaddleController>().Player1){
+                    if (player1)
+                    {
+                        if (!other.gameObject.GetComponentInParent<PaddleController>().Player1)
+                        {
                             Explode();
                         }
                     }
-                    else{
-                        if(other.gameObject.GetComponentInParent<PaddleController>().Player1){
+                    else
+                    {
+                        if (other.gameObject.GetComponentInParent<PaddleController>().Player1)
+                        {
                             Explode();
                         }
                     }
-                    
+
                 }
                 break;
         }
@@ -149,7 +149,7 @@ public class Bomb : MonoBehaviour
     {
         float duration = explosion.main.duration + 0.5f;
         float time = 0;
-
+        explosion.transform.position = transform.position + (3 * Vector3.up);
         explosion.Play();
         while (true)
         {
@@ -168,5 +168,5 @@ public class Bomb : MonoBehaviour
             }
         }
     }
-    
+
 }

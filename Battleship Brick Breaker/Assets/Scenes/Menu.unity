@@ -1401,7 +1401,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -87, y: 308}
+  m_AnchoredPosition: {x: 0, y: 453}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1590766043
@@ -1426,8 +1426,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Battleship Brick Breaker
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d9078ad6db54240448ea30eabd1539e3, type: 2}
-  m_sharedMaterial: {fileID: 6552387878219612920, guid: d9078ad6db54240448ea30eabd1539e3,
+  m_fontAsset: {fileID: 11400000, guid: 32ad3b661de987341af40f3cea0f327e, type: 2}
+  m_sharedMaterial: {fileID: 9070344012875165953, guid: 32ad3b661de987341af40f3cea0f327e,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1452,13 +1452,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 89.3
-  m_fontSizeBase: 89.3
+  m_fontSize: 234.4
+  m_fontSizeBase: 234.4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -1488,7 +1488,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -500.32532, y: 0, z: -716.8595, w: 0}
+  m_margin: {x: -774.71497, y: -168.88557, z: -856.64276, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

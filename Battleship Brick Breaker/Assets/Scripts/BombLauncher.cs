@@ -24,9 +24,18 @@ public class BombLauncher : MonoBehaviour
     Coroutine launchSequence;
     public bool HasBomb { get => hasBomb; set => hasBomb = value; }
 
+    
+    
+    private void OnDisable() {
+        StopAllCoroutines();
+        //BallEvents ballEvents = GetComponent<PaddleController>().Ball.GetComponent<BallEvents>();
+        
+    }
     // Start is called before the first frame update
     void Start()
     {
+        
+
         paddleSoundBox = GetComponentInChildren<PaddleSoundBox>();
         ResetBombLauncher();
         DisablePowerUpBar();
@@ -109,6 +118,7 @@ public class BombLauncher : MonoBehaviour
     }
     IEnumerator BombLaunchSequence(float period)
     {
+        GetComponent<PowerUpManager>().ResetBombPowerUp();
         if(TutorialManager.instance.isTutorial){
             TutorialManager.instance.bombPowerUp.ClosePrompt(player1);
             TutorialManager.instance.bombThrow.OpenPrompt(player1);
@@ -140,7 +150,6 @@ public class BombLauncher : MonoBehaviour
                     TutorialManager.instance.bombThrow.ClosePrompt(player1);
                     
                 }
-                Debug.Log(target + " Target Position");
                 SetTargetMarkerPosition(target);
                 currentBomb.LaunchBomb(target, bombHeight, player1);
                 paddleSoundBox.bombThrow.PlayOnce();
@@ -191,9 +200,6 @@ public class BombLauncher : MonoBehaviour
                 soundSwitched = true;
             }
         }
-    }
-    private void OnDisable() {
-        StopAllCoroutines();
     }
     
 

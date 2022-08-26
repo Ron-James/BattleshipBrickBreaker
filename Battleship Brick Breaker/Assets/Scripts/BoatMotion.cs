@@ -26,57 +26,69 @@ public class BoatMotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!isStopped && rock == null){
+        if (!isStopped && rock == null)
+        {
             rock = StartCoroutine(RockBoat(rockPeriodX, rockPeriodZ));
         }
     }
 
-    IEnumerator DriveUp(){
-        while(true){
-            if(transform.eulerAngles.z != 0){
+    IEnumerator DriveUp()
+    {
+        while (true)
+        {
+            if (transform.eulerAngles.z != 0)
+            {
                 Quaternion target = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, 0);
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, target, restoreZSpeed * Time.deltaTime);
             }
         }
     }
 
-    public void SinkShip(float duration){
-        StartCoroutine(Sink(duration, sinkSpeed));
+    public void SinkShip()
+    {
+        StartCoroutine(Sink(sinkSpeed));
     }
-    
-    private void OnDisable() {
+
+    private void OnDisable()
+    {
         StopAllCoroutines();
     }
-    IEnumerator Sink(float duration, float speed){
-        soundBox.boatSink.PlayOnce();
-        float time = 0;
+    IEnumerator Sink(float speed)
+    {
         Vector3 startPos = transform.localPosition;
+        soundBox.boatSink.PlayOnce();
+
         Vector3 target = transform.localPosition;
         target.y -= 20;
-        while(true){
-            if(time >= duration){
+        while (true)
+        {
+            if (!GetComponentInParent<HandicapController>().isHandicapped)
+            {
                 transform.localPosition = startPos;
-
                 break;
             }
-            else{
+            else
+            {
                 transform.localPosition = Vector3.MoveTowards(transform.localPosition, target, speed * Time.deltaTime);
-                time += Time.deltaTime;
                 yield return null;
             }
         }
     }
 
-    IEnumerator RockBoat(float periodX, float periodZ){
+    IEnumerator RockBoat(float periodX, float periodZ)
+    {
         float time = 0;
         float wX = (1 / periodX) * 2 * Mathf.PI;
         float wZ = (1 / periodZ) * 2 * Mathf.PI;
-        while(true){
-            if(isStopped){
+        while (true)
+        {
+            if (isStopped)
+            {
                 rock = null;
                 break;
             }
-            else{
+            else
+            {
                 time += Time.deltaTime;
                 float rotationX = defaultRotation.x + (deltaRotationX * Mathf.Sin(wX * time));
                 float rotationZ = defaultRotation.z + (deltaRotationZ * Mathf.Sin(wZ * time));

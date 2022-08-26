@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class AimArrow : MonoBehaviour
 {
@@ -9,7 +10,6 @@ public class AimArrow : MonoBehaviour
     [SerializeField] Transform ballPos;
     [SerializeField] Transform aimPoint;
     
-    [SerializeField] GameObject backboard;
     [SerializeField] Collider paddleCollider;
 
     [Header("Aiming angles and speed")]
@@ -21,7 +21,6 @@ public class AimArrow : MonoBehaviour
 
     [Header("Out Penalty Time")]
     [SerializeField] float outPenaltyTime = 1f;
-    [SerializeField] float outPenaltyIncrease = 0.25f;
     [SerializeField] bool aiming;
     [SerializeField] bool canLaunch;
     [SerializeField] bool canHit;
@@ -38,14 +37,21 @@ public class AimArrow : MonoBehaviour
     public bool CanHit { get => canHit; set => canHit = value; }
     public Coroutine LaunchPenalty1 { get => launchPenalty; set => launchPenalty = value; }
 
+
+    
+
+    private void OnDisable() {
+        StopAllCoroutines();
+    }
+    
     // Start is called before the first frame update
     void Start()
     {
+        
         outPenaltyTime = GameManager.instance.InitialOutPenalty;
         lastAimDirection = Vector3.zero;
         CanHit = false;
         arrow = GetComponent<Image>();
-        //maxTapDistance = backboard.transform.localScale.z/2;
         if(player1){
             sign = -1;
         }
@@ -118,14 +124,7 @@ public class AimArrow : MonoBehaviour
             return false;
         }
     }
-    
-    
-
-    public void StartLaunchPenalty(){
-        StartCoroutine(LaunchPenalty(outPenaltyTime));
-        outPenaltyTime += outPenaltyIncrease;
-    }
-
+ 
     IEnumerator LaunchPenalty(float period){
         canLaunch = false;
         CanHit = false;
@@ -136,7 +135,7 @@ public class AimArrow : MonoBehaviour
             time += Time.deltaTime;
             if(time >= period){
                 launchPenalty = null;
-                if(!GetComponentInParent<PaddleController>().IsHandicapped){
+                if(!GetComponentInParent<HandicapController>().isHandicapped){
                     canLaunch = true;
                     GetComponentInParent<Artillery>().CanFire = true;
                     GetComponentInParent<PaddleController>().Slider.interactable = true;
@@ -149,9 +148,6 @@ public class AimArrow : MonoBehaviour
                 yield return null;
             }
         }
-    }
-    private void OnDisable() {
-        StopAllCoroutines();
     }
     IEnumerator Oscillate(float period, bool canHit){
         
@@ -194,7 +190,7 @@ public class AimArrow : MonoBehaviour
                 }
                 else{
                     ball.GetComponent<BallPhysics>().Launch(GameManager.instance.InitialVelocity, sign * direction);
-                    Debug.Log(sign * direction + " what direction I am launching");
+                    //Debug.Log(sign * direction + " what direction I am launching");
                 }
                 StartCoroutine(BombLauncherDelay(0.2f));
                 arrow.enabled = false;
@@ -233,8 +229,14 @@ public class AimArrow : MonoBehaviour
         aiming = true;
         canLaunch = false;
         canHit = false;
-        launchPenalty = StartCoroutine(LaunchPenalty(outPenaltyTime));
+        if(!GetComponentInParent<HandicapController>().isHandicapped){
+            launchPenalty = StartCoroutine(LaunchPenalty(outPenaltyTime));
+        }
+        else{
+            GetComponentInParent<HandicapController>().AddHandicapTime(outPenaltyTime);
+        }
         outPenaltyTime += GameManager.instance.OutPenaltyIncrease;
 
     }
+
 }

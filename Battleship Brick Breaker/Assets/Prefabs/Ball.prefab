@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 4528959823049472435}
   - component: {fileID: -3928774363552113923}
   - component: {fileID: 2723910455624439903}
+  - component: {fileID: 5330099351416897773}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -302,6 +303,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2056922785459137483}
+        m_TargetAssemblyTypeName: PlayerTracker, Assembly-CSharp
+        m_MethodName: OnBallOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5330099351416897773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5703676189701985220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2b73c7f565c3304f954209e463a9df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8993593549358243778
 GameObject:
   m_ObjectHideFlags: 0
