@@ -5,14 +5,20 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shootable
+  - BombTrigger
+  - Ball
+  - Paddle
+  - Brick
+  - OutZone
+  - BulletDespawn
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Paddles
   - Water
   - UI
-  - 
+  - Bricks
   - 
   - Lighting
   - Ground

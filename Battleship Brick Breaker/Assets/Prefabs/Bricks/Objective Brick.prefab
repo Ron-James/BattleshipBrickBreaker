@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 2193258757540889685}
   - component: {fileID: 6358669965082443297}
   - component: {fileID: -7863900061298784009}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Objective Brick
   m_TagString: Brick
   m_Icon: {fileID: 0}
@@ -201,8 +201,10 @@ MonoBehaviour:
   objective: 1
   ammo: 0
   powerUp: 0
+  split: 0
   crack: {fileID: 2004270093959879294}
   feedbackOverlay: {fileID: 7618574980520447648}
+  tutorial: 0
   currentHealth: 0
   isBroken: 0
   hitSound:
