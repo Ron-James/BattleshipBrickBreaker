@@ -182,16 +182,20 @@ public class BrickHealth : MonoBehaviour
             {
                 if (TutorialManager.instance.isTutorial)
                 {
-                    TutorialManager.instance.cannonLaunch.OpenPrompt(true);
+                    if(!TutorialManager.instance.cannonLaunch.IsShownP1){
+                        TutorialManager.instance.cannonLaunch.OpenPrompt(true);
+                        TutorialManager.instance.EnableCannonPrompt(player1);
+                    }
+                    
                 }
                 GameManager.instance.paddle1.GetComponent<Artillery>().AddAmmo(1);
             }
             else
             {
-                if (TutorialManager.instance.isTutorial)
-                {
-                    TutorialManager.instance.cannonLaunch.OpenPrompt(false);
-                }
+                if(!TutorialManager.instance.cannonLaunch.IsShownP1){
+                        TutorialManager.instance.cannonLaunch.OpenPrompt(false);
+                        TutorialManager.instance.EnableCannonPrompt(player1);
+                    }
                 GameManager.instance.paddle2.GetComponent<Artillery>().AddAmmo(1);
             }
         }

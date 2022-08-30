@@ -10,14 +10,10 @@ public class PaddleController : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] Transform ballPosition;
     [SerializeField] bool isStopped = false;
-    [SerializeField] GameObject sliderHandle;
     [SerializeField] bool player1;
     [SerializeField] bool aiPlayer = false;
-    [SerializeField] float outPenaltyTime = 1f;
-    [SerializeField] float outPenaltyIncrease = 0.25f;
     [SerializeField] Transform backboard;
     [SerializeField] BallPhysics ball;
-    public BallEvents ballEvents;
     [SerializeField] Collider paddleCollider;
     [SerializeField] bool isHandicapped;
     [SerializeField] float handicapTimeRemaining = 0;

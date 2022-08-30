@@ -124,10 +124,11 @@ public class BallPhysics : MonoBehaviour
                 break;
             case "Paddle":
                 generalHit.PlayOnce();
-                if (other.collider.GetComponentInParent<PowerUpManager>().catcher && GetComponent<PlayerTracker>().GetMainOwner() != 0)
+                PaddleController paddle = other.collider.gameObject.GetComponentInParent<PaddleController>();
+                if (paddle.gameObject.GetComponent<PowerUpManager>().catcher && GetComponent<PlayerTracker>().GetMainOwner() != 0)
                 {
 
-                    if (!other.collider.GetComponentInChildren<AimArrow>().Aiming)
+                    if (!paddle.gameObject.GetComponentInChildren<AimArrow>().Aiming)
                     {
                         if (other.GetContact(0).normal == (Vector3.right * inwardSign))
                         {
@@ -227,6 +228,7 @@ public class BallPhysics : MonoBehaviour
         GameManager.instance.ApplyForceToVelocity(rb, inwardSign * power * direction, 1000);
 
         GetComponent<Collider>().enabled = true;
+        paddle.GetComponent<Artillery>().CanFire = true;
         //Debug.Log(power + " Power " + rb.velocity.magnitude + " Velocity ");
     }
 

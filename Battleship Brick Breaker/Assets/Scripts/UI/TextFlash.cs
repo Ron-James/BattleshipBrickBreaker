@@ -14,7 +14,7 @@ public class TextFlash : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        text.gameObject.SetActive(false);
+        text.enabled = false;
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class TextFlash : MonoBehaviour
     IEnumerator Flash(float duration, float period, Color color)
     {
         flashSound.PlayLoop();
-        text.gameObject.SetActive(true);
+        text.enabled = true;
         float time = 0;
         float flashTime = 0;
         int count = 0;
@@ -45,7 +45,7 @@ public class TextFlash : MonoBehaviour
             {
                 flashCoroutine = null;
                 text.color = defaultColor;
-                text.gameObject.SetActive(false);
+                text.enabled = false;
                 flashSound.StopSource();
                 break;
             }

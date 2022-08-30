@@ -6,6 +6,8 @@ public class Bomb : MonoBehaviour
 {
     public GameObject actives;
     public GameObject inactives;
+    [SerializeField] MeshRenderer meshRenderer;
+    [SerializeField] Collider bombCollider;
     [SerializeField] float explosionRadius = 5;
     [SerializeField] float brickDamage = 2;
     [SerializeField] ParticleSystem explosion;
@@ -34,8 +36,8 @@ public class Bomb : MonoBehaviour
     {
         //Gizmos.color = Color.red;
         //Gizmos.DrawSphere(transform.position, explosionRadius);
-
-        fuseBurn.Stop();
+        Debug.Log("Exploded " + gameObject.name);
+        fuseBurn.Pause();
         fuseSound.StopSource();
         explosionSound.PlayOnce();
         isActive = false;
@@ -65,8 +67,10 @@ public class Bomb : MonoBehaviour
         fuseBurn.Play();
         fuseSound.PlayLoop();
         transform.position = position;
-        GetComponent<Collider>().enabled = true;
-        GetComponent<MeshRenderer>().enabled = true;
+        Debug.Log(position + " Bomb position");
+        
+        bombCollider.enabled = true;
+        meshRenderer.enabled = true;
         //transform.SetParent(actives.transform);
     }
     public void DisableBomb()
@@ -75,10 +79,11 @@ public class Bomb : MonoBehaviour
         rb.useGravity = false;
         rb.velocity = Vector3.zero;
         transform.localPosition = Vector3.zero;
-        GetComponentInChildren<Collider>().enabled = false;
-        GetComponent<MeshRenderer>().enabled = false;
+        bombCollider.enabled = false;
+        meshRenderer.enabled = false;
         fuseSound.StopSource();
-
+        fuseBurn.Stop();
+        explosion.Stop();
         player1 = true;
         isActive = false;
     }

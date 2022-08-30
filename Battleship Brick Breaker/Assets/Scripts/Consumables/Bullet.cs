@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
             case "Paddle":
                 Debug.Log("Hit boat");
                 
-                if (other.GetComponentInParent<PaddleController>() != null && player1 != other.GetComponentInParent<PaddleController>().Player1)
+                if (other.GetComponentInParent<PaddleController>() != null)
                 {
                     
                     PaddleController paddle = other.GetComponentInParent<PaddleController>();
@@ -85,8 +85,8 @@ public class Bullet : MonoBehaviour
         rb.useGravity = false;
         rb.velocity = Vector3.zero;
         transform.position = Vector3.zero;
-        GetComponent<Collider>().enabled = true;
-        GetComponent<MeshRenderer>().enabled = true;
+        GetComponent<Collider>().enabled = false;
+        GetComponent<MeshRenderer>().enabled = false;
         transform.SetParent(inactives.transform);
 
         isActive = false;

@@ -79,7 +79,7 @@ public class BombLauncher : MonoBehaviour
     public void LoadBomb()
     {
         Bomb bomb = inactiveBombs.GetComponentInChildren<Bomb>();
-        bomb.gameObject.transform.SetParent(this.transform);
+        bomb.gameObject.transform.SetParent(transform);
         bomb.EnableBomb(firePoint.position);
         currentBomb = bomb;
     }

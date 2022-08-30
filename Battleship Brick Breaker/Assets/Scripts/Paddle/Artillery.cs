@@ -8,19 +8,18 @@ public class Artillery : MonoBehaviour
 {
     [SerializeField] GameObject inactiveBullets;
     [SerializeField] Transform oppPaddle;
-    [SerializeField] GameObject cannon;
-    [SerializeField] float cannonRotateSpeed;
     [SerializeField] Transform firePoint;
     [SerializeField] Transform[] firePoints = new Transform[3];
-    [SerializeField] bool PC = false;
     [SerializeField] bool canFire = true;
 
     [SerializeField] float bulletGravity = -10;
     [SerializeField] float bulletHeight = 5f;
 
     [SerializeField] Button fireButton;
+    [SerializeField] Button fireButtonLeft;
     [SerializeField] TextMeshProUGUI ammoIndicator;
-    [SerializeField] GameObject ammoUI;
+    [SerializeField] TextMeshProUGUI ammoIndicatorLeft;
+
 
     [SerializeField] int ammo = 0;
 
@@ -53,6 +52,7 @@ public class Artillery : MonoBehaviour
         //ammo = 99;
         AddAmmo(5);
         UpdateAmmo();
+        canFire = false;
 
     }
     void TestArtillery()
@@ -73,10 +73,10 @@ public class Artillery : MonoBehaviour
 
             float timeSinceLastTap = Time.time - lastTapTime;
             //Debug.Log("single tap" + timeSinceLastTap);
-            if (timeSinceLastTap <= GameManager.instance.DoubleTapTime)
+            if (timeSinceLastTap <= GameManager.instance.DoubleTapTime )
             {
                 Debug.Log("Double tap" + timeSinceLastTap);
-                if (ammo > 0)
+                if (ammo > 0 && !PauseManager.isPaused)
                 {
                     Fire();
                 }
@@ -134,6 +134,7 @@ public class Artillery : MonoBehaviour
             if (TutorialManager.instance.isTutorial)
             {
                 TutorialManager.instance.cannonLaunch.ClosePrompt(player1);
+                
             }
 
         }
@@ -141,22 +142,10 @@ public class Artillery : MonoBehaviour
     }
     public void UpdateAmmo()
     {
-        if (ammo > 0)
-        {
-            //fireButton.gameObject.SetActive(true);
-        }
-        else if (ammo <= 0)
-        {
-            //fireButton.gameObject.SetActive(true);
-        }
-        if (player1)
-        {
-            ammoIndicator.SetText(ammo.ToString());
-        }
-        else
-        {
-            ammoIndicator.SetText(ammo.ToString());
-        }
+        ammoIndicator.SetText(ammo.ToString());
+        ammoIndicatorLeft.SetText(ammo.ToString());
+
+        UpdateFireButton();
 
     }
     public void AddAmmo(int amount)
@@ -172,7 +161,7 @@ public class Artillery : MonoBehaviour
 
     public void OnBallOut()
     {
-        CanFire = true;
+        CanFire = false;
     }
 
     public void UpdateFireButton()
@@ -180,9 +169,11 @@ public class Artillery : MonoBehaviour
         if (ammo <= 0)
         {
             fireButton.interactable = false;
+            fireButtonLeft.interactable = false;
         }
         else
         {
+            fireButtonLeft.interactable = true;
             fireButton.interactable = true;
         }
     }

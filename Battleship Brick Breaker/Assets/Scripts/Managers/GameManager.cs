@@ -368,13 +368,13 @@ public class GameManager : Singleton<GameManager>
         
         int time = 3;
         countDownTime.text = time.ToString();
-        PauseManager.PauseGameplay();
+        PauseManager.instance.PauseGameplay();
         countDownSound.PlayOnce();
         yield return new WaitForSecondsRealtime(1);
         for (int loop = 0; loop <= 3; loop++){
             if(time == 0){
                 countDownTime.text = "Battle!";
-                PauseManager.ResumeGameplay();
+                PauseManager.instance.ResumeGameplay();
                 
             }
             else{

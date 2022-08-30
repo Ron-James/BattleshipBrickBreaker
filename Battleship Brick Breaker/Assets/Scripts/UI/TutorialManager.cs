@@ -15,15 +15,19 @@ public class TutorialManager : Singleton<TutorialManager>
     public TutorialPrompt[] tutorialPrompts;
     [SerializeField] GameObject brickHolder;
     [SerializeField] GameObject clearMenu;
+    [SerializeField] ButtonPrompt p1CannonPrompt;
+    [SerializeField] ButtonPrompt p2CannonPrompt;
+    [SerializeField] ButtonPrompt p1CannonPromptLeft;
+    [SerializeField] ButtonPrompt p2CannonPromptLeft;
     public BrickHealth[] bricks;
-    public bool isTutorial = true;
+
+    public bool isTutorial;
     // Start is called before the first frame update
+
+    
     void Start()
     {
         
-
-    }
-    private void Awake() {
         if (isTutorial)
         {
             //clearMenu.SetActive(false);
@@ -35,6 +39,7 @@ public class TutorialManager : Singleton<TutorialManager>
             moveTut.EnableBoth();
             ballLaunch.EnableBoth();
         }
+
     }
 
     // Update is called once per frame
@@ -43,8 +48,57 @@ public class TutorialManager : Singleton<TutorialManager>
 
     }
 
+    public void EnableCannonPrompt(bool player1){
+        if(player1){
+            if(SettingsManager.p1Right){
+                p1CannonPrompt.SwitchButtonPrompt(false);
+                Debug.Log("Should prompt here");
+            }
+            else{
+                p1CannonPromptLeft.SwitchButtonPrompt(false);
+            }
+            
+            
+        }
+        else{
+            if(SettingsManager.p2Right){
+                
+                p2CannonPrompt.SwitchButtonPrompt(false);
+            }
+            else{
+                p2CannonPromptLeft.SwitchButtonPrompt(false);
+            }
+            
+            
+        }
+    }
+    public void DisableCannonPrompt(bool player1){
+        if(player1){
+            if(SettingsManager.p1Right){
+                Debug.Log("Should prompt here");
+                p1CannonPrompt.SwitchButtonPrompt(true);
+            }
+            else{
+                p1CannonPromptLeft.SwitchButtonPrompt(true);
+            }
+            
+            
+        }
+        else{
+            if(SettingsManager.p2Right){
+                p2CannonPrompt.SwitchButtonPrompt(true);
+            }
+            else{
+                p2CannonPromptLeft.SwitchButtonPrompt(true);
+            }
+            
+            
+        }
+    }
     public void DisableAllPrompts()
     {
+        DisableCannonPrompt(true);
+        DisableCannonPrompt(false);
         foreach (TutorialPrompt prompt in tutorialPrompts)
         {
             prompt.DisableBoth();
@@ -75,7 +129,11 @@ public class TutorialManager : Singleton<TutorialManager>
 
     public void ClearTutorial()
     {
-        PauseManager.PauseGameplay();
+        PauseManager.instance.PauseGameplay();
         clearMenu.SetActive(true);
+    }
+
+    public void ToggleTutorial(){
+        DisableAllPrompts();
     }
 }
