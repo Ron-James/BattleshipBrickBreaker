@@ -28,7 +28,7 @@ public class PaddlePhysics : MonoBehaviour
     private void OnCollisionEnter(Collision other) {
         BallPhysics ball = other.collider.gameObject.GetComponent<BallPhysics>();
         if(ball != null){
-            Debug.Log("Hit paddle");
+            //Debug.Log("Hit paddle");
             Vector3 paddlePos = transform.position;
             Vector3 contactPoint = other.GetContact(0).point;
 

@@ -25,30 +25,27 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Hit " + other.gameObject.name);
         switch (other.tag)
         {
             case "Paddle":
-                Debug.Log("Hit boat");
-                
+                Debug.Log("Hit boat " + other.gameObject.name);
+
                 if (other.GetComponentInParent<PaddleController>() != null)
                 {
-                    
-                    PaddleController paddle = other.GetComponentInParent<PaddleController>();
-                    paddle.GetComponent<HandicapController>().AddHandicapTime(GameManager.instance.CannonballHitPenalty);
-                    paddle.gameObject.GetComponentInChildren<PaddleSoundBox>().boatHit.PlayOnce();
-                    GameManager.instance.ChangeAllBalls(player1);
+                    if (other.GetComponentInParent<PaddleController>().Player1 != player1)
+                    {
+                        PaddleController paddle = other.GetComponentInParent<PaddleController>();
+                        paddle.GetComponent<HandicapController>().AddHandicapTime(GameManager.instance.CannonballHitPenalty);
+                        paddle.GetComponent<PaddleParticleController>().StartBoatHitEffect(transform.position);
+                        paddle.gameObject.GetComponentInChildren<PaddleSoundBox>().boatHit.PlayOnce();
+                        GameManager.instance.ChangeAllBalls(player1);
+                        DisableBullet();
+                    }
+
 
                 }
-
-                if (player1)
-                {
-                    //StatsManager.instance.ShotsHit[0]++;
-                }
-                else
-                {
-                    //GameManager.instance.ShotsHit[1]++;
-                }
-                DisableBullet();
+                
                 //
                 break;
             case "BulletDespawn":
@@ -57,18 +54,10 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    public void Launch(float height, Vector3 target, float gravity, bool player)
+    public void Launch(float height, Vector3 target, bool player)
     {
         player1 = player;
         isActive = true;
-        if (gravity > 0)
-        {
-            Physics.gravity = Vector3.up * (gravity * -1);
-        }
-        else
-        {
-            Physics.gravity = Vector3.up * gravity;
-        }
         GetComponent<Rigidbody>().useGravity = true;
         GetComponent<Rigidbody>().velocity = CalculateLaunchVelocity(height, target);
     }

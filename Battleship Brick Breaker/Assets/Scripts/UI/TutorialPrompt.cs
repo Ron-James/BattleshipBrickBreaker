@@ -5,16 +5,20 @@ using UnityEngine;
 public class TutorialPrompt : MonoBehaviour
 {
     [SerializeField] GameObject[] prompts = new GameObject[2];
-    bool isShownP1;
-    bool isShownP2;
+    public bool hasAckP1;
+    public bool hasAckP2;
 
-    public bool IsShownP1 { get => isShownP1; set => isShownP1 = value; }
-    public bool IsShownP2 { get => isShownP2; set => isShownP2 = value; }
+    bool isEnabledP1;
+    bool isEnabledP2;
+
+    
+    public bool IsEnabledP1 { get => isEnabledP1; set => isEnabledP1 = value; }
+    public bool IsEnabledP2 { get => isEnabledP2; set => isEnabledP2 = value; }
 
     private void Awake()
     {
-        isShownP1 = false;
-        isShownP2 = false;
+        hasAckP1 = false;
+        hasAckP2 = false;
     }
     // Start is called before the first frame update
     void Start()
@@ -33,12 +37,12 @@ public class TutorialPrompt : MonoBehaviour
         if (player1)
         {
             prompts[0].SetActive(true);
-            isShownP1 = true;
+            isEnabledP1 = true;
         }
         else
         {
             prompts[1].SetActive(true);
-            isShownP2 = true;
+            isEnabledP2 = true;
         }
     }
 
@@ -47,10 +51,12 @@ public class TutorialPrompt : MonoBehaviour
         if (player1)
         {
             prompts[0].SetActive(false);
+            isEnabledP1 = false;
         }
         else
         {
             prompts[1].SetActive(false);
+            isEnabledP2 = false;
         }
     }
 
@@ -58,14 +64,16 @@ public class TutorialPrompt : MonoBehaviour
     {
         OpenPrompt(true);
         OpenPrompt(false);
-        isShownP1 = true;
-        isShownP2 = true;
+        isEnabledP1 = true;
+        isEnabledP2 = true;
     }
 
     public void DisableBoth()
     {
         ClosePrompt(true);
         ClosePrompt(false);
+        isEnabledP2 = false;
+        isEnabledP1 = false;
     }
 
     public bool IsOpen(bool player1)
@@ -77,6 +85,32 @@ public class TutorialPrompt : MonoBehaviour
         else
         {
             return prompts[1].activeInHierarchy;
+        }
+    }
+
+    public bool HasAcknowledged(bool player1){
+        if(player1){
+            return hasAckP1;
+        }
+        else{
+            return hasAckP2;
+        }
+    }
+    public void SetAcknowledge(bool ack, bool player1){
+        if(player1){
+            hasAckP1 = ack;
+        }
+        else{
+            hasAckP2 = ack;
+        }
+    }
+
+    public bool IsEnabled(bool player1){
+        if(player1){
+            return isEnabledP1;
+        }
+        else{
+            return isEnabledP2;
         }
     }
 

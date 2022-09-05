@@ -1,0 +1,339 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.6f1 (7da38d85baf6) revision 8233869'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19044) 64bit Core' Language: 'en' Physical Memory: 16177 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+D:\Unity Editors\2021.3.6f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+D:/Unity Projects/BattleshipBrickBreaker/BattleshipBrickBreaker/Battleship Brick Breaker
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+22368
+Successfully changed project path to: D:/Unity Projects/BattleshipBrickBreaker/BattleshipBrickBreaker/Battleship Brick Breaker
+D:/Unity Projects/BattleshipBrickBreaker/BattleshipBrickBreaker/Battleship Brick Breaker
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 130.31 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.6f1 (7da38d85baf6)
+[Subsystems] Discovering subsystems at path D:/Unity Editors/2021.3.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Unity Projects/BattleshipBrickBreaker/BattleshipBrickBreaker/Battleship Brick Breaker/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1050 Ti (ID=0x1c8c)
+    Vendor:   NVIDIA
+    VRAM:     4019 MB
+    Driver:   30.0.15.1215
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Initialize mono
+Mono path[0] = 'D:/Unity Editors/2021.3.6f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity Editors/2021.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/Unity Editors/2021.3.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56700
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity Editors/2021.3.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: D:/Unity Editors/2021.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003458 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 120.88 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.758 seconds
+Domain Reload Profiling:
+	ReloadAssembly (759ms)
+		BeginReloadAssembly (101ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (541ms)
+			LoadAssemblies (101ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (127ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (30ms)
+			SetupLoadedEditorAssemblies (333ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (59ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (121ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (101ms)
+				ProcessInitializeOnLoadMethodAttributes (50ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006483 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.296 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1297ms)
+		BeginReloadAssembly (252ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (135ms)
+		EndReloadAssembly (916ms)
+			LoadAssemblies (126ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (287ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (57ms)
+			SetupLoadedEditorAssemblies (436ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (12ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (100ms)
+				ProcessInitializeOnLoadAttributes (280ms)
+				ProcessInitializeOnLoadMethodAttributes (38ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.58 seconds
+Refreshing native plugins compatible for Editor in 0.82 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3710 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 45 unused Assets / (347.2 KB). Loaded Objects now: 4173.
+Memory consumption went from 214.0 MB to 213.7 MB.
+Total: 3.500200 ms (FindLiveObjects: 0.301100 ms CreateObjectMapping: 0.244900 ms MarkObjects: 2.771300 ms  DeleteObjects: 0.181800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 21007.743931 seconds.
+  path: Assets/Materials/Brick Materials/Cracked/Red_Coral 1.mat
+  artifactKey: Guid(bcc9897f4b2234b45892b6097a39e7b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Cracked/Red_Coral 1.mat using Guid(bcc9897f4b2234b45892b6097a39e7b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8daa63b0721eb4420544e7d521b0981d') in 0.156777 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.813271 seconds.
+  path: Assets/Materials/Brick Materials/Cracked/Red_Coral 2.mat
+  artifactKey: Guid(fb10c66208dd14d439b566427f682202) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Cracked/Red_Coral 2.mat using Guid(fb10c66208dd14d439b566427f682202) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5718c92b15dd2b89152204c059b561f0') in 0.016937 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.914544 seconds.
+  path: Assets/Materials/Brick Materials/Cracked/Green_Coral 1.mat
+  artifactKey: Guid(bcc9897f4b2234b45892b6097a39e7b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Cracked/Green_Coral 1.mat using Guid(bcc9897f4b2234b45892b6097a39e7b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd423f952b2ff773b94154af756704ed2') in 0.017969 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.295391 seconds.
+  path: Assets/Materials/Brick Materials/Cracked/Orange_Coral 2.mat
+  artifactKey: Guid(fb10c66208dd14d439b566427f682202) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Cracked/Orange_Coral 2.mat using Guid(fb10c66208dd14d439b566427f682202) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46d573f2956f03893da0c4ed89c170de') in 0.016505 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.861958 seconds.
+  path: Assets/Props_3D/Textures/texture_barrel_lowpoly_BaseMap.png
+  artifactKey: Guid(f2be03ef3eafa4ff4b7e1b6524754d74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Props_3D/Textures/texture_barrel_lowpoly_BaseMap.png using Guid(f2be03ef3eafa4ff4b7e1b6524754d74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44b5ee896777bf991fd0461c10c5f88f') in 0.177315 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 56.044965 seconds.
+  path: Assets/Materials/Brick Materials/Sink
+  artifactKey: Guid(1fec65b9daa92bc4dbd89c3456a32424) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Sink using Guid(1fec65b9daa92bc4dbd89c3456a32424) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '339bea6c99c4a95ae2cd53c9ba016f03') in 0.007288 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.004057 seconds.
+  path: Assets/Materials/Brick Materials/Sink/Red_Coral.mat
+  artifactKey: Guid(fde6670ab72dda94a956bccd036c0376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Sink/Red_Coral.mat using Guid(fde6670ab72dda94a956bccd036c0376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c81f0a6f13033bb9486fbc8aa39d817') in 0.010425 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.245203 seconds.
+  path: Assets/Materials/Brick Materials/Sink/Red_Coral 1.mat
+  artifactKey: Guid(7272904cc497e10499b30a6a17fe37fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Sink/Red_Coral 1.mat using Guid(7272904cc497e10499b30a6a17fe37fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69083289da308961f33360e2da90de8f') in 0.022757 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.517681 seconds.
+  path: Assets/Materials/Brick Materials/Sink/Red_Coral 2.mat
+  artifactKey: Guid(cfe018171e7f8e749a5b50ca2d20aa6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Sink/Red_Coral 2.mat using Guid(cfe018171e7f8e749a5b50ca2d20aa6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0d9721da5dfbdd5d72f3929db569838') in 0.016560 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.470667 seconds.
+  path: Assets/Materials/Brick Materials/Sink/Red_Coral 3.mat
+  artifactKey: Guid(07d5c944bf0b02542972358b5d7f4319) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Sink/Red_Coral 3.mat using Guid(07d5c944bf0b02542972358b5d7f4319) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73637e92ed55f64f3382901202bf78e5') in 0.018410 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.345726 seconds.
+  path: Assets/Materials/Brick Materials/Sink/Green_Coral.mat
+  artifactKey: Guid(07d5c944bf0b02542972358b5d7f4319) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Sink/Green_Coral.mat using Guid(07d5c944bf0b02542972358b5d7f4319) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a524dd1cc0393f768eb580fc88c6ac4f') in 0.014740 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 49.658150 seconds.
+  path: Assets/Materials/Brick Materials/Sink/Orange_Coral 1.mat
+  artifactKey: Guid(7272904cc497e10499b30a6a17fe37fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Sink/Orange_Coral 1.mat using Guid(7272904cc497e10499b30a6a17fe37fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '668256fbb8346911a1edd4eb7791242b') in 0.016197 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 16.148648 seconds.
+  path: Assets/Materials/Brick Materials/Sink/Ammo.mat
+  artifactKey: Guid(cfe018171e7f8e749a5b50ca2d20aa6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Sink/Ammo.mat using Guid(cfe018171e7f8e749a5b50ca2d20aa6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef10a74e906a1497ecdb6b0870888227') in 0.018941 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.007473 seconds.
+  path: Assets/FPSFont/FPS Gaming Font/Square-Black SDF.asset
+  artifactKey: Guid(47047af1cd19c4640b4fec6cda109d7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FPSFont/FPS Gaming Font/Square-Black SDF.asset using Guid(47047af1cd19c4640b4fec6cda109d7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f96a16b3c722d8d0c4608c19aab99bc8') in 1.395676 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Props_3D/Textures/texture_bottle1_Alpha.png
+  artifactKey: Guid(ca13a59e1daed4c99bbf270e70b76114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Props_3D/Textures/texture_bottle1_Alpha.png using Guid(ca13a59e1daed4c99bbf270e70b76114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d3c643870ff114290e0d9302ade7c90') in 0.128434 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Props_3D/Textures/texture_barrel_MaskMap.png
+  artifactKey: Guid(6f85553e439ce487a9a977a1680d3076) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Props_3D/Textures/texture_barrel_MaskMap.png using Guid(6f85553e439ce487a9a977a1680d3076) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b05d2e1662d9bc463ac653b7eae32eba') in 0.251108 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Props_3D/Textures/texture_bottle1_BaseMap.png
+  artifactKey: Guid(7e204110469df4e0991ec8ed5dfc15d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Props_3D/Textures/texture_bottle1_BaseMap.png using Guid(7e204110469df4e0991ec8ed5dfc15d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fa02f08bce87443613670291a754984') in 0.150731 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 51.884878 seconds.
+  path: Assets/Materials/Brick Materials/Sink/Ammo 1.mat
+  artifactKey: Guid(45dfa2715d6efaf44aa47a410af52aff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Sink/Ammo 1.mat using Guid(45dfa2715d6efaf44aa47a410af52aff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '99e7aa88d8b3a843a7173ef0e8c975d4') in 0.027858 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.556959 seconds.
+  path: Assets/Materials/Brick Materials/Sink/Ammo 2.mat
+  artifactKey: Guid(8b7934071f89d254689f3cc8594cbe1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Sink/Ammo 2.mat using Guid(8b7934071f89d254689f3cc8594cbe1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6091051f703d62b0e1cf1b960f27a9de') in 0.018539 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.077452 seconds.
+  path: Assets/Materials/Brick Materials/Sink/Stone.mat
+  artifactKey: Guid(45dfa2715d6efaf44aa47a410af52aff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Sink/Stone.mat using Guid(45dfa2715d6efaf44aa47a410af52aff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4053f2441488073e637fa9fcfb98acb7') in 0.018922 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.330072 seconds.
+  path: Assets/Free Assets/JMO Assets/WarFX/Desktop/Textures/Flames/WFX_T_StarFlames A8.tga
+  artifactKey: Guid(714258cc1f8222649840f292337fb353) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Assets/JMO Assets/WarFX/Desktop/Textures/Flames/WFX_T_StarFlames A8.tga using Guid(714258cc1f8222649840f292337fb353) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1b4a2b3330212ca133a13c29e98e325') in 0.053815 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 71.484246 seconds.
+  path: Assets/Materials/Brick Materials/Cracked/Green_Coral 1.mat
+  artifactKey: Guid(bcc9897f4b2234b45892b6097a39e7b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Cracked/Green_Coral 1.mat using Guid(bcc9897f4b2234b45892b6097a39e7b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '533e28b6541654d102e82ea59a4053e2') in 0.023510 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.490130 seconds.
+  path: Assets/Materials/Brick Materials/Cracked/Red_Coral 1.mat
+  artifactKey: Guid(babfdb8c9af7f3b45b0622c241b452eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Cracked/Red_Coral 1.mat using Guid(babfdb8c9af7f3b45b0622c241b452eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5f6709737acf48eef15f5e50b88a951') in 0.017337 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.723583 seconds.
+  path: Assets/Materials/Brick Materials/Cracked/Red_Coral 2.mat
+  artifactKey: Guid(2c8de9ad7f9764248aeb08492fcd2846) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Cracked/Red_Coral 2.mat using Guid(2c8de9ad7f9764248aeb08492fcd2846) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11d65fc45f7a3642cb13b0df778b9c81') in 0.015626 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.857819 seconds.
+  path: Assets/Materials/Brick Materials/Cracked/Stone.mat
+  artifactKey: Guid(babfdb8c9af7f3b45b0622c241b452eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Cracked/Stone.mat using Guid(babfdb8c9af7f3b45b0622c241b452eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd92fb5d802c83023474cf66c1d862905') in 0.017159 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.477674 seconds.
+  path: Assets/Free Assets/JMO Assets/WarFX/Desktop/Textures/Misc/WFX_T_Sparks Metal A8.png
+  artifactKey: Guid(12c8a95ddc5cf3f42845dd67d4806a43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Assets/JMO Assets/WarFX/Desktop/Textures/Misc/WFX_T_Sparks Metal A8.png using Guid(12c8a95ddc5cf3f42845dd67d4806a43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40b314e7e796fa0a78caf1f0268ee594') in 0.062419 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Free Assets/JMO Assets/WarFX/Mobile/Textures/Bullet Holes/WFXM_T_BulletHoles Wood.tga
+  artifactKey: Guid(22b2fb4b5fccb7f42a75c83a2ceecaa9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Assets/JMO Assets/WarFX/Mobile/Textures/Bullet Holes/WFXM_T_BulletHoles Wood.tga using Guid(22b2fb4b5fccb7f42a75c83a2ceecaa9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc263f508b5af3bdcb41fbc1f27bfd26') in 0.057855 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000164 seconds.
+  path: Assets/Free Assets/JMO Assets/WarFX/Mobile/Textures/Misc/WFXM_T_Debris Wood.tga
+  artifactKey: Guid(c1359f3cb3c1e964899a17d4a530085c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Assets/JMO Assets/WarFX/Mobile/Textures/Misc/WFXM_T_Debris Wood.tga using Guid(c1359f3cb3c1e964899a17d4a530085c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7fd56ba9681164026ae70ae0f7c5790') in 0.056539 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

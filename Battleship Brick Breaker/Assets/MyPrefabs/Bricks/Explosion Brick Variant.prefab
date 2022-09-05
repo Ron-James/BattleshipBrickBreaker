@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1897812771786072994
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 423251326984404068, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c8de9ad7f9764248aeb08492fcd2846, type: 2}
+    - target: {fileID: 639568355380002089, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a601d927bc919354c9fceccf85f63a61, type: 2}
+    - target: {fileID: 3122499831411242097, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122499831411242097, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122499831411242097, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122499831411242097, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122499831411242097, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122499831411242097, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122499831411242097, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122499831411242097, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122499831411242097, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122499831411242097, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122499831411242097, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3569148195282049046, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885875656764031725, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: maxHealth
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358138699070902786, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: m_Name
+      value: Explosion Brick Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: df0d82aec765ff54490f52f07cc43437, type: 3}

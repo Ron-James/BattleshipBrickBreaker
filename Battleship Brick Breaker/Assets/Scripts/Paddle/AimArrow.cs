@@ -235,7 +235,6 @@ public class AimArrow : MonoBehaviour
         else{
             GetComponentInParent<HandicapController>().AddHandicapTime(outPenaltyTime);
         }
-        outPenaltyTime += GameManager.instance.OutPenaltyIncrease;
 
     }
 

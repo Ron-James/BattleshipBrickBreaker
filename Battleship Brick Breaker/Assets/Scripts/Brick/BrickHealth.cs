@@ -1,14 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class BrickHealth : MonoBehaviour
 {
+    public enum BrickType
+    {
+        Basic = 0,
+        PowerUp = 1,
+        Ammo = 2,
+        Objective = 3,
+        Split = 4,
+        Explosion = 5
+    }
     [SerializeField] float maxHealth = 3f;
     [SerializeField] bool objective = false;
     [SerializeField] bool ammo = false;
     [SerializeField] bool powerUp = false;
     [SerializeField] bool split = false;
+    [SerializeField] BrickType brickType;
 
     [SerializeField] GameObject crack;
     [SerializeField] GameObject feedbackOverlay;
@@ -16,13 +26,17 @@ public class BrickHealth : MonoBehaviour
 
 
     public float currentHealth;
-
+    [SerializeField] BrickEffects brickEffects;
     public bool isBroken = false;
     [Header("Audio")]
     [SerializeField] Sound hitSound;
+    [SerializeField] UnityEvent OnBrickBreak;
+    [SerializeField] UnityEvent OnBrickCrack;
     // Start is called before the first frame update
+
     void Start()
     {
+        
         hitSound.src = GetComponent<AudioSource>();
         currentHealth = maxHealth;
         if (crack != null)
@@ -51,13 +65,15 @@ public class BrickHealth : MonoBehaviour
     {
         currentHealth -= amount;
         //Debug.Log("damage take by player" + player);
-        if (currentHealth == 1 && crack != null)
+        if (currentHealth == 1)
         {
-            crack.SetActive(true);
+            OnBrickCrack.Invoke();
         }
         if (currentHealth <= 0)
         {
-            Break(player1);
+            BreakBrick(player1);
+            OnBrickBreak.Invoke();
+            
         }
         else
         {
@@ -65,141 +81,104 @@ public class BrickHealth : MonoBehaviour
         }
     }
 
-
-    public void Break(bool player1)
+    public void BreakBrick(bool player1)
     {
         GetComponent<Collider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
+        isBroken = true;
+        Vector3 position = transform.position;
         if (crack != null)
         {
             crack.SetActive(false);
         }
-
-        isBroken = true;
-        if (!objective && !ammo && !split)
+        if (player1)
         {
-            if (player1)
-            {
-                StatsManager.instance.bricksBroken[0]++;
-            }
-            else
-            {
-                StatsManager.instance.bricksBroken[0]++;
-            }
-            int random = Random.Range(0, GameManager.instance.PowerUpDropRate);
-            //Debug.Log(random + " Random number");
-            if (random == 0)
-            {
+            StatsManager.instance.bricksBroken[0]++;
+        }
+        else
+        {
+            StatsManager.instance.bricksBroken[0]++;
+        }
+        switch ((int)brickType)
+        {
+            case 0://Basic Brick
+                if (GameManager.instance.NumberOfActivePowerUps(player1) > 0)
+                {
+                    return;
+                }
+                int random = Random.Range(0, GameManager.instance.PowerUpDropRate);
+                //Debug.Log(random + " Random number");
+                if (random == 0)
+                {
+                    position = transform.position;
+                    position.y = 3;
+                    GameManager.instance.SpawnPowerup(position, player1);
+                    Debug.Log("Power up spawned " + player1);
+                }
+                break;
+            case 1://power up
+                position = transform.position;
+                position.y = 3;
+                GameManager.instance.SpawnPowerup(position, player1);
+                Debug.Log("Power up spawned " + player1);
+                break;
+            case 2:// ammo
                 if (player1)
                 {
-                    Vector3 position = transform.position;
-                    position.y = 1;
-                    GameManager.instance.SpawnPowerup(position, true);
+                    GameManager.instance.paddle1.GetComponent<Artillery>().AddAmmo(1);
+
                 }
                 else
                 {
-                    Vector3 position = transform.position;
-                    position.y = 1;
-                    GameManager.instance.SpawnPowerup(position, false);
-                }
-            }
-        }
-        else if (split)
-        {
-            if (player1)
-            {
-                GameManager.instance.paddle1.GetComponent<PaddleController>().Ball.GetComponent<BallSplitter>().SplitBall(2);
-            }
-            else
-            {
-                GameManager.instance.paddle2.GetComponent<PaddleController>().Ball.GetComponent<BallSplitter>().SplitBall(2);
-            }
-        }
-        else if (powerUp)
-        {
-            if (player1)
-            {
-                if (TutorialManager.instance.isTutorial)
-                {
-                    Vector3 position = transform.position;
-                    position.y = 1;
-                    GameManager.instance.SpawnPowerup(position, true, 4);
-                }
-                else
-                {
-                    Vector3 position = transform.position;
-                    position.y = 1;
-                    GameManager.instance.SpawnPowerup(position, true);
-                }
+                    GameManager.instance.paddle2.GetComponent<Artillery>().AddAmmo(1);
+                    if (TutorialManager.instance.isTutorial)
+                    {
+                        if (!TutorialManager.instance.cannonLaunch.hasAckP2)
+                        {
+                            TutorialManager.instance.cannonLaunch.OpenPrompt(player1);
+                            TutorialManager.instance.EnableCannonPrompt(player1);
+                        }
 
-            }
-
-            else
-            {
-                if (TutorialManager.instance.isTutorial)
-                {
-                    Vector3 position = transform.position;
-                    position.y = 1;
-                    GameManager.instance.SpawnPowerup(position, false, 4);
-                }
-                else
-                {
-                    Vector3 position = transform.position;
-                    position.y = 1;
-                    GameManager.instance.SpawnPowerup(position, false);
-                }
-            }
-
-
-        }
-
-        else if (objective)
-        {
-            if (player1)
-            {
-                if (TutorialManager.instance.isTutorial)
-                {
-                    
-                }
-                GameManager.instance.AddScore(1);
-                StatsManager.instance.objBroken[0]++;
-            }
-            else
-            {
-                if (TutorialManager.instance.isTutorial)
-                {
-                    
-                }
-                GameManager.instance.AddScore(2);
-                StatsManager.instance.objBroken[0]++;
-            }
-
-
-        }
-        else if (ammo)
-        {
-            if (player1)
-            {
-                if (TutorialManager.instance.isTutorial)
-                {
-                    if(!TutorialManager.instance.cannonLaunch.IsShownP1){
-                        TutorialManager.instance.cannonLaunch.OpenPrompt(true);
-                        TutorialManager.instance.EnableCannonPrompt(player1);
                     }
-                    
                 }
-                GameManager.instance.paddle1.GetComponent<Artillery>().AddAmmo(1);
-            }
-            else
-            {
-                if(!TutorialManager.instance.cannonLaunch.IsShownP1){
-                        TutorialManager.instance.cannonLaunch.OpenPrompt(false);
-                        TutorialManager.instance.EnableCannonPrompt(player1);
-                    }
-                GameManager.instance.paddle2.GetComponent<Artillery>().AddAmmo(1);
-            }
+                break;
+            case 3:// objective
+                GameManager.instance.AddScore(player1);
+                if (player1)
+                {
+                    StatsManager.instance.objBroken[0]++;
+                }
+                else
+                {
+                    StatsManager.instance.objBroken[1]++;
+                }
+
+                break;
+            case 4:// split
+                if (player1)
+                {
+                    GameManager.instance.paddle1.GetComponent<PaddleController>().Ball.GetComponent<BallSplitter>().SplitBall(1);
+                }
+                else
+                {
+                    GameManager.instance.paddle2.GetComponent<PaddleController>().Ball.GetComponent<BallSplitter>().SplitBall(1);
+                }
+                break;
+            case 5://explosive
+                GetComponent<ExplosionBrick>().Explode(player1);
+                if (player1)
+                {
+                    StatsManager.instance.bricksBroken[0]++;
+                }
+                else
+                {
+                    StatsManager.instance.bricksBroken[0]++;
+                }
+                break;
         }
     }
+
+
 
     public void Revive()
     {

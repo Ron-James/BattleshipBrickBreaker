@@ -15,7 +15,7 @@ D:/Unity Projects/BattleshipBrickBreaker/BattleshipBrickBreaker/Battleship Brick
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-1751
+22368
 Successfully changed project path to: D:/Unity Projects/BattleshipBrickBreaker/BattleshipBrickBreaker/Battleship Brick Breaker
 D:/Unity Projects/BattleshipBrickBreaker/BattleshipBrickBreaker/Battleship Brick Breaker
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ D:/Unity Projects/BattleshipBrickBreaker/BattleshipBrickBreaker/Battleship Brick
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 120.63 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 159.31 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.6f1 (7da38d85baf6)
 [Subsystems] Discovering subsystems at path D:/Unity Editors/2021.3.6f1/Editor/Data/Resources/UnitySubsystems
@@ -65,741 +65,94 @@ Initialize mono
 Mono path[0] = 'D:/Unity Editors/2021.3.6f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity Editors/2021.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Unity Editors/2021.3.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56676
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56620
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity Editors/2021.3.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: D:/Unity Editors/2021.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003509 seconds.
+Registered in 0.003494 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 123.82 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 124.16 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.700 seconds
+- Completed reload, in  0.816 seconds
 Domain Reload Profiling:
-	ReloadAssembly (701ms)
-		BeginReloadAssembly (89ms)
+	ReloadAssembly (817ms)
+		BeginReloadAssembly (107ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (509ms)
-			LoadAssemblies (89ms)
+		EndReloadAssembly (589ms)
+			LoadAssemblies (107ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (111ms)
+			SetupTypeCache (140ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (26ms)
-			SetupLoadedEditorAssemblies (326ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (360ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (54ms)
+				InitializePlatformSupportModulesInManaged (69ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (124ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (96ms)
-				ProcessInitializeOnLoadMethodAttributes (51ms)
+				ProcessInitializeOnLoadAttributes (110ms)
+				ProcessInitializeOnLoadMethodAttributes (56ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006509 seconds.
+Registered in 0.006324 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.76 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.94 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.346 seconds
+- Completed reload, in  1.540 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1347ms)
-		BeginReloadAssembly (241ms)
+	ReloadAssembly (1541ms)
+		BeginReloadAssembly (284ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (128ms)
-		EndReloadAssembly (973ms)
-			LoadAssemblies (109ms)
+			CreateAndSetChildDomain (144ms)
+		EndReloadAssembly (1129ms)
+			LoadAssemblies (223ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (359ms)
+			SetupTypeCache (353ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (61ms)
-			SetupLoadedEditorAssemblies (417ms)
+			RebuildScriptCaches (67ms)
+			SetupLoadedEditorAssemblies (479ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (14ms)
+				InitializePlatformSupportModulesInManaged (13ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (95ms)
-				ProcessInitializeOnLoadAttributes (268ms)
-				ProcessInitializeOnLoadMethodAttributes (36ms)
-				AfterProcessingInitializeOnLoad (3ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (106ms)
+				ProcessInitializeOnLoadAttributes (313ms)
+				ProcessInitializeOnLoadMethodAttributes (40ms)
+				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
 Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.76 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3708 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 45 unused Assets / (347.1 KB). Loaded Objects now: 4171.
-Memory consumption went from 213.9 MB to 213.6 MB.
-Total: 4.396800 ms (FindLiveObjects: 0.327400 ms CreateObjectMapping: 0.278000 ms MarkObjects: 3.593600 ms  DeleteObjects: 0.197000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 52125.794884 seconds.
-  path: Assets/Prefabs/Managers/Slider P1.prefab
-  artifactKey: Guid(895d18765add0ed4abd6a726cef36350) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Managers/Slider P1.prefab using Guid(895d18765add0ed4abd6a726cef36350) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12871e1f62d50f75162ad649af0d2431') in 0.103608 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.853003 seconds.
-  path: Assets/Prefabs/Managers/GameUI.prefab
-  artifactKey: Guid(bae1e801c225ed247bdbaac166846fa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Managers/GameUI.prefab using Guid(bae1e801c225ed247bdbaac166846fa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21f6f730fd582147cb132380d3560f8c') in 0.051444 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 13.395041 seconds.
-  path: Assets/Scenes/Test Scene.unity
-  artifactKey: Guid(d72e599abed2843499a6a1a89fa0272f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Test Scene.unity using Guid(d72e599abed2843499a6a1a89fa0272f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb4a26fd8c59a1c260632aedb324d6d1') in 0.006986 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006280 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.91 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.387 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1388ms)
-		BeginReloadAssembly (162ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (40ms)
-		EndReloadAssembly (1134ms)
-			LoadAssemblies (128ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (361ms)
-			ReleaseScriptCaches (4ms)
-			RebuildScriptCaches (70ms)
-			SetupLoadedEditorAssemblies (505ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (31ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (95ms)
-				ProcessInitializeOnLoadAttributes (321ms)
-				ProcessInitializeOnLoadMethodAttributes (52ms)
-				AfterProcessingInitializeOnLoad (4ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (14ms)
-Platform modules already initialized, skipping
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 4.64 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3649 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 37 unused Assets / (316.9 KB). Loaded Objects now: 4176.
-Memory consumption went from 208.6 MB to 208.3 MB.
-Total: 4.774500 ms (FindLiveObjects: 0.298500 ms CreateObjectMapping: 0.181900 ms MarkObjects: 4.075100 ms  DeleteObjects: 0.218000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 52.208616 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '52e6af3030385faf4550a661f1e13200') in 1.828598 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.438383 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'b5fe0c0f2360cfb2bad4f3af2b2f1a59') in 1.364269 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.131256 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'c06ca66584079d1726514235467bad54') in 1.329356 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.183682 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '51074e5f0e2a6301dadf234ed112cde1') in 1.271626 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.334582 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '36cc13bda65ccb440196da373d4c6251') in 1.341695 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.721132 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'c0d31f6d2be0b226f76fe365c60cfa33') in 1.315299 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.794224 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'e80aa55e15891e1267ce57f26d3e537e') in 1.426363 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 192.011683 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'bc8c0e7ce907cecf235cf68da8495a6c') in 1.639738 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.583352 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '86eb1f1e798332bb9377aa43c8a748c0') in 1.273535 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 12.941987 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '67e3eaa89f55c50e99164cd2e6f34b00') in 1.313115 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.784539 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '7642941079d0f9f62eb524ad4bf4cbcf') in 1.319680 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.127106 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '149d1d34997588015667461aa1f271bf') in 1.222363 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.822429 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '5f191d89b92eb9e90042d754cebcb159') in 1.345672 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 18.329195 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'cf90ad7b322ffc9e516842569bf17aa1') in 1.312862 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.946976 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '199d027be605ce20ecbc2970cecbbd02') in 1.384532 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.790085 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '53fc7fcc7985a3f71a1728fc3a986256') in 1.327626 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.572170 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '77004fc16a1fe177ead22a8dacf7f9eb') in 1.237514 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 12.417472 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'aeaccb1548f8c0e0cf81de896651f390') in 1.411983 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 23.181059 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '33887430c086067bbda54fd36520bfb8') in 1.329927 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.543903 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '872c93dbac0c920ae1821b463629a1b4') in 1.425990 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.091054 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '4d1996e67b38c03ba302c2bc5c255ac8') in 1.376177 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 11.373246 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '9490f57c599f5207f79dcce92492ee11') in 1.317794 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.628138 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'cb2fb3f461f0a35f6a02ce4ec78773dc') in 1.445243 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.307339 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'ebe97adc8749597c737e21a170469cef') in 1.174048 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 24.027628 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '6bd9e8c1723ee7bbae694fa07055bdf8') in 1.254970 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.204480 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'a2bd822eb8de9e89f0ad2d1bca313dba') in 1.183701 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.838193 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'f3255870c63fa5f6c1097b0d48c2b2ca') in 1.162089 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.541222 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'a922011cd7abbadeb56a8dab81ef8c12') in 1.251641 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.617084 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '4c3a5c0bede1aea890356624a310762c') in 1.134354 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 4.103273 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'ca8ceeafceeb5bb52a3f9ffdc299619d') in 1.223213 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 21.968041 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'd39c373bd0965c00e49959a293f9ed8b') in 1.240257 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.609317 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'fe7bf9d7806298c0576b4524eb26fce4') in 1.235347 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.590715 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '47220cae4dd4d72440345fc08a929166') in 1.307908 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.334050 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '36a13f4b9918d318aa84e04cc93e2dff') in 1.148664 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.090487 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'e9b8cec7002e0216e40dc84295fda0c2') in 1.183528 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.557906 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'ced3140c8caf4c6f05ca05ae112fc0b6') in 1.082937 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.357029 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '33a662703d568a5ef13c928c5a01a0b0') in 1.113992 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 51.301788 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'cfeaaa5d24e32ffdac5bd594676bd5fd') in 1.405249 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.048556 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'e90e7e78ff8b7e2c9b7b7c6469c29151') in 1.323314 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.975586 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'ce9094607bf3947dcfa1ce4207eca1c5') in 1.276055 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 24.510157 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '6d871552d49c8cd189d665f20eca71d5') in 1.295600 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.008680 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.81 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.106 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1107ms)
-		BeginReloadAssembly (175ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (46ms)
-		EndReloadAssembly (818ms)
-			LoadAssemblies (136ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (291ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (39ms)
-			SetupLoadedEditorAssemblies (347ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (21ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (75ms)
-				ProcessInitializeOnLoadAttributes (219ms)
-				ProcessInitializeOnLoadMethodAttributes (27ms)
-				AfterProcessingInitializeOnLoad (3ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (8ms)
-Platform modules already initialized, skipping
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 3.00 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3649 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (314.6 KB). Loaded Objects now: 4189.
-Memory consumption went from 214.3 MB to 214.0 MB.
-Total: 5.988900 ms (FindLiveObjects: 0.442900 ms CreateObjectMapping: 0.309000 ms MarkObjects: 4.753100 ms  DeleteObjects: 0.482200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006553 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.87 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.265 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1266ms)
-		BeginReloadAssembly (164ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (40ms)
-		EndReloadAssembly (1004ms)
-			LoadAssemblies (133ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (300ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (55ms)
-			SetupLoadedEditorAssemblies (473ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (24ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (74ms)
-				ProcessInitializeOnLoadAttributes (324ms)
-				ProcessInitializeOnLoadMethodAttributes (45ms)
-				AfterProcessingInitializeOnLoad (4ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (13ms)
-Platform modules already initialized, skipping
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 6.68 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3649 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (314.6 KB). Loaded Objects now: 4192.
-Memory consumption went from 214.3 MB to 214.0 MB.
-Total: 6.206600 ms (FindLiveObjects: 0.344900 ms CreateObjectMapping: 0.220000 ms MarkObjects: 5.164600 ms  DeleteObjects: 0.475300 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006378 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.77 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.191 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1191ms)
-		BeginReloadAssembly (178ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (13ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (42ms)
-		EndReloadAssembly (913ms)
-			LoadAssemblies (131ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (292ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (51ms)
-			SetupLoadedEditorAssemblies (418ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (19ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (74ms)
-				ProcessInitializeOnLoadAttributes (276ms)
-				ProcessInitializeOnLoadMethodAttributes (43ms)
-				AfterProcessingInitializeOnLoad (4ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
-Platform modules already initialized, skipping
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 3.97 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3649 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (314.7 KB). Loaded Objects now: 4195.
-Memory consumption went from 214.4 MB to 214.0 MB.
-Total: 4.265000 ms (FindLiveObjects: 0.394100 ms CreateObjectMapping: 0.240200 ms MarkObjects: 3.415800 ms  DeleteObjects: 0.213600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 264.968373 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '1ea7315b4b047252f7a13ae13c67b106') in 1.821149 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.450394 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'c2d8d85c16344ce9f36d0d1958065020') in 1.365070 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.030085 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '306cbcf5dbc55ca799f1e3ba27d1192f') in 1.536356 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.781248 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '09993d15d712de733d919bd9246d8012') in 1.441588 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.227158 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '7bd2601e1f450ded2e301f9cbcea7f93') in 1.451774 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.818767 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '3236cc8bb26c6502c01d7e3cb900d829') in 1.388432 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006597 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.52 seconds
 Refreshing native plugins compatible for Editor in 0.78 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.169 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1170ms)
-		BeginReloadAssembly (181ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (47ms)
-		EndReloadAssembly (891ms)
-			LoadAssemblies (139ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (284ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (47ms)
-			SetupLoadedEditorAssemblies (398ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (19ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (73ms)
-				ProcessInitializeOnLoadAttributes (258ms)
-				ProcessInitializeOnLoadMethodAttributes (42ms)
-				AfterProcessingInitializeOnLoad (5ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (15ms)
-Platform modules already initialized, skipping
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 3.57 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3649 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (314.6 KB). Loaded Objects now: 4198.
-Memory consumption went from 214.4 MB to 214.1 MB.
-Total: 5.813100 ms (FindLiveObjects: 1.346500 ms CreateObjectMapping: 0.985400 ms MarkObjects: 3.175800 ms  DeleteObjects: 0.303700 ms)
+Unloading 3710 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 45 unused Assets / (347.2 KB). Loaded Objects now: 4173.
+Memory consumption went from 214.0 MB to 213.7 MB.
+Total: 7.442100 ms (FindLiveObjects: 0.444500 ms CreateObjectMapping: 0.240200 ms MarkObjects: 6.305300 ms  DeleteObjects: 0.450700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -814,110 +167,167 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 33.470815 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '2139b8b308c7a3c322eb7f767cb3722b') in 1.224936 seconds 
+  Time since last request: 20673.572167 seconds.
+  path: Assets/Materials/Brick Materials/Explosion Brick_Orange.mat
+  artifactKey: Guid(d375d4879e44db548ba4450e7a9e361d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Explosion Brick_Orange.mat using Guid(d375d4879e44db548ba4450e7a9e361d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51e4b9254797eb6c0bb95227a76ffd4c') in 0.449297 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 26.677536 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '05e697414fc27844b50cc83627feb6b3') in 1.433444 seconds 
+  Time since last request: 1.360275 seconds.
+  path: Assets/Materials/Brick Materials/Cracked
+  artifactKey: Guid(c6af6c91a4dcd5947b929d217a54fb8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Cracked using Guid(c6af6c91a4dcd5947b929d217a54fb8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9815817efd728ef40a764af10822d1e') in 0.007629 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 8.382508 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '2acfb2953ffc1a93e800b617ce9f37c2') in 1.224913 seconds 
+  Time since last request: 12.281099 seconds.
+  path: Assets/Materials/Brick Materials/Cracked/Red_Coral.mat
+  artifactKey: Guid(ede95fa0306ea1d44be2f10858c97d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Cracked/Red_Coral.mat using Guid(ede95fa0306ea1d44be2f10858c97d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '169f5b55504d806dc0e7178ec61f0bd0') in 0.015821 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 9.164646 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'b498544a2307fd5fd609b934140799ac') in 1.188291 seconds 
+  Time since last request: 14.511679 seconds.
+  path: Assets/Sprites/Brick Sprites/Transparent Masked Brick Sprites/Ammo brick.png
+  artifactKey: Guid(581c7712ea2927b42a8ebf487c777a64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/Transparent Masked Brick Sprites/Ammo brick.png using Guid(581c7712ea2927b42a8ebf487c777a64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '190f2bcdab946b668a6ea9edafd89422') in 0.071577 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.098601 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: 'cce813e5fa70863593db19dc3d874734') in 1.232678 seconds 
+  Time since last request: 0.000077 seconds.
+  path: Assets/Sprites/Brick Sprites/explosion brick_cracked.png
+  artifactKey: Guid(65872b9331d0788459f3dfa3dc63be14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/explosion brick_cracked.png using Guid(65872b9331d0788459f3dfa3dc63be14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78c3231aa58131d53942c9299f9462ec') in 0.024909 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 8.510995 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab
-  artifactKey: Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle (P2) Variant.prefab using Guid(73d0b0be4206ce6408cfae1d33bfd214) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '4d0ebc6eed8002e882829b058acbe483') in 1.366046 seconds 
+  Time since last request: 1.695075 seconds.
+  path: Assets/Sprites/Brick Sprites/Transparent Masked Brick Sprites/Red_Coral.png
+  artifactKey: Guid(ad7430011673c564b85d329f2444e0d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/Transparent Masked Brick Sprites/Red_Coral.png using Guid(ad7430011673c564b85d329f2444e0d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53982e0ffa25aff0081fc677cc038dd4') in 0.018936 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Prefabs/Paddles and Related/Paddle.prefab
-  artifactKey: Guid(07fc1662e60853f4ab877e60d0e634ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Paddles and Related/Paddle.prefab using Guid(07fc1662e60853f4ab877e60d0e634ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '6d420c04bc52d5df17f7b78e3d89a534') in 1.377137 seconds 
+  Time since last request: 208.438166 seconds.
+  path: Assets/Sprites/Brick Sprites/explosion brick_Orange_cracked.png
+  artifactKey: Guid(dfca8c5503416664ebe7dcffd05f88e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/explosion brick_Orange_cracked.png using Guid(dfca8c5503416664ebe7dcffd05f88e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '802b8bb4287836394fa984726d43cf8a') in 0.020993 seconds 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006244 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleshipBrickBreaker\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.79 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.205 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1206ms)
-		BeginReloadAssembly (170ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (42ms)
-		EndReloadAssembly (933ms)
-			LoadAssemblies (134ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (280ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (47ms)
-			SetupLoadedEditorAssemblies (442ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (21ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (79ms)
-				ProcessInitializeOnLoadAttributes (295ms)
-				ProcessInitializeOnLoadMethodAttributes (43ms)
-				AfterProcessingInitializeOnLoad (3ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (13ms)
-Platform modules already initialized, skipping
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 2.52 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3649 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 34 unused Assets / (314.6 KB). Loaded Objects now: 4201.
-Memory consumption went from 214.4 MB to 214.1 MB.
-Total: 6.136600 ms (FindLiveObjects: 0.874500 ms CreateObjectMapping: 0.240200 ms MarkObjects: 4.701000 ms  DeleteObjects: 0.314600 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Sprites/Brick Sprites/StoneTexture_Cracked.png
+  artifactKey: Guid(f3a8380a39eac4f418b15a8f1de50601) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/StoneTexture_Cracked.png using Guid(f3a8380a39eac4f418b15a8f1de50601) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6886922163dc43a7b93e75f459924a9e') in 0.020778 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.993445 seconds.
+  path: Assets/Sprites/Brick Sprites/Cracked
+  artifactKey: Guid(a9467fab4f63e124494e614f270a5d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/Cracked using Guid(a9467fab4f63e124494e614f270a5d41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0bad42df04dcdc5b13d423552e553c5') in 0.002050 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.047328 seconds.
+  path: Assets/Sprites/Brick Sprites/Cracked/Green_coral_cracked.png
+  artifactKey: Guid(c8f0e581c72981d4089c92c5e90da5a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/Cracked/Green_coral_cracked.png using Guid(c8f0e581c72981d4089c92c5e90da5a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65d17b7581b17d9db4a3552a97e4edec') in 0.018644 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Sprites/Brick Sprites/Cracked/Red_coral_cracked.png
+  artifactKey: Guid(aa5ab9ff7cd1faa4aa3bb5ad947a128b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/Cracked/Red_coral_cracked.png using Guid(aa5ab9ff7cd1faa4aa3bb5ad947a128b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '997f10df124478c09d17abe421954539') in 0.018949 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.213992 seconds.
+  path: Assets/Sprites/Brick Sprites/Cracked/Green_coral_cracked.png
+  artifactKey: Guid(c8f0e581c72981d4089c92c5e90da5a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/Cracked/Green_coral_cracked.png using Guid(c8f0e581c72981d4089c92c5e90da5a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8128686f62d76d2e835af1bab504973') in 0.948761 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Sprites/Brick Sprites/Cracked/Red_coral_cracked.png
+  artifactKey: Guid(aa5ab9ff7cd1faa4aa3bb5ad947a128b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/Cracked/Red_coral_cracked.png using Guid(aa5ab9ff7cd1faa4aa3bb5ad947a128b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fadcd7d1716f2f43efa99822fbd9fac') in 0.035078 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.386156 seconds.
+  path: Assets/Sprites/Brick Sprites/Transparent Masked Brick Sprites
+  artifactKey: Guid(8190d45d912f61f40921ee25c0c8daba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/Transparent Masked Brick Sprites using Guid(8190d45d912f61f40921ee25c0c8daba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbb28daacb4f34da77c6362d9323d32f') in 0.010297 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.031970 seconds.
+  path: Assets/Sprites/Brick Sprites/Transparent Masked Brick Sprites/Green_Coral.png
+  artifactKey: Guid(e62303c948ec2674c9b8343a278a8a30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/Transparent Masked Brick Sprites/Green_Coral.png using Guid(e62303c948ec2674c9b8343a278a8a30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b6b9c881d72197baa1b1b8b57a534eb') in 0.019067 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/Sprites/Brick Sprites/Transparent Masked Brick Sprites/StoneTexture_new.png
+  artifactKey: Guid(59a41d275fbf24244a0fe2b4bde6de08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/Transparent Masked Brick Sprites/StoneTexture_new.png using Guid(59a41d275fbf24244a0fe2b4bde6de08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ac669bc8951311de3f646328242a764') in 0.019286 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.162002 seconds.
+  path: Assets/Sprites/Brick Sprites/Transparent Masked Brick Sprites/Ammo brick.png
+  artifactKey: Guid(581c7712ea2927b42a8ebf487c777a64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/Transparent Masked Brick Sprites/Ammo brick.png using Guid(581c7712ea2927b42a8ebf487c777a64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef85a0732a1a3010e38dd971dd39794c') in 0.036382 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Sprites/Brick Sprites/Transparent Masked Brick Sprites/Red_Coral.png
+  artifactKey: Guid(ad7430011673c564b85d329f2444e0d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/Transparent Masked Brick Sprites/Red_Coral.png using Guid(ad7430011673c564b85d329f2444e0d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3d9ded7255e0786c45e6943defe2d33') in 0.038633 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000114 seconds.
+  path: Assets/Sprites/Brick Sprites/Transparent Masked Brick Sprites/Orange_Coral.png
+  artifactKey: Guid(15001a3f218e14f4ebc838b3ff55df94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/Transparent Masked Brick Sprites/Orange_Coral.png using Guid(15001a3f218e14f4ebc838b3ff55df94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd2ae731596530a53e79877d190ba889') in 0.031850 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 51.052376 seconds.
+  path: Assets/Materials/Brick Materials/Cracked/Red_Coral.mat
+  artifactKey: Guid(ede95fa0306ea1d44be2f10858c97d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Cracked/Red_Coral.mat using Guid(ede95fa0306ea1d44be2f10858c97d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f77c18b167f8ab675fefe0d1298eba3e') in 0.018874 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 114.609746 seconds.
+  path: Assets/Materials/Brick Materials/Sink/Red_Coral.mat
+  artifactKey: Guid(fde6670ab72dda94a956bccd036c0376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Sink/Red_Coral.mat using Guid(fde6670ab72dda94a956bccd036c0376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d18605f4d55ceebf8f83e596ebe167a') in 0.044230 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 83.260742 seconds.
+  path: Assets/Props_3D/Textures/texture_barrel_lowpoly_MaskMap.png
+  artifactKey: Guid(530fea34633754131a438b1c6da96485) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Props_3D/Textures/texture_barrel_lowpoly_MaskMap.png using Guid(530fea34633754131a438b1c6da96485) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '116e37aec91fec80d5daf185ccde582b') in 1.712328 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Props_3D/Textures/texture_bomb_BaseMap.png
+  artifactKey: Guid(3795f184c97164ef0b8511149479061b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Props_3D/Textures/texture_bomb_BaseMap.png using Guid(3795f184c97164ef0b8511149479061b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5fa5a379a3c29d603cbff2d7d07cc649') in 0.048371 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Props_3D/Textures/texture_bomb_MaskMap.png
+  artifactKey: Guid(5dd62f9b1fc0f436c9bf95502b59cc3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Props_3D/Textures/texture_bomb_MaskMap.png using Guid(5dd62f9b1fc0f436c9bf95502b59cc3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0ecb189cd6c1b72c70480638521e614') in 0.115028 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Props_3D/Textures/texture_bottle1_MaskMap.png
+  artifactKey: Guid(74d03ee7689fb44118fe9c87bbd98416) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Props_3D/Textures/texture_bottle1_MaskMap.png using Guid(74d03ee7689fb44118fe9c87bbd98416) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27c1157d4eca8e1b59c81df184c26ed7') in 0.113183 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 51.765944 seconds.
+  path: Assets/Materials/Brick Materials/Sink/Ammo.mat
+  artifactKey: Guid(cfe018171e7f8e749a5b50ca2d20aa6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Sink/Ammo.mat using Guid(cfe018171e7f8e749a5b50ca2d20aa6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b1815e2448d9f849b0a02a9e9341165') in 0.024106 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000134 seconds.
+  path: Assets/Materials/Brick Materials/Sink/Orange_Coral 1.mat
+  artifactKey: Guid(7272904cc497e10499b30a6a17fe37fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Sink/Orange_Coral 1.mat using Guid(7272904cc497e10499b30a6a17fe37fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7447c0df7b212371fcd525ef7303b1e2') in 0.022413 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

@@ -58,6 +58,14 @@ public class PlayerTracker : MonoBehaviour
                     SwitchCurrentOwner();
                 }
                 break;
+            case "Brick":
+                if(currentOwner == CurrentOwner.player1){
+                    other.collider.GetComponent<BrickHealth>().TakeDamge(1, true);
+                }
+                else{
+                    other.collider.GetComponent<BrickHealth>().TakeDamge(1, false);
+                }
+                break;
         }
     }
     private void OnTriggerEnter(Collider other)

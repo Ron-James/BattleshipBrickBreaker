@@ -30,6 +30,8 @@ public class Artillery : MonoBehaviour
     [SerializeField] PaddleSoundBox paddleSoundBox;
     public Transform FirePoint { get => firePoint; set => firePoint = value; }
     public bool CanFire { get => canFire; set => canFire = value; }
+    public int Ammo { get => ammo; set => ammo = value; }
+
     float lastTapTime;
 
     int touchIndex;
@@ -50,7 +52,7 @@ public class Artillery : MonoBehaviour
         paddleSoundBox = GetComponentInChildren<PaddleSoundBox>();
         //ammoIndicator = ammoUI.GetComponentInChildren<TextMeshProUGUI>();
         //ammo = 99;
-        AddAmmo(5);
+        AddAmmo(1);
         UpdateAmmo();
         canFire = false;
 
@@ -106,35 +108,38 @@ public class Artillery : MonoBehaviour
         }
         else if (GetComponent<PowerUpManager>().IsTripleCannon())
         {
+            
             for (int loop = 0; loop < 3; loop++)
             {
                 Bullet bullet = inactiveBullets.GetComponentsInChildren<Bullet>()[loop];
                 bullet.player1 = player1;
                 bullet.EnableBullet(firePoints[loop].position, player1);
                 Vector3 target = new Vector3(oppPaddle.position.x, firePoints[loop].position.y, firePoints[loop].position.z);
-                bullet.Launch(bulletHeight, target, bulletGravity, player1);
+                bullet.Launch(bulletHeight, target, player1);
             }
             AddAmmo(-1);
             if (TutorialManager.instance.isTutorial)
             {
                 TutorialManager.instance.cannonLaunch.ClosePrompt(player1);
+                TutorialManager.instance.cannonLaunch.SetAcknowledge(true, player1);
             }
 
         }
         else
         {
+            
             Bullet bullet = inactiveBullets.GetComponentsInChildren<Bullet>()[0];
             bullet.player1 = player1;
             bullet.EnableBullet(firePoint.position, player1);
             Vector3 target = new Vector3(oppPaddle.position.x, transform.position.y, transform.position.z);
-            bullet.Launch(bulletHeight, target, bulletGravity, player1);
+            bullet.Launch(bulletHeight, target, player1);
             AddAmmo(-1);
             UpdateFireButton();
             paddleSoundBox.cannonSound.PlayOnce();
             if (TutorialManager.instance.isTutorial)
             {
                 TutorialManager.instance.cannonLaunch.ClosePrompt(player1);
-                
+                TutorialManager.instance.cannonLaunch.SetAcknowledge(true, player1);
             }
 
         }
@@ -150,6 +155,13 @@ public class Artillery : MonoBehaviour
     }
     public void AddAmmo(int amount)
     {
+        if(TutorialManager.instance.isTutorial){
+            if(!TutorialManager.instance.cannonLaunch.HasAcknowledged(player1)){
+                if(!TutorialManager.instance.bombPowerUp.IsEnabled(player1) && !TutorialManager.instance.bombThrow.IsEnabled(player1)){
+                    TutorialManager.instance.SwitchLauchTut(TutorialManager.LaunchTutorial.Cannon, player1);
+                }
+            }
+        }
         ammo += amount;
         if (ammo < 0)
         {

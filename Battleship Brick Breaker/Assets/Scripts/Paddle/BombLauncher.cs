@@ -18,6 +18,7 @@ public class BombLauncher : MonoBehaviour
     [SerializeField] Transform targetMarker;
     [SerializeField] float targetMarkerDelayTime = 1f;
     public bool canLaunch;
+    PowerUpManager powerUpManager;
     Touch lastTouch;
     int touchIndex;
     Vector3 touchPos;
@@ -34,7 +35,7 @@ public class BombLauncher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        powerUpManager = GetComponent<PowerUpManager>();
 
         paddleSoundBox = GetComponentInChildren<PaddleSoundBox>();
         ResetBombLauncher();
@@ -44,10 +45,6 @@ public class BombLauncher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            hasBomb = true;
-        }
         if (hasBomb)
         {
             if (currentBomb == null)
@@ -82,6 +79,12 @@ public class BombLauncher : MonoBehaviour
         bomb.gameObject.transform.SetParent(transform);
         bomb.EnableBomb(firePoint.position);
         currentBomb = bomb;
+        if(TutorialManager.instance.isTutorial){
+            Debug.Log(TutorialManager.instance.bombPowerUp.HasAcknowledged(player1) + " Has acknowledged bomb powerup");
+            if(!TutorialManager.instance.bombPowerUp.HasAcknowledged(player1)){
+                TutorialManager.instance.SwitchLauchTut(TutorialManager.LaunchTutorial.BombHold, player1);
+            }
+        }
     }
 
     public void ResetBombLauncher()
@@ -92,6 +95,7 @@ public class BombLauncher : MonoBehaviour
             currentBomb = null;
         }
         DisablePowerUpBar();
+        powerUpManager.OpenBombSlot();
         hasBomb = false;
     }
 
@@ -119,10 +123,7 @@ public class BombLauncher : MonoBehaviour
     IEnumerator BombLaunchSequence(float period)
     {
         GetComponent<PowerUpManager>().ResetBombPowerUp();
-        if(TutorialManager.instance.isTutorial){
-            TutorialManager.instance.bombPowerUp.ClosePrompt(player1);
-            TutorialManager.instance.bombThrow.OpenPrompt(player1);
-        }
+        
         targetMarker.gameObject.SetActive(true);
         powerUpBar.fillAmount = 0;
         float time = 0;
@@ -136,6 +137,13 @@ public class BombLauncher : MonoBehaviour
         //Debug.Log(xDifference + " Xdifference" + diff + " difference ");
         float w = 2 * Mathf.PI * (1 / period);
         paddleSoundBox.bombPowerUp.PlayOnce();
+
+        if(TutorialManager.instance.isTutorial){
+            TutorialManager.instance.bombPowerUp.SetAcknowledge(true, player1);
+            TutorialManager.instance.SwitchLauchTut(TutorialManager.LaunchTutorial.BombRelease, player1);
+        }
+        
+
         if (!player1)
         {
             sign = 1;
@@ -146,30 +154,35 @@ public class BombLauncher : MonoBehaviour
         {
             if (!GameManager.instance.TouchInField(out touchIndex, out touchPos, player1))
             {
-                if(TutorialManager.instance.isTutorial){
-                    TutorialManager.instance.bombThrow.ClosePrompt(player1);
-                    
-                }
-                SetTargetMarkerPosition(target);
+                SetTargetMarkerPosition(new Vector3(target.x, 3f, target.z));
                 currentBomb.LaunchBomb(target, bombHeight, player1);
+                powerUpManager.OpenBombSlot();
                 paddleSoundBox.bombThrow.PlayOnce();
                 launchSequence = null;
                 currentBomb = null;
                 DisablePowerUpBar();
                 hasBomb = false;
                 DisableTargetMarker();
+
+
+                TutorialManager.instance.bombThrow.SetAcknowledge(true, player1);
+                if(GetComponent<Artillery>().Ammo > 0 && !TutorialManager.instance.cannonLaunch.HasAcknowledged(player1)){
+                    TutorialManager.instance.SwitchLauchTut(TutorialManager.LaunchTutorial.Cannon, player1);
+                }
+                else{
+                    TutorialManager.instance.SwitchLauchTut(TutorialManager.LaunchTutorial.None, player1);
+                }
                 break;
             }
             else if (time >= (period / 2) || Mathf.Sin(time * w) < 0)
             {
-                if(TutorialManager.instance.isTutorial){
-                    TutorialManager.instance.bombThrow.ClosePrompt(player1);
-                }
+                
                 float d = GameManager.instance.MinBombLaunchDistance + (diff * Mathf.Sin(time * w));
                 target = firePoint.position;
                 target.x += (sign * d);
-                SetTargetMarkerPosition(target);
+                SetTargetMarkerPosition(new Vector3(target.x, 3f, target.z));
                 currentBomb.LaunchBomb(target, bombHeight, player1);
+                powerUpManager.OpenBombSlot();
                 launchSequence = null;
                 ResetBombLauncher();
                 Debug.Log(target + " Target Position");
@@ -181,6 +194,7 @@ public class BombLauncher : MonoBehaviour
             {
                 targetMarker.gameObject.SetActive(false);
                 launchSequence = null;
+                powerUpManager.OpenBombSlot();
                 ResetBombLauncher();
                 break;
             }
@@ -189,7 +203,7 @@ public class BombLauncher : MonoBehaviour
                 float d = GameManager.instance.MinBombLaunchDistance + (diff * Mathf.Sin(time * w));
                 target = firePoint.position;
                 target.x += (sign * d);
-                SetTargetMarkerPosition(target);
+                SetTargetMarkerPosition(new Vector3(target.x, 3f, target.z));
                 time += Time.deltaTime;
                 powerUpBar.fillAmount = Mathf.Sin(time * w);
 

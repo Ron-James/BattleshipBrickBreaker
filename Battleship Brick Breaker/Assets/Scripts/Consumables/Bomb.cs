@@ -41,7 +41,9 @@ public class Bomb : MonoBehaviour
         fuseSound.StopSource();
         explosionSound.PlayOnce();
         isActive = false;
-        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+        Vector3 position = transform.position;
+        position.y = 1;
+        Collider[] colliders = Physics.OverlapSphere(position, explosionRadius);
         foreach (Collider item in colliders)
         {
             if (item.GetComponent<BrickHealth>() != null)
@@ -115,39 +117,13 @@ public class Bomb : MonoBehaviour
     {
         switch (other.tag)
         {
-            case "Brick":
-                if (isActive)
-                {
-                    Explode();
-                }
-
-                break;
             case "BombTrigger":
                 if (isActive)
                 {
                     Explode();
                 }
                 break;
-            case "Paddle":
-                if (isActive)
-                {
-                    if (player1)
-                    {
-                        if (!other.gameObject.GetComponentInParent<PaddleController>().Player1)
-                        {
-                            Explode();
-                        }
-                    }
-                    else
-                    {
-                        if (other.gameObject.GetComponentInParent<PaddleController>().Player1)
-                        {
-                            Explode();
-                        }
-                    }
-
-                }
-                break;
+            
         }
     }
     IEnumerator ExplosionEffect()

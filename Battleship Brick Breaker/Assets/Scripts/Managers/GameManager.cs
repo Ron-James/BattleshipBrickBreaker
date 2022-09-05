@@ -22,6 +22,11 @@ public class GameManager : Singleton<GameManager>
     public ObjBrickIndicator[] p1ObjIndicators;
     public ObjBrickIndicator[] p2ObjIndicators;
 
+    [Header("Barriers")]
+    [SerializeField] GameObject p1Barriers;
+    [SerializeField] GameObject p2Barriers;
+
+
     [Header("paddles")]
     public GameObject paddle1;
     public GameObject paddle2;
@@ -88,6 +93,14 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    public void ControlBarriers(bool player1, bool enable){
+        if(player1){
+            p1Barriers.SetActive(enable);
+        }
+        else{
+            p2Barriers.SetActive(enable);
+        }
+    }
     public void ChangeAllBalls(bool player1){
         GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
         foreach(GameObject ball in balls){
@@ -251,11 +264,11 @@ public class GameManager : Singleton<GameManager>
         }
 
     }
-    public void UpdateObjIndicators(int player)
+    public void UpdateObjIndicators(bool player1)
     {
-        switch (player)
+        switch (player1)
         {
-            case 1:
+            case true:
                 if (p1Score == 0)
                 {
                     return;
@@ -268,7 +281,7 @@ public class GameManager : Singleton<GameManager>
                     }
                 }
                 break;
-            case 2:
+            case false:
                 if (p2Score == 0)
                 {
                     return;
@@ -281,9 +294,6 @@ public class GameManager : Singleton<GameManager>
                     }
                 }
                 break;
-            default:
-                Debug.Log("player index out of bounds");
-                return;
         }
     }
     public void TurnOffAllObjIndicators()
@@ -299,34 +309,32 @@ public class GameManager : Singleton<GameManager>
             p2ObjIndicators[loop].TurnOff();
         }
     }
-    public void AddScore(int player)
+    public void AddScore(bool player1)
     {
-        switch (player)
+        switch (player1)
         {
-            case 1:
+            case true:
                 p1Score++;
-                UpdateObjIndicators(player);
+                UpdateObjIndicators(player1);
                 if (p1Score >= objScore)
                 {
                     gameOver = true;
                     winScreen.Open(true);
                 }
                 break;
-            case 2:
+            case false:
                 p2Score++;
-                UpdateObjIndicators(player);
+                UpdateObjIndicators(player1);
                 if (p2Score >= objScore)
                 {
                     gameOver = true;
                     winScreen.Open(false);
                 }
                 break;
-
-            default:
-                return;
         }
     }
 
+    
     public void SpawnPowerup(Vector3 position, bool player1)
     {
         int rand = 0;
@@ -361,6 +369,19 @@ public class GameManager : Singleton<GameManager>
                 powers[loop].DisablePowerUp();
             }
         }
+    }
+
+    public int NumberOfActivePowerUps(bool player1){
+        PowerUp[] powers = activePowerups.GetComponentsInChildren<PowerUp>();
+        int num = 0;
+        for (int loop = 0; loop < powers.Length; loop++)
+        {
+            if (powers[loop].RightSided == player1)
+            {
+                num++;
+            }
+        }
+        return num;
     }
     [SerializeField] Sound countDownSound;
     IEnumerator StartSequence(){

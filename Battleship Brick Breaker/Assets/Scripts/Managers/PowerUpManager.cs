@@ -22,12 +22,14 @@ public class PowerUpManager : MonoBehaviour
     [SerializeField] bool[] currentPowerUps = new bool[6];
     float paddleLength;
     PaddleSoundBox paddleSoundBox;
+    bool player1;
 
     public bool[] CurrentPowerUps { get => currentPowerUps; set => currentPowerUps = value; }
 
     // Start is called before the first frame update
     void Start()
     {
+        player1 = GetComponent<PaddleController>().Player1;
         paddleSoundBox = GetComponentInChildren<PaddleSoundBox>();
         paddleLength = coll.gameObject.transform.localScale.z;
         ResetPowerUp();
@@ -147,17 +149,13 @@ public class PowerUpManager : MonoBehaviour
                 currentPowerUps[powerUp] = true;
                 break;
             case 3: // catch ball;
-                paddleSoundBox.catcherPowerup.PlayOnce();
-                catcher = true;
-                slimeBall.SetActive(true);
+                paddleSoundBox.powerUpSound.PlayOnce();
+                GameManager.instance.ControlBarriers(player1, true);
                 currentPowerUps[powerUp] = true;
                 break;
             case 4: //bomb
                 paddleSoundBox.powerUpSound.PlayOnce();
-                if (TutorialManager.instance.isTutorial)
-                {
-                    TutorialManager.instance.bombPowerUp.OpenPrompt(GetComponent<PaddleController>().Player1);
-                }
+                
                 GetComponent<BombLauncher>().GiveBomb();
                 currentPowerUps[powerUp] = true;
                 break;
@@ -184,11 +182,16 @@ public class PowerUpManager : MonoBehaviour
         ball.GetComponent<BallPhysics>().ResetSize();
         catcher = false;
         slimeBall.SetActive(false);
+        GameManager.instance.ControlBarriers(player1, false);
     }
 
     public void OnBallOut()
     {
         ResetPowerUp();
+    }
+
+    public void OpenBombSlot(){
+        currentPowerUps[4] = false;
     }
 
 

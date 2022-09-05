@@ -9,7 +9,7 @@ public enum Power
     longer = 0,
     speed = 1,
     sizeUp = 2,
-    catcher = 3,
+    barrier = 3,
     bomb = 4,
     split = 5,
     tripleCannon = 6
@@ -76,13 +76,13 @@ public class PowerUp : MonoBehaviour
         transform.SetParent(actives);
         if (RightSided)
         {
-            target = new Vector3(100, 1.5f, position.z);
+            target = new Vector3(100, 3f, position.z);
         }
         else
         {
-            target = new Vector3(-100, 1.5f, position.z);
+            target = new Vector3(-100, 3f, position.z);
         }
-        transform.position = new Vector3(position.x, 1.5f, position.z);
+        transform.position = new Vector3(position.x, 3f, position.z);
         collectable.SetActive(true);
         isStopped = false;
         
@@ -116,7 +116,7 @@ public class PowerUp : MonoBehaviour
                 powerUpText.text = "Large Ball";
                 break;
             case 3:
-                powerUpText.text = "Catcher";
+                powerUpText.text = "Barrier";
                 break;
             case 4:
                 powerUpText.text = "Bomb";
