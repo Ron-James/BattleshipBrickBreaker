@@ -155,10 +155,10 @@ public class BallPhysics : MonoBehaviour
     {
         Vector3 reflected = Vector3.Reflect(lastVelocity, collision.GetContact(0).normal);
         if(reflected.normalized.Equals(Vector3.forward) || reflected.normalized.Equals(-Vector3.forward)){
-            reflected = Quaternion.AngleAxis(inwardSign * 5, Vector3.up) * reflected;
+            reflected = Quaternion.AngleAxis(inwardSign * 8, Vector3.up) * reflected;
         }
         else if(reflected.normalized.Equals(Vector3.left) || reflected.normalized.Equals(Vector3.right)){
-            reflected = Quaternion.AngleAxis(inwardSign * 5, Vector3.up) * reflected;
+            reflected = Quaternion.AngleAxis(inwardSign * 8, Vector3.up) * reflected;
         }
         rb.velocity = reflected;
         IncreaseVelocity(percent);

@@ -52,7 +52,7 @@ public class Artillery : MonoBehaviour
         paddleSoundBox = GetComponentInChildren<PaddleSoundBox>();
         //ammoIndicator = ammoUI.GetComponentInChildren<TextMeshProUGUI>();
         //ammo = 99;
-        AddAmmo(1);
+        //AddAmmo(1);
         UpdateAmmo();
         canFire = false;
 

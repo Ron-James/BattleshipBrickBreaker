@@ -20,6 +20,8 @@ public class ExplosionBrick : MonoBehaviour
 
     public void Explode(bool player1){
         Collider [] colliders = Physics.OverlapSphere(transform.position, radius);
+        GetComponent<MeshRenderer>().enabled = false;
+    
         StartCoroutine(PlayParticleEffect());
         foreach(Collider element in colliders){
             if(element.GetComponent<BrickHealth>() != null){

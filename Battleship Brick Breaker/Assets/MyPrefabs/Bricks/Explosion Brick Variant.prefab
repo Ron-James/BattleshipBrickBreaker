@@ -82,6 +82,41 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7885875656764031725, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: OnBrickBreak.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885875656764031725, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: OnBrickBreak.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885875656764031725, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: OnBrickBreak.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4166699046200445289}
+    - target: {fileID: 7885875656764031725, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: OnBrickBreak.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885875656764031725, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: OnBrickBreak.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885875656764031725, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: OnBrickBreak.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885875656764031725, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: OnBrickBreak.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8358138699070902786, guid: df0d82aec765ff54490f52f07cc43437,
         type: 3}
       propertyPath: m_Name
@@ -89,3 +124,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df0d82aec765ff54490f52f07cc43437, type: 3}
+--- !u!1 &4166699046200445289 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2559579634995735243, guid: df0d82aec765ff54490f52f07cc43437,
+    type: 3}
+  m_PrefabInstance: {fileID: 1897812771786072994}
+  m_PrefabAsset: {fileID: 0}
