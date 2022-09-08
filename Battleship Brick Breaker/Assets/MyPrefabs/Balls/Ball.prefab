@@ -141,6 +141,7 @@ MonoBehaviour:
   lastVelocity: {x: 0, y: 0, z: 0}
   oldVelocity: {x: 0, y: 0, z: 0}
   isOut: 0
+  nudgeForce: 5
   catcher: 0
   onFire: 0
   fireDamage: 2
@@ -148,6 +149,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 9bc49429cbaf3894b8ff18a5827391e7, type: 3}
     src: {fileID: 0}
     volume: 0.1
+  rb: {fileID: 0}
 --- !u!114 &2056922785459137483
 MonoBehaviour:
   m_ObjectHideFlags: 0

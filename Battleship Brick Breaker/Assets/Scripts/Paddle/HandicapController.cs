@@ -7,16 +7,17 @@ public class HandicapController : MonoBehaviour
 {
     public bool isHandicapped;
     [SerializeField] float handicapTime = 0;
-    [SerializeField] Collider paddleCollider;
     Coroutine handicapRoutine;
     PaddleController paddleController;
+    AimArrow aimArrow;
 
     public Coroutine HandicapRoutine { get => HandicapRoutine; set => HandicapRoutine = value; }
-   
+
 
     // Start is called before the first frame update
     void Start()
     {
+        aimArrow = GetComponentInChildren<AimArrow>();
         paddleController = GetComponent<PaddleController>();
         isHandicapped = false;
     }
@@ -24,44 +25,59 @@ public class HandicapController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    IEnumerator HandicapPeriod(){
+    IEnumerator HandicapPeriod(bool sink = true)
+    {
         isHandicapped = true;
-        GetComponentInChildren<BoatMotion>().SinkShip();
+        if (sink)
+        {
+            GetComponentInChildren<BoatMotion>().SinkShip();
+        }
+
         GetComponent<Artillery>().CanFire = false;
-        paddleCollider.enabled = false;
+        aimArrow.IgnoreBalls(true);
         GetComponentInChildren<AimArrow>().CanLaunch = false;
         paddleController.IsStopped = true;
         paddleController.Slider.interactable = false;
-        while(true){
-            if(handicapTime <= 0){
+        while (true)
+        {
+            if (handicapTime <= 0)
+            {
+                handicapTime = 0;
                 isHandicapped = false;
                 handicapRoutine = null;
-                if(GetComponentInChildren<AimArrow>().LaunchPenalty1 == null){
-                    GetComponentInChildren<AimArrow>().CanLaunch = true;
-                    GetComponent<Artillery>().CanFire = true;
-                    paddleController.IsStopped = false;
-                    paddleController.Slider.interactable = true;
-                }
-                
-                
+                aimArrow.IgnoreBalls(false);
+                aimArrow.CanLaunch = true;
+                GetComponent<Artillery>().CanFire = true;
+                paddleController.IsStopped = false;
+                paddleController.Slider.interactable = true;
+
+
+
                 break;
             }
-            else{
+            else
+            {
                 handicapTime -= Time.deltaTime;
                 yield return null;
             }
         }
     }
 
-    public void AddHandicapTime(float time){
+    public void AddHandicapTime(float time, bool sink)
+    {
         handicapTime += time;
-        if(handicapTime > 0 && handicapRoutine == null){
-            handicapRoutine = StartCoroutine(HandicapPeriod());
+        if (handicapTime > 0 && handicapRoutine == null)
+        {
+            handicapRoutine = StartCoroutine(HandicapPeriod(sink));
         }
     }
 
-    
+    public void OnBallOut(){
+        AddHandicapTime(GameManager.instance.InitialOutPenalty, false);
+    }
+
+
 }

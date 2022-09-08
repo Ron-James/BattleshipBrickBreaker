@@ -143,7 +143,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnBrickBreak.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4019406546527107410}
+      objectReference: {fileID: 2559579634995735243}
     - target: {fileID: 790218555712783194, guid: 6cb226225a379bb4a9d4d14d15edfee5,
         type: 3}
       propertyPath: OnBrickBreak.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -246,15 +246,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d375d4879e44db548ba4450e7a9e361d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cb226225a379bb4a9d4d14d15edfee5, type: 3}
---- !u!4 &3122499831411242097 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5535610842768684486, guid: 6cb226225a379bb4a9d4d14d15edfee5,
+--- !u!1 &2559579634995735243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4900582337349315452, guid: 6cb226225a379bb4a9d4d14d15edfee5,
     type: 3}
   m_PrefabInstance: {fileID: 7459977169498587575}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4019406546527107410 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5782873998842689765, guid: 6cb226225a379bb4a9d4d14d15edfee5,
+--- !u!4 &3122499831411242097 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5535610842768684486, guid: 6cb226225a379bb4a9d4d14d15edfee5,
     type: 3}
   m_PrefabInstance: {fileID: 7459977169498587575}
   m_PrefabAsset: {fileID: 0}

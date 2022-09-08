@@ -34,20 +34,24 @@ public class GameManager : Singleton<GameManager>
     [Header("Game Constants")]
     [SerializeField] int powerUpDropRate = 5;
     [SerializeField] float doubleTapTime = 0.5f;
-    [SerializeField] float maxTapDistance = 10;
+
+    [Header("Penalty Times")]
     [SerializeField] float cannonballHitPenalty = 8f;
     [SerializeField] float bombHitPenalty = 7f;
-    [SerializeField] float minBombLaunchDistance = 18f;
-    [SerializeField] float bombPowerUpTime = 5f;
-    [SerializeField] float bombCountDownTime = 7f;
-    [SerializeField] float initialVelocity = 21f;
-    [SerializeField] float maxBallVelocity = 45f;
-    [SerializeField] float randomReturnDistance = 40f;
     [SerializeField] float initialOutPenalty;
     [SerializeField] float outPenaltyIncrease;
+
+    [Header("Bomb Constants")]
+    [SerializeField] float minBombLaunchDistance = 18f;
+    [SerializeField] float bombPowerUpTime = 5f;
+
+    [Header("Ball Constants")]
+    [SerializeField] float initialVelocity = 21f;
+    [SerializeField] float maxBallVelocity = 45f;
     [SerializeField] float maxExtraBalls;
 
-    [SerializeField] float outPenalty = 3f;
+    [Header("Tap Colliders")]
+    [SerializeField] LayerMask tapColliders;
     public static bool gameOver;
 
 
@@ -60,14 +64,11 @@ public class GameManager : Singleton<GameManager>
     public float InitialVelocity { get => initialVelocity; set => initialVelocity = value; }
     public int PowerUpDropRate { get => powerUpDropRate; set => powerUpDropRate = value; }
     public float DoubleTapTime { get => doubleTapTime; set => doubleTapTime = value; }
-    public float MaxTapDistance { get => maxTapDistance; set => maxTapDistance = value; }
     public float CannonballHitPenalty { get => cannonballHitPenalty; set => cannonballHitPenalty = value; }
     public float BombHitPenalty { get => bombHitPenalty; set => bombHitPenalty = value; }
     public float MinBombLaunchDistance { get => minBombLaunchDistance; set => minBombLaunchDistance = value; }
     public float BombPowerUpTime { get => bombPowerUpTime; set => bombPowerUpTime = value; }
-    public float BombCountDownTime { get => bombCountDownTime; set => bombCountDownTime = value; }
     public float MaxBallVelocity { get => maxBallVelocity; set => maxBallVelocity = value; }
-    public float RandomReturnDistance { get => randomReturnDistance; set => randomReturnDistance = value; }
     public float InitialOutPenalty { get => initialOutPenalty; set => initialOutPenalty = value; }
     public float OutPenaltyIncrease { get => outPenaltyIncrease; set => outPenaltyIncrease = value; }
     public float MaxExtraBalls { get => maxExtraBalls; set => maxExtraBalls = value; }
@@ -131,7 +132,7 @@ public class GameManager : Singleton<GameManager>
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.touches[loop].position);
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit))
+                if (Physics.Raycast(ray, out hit, tapColliders))
                 {
                     index = loop;
                     return true;
@@ -209,6 +210,12 @@ public class GameManager : Singleton<GameManager>
                 {
                     if (player1)
                     {
+                        if(hit.collider.tag == "Right Tap Collider"){
+                            position = hit.point;
+                            index = loop;
+                            return true;
+                        }
+                        /*
                         if (paddle1.transform.position.x > hit.point.x && hit.point.x > (paddle1.transform.position.x - maxTapDistance))
                         {
                             //Debug.Log("success");
@@ -216,15 +223,23 @@ public class GameManager : Singleton<GameManager>
                             index = loop;
                             return true;
                         }
+                        */
                     }
                     else
                     {
+                        if(hit.collider.tag == "Left Tap Collider"){
+                            position = hit.point;
+                            index = loop;
+                            return true;
+                        }
+                        /*
                         if (hit.point.x > paddle2.transform.position.x && hit.point.x < (paddle2.transform.position.x + maxTapDistance))
                         {
                             position = hit.point;
                             index = loop;
                             return true;
                         }
+                        */
                     }
 
                 }

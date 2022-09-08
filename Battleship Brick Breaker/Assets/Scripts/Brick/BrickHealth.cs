@@ -131,15 +131,7 @@ public class BrickHealth : MonoBehaviour
                 else
                 {
                     GameManager.instance.paddle2.GetComponent<Artillery>().AddAmmo(1);
-                    if (TutorialManager.instance.isTutorial)
-                    {
-                        if (!TutorialManager.instance.cannonLaunch.hasAckP2)
-                        {
-                            TutorialManager.instance.cannonLaunch.OpenPrompt(player1);
-                            TutorialManager.instance.EnableCannonPrompt(player1);
-                        }
-
-                    }
+                    
                 }
                 break;
             case 3:// objective

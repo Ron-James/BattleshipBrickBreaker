@@ -31,6 +31,9 @@ public class AimArrow : MonoBehaviour
     Touch lastTouchInField;
     Vector3 touchPoint;
     Image arrow;
+    BallPhysics ballPhysics;
+    HandicapController handicapController;
+    PaddleController paddleController;
 
     public bool Aiming { get => aiming; set => aiming = value; }
     public bool CanLaunch { get => canLaunch; set => canLaunch = value; }
@@ -47,7 +50,9 @@ public class AimArrow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        handicapController = GetComponentInParent<HandicapController>();
+        ballPhysics = ball.GetComponent<BallPhysics>();
+        paddleController = GetComponentInParent<PaddleController>();
         outPenaltyTime = GameManager.instance.InitialOutPenalty;
         lastAimDirection = Vector3.zero;
         CanHit = false;
@@ -68,7 +73,15 @@ public class AimArrow : MonoBehaviour
     void Update()
     {
         if(canLaunch && aiming && oscillator == null){
-            oscillator = StartCoroutine(Oscillate(aimPeriod, CanHit));
+            //oscillator = StartCoroutine(Oscillate(aimPeriod, CanHit));
+        }
+
+        if(ballPhysics.IsBoundToPaddle){
+            if(!handicapController.isHandicapped){
+                if(oscillator == null){
+                    oscillator = StartCoroutine(Oscillate(aimPeriod, CanHit));
+                }
+            }
         }
 
         
@@ -124,36 +137,18 @@ public class AimArrow : MonoBehaviour
             return false;
         }
     }
- 
-    IEnumerator LaunchPenalty(float period){
-        canLaunch = false;
-        CanHit = false;
-        float time = 0;
-        GetComponentInParent<PaddleController>().Slider.interactable = false;
-        paddleCollider.enabled = false;
-        while(true){
-            time += Time.deltaTime;
-            if(time >= period){
-                launchPenalty = null;
-                if(!GetComponentInParent<HandicapController>().isHandicapped){
-                    canLaunch = true;
-                    GetComponentInParent<Artillery>().CanFire = true;
-                    GetComponentInParent<PaddleController>().Slider.interactable = true;
-                    paddleCollider.enabled = true;
-                }
-                
-                break;
-            }
-            else{
-                yield return null;
-            }
+
+    public void IgnoreBalls(bool ignore){
+        GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
+        foreach(GameObject ball in balls){
+            Physics.IgnoreCollision(paddleCollider, ball.GetComponent<SphereCollider>(), ignore);
         }
+        
     }
     IEnumerator Oscillate(float period, bool canHit){
         
         arrow.enabled = true;
         transform.position = GetComponentInParent<PaddleController>().Ball.transform.position;
-        paddleCollider.enabled = false;
         float time = 0;
         float w = (1/period) * 2 * Mathf.PI;
         float straight = 180;
@@ -169,42 +164,34 @@ public class AimArrow : MonoBehaviour
             straight = 180;
         }
         if(canHit){
-            paddleCollider.enabled = true;
+            IgnoreBalls(true);
         }
         else{
-            paddleCollider.enabled = false;
+            IgnoreBalls(false);
         }
         while(true){
+            if(GetComponentInParent<HandicapController>().isHandicapped){
+                oscillator = null;
+                break;
+            }
             if((ClickInField() && Input.GetMouseButtonDown(0)) || GameManager.instance.TouchInField(out touchIndex, out touchPos, player1)){
-                
+                if(paddleController.controlScheme == PaddleController.ControlScheme.slider){
+                    paddleController.Slider.interactable = true;
+                }
                 if(TutorialManager.instance.isTutorial){
                     TutorialManager.instance.ballLaunch.ClosePrompt(player1);
                 }
-                
+                IgnoreBalls(false);
                 direction = (aimPoint.position - GetComponent<RectTransform>().position).normalized;
-                //lastAimDirection = sign * direction;
-                //Debug.Log(lastAimDirection + " Last aim directions");
-                if(GetComponentInParent<PowerUpManager>().catcher && ball.GetComponent<BallPhysics>().LastVelocity.magnitude > 0){
-                    ball.GetComponent<BallPhysics>().Launch(ball.GetComponent<CollisionVelocityControl>().LastVelocity.magnitude, sign * direction);
-                    Debug.Log("Catcher launch");
-                }
-                else{
-                    ball.GetComponent<BallPhysics>().Launch(GameManager.instance.InitialVelocity, sign * direction);
-                    //Debug.Log(sign * direction + " what direction I am launching");
-                }
+                
                 StartCoroutine(BombLauncherDelay(0.2f));
                 arrow.enabled = false;
                 aiming = false;
                 oscillator = null;
                 CanHit = true;
-                GetComponentInParent<PaddleController>().Slider.interactable = true;
-                paddleCollider.enabled = true;
+                ballPhysics.Launch(GameManager.instance.InitialVelocity, sign * direction);
+        
                 yield return new WaitForFixedUpdate();
-                break;
-            }
-            else if(!canLaunch){
-                arrow.enabled = false;
-                oscillator = null;
                 break;
             }
             else{
@@ -229,12 +216,8 @@ public class AimArrow : MonoBehaviour
         aiming = true;
         canLaunch = false;
         canHit = false;
-        if(!GetComponentInParent<HandicapController>().isHandicapped){
-            launchPenalty = StartCoroutine(LaunchPenalty(outPenaltyTime));
-        }
-        else{
-            GetComponentInParent<HandicapController>().AddHandicapTime(outPenaltyTime);
-        }
+        
+        
 
     }
 

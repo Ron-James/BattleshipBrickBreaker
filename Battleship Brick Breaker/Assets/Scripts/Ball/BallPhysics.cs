@@ -14,6 +14,7 @@ public class BallPhysics : MonoBehaviour
     [SerializeField] Vector3 lastVelocity;
     [SerializeField] Vector3 oldVelocity;
     [SerializeField] bool isOut = false;
+    [SerializeField] float nudgeForce = 2f;
 
 
     [Header("Power Up Things")]
@@ -25,8 +26,10 @@ public class BallPhysics : MonoBehaviour
     [SerializeField] Sound generalHit;
 
 
-    Rigidbody rb;
+    [SerializeField] Rigidbody rb;
     int inwardSign;
+    bool isBoundToPaddle;
+    Collider ballCollider;
 
 
 
@@ -37,17 +40,17 @@ public class BallPhysics : MonoBehaviour
     public bool RightSide { get => rightSide; set => rightSide = value; }
     public bool IsOut { get => isOut; set => isOut = value; }
     public Vector3 LastVelocity { get => lastVelocity; set => lastVelocity = value; }
-
-
-
+    public bool IsBoundToPaddle { get => isBoundToPaddle; set => isBoundToPaddle = value; }
 
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         IgnoreBallCollisions();
+        ballCollider = GetComponent<Collider>();
         generalHit.src = GetComponent<AudioSource>();
         Radius = transform.localScale.x / 2;
         IsOut = false;
-        rb = GetComponent<Rigidbody>();
+        
 
         if (rightSide)
         {
@@ -80,7 +83,7 @@ public class BallPhysics : MonoBehaviour
         }
         if (transform.parent != null && rb.velocity.magnitude > 0 && paddle != null)
         {
-            BindToPaddle();
+            //BindToPaddle();
         }
     }
     // Update is called once per frame
@@ -113,6 +116,7 @@ public class BallPhysics : MonoBehaviour
         }
 
     }
+    
     private void OnCollisionEnter(Collision other)
     {
         switch (other.collider.tag)
@@ -153,15 +157,29 @@ public class BallPhysics : MonoBehaviour
     }
     private void Reflect(Collision collision, float percent)
     {
+        int rand = Random.Range(0, 2);
+        if(rand == 0){
+            rand = 1;
+        }
+        float angle = Random.Range(10, 21);
         Vector3 reflected = Vector3.Reflect(lastVelocity, collision.GetContact(0).normal);
-        if(reflected.normalized.Equals(Vector3.forward) || reflected.normalized.Equals(-Vector3.forward)){
-            reflected = Quaternion.AngleAxis(inwardSign * 8, Vector3.up) * reflected;
+        float reflectedZ = Mathf.Abs(reflected.normalized.z);
+        float diffZ = 1 - reflectedZ;
+        if(diffZ < 0.1f){
+            rb.velocity = reflected;
+            IncreaseVelocity(percent);
+            rb.AddForce(-inwardSign * Vector3.right * nudgeForce);
         }
-        else if(reflected.normalized.Equals(Vector3.left) || reflected.normalized.Equals(Vector3.right)){
-            reflected = Quaternion.AngleAxis(inwardSign * 8, Vector3.up) * reflected;
+        else{
+            rb.velocity = reflected;
+            IncreaseVelocity(percent);
         }
-        rb.velocity = reflected;
-        IncreaseVelocity(percent);
+        
+    }
+
+    public void ChangeVelocity(Vector3 velocity){
+        rb.velocity = Vector3.zero;
+        GameManager.instance.ApplyForceToVelocity(rb, velocity, 1000000);
     }
     private void OnDisable()
     {
@@ -183,9 +201,10 @@ public class BallPhysics : MonoBehaviour
         {
             return;
         }
+        rb.isKinematic = true;
         rb.velocity = Vector3.zero;
         transform.SetParent(paddle.transform);
-
+        isBoundToPaddle = true;
         transform.position = paddle.GetComponent<PaddleController>().BallPosition.position;
 
 
@@ -215,8 +234,9 @@ public class BallPhysics : MonoBehaviour
     }
 
     public void Launch(float power, Vector3 direction)
-    {
+    {   Debug.Log("Launched");
         isOut = false;
+        isBoundToPaddle = false;
         if (rb.isKinematic)
         {
             rb.isKinematic = false;

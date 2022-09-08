@@ -54,7 +54,7 @@ public class Bomb : MonoBehaviour
             }
             else if (item.GetComponentInParent<HandicapController>() != null)
             {
-                item.GetComponentInParent<HandicapController>().AddHandicapTime(GameManager.instance.BombHitPenalty);
+                item.GetComponentInParent<HandicapController>().AddHandicapTime(GameManager.instance.BombHitPenalty, true);
                 GameManager.instance.ChangeAllBalls(player1);
             }
         }

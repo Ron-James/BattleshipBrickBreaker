@@ -159,6 +159,7 @@ public class Artillery : MonoBehaviour
             if(!TutorialManager.instance.cannonLaunch.HasAcknowledged(player1)){
                 if(!TutorialManager.instance.bombPowerUp.IsEnabled(player1) && !TutorialManager.instance.bombThrow.IsEnabled(player1)){
                     TutorialManager.instance.SwitchLauchTut(TutorialManager.LaunchTutorial.Cannon, player1);
+                    TutorialManager.instance.EnableCannonPrompt(player1);
                 }
             }
         }

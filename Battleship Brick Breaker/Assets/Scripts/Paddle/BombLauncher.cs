@@ -106,7 +106,7 @@ public class BombLauncher : MonoBehaviour
 
     public void SetTargetMarkerPosition(Vector3 position){
         Vector3 newPos = position;
-        newPos.y = 2f;
+        newPos.y = 5f;
         targetMarker.position = newPos;
     }
 

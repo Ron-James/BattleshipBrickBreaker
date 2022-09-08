@@ -30,7 +30,7 @@ public class ButtonPrompt : MonoBehaviour
     public void SwitchButtonPrompt(bool stopped){
         isStopped = stopped;
         if(!isStopped){
-            if(fadeFlash == null){
+            if(fadeFlash == null ){
                 fadeFlash = StartCoroutine(FadeFlash(flashPeriod, maxAlpha));
             }
             

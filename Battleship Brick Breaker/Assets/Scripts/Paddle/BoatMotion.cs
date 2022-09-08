@@ -4,22 +4,38 @@ using UnityEngine;
 
 public class BoatMotion : MonoBehaviour
 {
+    [Header("Rock Motion X (rotation)")]
     [SerializeField] float deltaRotationX = 5;
-    [SerializeField] float deltaRotationZ = 5;
     [SerializeField] float rockPeriodX = 5f;
+
+    [Header("Rock Motion Z (rotation)")]
+    [SerializeField] float deltaRotationZ = 5;
     [SerializeField] float rockPeriodZ = 5f;
+
+    [Header("Bouy Force (Y-Axis Motion)")] 
+    [SerializeField] float bouyPeriod = 1f;
+    [SerializeField] float bouyAmplitude = 10f;
+
+    [Header("isStopped")]
     [SerializeField] bool isStopped;
+
+    [Header("Sink Motion")]
     [SerializeField] float restoreZSpeed = 1f;
     [SerializeField] float sinkSpeed = 0.1f;
+
+    [Header("Sounds")]
     [SerializeField] PaddleSoundBox soundBox;
+
+
     Vector3 defaultRotation;
     Vector3 defaulPosition;
     Coroutine rock;
+    Coroutine bouy;
     // Start is called before the first frame update
     void Start()
     {
         defaultRotation = transform.eulerAngles;
-        defaulPosition = transform.position;
+        defaulPosition = transform.localPosition;
         isStopped = false;
     }
 
@@ -29,6 +45,7 @@ public class BoatMotion : MonoBehaviour
         if (!isStopped && rock == null)
         {
             rock = StartCoroutine(RockBoat(rockPeriodX, rockPeriodZ));
+            //bouy = StartCoroutine(BouyantForce(bouyPeriod, bouyAmplitude));
         }
     }
 
@@ -74,7 +91,23 @@ public class BoatMotion : MonoBehaviour
             }
         }
     }
-
+    IEnumerator BouyantForce(float period, float amplitude){
+        float time = 0;
+        Vector3 defPos = defaulPosition;
+        float w = 2 * Mathf.PI * (1 / period);
+        while(true){
+            if(isStopped){
+                transform.position = defPos;
+                break;
+            }
+            else{
+                float vertDistance = amplitude * Mathf.Sin(w * time);
+                transform.localPosition = defPos + (Vector3.up * vertDistance);
+                time += Time.deltaTime;
+                yield return null;
+            }
+        }
+    }
     IEnumerator RockBoat(float periodX, float periodZ)
     {
         float time = 0;

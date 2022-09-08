@@ -25,11 +25,15 @@ public class SettingsManager : Singleton<SettingsManager>
     public Toggle RightHandP2 { get => rightHandP2; set => rightHandP2 = value; }
     public Toggle RightHandP1 { get => rightHandP1; set => rightHandP1 = value; }
 
-
+    
     // Start is called before the first frame update
     void Start()
     {
-        UpdateFireButtons();
+        SetDefaultPrefs();
+        //UpdatePrefs();
+        //UpdateFireButtons();
+        
+        
         //UpdateSliderText(initialVelocity);
     }
 
@@ -39,10 +43,61 @@ public class SettingsManager : Singleton<SettingsManager>
 
     }
 
+    public void SetDefaultPrefs(){
+        if(!PlayerPrefs.HasKey("P1 Hand")){
+            PlayerPrefs.SetInt("P1 Hand", 1);
+        }
+        if(!PlayerPrefs.HasKey("P2 Hand")){
+            PlayerPrefs.SetInt("P2 Hand", 1);
+        }
+    }
+    public void UpdatePrefs()
+    {
+        int p1Hand = PlayerPrefs.GetInt("P1 Hand");
+        int p2Hand = PlayerPrefs.GetInt("P2 Hand");
+
+        switch (p1Hand)
+        {
+            case 0:
+                rightHandP1.isOn = true;
+                p1Right = false;
+                rightSideFireButtonP1.SetActive(false);
+                leftSideFireButtonP1.SetActive(true);
+                p1Side.text = "Left";
+                break;
+            case 1:
+                rightHandP1.isOn = false;
+                p1Right = true;
+                rightSideFireButtonP1.SetActive(true);
+                leftSideFireButtonP1.SetActive(false);
+                p1Side.text = "Right";
+                break;
+        }
+        switch (p2Hand)
+        {
+            case 0:
+                rightHandP2.isOn = true;
+                p2Right = false;
+                rightSideFireButtonP2.SetActive(false);
+                leftSideFireButtonP2.SetActive(true);
+                p2Side.text = "Left";
+                break;
+            case 1:
+                rightHandP2.isOn = false;
+                p2Right = true;
+                rightSideFireButtonP2.SetActive(true);
+                leftSideFireButtonP2.SetActive(false);
+                p2Side.text = "Right";
+                break;
+        }
+
+    }
     public void UpdateFireButtons()
     {
         if (rightHandP1.isOn)
         {
+            PlayerPrefs.SetInt("P1 Hand", 1);
+
             p1Right = true;
             rightSideFireButtonP1.SetActive(true);
             leftSideFireButtonP1.SetActive(false);
@@ -50,6 +105,7 @@ public class SettingsManager : Singleton<SettingsManager>
         }
         else
         {
+            PlayerPrefs.SetInt("P1 Hand", 0);
             p1Right = false;
             rightSideFireButtonP1.SetActive(false);
             leftSideFireButtonP1.SetActive(true);
@@ -58,6 +114,7 @@ public class SettingsManager : Singleton<SettingsManager>
 
         if (rightHandP2.isOn)
         {
+            PlayerPrefs.SetInt("P2 Hand", 1);
             p2Right = true;
             rightSideFireButtonP2.SetActive(true);
             leftSideFireButtonP2.SetActive(false);
@@ -65,13 +122,14 @@ public class SettingsManager : Singleton<SettingsManager>
         }
         else
         {
+            PlayerPrefs.SetInt("P2 Hand", 0);
             p2Right = false;
             rightSideFireButtonP2.SetActive(false);
             leftSideFireButtonP2.SetActive(true);
             p2Side.text = "Left";
         }
     }
-    
+
 
     public void UpdateSliderText(Slider slider)
     {

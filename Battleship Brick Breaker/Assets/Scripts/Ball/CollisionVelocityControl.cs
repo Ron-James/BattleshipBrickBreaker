@@ -40,7 +40,7 @@ public class CollisionVelocityControl : MonoBehaviour
 
         if(!GetComponent<BallPhysics>().IsOut){
             if(rb.velocity.magnitude < largestMagnitude){
-                //GameManager.instance.ApplyForceToVelocity(rb, rb.velocity.normalized * largestMagnitude, 10000);
+                GameManager.instance.ApplyForceToVelocity(rb, lastVelocity.normalized * largestMagnitude, 10000);
             }
         }
 

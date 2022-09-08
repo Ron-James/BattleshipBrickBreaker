@@ -13,6 +13,8 @@ TagManager:
   - BulletDespawn
   - FxTemporaire
   - Backboard
+  - Right Tap Collider
+  - Left Tap Collider
   layers:
   - Default
   - TransparentFX
@@ -25,7 +27,7 @@ TagManager:
   - Lighting
   - Ground
   - Postprocessing
-  - 
+  - TapCollider
   - 
   - 
   - 

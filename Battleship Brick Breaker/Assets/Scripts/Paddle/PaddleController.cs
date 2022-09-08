@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class PaddleController : MonoBehaviour
 {
+
+    public enum ControlScheme{
+        slider = 0,
+        button = 1
+    }
     [SerializeField] Slider slider;
     [SerializeField] float maxZ = 21.3f;
     [SerializeField] float speed;
@@ -14,14 +19,17 @@ public class PaddleController : MonoBehaviour
     [SerializeField] bool aiPlayer = false;
     [SerializeField] Transform backboard;
     [SerializeField] BallPhysics ball;
-    [SerializeField] Collider paddleCollider;
+
     [SerializeField] bool isHandicapped;
     [SerializeField] float handicapTimeRemaining = 0;
+    public ControlScheme controlScheme = ControlScheme.slider;
+
 
     AimArrow ballAim;
     Artillery artillery;
     BombLauncher bombLauncher;
     PowerUpManager powerUpManager;
+    HandicapController handicapController;
 
     float currentSliderValue;
     float paddleWidth;
@@ -29,14 +37,14 @@ public class PaddleController : MonoBehaviour
 
     Vector3 defaultPos;
 
-
+    
     public Transform Backboard { get => backboard; set => backboard = value; }
     public bool IsStopped { get => isStopped; set => isStopped = value; }
     public Slider Slider { get => slider; set => slider = value; }
     public bool Player1 { get => player1; set => player1 = value; }
     public BallPhysics Ball { get => ball; set => ball = value; }
     public Transform BallPosition { get => ballPosition; set => ballPosition = value; }
-    public Collider PaddleCollider { get => paddleCollider; set => paddleCollider = value; }
+
     public bool IsHandicapped { get => isHandicapped; set => isHandicapped = value; }
 
 
@@ -47,7 +55,9 @@ public class PaddleController : MonoBehaviour
         powerUpManager = GetComponent<PowerUpManager>();
         artillery = GetComponent<Artillery>();
         bombLauncher = GetComponent<BombLauncher>();
+        handicapController = GetComponent<HandicapController>();
 
+        ballEvents.OnBallOut.AddListener(delegate { handicapController.OnBallOut(); });
         ballEvents.OnBallOut.AddListener(delegate { OnBallOut(); });
         ballEvents.OnBallOut.AddListener(delegate { ballAim.OnBallOut(); });
         ballEvents.OnBallOut.AddListener(delegate { bombLauncher.OnBallOut(); });
@@ -78,6 +88,7 @@ public class PaddleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (!IsStopped && !aiPlayer)
         {
             Vector3 position = transform.position;
@@ -85,6 +96,7 @@ public class PaddleController : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, position, speed);
             currentSliderValue = slider.value;
         }
+        */
 
     }
 

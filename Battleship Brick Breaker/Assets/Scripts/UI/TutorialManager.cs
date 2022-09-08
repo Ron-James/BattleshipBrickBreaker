@@ -86,12 +86,20 @@ public class TutorialManager : Singleton<TutorialManager>
         {
             if (SettingsManager.p1Right)
             {
-                p1CannonPrompt.SwitchButtonPrompt(false);
-                Debug.Log("Should prompt here");
+                if (p1CannonPrompt.gameObject.activeSelf)
+                {
+                    p1CannonPrompt.SwitchButtonPrompt(false);
+                    Debug.Log("Should prompt here");
+                }
+
             }
             else
             {
-                p1CannonPromptLeft.SwitchButtonPrompt(false);
+                if (p1CannonPromptLeft.gameObject.activeSelf)
+                {
+                    p1CannonPrompt.SwitchButtonPrompt(false);
+                    Debug.Log("Should prompt here");
+                }
             }
 
 
@@ -100,12 +108,17 @@ public class TutorialManager : Singleton<TutorialManager>
         {
             if (SettingsManager.p2Right)
             {
-                p2CannonPromptLeft.SwitchButtonPrompt(false);
+                if(p2CannonPrompt.gameObject.activeSelf){
+                    p2CannonPrompt.SwitchButtonPrompt(false);
+                }
+                
             }
             else
             {
-
-                p2CannonPrompt.SwitchButtonPrompt(false);
+                if(p2CannonPromptLeft.gameObject.activeSelf){
+                    p2CannonPromptLeft.SwitchButtonPrompt(false);
+                }
+                
             }
 
 
