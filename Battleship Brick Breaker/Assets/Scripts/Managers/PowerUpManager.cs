@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+public struct MinMaxWeightPair{
+    int min;
+    int max;
+}
 public class PowerUpManager : MonoBehaviour
 {
     [SerializeField] GameObject paddle;
@@ -13,13 +17,15 @@ public class PowerUpManager : MonoBehaviour
     [SerializeField] GameObject slimeBall;
     [SerializeField] TextFlash tripleCannonText;
     public bool catcher;
+    [Header("Triple Cannon Text Flash Max Time")]
+    [SerializeField] float trippleCannonTextFlashTime = 2f;
 
     [Header("power Up numbers")]
-    [SerializeField] float paddleLengthUpgrade = 1.25f;
     [SerializeField] float ballSpdIncrease = 1.35f;
     [SerializeField] float ballSizeUpgrade;
-    [SerializeField] float colliderLargeSize = 1.67f;
+    [SerializeField] float colliderLargeSize = 1.5f;
     [SerializeField] bool[] currentPowerUps = new bool[6];
+    [SerializeField] int [] powerUpWeights = new int[6];
     float paddleLength;
     PaddleSoundBox paddleSoundBox;
     bool player1;
@@ -36,11 +42,18 @@ public class PowerUpManager : MonoBehaviour
         if (currentPowerUps.Length != PowerUp.NumOfPowerUps)
         {
             Array.Resize(ref currentPowerUps, PowerUp.NumOfPowerUps);
+            Array.Resize(ref powerUpWeights, PowerUp.NumOfPowerUps);
         }
 
         ResetCurrentPowerUps();
     }
 
+    public List<MinMaxWeightPair> CalculateMinMaxPairs(){
+        
+        List<MinMaxWeightPair> pairs = new List<MinMaxWeightPair>(6);
+
+        return pairs;
+    }
     public void ResetCurrentPowerUps()
     {
         for (int loop = 0; loop < currentPowerUps.Length; loop++)
@@ -112,6 +125,7 @@ public class PowerUpManager : MonoBehaviour
         regBoat.SetActive(false);
         bigBoat.SetActive(true);
         coll.gameObject.transform.localScale = new Vector3(1, 1, colliderLargeSize);
+        GetComponent<PaddleButtonController>().CalculateMaximumValues();
 
     }
 
@@ -120,6 +134,7 @@ public class PowerUpManager : MonoBehaviour
         coll.gameObject.transform.localScale = new Vector3(1, 1, paddleLength);
         regBoat.SetActive(true);
         bigBoat.SetActive(false);
+        GetComponent<PaddleButtonController>().CalculateMaximumValues();
 
     }
     public bool IsTripleCannon(){
@@ -156,7 +171,7 @@ public class PowerUpManager : MonoBehaviour
             case 4: //bomb
                 paddleSoundBox.powerUpSound.PlayOnce();
                 
-                GetComponent<BombLauncher>().GiveBomb();
+                GetComponent<BombLauncher>().LoadBomb();
                 currentPowerUps[powerUp] = true;
                 break;
             case 5: //split
@@ -167,7 +182,7 @@ public class PowerUpManager : MonoBehaviour
                 }
                 break;
             case 6: // triple cannon
-                tripleCannonText.FlashText();
+                tripleCannonText.FlashText(trippleCannonTextFlashTime);
                 currentPowerUps[powerUp] = true;
                 break;
             default:
@@ -183,6 +198,7 @@ public class PowerUpManager : MonoBehaviour
         catcher = false;
         slimeBall.SetActive(false);
         GameManager.instance.ControlBarriers(player1, false);
+        tripleCannonText.FlashText(0);
     }
 
     public void OnBallOut()

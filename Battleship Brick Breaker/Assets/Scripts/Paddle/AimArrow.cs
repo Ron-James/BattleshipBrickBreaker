@@ -23,7 +23,6 @@ public class AimArrow : MonoBehaviour
     [SerializeField] float outPenaltyTime = 1f;
     [SerializeField] bool aiming;
     [SerializeField] bool canLaunch;
-    [SerializeField] bool canHit;
     int sign;
     public Vector3 lastAimDirection;
     Coroutine oscillator;
@@ -37,7 +36,7 @@ public class AimArrow : MonoBehaviour
 
     public bool Aiming { get => aiming; set => aiming = value; }
     public bool CanLaunch { get => canLaunch; set => canLaunch = value; }
-    public bool CanHit { get => canHit; set => canHit = value; }
+
     public Coroutine LaunchPenalty1 { get => launchPenalty; set => launchPenalty = value; }
 
 
@@ -55,13 +54,12 @@ public class AimArrow : MonoBehaviour
         paddleController = GetComponentInParent<PaddleController>();
         outPenaltyTime = GameManager.instance.InitialOutPenalty;
         lastAimDirection = Vector3.zero;
-        CanHit = false;
         arrow = GetComponent<Image>();
         if(player1){
             sign = -1;
         }
         else{
-            sign = 1;
+            sign = -1;
         }
         aiming = true;
         canLaunch = true;
@@ -79,7 +77,7 @@ public class AimArrow : MonoBehaviour
         if(ballPhysics.IsBoundToPaddle){
             if(!handicapController.isHandicapped){
                 if(oscillator == null){
-                    oscillator = StartCoroutine(Oscillate(aimPeriod, CanHit));
+                    oscillator = StartCoroutine(Oscillate(aimPeriod, GameManager.instance.MaxAimTime));
                 }
             }
         }
@@ -145,7 +143,7 @@ public class AimArrow : MonoBehaviour
         }
         
     }
-    IEnumerator Oscillate(float period, bool canHit){
+    IEnumerator Oscillate(float period, float maxTime){
         
         arrow.enabled = true;
         transform.position = GetComponentInParent<PaddleController>().Ball.transform.position;
@@ -155,6 +153,7 @@ public class AimArrow : MonoBehaviour
         int touchIndex;
         Vector3 touchPos;
         GetComponentInParent<PaddleController>().Slider.interactable = false;
+        GetComponentInParent<PaddleController>().IsStopped = true;
         GetComponentInParent<BombLauncher>().canLaunch = false;
         Vector3 direction = (aimPoint.position - GetComponent<RectTransform>().position).normalized;
         if(player1) {
@@ -163,18 +162,15 @@ public class AimArrow : MonoBehaviour
         else{
             straight = 180;
         }
-        if(canHit){
-            IgnoreBalls(true);
-        }
-        else{
-            IgnoreBalls(false);
-        }
+        
+        IgnoreBalls(true);
+        
         while(true){
             if(GetComponentInParent<HandicapController>().isHandicapped){
                 oscillator = null;
                 break;
             }
-            if((ClickInField() && Input.GetMouseButtonDown(0)) || GameManager.instance.TouchInField(out touchIndex, out touchPos, player1)){
+            if((ClickInField() && Input.GetMouseButtonDown(0)) || GameManager.instance.TouchInField(out touchIndex, out touchPos, player1) || time >= maxTime){
                 if(paddleController.controlScheme == PaddleController.ControlScheme.slider){
                     paddleController.Slider.interactable = true;
                 }
@@ -183,12 +179,11 @@ public class AimArrow : MonoBehaviour
                 }
                 IgnoreBalls(false);
                 direction = (aimPoint.position - GetComponent<RectTransform>().position).normalized;
-                
+                GetComponentInParent<PaddleController>().IsStopped = false;
                 StartCoroutine(BombLauncherDelay(0.2f));
                 arrow.enabled = false;
                 aiming = false;
                 oscillator = null;
-                CanHit = true;
                 ballPhysics.Launch(GameManager.instance.InitialVelocity, sign * direction);
         
                 yield return new WaitForFixedUpdate();
@@ -215,7 +210,7 @@ public class AimArrow : MonoBehaviour
     public void OnBallOut(){
         aiming = true;
         canLaunch = false;
-        canHit = false;
+
         
         
 

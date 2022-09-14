@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.7
   paddle: {fileID: 0}
-  bounciness: 1.007
+  bounciness: 1.004
   rightSide: 1
   lastVelocity: {x: 0, y: 0, z: 0}
   oldVelocity: {x: 0, y: 0, z: 0}

@@ -15,7 +15,7 @@ public class TutorialManager : Singleton<TutorialManager>
     public TutorialPrompt ballLaunch;
     public TutorialPrompt cannonLaunch;
     public TutorialPrompt bombPowerUp;
-    public TutorialPrompt bombThrow;
+    
 
     public TutorialPrompt moveTut;
 
@@ -27,6 +27,10 @@ public class TutorialManager : Singleton<TutorialManager>
     [SerializeField] ButtonPrompt p2CannonPrompt;
     [SerializeField] ButtonPrompt p1CannonPromptLeft;
     [SerializeField] ButtonPrompt p2CannonPromptLeft;
+
+    [SerializeField] TutorialPrompt [] cannonPrompts = new TutorialPrompt[2];
+    [SerializeField] TutorialPrompt [] bombPrompts = new TutorialPrompt[2];
+
     public BrickHealth[] bricks;
     public LaunchTutorial launchTutorialP1 = LaunchTutorial.None;
     public LaunchTutorial launchTutorialP2 = LaunchTutorial.None;
@@ -43,7 +47,6 @@ public class TutorialManager : Singleton<TutorialManager>
             //clearMenu.SetActive(false);
             bricks = brickHolder.GetComponentsInChildren<BrickHealth>();
             tutorialPrompts = GetComponentsInChildren<TutorialPrompt>();
-            bombThrow.DisableBoth();
             bombPowerUp.DisableBoth();
             cannonLaunch.DisableBoth();
             moveTut.EnableBoth();
@@ -52,6 +55,9 @@ public class TutorialManager : Singleton<TutorialManager>
 
     }
 
+    public void UpdateTutorialPrompts(){
+        
+    }
     // Update is called once per frame
     void Update()
     {
@@ -68,7 +74,7 @@ public class TutorialManager : Singleton<TutorialManager>
             return launchTutorialP2;
         }
     }
-
+    
     public void SetGetLaunchTutorialCurrentState(LaunchTutorial tut, bool player1)
     {
         if (player1)
@@ -154,6 +160,9 @@ public class TutorialManager : Singleton<TutorialManager>
 
         }
     }
+    public void DisableMoveTutorial(bool player1){
+        moveTut.ClosePrompt(player1);
+    }
     public void DisableAllPrompts()
     {
         DisableCannonPrompt(true);
@@ -175,7 +184,6 @@ public class TutorialManager : Singleton<TutorialManager>
     public void DisableAllLaunchPrompts(bool player1)
     {
         cannonLaunch.ClosePrompt(player1);
-        bombThrow.ClosePrompt(player1);
         bombPowerUp.ClosePrompt(player1);
     }
 
@@ -236,7 +244,6 @@ public class TutorialManager : Singleton<TutorialManager>
                 break;
             case 4://bomb release
                 DisableAllLaunchPrompts(player1);
-                bombThrow.OpenPrompt(player1);
 
 
                 break;

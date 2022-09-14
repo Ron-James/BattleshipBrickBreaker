@@ -80,11 +80,28 @@ public class BrickHealth : MonoBehaviour
             StartCoroutine(FlashOverlay(0.3f));
         }
     }
+    public void SetColliderActive(bool active){
+        GetComponent<Collider>().enabled = active;
+    }
 
+    IEnumerator DisableColliderDelay(float duration){
+        float time = 0;
+        SetColliderActive(true);
+        while(true){
+            if(time >= Time.deltaTime){
+                SetColliderActive(false);
+                break;
+            }
+            else{
+                yield return null;
+            }
+        }
+
+    }
     public void BreakBrick(bool player1)
     {
-        GetComponent<Collider>().enabled = false;
-        GetComponent<MeshRenderer>().enabled = false;
+        //StartCoroutine(DisableColliderDelay(0.2f));
+        SetColliderActive(false);
         isBroken = true;
         Vector3 position = transform.position;
         if (crack != null)
@@ -115,6 +132,7 @@ public class BrickHealth : MonoBehaviour
                     GameManager.instance.SpawnPowerup(position, player1);
                     Debug.Log("Power up spawned " + player1);
                 }
+                
                 break;
             case 1://power up
                 position = transform.position;
@@ -126,11 +144,24 @@ public class BrickHealth : MonoBehaviour
                 if (player1)
                 {
                     GameManager.instance.paddle1.GetComponent<Artillery>().AddAmmo(1);
-
+                    FloatingText floatingText = AssetManager.instance.GetFloatingText();
+                    if(floatingText != null){
+                        floatingText.gameObject.transform.eulerAngles = new Vector3(0, -90, 0);
+                        Vector3 pos = transform.position;
+                        pos.y = 10f;
+                        floatingText.DeployFloatingText(pos);
+                    }
                 }
                 else
                 {
                     GameManager.instance.paddle2.GetComponent<Artillery>().AddAmmo(1);
+                    FloatingText floatingText = AssetManager.instance.GetFloatingText();
+                    if(floatingText != null){
+                        floatingText.gameObject.transform.eulerAngles = new Vector3(0, 90, 0);
+                        Vector3 pos = transform.position;
+                        pos.y = 10f;
+                        floatingText.DeployFloatingText(pos);
+                    }
                     
                 }
                 break;

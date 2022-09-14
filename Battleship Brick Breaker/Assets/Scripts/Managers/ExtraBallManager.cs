@@ -6,6 +6,7 @@ public class ExtraBallManager : Singleton<ExtraBallManager>
 {
     [SerializeField] GameObject actives;
     [SerializeField] GameObject inactives;
+    
     // Start is called before the first frame update
     void Start()
     {

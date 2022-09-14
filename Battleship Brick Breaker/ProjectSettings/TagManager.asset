@@ -15,6 +15,7 @@ TagManager:
   - Backboard
   - Right Tap Collider
   - Left Tap Collider
+  - Barrier
   layers:
   - Default
   - TransparentFX

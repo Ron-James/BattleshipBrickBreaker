@@ -11,10 +11,15 @@ public class SettingsManager : Singleton<SettingsManager>
     [SerializeField] Toggle rightHandP2;
     [SerializeField] TextMeshProUGUI p1Side;
     [SerializeField] TextMeshProUGUI p2Side;
-    [SerializeField] GameObject rightSideFireButtonP1;
-    [SerializeField] GameObject leftSideFireButtonP1;
-    [SerializeField] GameObject rightSideFireButtonP2;
-    [SerializeField] GameObject leftSideFireButtonP2;
+
+    [SerializeField] GameObject [] player1CannonButtons = new GameObject [2];
+    [SerializeField] GameObject [] player2CannonButtons = new GameObject [2];
+
+    [SerializeField] GameObject [] player1BombButtons = new GameObject [2];
+    [SerializeField] GameObject [] player2BombButtons = new GameObject [2];
+
+    
+    
 
     public static bool p1Right;
     public static bool p2Right;
@@ -30,9 +35,9 @@ public class SettingsManager : Singleton<SettingsManager>
     void Start()
     {
         SetDefaultPrefs();
-        //UpdatePrefs();
-        //UpdateFireButtons();
-        
+        UpdateFromPrefs();
+        UpdateFireButtons();
+        Debug.Log(ActiveBombButton(true).name);
         
         //UpdateSliderText(initialVelocity);
     }
@@ -43,50 +48,86 @@ public class SettingsManager : Singleton<SettingsManager>
 
     }
 
-    public void SetDefaultPrefs(){
-        if(!PlayerPrefs.HasKey("P1 Hand")){
-            PlayerPrefs.SetInt("P1 Hand", 1);
+    public GameObject ActiveBombButton(bool player1){
+        if(player1){
+            if(p1Right){
+                return player1BombButtons[1];
+            }
+            else{
+                return player1BombButtons[0];
+            }
         }
-        if(!PlayerPrefs.HasKey("P2 Hand")){
-            PlayerPrefs.SetInt("P2 Hand", 1);
+        else{
+            if(p2Right){
+                return player2BombButtons[1];
+            }
+            else{
+                return player2BombButtons[0];
+            }
         }
     }
-    public void UpdatePrefs()
+    public GameObject ActiveCannonButton(bool player1){
+        if(player1){
+            if(p1Right){
+                return player1CannonButtons[0];
+            }
+            else{
+                return player1CannonButtons[1];
+            }
+        }
+        else{
+            if(p2Right){
+                return player2CannonButtons[0];
+            }
+            else{
+                return player2CannonButtons[1];
+            }
+        }
+    }
+    public void SetDefaultPrefs(){
+        if(!PlayerPrefs.HasKey("P1 Hand")){
+            PlayerPrefs.SetString("P1 Hand", "Right");
+        }
+        if(!PlayerPrefs.HasKey("P2 Hand")){
+            PlayerPrefs.SetString("P2 Hand", "Right");
+        }
+    }
+    public void UpdateFromPrefs()// update button game objects from player prefs
     {
-        int p1Hand = PlayerPrefs.GetInt("P1 Hand");
-        int p2Hand = PlayerPrefs.GetInt("P2 Hand");
+        string p1Hand = PlayerPrefs.GetString("P1 Hand");
+        string p2Hand = PlayerPrefs.GetString("P2 Hand");
 
         switch (p1Hand)
         {
-            case 0:
-                rightHandP1.isOn = true;
+            case "Left":
+                rightHandP1.isOn = false;
                 p1Right = false;
-                rightSideFireButtonP1.SetActive(false);
-                leftSideFireButtonP1.SetActive(true);
+                SetButtonSide(player1CannonButtons, false);
+                SetButtonSide(player1BombButtons, true);
                 p1Side.text = "Left";
                 break;
-            case 1:
-                rightHandP1.isOn = false;
+            case "Right":
+                rightHandP1.isOn = true;
                 p1Right = true;
-                rightSideFireButtonP1.SetActive(true);
-                leftSideFireButtonP1.SetActive(false);
+                SetButtonSide(player1CannonButtons, true);
+                SetButtonSide(player1BombButtons, false);
                 p1Side.text = "Right";
                 break;
         }
         switch (p2Hand)
         {
-            case 0:
-                rightHandP2.isOn = true;
+            case "Left":
+                rightHandP2.isOn = false;
                 p2Right = false;
-                rightSideFireButtonP2.SetActive(false);
-                leftSideFireButtonP2.SetActive(true);
+                SetButtonSide(player2CannonButtons, false);
+                SetButtonSide(player2BombButtons, true);
                 p2Side.text = "Left";
                 break;
-            case 1:
-                rightHandP2.isOn = false;
+            case "Right":
+                rightHandP2.isOn = true;
                 p2Right = true;
-                rightSideFireButtonP2.SetActive(true);
-                leftSideFireButtonP2.SetActive(false);
+                SetButtonSide(player2CannonButtons, true);
+                SetButtonSide(player2BombButtons, false);
                 p2Side.text = "Right";
                 break;
         }
@@ -96,38 +137,51 @@ public class SettingsManager : Singleton<SettingsManager>
     {
         if (rightHandP1.isOn)
         {
-            PlayerPrefs.SetInt("P1 Hand", 1);
+            PlayerPrefs.SetString("P1 Hand", "Right");
 
             p1Right = true;
-            rightSideFireButtonP1.SetActive(true);
-            leftSideFireButtonP1.SetActive(false);
+            SetButtonSide(player1CannonButtons, true);
+            SetButtonSide(player1BombButtons, false);
             p1Side.text = "Right";
         }
         else
         {
-            PlayerPrefs.SetInt("P1 Hand", 0);
+            PlayerPrefs.SetString("P1 Hand", "Left");
             p1Right = false;
-            rightSideFireButtonP1.SetActive(false);
-            leftSideFireButtonP1.SetActive(true);
+            SetButtonSide(player1CannonButtons, false);
+            SetButtonSide(player1BombButtons, true);
             p1Side.text = "Left";
         }
 
         if (rightHandP2.isOn)
         {
-            PlayerPrefs.SetInt("P2 Hand", 1);
+            PlayerPrefs.SetString("P2 Hand", "Right");
             p2Right = true;
-            rightSideFireButtonP2.SetActive(true);
-            leftSideFireButtonP2.SetActive(false);
+            SetButtonSide(player2CannonButtons, true);
+            SetButtonSide(player2BombButtons, false);
             p2Side.text = "Right";
         }
         else
         {
-            PlayerPrefs.SetInt("P2 Hand", 0);
+            PlayerPrefs.SetString("P2 Hand", "Left");
             p2Right = false;
-            rightSideFireButtonP2.SetActive(false);
-            leftSideFireButtonP2.SetActive(true);
+            SetButtonSide(player2CannonButtons, false);
+            SetButtonSide(player2BombButtons, true);
             p2Side.text = "Left";
         }
+    }
+
+    public void SetButtonSide(GameObject [] buttons, bool right = true){
+        if(right){
+            buttons[0].SetActive(true);
+            buttons[1].SetActive(false);
+
+        }
+        else{
+            buttons[1].SetActive(true);
+            buttons[0].SetActive(false);
+        }
+        
     }
 
 

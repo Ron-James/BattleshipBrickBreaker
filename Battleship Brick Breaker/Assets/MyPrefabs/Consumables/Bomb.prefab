@@ -234,7 +234,7 @@ MonoBehaviour:
   inactives: {fileID: 0}
   meshRenderer: {fileID: 7221396140976061946}
   bombCollider: {fileID: 2771190952205941659}
-  explosionRadius: 2
+  explosionRadius: 3
   brickDamage: 1
   explosion: {fileID: 5059086540429498191}
   fuseBurn: {fileID: 6766523307177846877}
@@ -273,7 +273,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.6
+  m_Radius: 1.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &6650255280627594074
 AudioSource:

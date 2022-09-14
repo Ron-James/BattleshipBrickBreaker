@@ -19,6 +19,7 @@ public class Artillery : MonoBehaviour
     [SerializeField] Button fireButtonLeft;
     [SerializeField] TextMeshProUGUI ammoIndicator;
     [SerializeField] TextMeshProUGUI ammoIndicatorLeft;
+    [SerializeField] FloatingText ammoFloatingText;
 
 
     [SerializeField] int ammo = 0;
@@ -155,12 +156,22 @@ public class Artillery : MonoBehaviour
     }
     public void AddAmmo(int amount)
     {
+        Debug.Log(SettingsManager.instance.ActiveCannonButton(player1).GetComponentInChildren<FloatingText>().gameObject.name);
+        FloatingText floatingText = SettingsManager.instance.ActiveCannonButton(player1).GetComponentInChildren<FloatingText>();
+        if(floatingText != null){
+            if(amount > 0){
+                floatingText.DeployFloatingText(floatingText.transform.position, "+" + amount.ToString());
+            }
+            else if(amount < 0){
+                int num = Mathf.Abs(amount);
+                floatingText.DeployFloatingText(floatingText.transform.position, "-" + num.ToString());
+            }
+        }
+        
         if(TutorialManager.instance.isTutorial){
             if(!TutorialManager.instance.cannonLaunch.HasAcknowledged(player1)){
-                if(!TutorialManager.instance.bombPowerUp.IsEnabled(player1) && !TutorialManager.instance.bombThrow.IsEnabled(player1)){
-                    TutorialManager.instance.SwitchLauchTut(TutorialManager.LaunchTutorial.Cannon, player1);
-                    TutorialManager.instance.EnableCannonPrompt(player1);
-                }
+                TutorialManager.instance.EnableCannonPrompt(player1);
+                TutorialManager.instance.cannonLaunch.OpenPrompt(player1);
             }
         }
         ammo += amount;

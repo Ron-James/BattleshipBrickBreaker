@@ -5,208 +5,259 @@ using UnityEngine.UI;
 
 public class PaddleButtonController : MonoBehaviour
 {
+
+    Coroutine move;
+    Coroutine slowDown;
+
+    [SerializeField] AnimationCurve speedUpCurve;
+    [SerializeField] AnimationCurve slowDownCurve;
+
+    [SerializeField] Vector3 maxPoint;
+    [SerializeField] Vector3 minPoint;
+    [SerializeField] float speedUpDuration = 1f;
+    [SerializeField] float slowDownDuration = 1f;
+    [SerializeField] float initialSpeed = 1f;
+    [SerializeField] float maxSpeed = 1f;
+    [SerializeField] float currentSpeed;
+    [SerializeField] BoxCollider paddleCollider;
+    Vector3 defPos;
+    [SerializeField] float currentDirection = 1;
+    [SerializeField] BoxCollider[] barriers = new BoxCollider[2];
+
+
     Rigidbody rb;
-    [SerializeField] float maxSpeed = 10;
-    [SerializeField] float posAccelaration = 10;
-    [SerializeField] float slowDownTime = 0.6f;
+
     [SerializeField] bool upButtonDown;
     [SerializeField] bool downButtonDown;
-    Coroutine reduceVelocity;
-    Coroutine increaseVelocity;
-    int direction = 0;
+
+
     PaddleController paddleController;
     public void UpdateButtonInput()
     {
 
     }
+    public void SetUpButton(bool down)
+    {
+        upButtonDown = down;
+    }
+    public void SetDownButton(bool down)
+    {
+        downButtonDown = down;
+    }
     // Start is called before the first frame update
     void Start()
     {
+        CalculateMaximumValues();
         paddleController = GetComponent<PaddleController>();
         upButtonDown = false;
         downButtonDown = false;
-        reduceVelocity = null;
-        rb = GetComponent<Rigidbody>();
-        if(paddleController.controlScheme == PaddleController.ControlScheme.button){
-            Debug.Log("Button");
-            rb.isKinematic = false;
-        }
+        slowDown = null;
+        move = null;
+        //rb = GetComponent<Rigidbody>();
+
     }
 
-    public void SetUpButton(bool down){
-        upButtonDown = down;
-    }
-    public void SetDownButton(bool down){
-        downButtonDown = down;
-    }
-    
-    
+
+
+
     // Update is called once per frame
     void Update()
     {
-        if(!rb.isKinematic){
-            if(paddleController.controlScheme == PaddleController.ControlScheme.button){
-                if(!paddleController.IsStopped){
-                    ApplyButtonInput();
-                }
-                else{
-                    rb.velocity = Vector3.zero;
-                }
-            }
-            
+
+
+
+        if (!paddleController.IsStopped)
+        {
+            ApplyButtonInput();
         }
-        
+
+
     }
 
-    public void ApplyButtonInput(){
-        if(upButtonDown && !downButtonDown){
-            direction = 1;
-            ApplyForceToVelocity(rb, Vector3.forward * maxSpeed, posAccelaration);
-        }
-        else if(!upButtonDown && downButtonDown){
-            direction = -1;
-            ApplyForceToVelocity(rb, -Vector3.forward * maxSpeed, posAccelaration);
-        }
-        else if(!downButtonDown && !upButtonDown){
-            direction = 0;
-            if(reduceVelocity == null){
-                reduceVelocity = StartCoroutine(ReduceVelocity(slowDownTime));
-            }
-        }
-        else if(downButtonDown && upButtonDown){
-            direction = 0;
-            if(reduceVelocity == null){
-                reduceVelocity = StartCoroutine(ReduceVelocity(slowDownTime));
-            }
-        }
-    }
 
-    public void ApplyForceToVelocity(Rigidbody rigidbody, Vector3 velocity, float force = 1, ForceMode mode = ForceMode.Force)
+
+
+
+    public void ApplyButtonInput()
     {
-        //Debug.Log(velocity.magnitude + " Increase to velocity");
-        if (force == 0 || velocity.magnitude == 0)
-            return;
-
-        velocity = velocity + velocity.normalized * 0.2f * rigidbody.drag;
-
-        force = Mathf.Clamp(force, -rigidbody.mass / Time.fixedDeltaTime, rigidbody.mass / Time.fixedDeltaTime);
-        if (rigidbody.velocity.magnitude == 0)
+        if (upButtonDown && !downButtonDown)
         {
-            rigidbody.AddForce(velocity * force, mode);
-        }
-        else
-        {
-            var velocityProjectedtoTarget = (velocity.normalized * Vector3.Dot(velocity, rigidbody.velocity) / velocity.magnitude);
-            rigidbody.AddForce((velocity - velocityProjectedtoTarget) * force, mode);
-        }
-
-    }
-
-    public Vector3 ForceToApplyToVelocity(Rigidbody rigidbody, Vector3 velocity, float force = 1, ForceMode mode = ForceMode.Force)
-    {
-        if (force == 0 || velocity.magnitude == 0)
-            return Vector3.zero;
-
-        velocity = velocity + velocity.normalized * 0.2f * rigidbody.drag;
-
-        force = Mathf.Clamp(force, -rigidbody.mass / Time.fixedDeltaTime, rigidbody.mass / Time.fixedDeltaTime);
-        if (rigidbody.velocity.magnitude == 0)
-        {
-            //rigidbody.AddForce(velocity * force, mode);
-            return velocity * force;
-        }
-        else
-        {
-            var velocityProjectedtoTarget = (velocity.normalized * Vector3.Dot(velocity, rigidbody.velocity) / velocity.magnitude);
-            //rigidbody.AddForce((velocity - velocityProjectedtoTarget) * force, mode);
-            return (velocity - velocityProjectedtoTarget) * force;
-        }
-    }
-
-
-    IEnumerator IncreaseVelocity(float period, Vector3 velocity)
-    {
-        float time = 0;
-        if (velocity.magnitude < rb.velocity.magnitude)
-        {
-            yield return null;
-
-        }
-        else
-        {
-            float increaseRate = (velocity.magnitude - rb.velocity.magnitude) / (period / Time.fixedDeltaTime);
-            while (true)
+            currentDirection = 1;
+            if (move == null)
             {
-                time += Time.fixedDeltaTime;
-
-                if (rb.velocity.magnitude + increaseRate >= velocity.magnitude)
+                if (currentSpeed == 0)
                 {
-                    ChangeVelocity(velocity.magnitude);
-                    increaseVelocity = null;
-                    break;
-                }
-                else if (time >= period)
-                {
-                    ChangeVelocity(velocity.magnitude);
-                    increaseVelocity = null;
-                    break;
+                    move = StartCoroutine(MovePaddle(initialSpeed, maxSpeed, speedUpDuration));
                 }
                 else
                 {
-                    float vel = rb.velocity.magnitude;
-                    ChangeVelocity(vel + increaseRate);
-                    yield return new WaitForFixedUpdate();
+                    move = StartCoroutine(MovePaddle(currentSpeed, maxSpeed, speedUpDuration));
+                }
+
+            }
+        }
+        else if (!upButtonDown && downButtonDown)
+        {
+            currentDirection = -1;
+            if (move == null)
+            {
+                if (currentSpeed == 0)
+                {
+                    move = StartCoroutine(MovePaddle(initialSpeed, maxSpeed, speedUpDuration));
+                }
+                else
+                {
+                    move = StartCoroutine(MovePaddle(currentSpeed, maxSpeed, speedUpDuration));
                 }
             }
         }
-        float rate = velocity.magnitude - rb.velocity.magnitude;
+        else if (!downButtonDown && !upButtonDown)
+        {
+            if (slowDown == null)
+            {
+                slowDown = StartCoroutine(SlowDown(slowDownDuration));
+            }
+        }
+        else if (downButtonDown && upButtonDown)
+        {
+
+            if (slowDown == null)
+            {
+                slowDown = StartCoroutine(SlowDown(slowDownDuration));
+            }
+        }
     }
-    IEnumerator ReduceVelocity(float period)
+
+
+
+
+
+    IEnumerator SlowDown(float duration)
     {
         float time = 0;
-        float rate = rb.velocity.magnitude / (period / Time.fixedDeltaTime);
-        Debug.Log("Reduce velocity");
+        float speed = currentSpeed;
+        float iniSpeed = speed;
+        currentSpeed = speed;
+        Vector3 target = transform.position;
+        float rate = speed / (duration / Time.deltaTime);
         while (true)
         {
-            time += Time.fixedDeltaTime;
-            if (rb.velocity.magnitude - rate <= 0)
+            time += Time.deltaTime;
+            float ratio = time / duration;
+            speed = slowDownCurve.Evaluate(ratio) * iniSpeed;
+            currentSpeed = speed;
+            if (speed <= 0 || paddleController.IsStopped)
             {
-                rb.velocity = Vector3.zero;
-                reduceVelocity = null;
-                //yield return null;
+                slowDown = null;
+                currentSpeed = 0;
                 break;
             }
-            else if (time >= period || rb.velocity.Equals(Vector3.zero))
+            else if (upButtonDown || downButtonDown)
             {
-                Debug.Log("Reduce velocity");
-                rb.velocity = Vector3.zero;
-                reduceVelocity = null;
-                //yield return null;
-                break;
-            }
-            else if(upButtonDown || downButtonDown){
-                reduceVelocity = null;
-                //yield return null;
+                slowDown = null;
+                //move = StartCoroutine(MovePaddle(currentSpeed, maxSpeed, speedUpDuration));
                 break;
             }
             else
             {
-                float velocity = rb.velocity.magnitude;
 
-                ChangeVelocity(velocity - rate);
-                yield return new WaitForFixedUpdate();
+
+                if (currentDirection == -1)
+                {
+                    target = minPoint;
+                }
+                else if (currentDirection == 1)
+                {
+                    target = maxPoint;
+                }
+                transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+
+                
+                yield return null;
+            }
+        }
+    }
+    IEnumerator MovePaddle(float iniSpeed, float maxSpeed, float duration)
+    {
+
+        float time = 0;
+        float speed = iniSpeed;
+        currentSpeed = speed;
+        Vector3 target = transform.position;
+        float rate = (maxSpeed - iniSpeed) / (duration / Time.deltaTime);
+        while (true)
+        {
+            time += Time.deltaTime;
+            float ratio = time / duration;
+            speed = speedUpCurve.Evaluate(ratio) * maxSpeed;
+            currentSpeed = speed;
+            if (!upButtonDown && !downButtonDown)
+            {
+                slowDown = StartCoroutine(SlowDown(slowDownDuration));
+                move = null;
+                break;
+            }
+            else if (paddleController.IsStopped)
+            {
+                currentSpeed = 0;
+                move = null;
+                break;
+            }
+            else
+            {
+
+                if (currentDirection == -1)
+                {
+                    target = minPoint;
+                }
+                else if (currentDirection == 1)
+                {
+                    target = maxPoint;
+                }
+
+                if (speed >= maxSpeed)
+                {
+                    speed = maxSpeed;
+                    currentSpeed = speed;
+                    if (currentDirection == -1)
+                    {
+                        target = minPoint;
+                    }
+                    else if (currentDirection == 1)
+                    {
+                        target = maxPoint;
+                    }
+                    transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+                }
+                else
+                {
+
+                    transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+                    currentSpeed = speed;
+                }
+
+                yield return null;
             }
         }
     }
 
-    public void ChangeVelocity(float magnitude)
+    public void CalculateMaximumValues()
     {
-        if (magnitude == 0)
-        {
-            return;
-        }
-        Vector3 direction = rb.velocity.normalized;
-        ApplyForceToVelocity(rb, direction * magnitude, 10000);
-        //rb.velocity = direction * magnitude;
+        Transform topPiece = barriers[0].transform;
+        Transform bottomPiece = barriers[1].transform;
+
+        float barrierWidth = barriers[0].bounds.size.z / 2;
+        float paddleWidth = paddleCollider.bounds.size.z / 2;
+
+
+        maxPoint = topPiece.position;
+        maxPoint.z -= barrierWidth;
+        maxPoint.z -= paddleWidth;
+        maxPoint.x = transform.position.x;
+
+        minPoint = bottomPiece.position;
+        minPoint.z += barrierWidth;
+        minPoint.z += paddleWidth;
+        minPoint.x = transform.position.x;
     }
 }

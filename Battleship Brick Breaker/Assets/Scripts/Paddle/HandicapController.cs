@@ -40,7 +40,7 @@ public class HandicapController : MonoBehaviour
         aimArrow.IgnoreBalls(true);
         GetComponentInChildren<AimArrow>().CanLaunch = false;
         paddleController.IsStopped = true;
-        paddleController.Slider.interactable = false;
+
         while (true)
         {
             if (handicapTime <= 0)

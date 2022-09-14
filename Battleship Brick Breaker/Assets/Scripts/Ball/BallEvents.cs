@@ -24,6 +24,20 @@ public class BallEvents : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        if(other.collider.tag == "Paddle"){
+            Vector3 normal = other.contacts[0].normal;
+            normal = AbsVector(normal);
+            if(normal.Equals(Vector3.forward)){
+                onBallOut.Invoke();
+            }
+        }
+    }
+
+    public Vector3 AbsVector(Vector3 vec){
+        return new Vector3(Mathf.Abs(vec.x), Mathf.Abs(vec.y), Mathf.Abs(vec.z));
+    }
     private void OnTriggerEnter(Collider other)
     {
 

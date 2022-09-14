@@ -635,7 +635,6 @@ GameObject:
   - component: {fileID: 7793019395018041438}
   - component: {fileID: 7724497848224312261}
   - component: {fileID: 1365457344159998083}
-  - component: {fileID: 4202097229041110033}
   - component: {fileID: 560931210366686316}
   - component: {fileID: 4592976119530651211}
   m_Layer: 3
@@ -852,12 +851,12 @@ MonoBehaviour:
   coll: {fileID: 577732273106080975}
   slimeBall: {fileID: 0}
   tripleCannonText: {fileID: 0}
-  catcher: 0
-  paddleLengthUpgrade: 1.25
-  ballSpdIncrease: 1.35
+  catcher: 1
+  trippleCannonTextFlashTime: 2
+  ballSpdIncrease: 1.1
   ballSizeUpgrade: 1.5
-  colliderLargeSize: 15
-  currentPowerUps: 000000000000
+  colliderLargeSize: 1.5
+  currentPowerUps: 00000000000000
 --- !u!114 &7793019395018041438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -881,6 +880,7 @@ MonoBehaviour:
   paddleSoundBox: {fileID: 0}
   targetMarker: {fileID: 2498102468201111087}
   targetMarkerDelayTime: 3
+  bombButtonDown: 0
   canLaunch: 0
 --- !u!114 &7724497848224312261
 MonoBehaviour:
@@ -909,22 +909,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boatHit: {fileID: 8236284734844466575}
---- !u!54 &4202097229041110033
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4108793954960024002}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 118
-  m_CollisionDetection: 0
 --- !u!114 &560931210366686316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -937,9 +921,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6bd7d4288112e54dad10c688a9274ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedUpCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  slowDownCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.001209259
+      value: 0.9952698
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0.03819831
+      outSlope: 0.03819831
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.061668746
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  maxPoint: {x: 0, y: 0, z: 0}
+  minPoint: {x: 0, y: 0, z: 0}
+  speedUpDuration: 0.1
+  slowDownDuration: 0.15
+  initialSpeed: 0
   maxSpeed: 25
-  posAccelaration: 10
-  slowDownTime: 0.6
+  currentSpeed: 0
+  paddleCollider: {fileID: 577732273106080975}
+  currentDirection: 1
+  barriers:
+  - {fileID: 0}
+  - {fileID: 0}
   upButtonDown: 0
   downButtonDown: 0
 --- !u!114 &4592976119530651211
@@ -1638,7 +1679,6 @@ MonoBehaviour:
   outPenaltyTime: 1
   aiming: 0
   canLaunch: 0
-  canHit: 0
   lastAimDirection: {x: 0, y: 0, z: 0}
 --- !u!1 &7651167522258842580
 GameObject:

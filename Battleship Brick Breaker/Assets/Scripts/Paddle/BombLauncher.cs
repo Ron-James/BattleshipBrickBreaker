@@ -17,26 +17,67 @@ public class BombLauncher : MonoBehaviour
     [SerializeField] PaddleSoundBox paddleSoundBox;
     [SerializeField] Transform targetMarker;
     [SerializeField] float targetMarkerDelayTime = 1f;
+    [SerializeField] bool bombButtonDown;
     public bool canLaunch;
     PowerUpManager powerUpManager;
     Touch lastTouch;
     int touchIndex;
     Vector3 touchPos;
     Coroutine launchSequence;
+    GameObject bombButton;
     public bool HasBomb { get => hasBomb; set => hasBomb = value; }
+    public GameObject BombButton { get => bombButton; set => bombButton = value; }
+    public Transform FirePoint { get => firePoint; set => firePoint = value; }
+
+    public void SetBombButtonActive(bool active){
+        GameObject bombButtonCurrent = SettingsManager.instance.ActiveBombButton(player1);
+        bombButtonCurrent.SetActive(active);
+        if(active){
+            if(TutorialManager.instance.isTutorial){
+                if(!TutorialManager.instance.bombPowerUp.HasAcknowledged(player1)){
+                    bombButtonCurrent.GetComponent<ButtonPrompt>().SwitchButtonPrompt(false);
+                    TutorialManager.instance.bombPowerUp.OpenPrompt(player1);
+                }
+            }
+        }
+    }
 
     
-    
+    public void SetBombButtonDown(bool down){
+        bombButtonDown = down;
+        
+        if(bombButtonDown){
+            if (currentBomb != null && canLaunch)
+            {
+                if(launchSequence == null){
+                    launchSequence = StartCoroutine(BombLaunchSequence(GameManager.instance.BombPowerUpTime));
+                }
+                
+            }
+        }
+        if(down){
+            if(TutorialManager.instance.isTutorial){
+                if(!TutorialManager.instance.bombPowerUp.HasAcknowledged(player1)){
+                    TutorialManager.instance.bombPowerUp.ClosePrompt(player1);
+                    TutorialManager.instance.bombPowerUp.SetAcknowledge(true, player1);
+                }
+            }
+        }
+    }
     private void OnDisable() {
         StopAllCoroutines();
         //BallEvents ballEvents = GetComponent<PaddleController>().Ball.GetComponent<BallEvents>();
         
     }
+    
     // Start is called before the first frame update
     void Start()
     {
+        bombButton = SettingsManager.instance.ActiveBombButton(player1);
+        bombButton.SetActive(false);
+        bombButtonDown = false;
         powerUpManager = GetComponent<PowerUpManager>();
-
+        //SetBombButtonActive(false);
         paddleSoundBox = GetComponentInChildren<PaddleSoundBox>();
         ResetBombLauncher();
         DisablePowerUpBar();
@@ -45,13 +86,8 @@ public class BombLauncher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hasBomb)
-        {
-            if (currentBomb == null)
-            {
-                LoadBomb();
-            }
-        }
+        
+        /*
         if (GameManager.instance.TouchInField(out touchIndex, out touchPos, player1) && hasBomb && launchSequence == null && !GetComponentInChildren<AimArrow>().Aiming && Input.touches[touchIndex].phase == TouchPhase.Began)
         {
             if (currentBomb != null && canLaunch)
@@ -62,6 +98,7 @@ public class BombLauncher : MonoBehaviour
 
 
         }
+        */
     }
     public void EnablePowerUpBar()
     {
@@ -75,16 +112,16 @@ public class BombLauncher : MonoBehaviour
     }
     public void LoadBomb()
     {
-        Bomb bomb = inactiveBombs.GetComponentInChildren<Bomb>();
-        bomb.gameObject.transform.SetParent(transform);
-        bomb.EnableBomb(firePoint.position);
-        currentBomb = bomb;
-        if(TutorialManager.instance.isTutorial){
-            Debug.Log(TutorialManager.instance.bombPowerUp.HasAcknowledged(player1) + " Has acknowledged bomb powerup");
-            if(!TutorialManager.instance.bombPowerUp.HasAcknowledged(player1)){
-                TutorialManager.instance.SwitchLauchTut(TutorialManager.LaunchTutorial.BombHold, player1);
-            }
+        if(currentBomb != null){
+            return;
         }
+        Bomb bomb = inactiveBombs.GetComponentInChildren<Bomb>();
+        bomb.EnableBomb(firePoint);
+        bomb.gameObject.transform.SetParent(transform);
+        
+        currentBomb = bomb;
+        SetBombButtonActive(true);
+        
     }
 
     public void ResetBombLauncher()
@@ -106,7 +143,7 @@ public class BombLauncher : MonoBehaviour
 
     public void SetTargetMarkerPosition(Vector3 position){
         Vector3 newPos = position;
-        newPos.y = 5f;
+        newPos.y = 3f;
         targetMarker.position = newPos;
     }
 
@@ -138,10 +175,7 @@ public class BombLauncher : MonoBehaviour
         float w = 2 * Mathf.PI * (1 / period);
         paddleSoundBox.bombPowerUp.PlayOnce();
 
-        if(TutorialManager.instance.isTutorial){
-            TutorialManager.instance.bombPowerUp.SetAcknowledge(true, player1);
-            TutorialManager.instance.SwitchLauchTut(TutorialManager.LaunchTutorial.BombRelease, player1);
-        }
+        
         
 
         if (!player1)
@@ -152,9 +186,21 @@ public class BombLauncher : MonoBehaviour
         EnablePowerUpBar();
         while (true)
         {
-            if (!GameManager.instance.TouchInField(out touchIndex, out touchPos, player1))
+            if (currentBomb == null)
             {
-                SetTargetMarkerPosition(new Vector3(target.x, 3f, target.z));
+                targetMarker.gameObject.SetActive(false);
+                launchSequence = null;
+                powerUpManager.OpenBombSlot();
+                ResetBombLauncher();
+                DisableTargetMarker();
+                SetBombButtonActive(false);
+                
+                break;
+            }
+
+            else if (!bombButtonDown)
+            {
+                SetTargetMarkerPosition(new Vector3(target.x, 5f, target.z));
                 currentBomb.LaunchBomb(target, bombHeight, player1);
                 powerUpManager.OpenBombSlot();
                 paddleSoundBox.bombThrow.PlayOnce();
@@ -163,15 +209,8 @@ public class BombLauncher : MonoBehaviour
                 DisablePowerUpBar();
                 hasBomb = false;
                 DisableTargetMarker();
+                SetBombButtonActive(false);
 
-
-                TutorialManager.instance.bombThrow.SetAcknowledge(true, player1);
-                if(GetComponent<Artillery>().Ammo > 0 && !TutorialManager.instance.cannonLaunch.HasAcknowledged(player1)){
-                    TutorialManager.instance.SwitchLauchTut(TutorialManager.LaunchTutorial.Cannon, player1);
-                }
-                else{
-                    TutorialManager.instance.SwitchLauchTut(TutorialManager.LaunchTutorial.None, player1);
-                }
                 break;
             }
             else if (time >= (period / 2) || Mathf.Sin(time * w) < 0)
@@ -188,14 +227,8 @@ public class BombLauncher : MonoBehaviour
                 Debug.Log(target + " Target Position");
                 paddleSoundBox.bombThrow.PlayOnce();
                 DisableTargetMarker();
-                break;
-            }
-            else if (currentBomb == null)
-            {
-                targetMarker.gameObject.SetActive(false);
-                launchSequence = null;
-                powerUpManager.OpenBombSlot();
-                ResetBombLauncher();
+                SetBombButtonActive(false);
+                
                 break;
             }
             else
@@ -219,5 +252,11 @@ public class BombLauncher : MonoBehaviour
 
     public void OnBallOut(){
         ResetBombLauncher();
+        bombButton.SetActive(false);
+        if(launchSequence != null){
+            StopCoroutine(launchSequence);
+            launchSequence = null;
+            currentBomb = null;
+        }
     }
 }

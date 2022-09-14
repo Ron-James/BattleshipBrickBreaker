@@ -17,15 +17,15 @@ public class PaddleSliderControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         paddleController = GetComponent<PaddleController>();
         backboardOffset = backBoard.position.z;
         currentSliderValue = slider.value;
         if(paddleController.controlScheme == PaddleController.ControlScheme.slider){
-            rb.isKinematic = true;
+            //rb.isKinematic = true;
         }
         else{
-            rb.isKinematic = false;
+            //rb.isKinematic = false;
         }
     }
 

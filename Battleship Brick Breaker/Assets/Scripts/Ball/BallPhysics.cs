@@ -50,7 +50,7 @@ public class BallPhysics : MonoBehaviour
         generalHit.src = GetComponent<AudioSource>();
         Radius = transform.localScale.x / 2;
         IsOut = false;
-        
+
 
         if (rightSide)
         {
@@ -116,7 +116,7 @@ public class BallPhysics : MonoBehaviour
         }
 
     }
-    
+
     private void OnCollisionEnter(Collision other)
     {
         switch (other.collider.tag)
@@ -146,7 +146,7 @@ public class BallPhysics : MonoBehaviour
                 IncreaseVelocity(bounciness);
                 break;
             case "Ball":
-                
+
                 break;
             case "Brick":
                 Reflect(other, bounciness);
@@ -158,26 +158,72 @@ public class BallPhysics : MonoBehaviour
     private void Reflect(Collision collision, float percent)
     {
         int rand = Random.Range(0, 2);
-        if(rand == 0){
+        if (rand == 0)
+        {
             rand = 1;
         }
-        float angle = Random.Range(10, 21);
+        float angle = Random.Range(25, 36);
+
         Vector3 reflected = Vector3.Reflect(lastVelocity, collision.GetContact(0).normal);
         float reflectedZ = Mathf.Abs(reflected.normalized.z);
+        float reflectedX = Mathf.Abs(reflected.normalized.x);
         float diffZ = 1 - reflectedZ;
-        if(diffZ < 0.1f){
+        float diffX = 1 - reflectedX;
+        if (diffZ <= 0.05f)
+        {
+
+            int direction = 1;
+            if (lastVelocity.x > 0)
+            {
+                direction = -1;
+            }
+            else
+            {
+                direction = 1;
+            }
+            Debug.Log("Rotated Velocity");
+            Debug.Log(reflected.normalized + " initial");
+
+            reflected = Quaternion.AngleAxis(direction * angle, Vector3.up) * reflected;
+            rb.velocity = reflected;
+
+            IncreaseVelocity(percent);
+            //rb.AddForce(-inwardSign * Vector3.right * nudgeForce, ForceMode.Impulse);
+            Debug.Log(reflected.normalized + " final velocity");
+        }
+        else if (diffX <= 0.05f)
+        {
+            int random = Random.Range(0, 2);
+            if (random == 0)
+            {
+                reflected = Quaternion.AngleAxis(-1 * angle, Vector3.up) * reflected;
+                rb.velocity = reflected;
+
+                IncreaseVelocity(percent);
+            }
+            else{
+                reflected = Quaternion.AngleAxis(angle, Vector3.up) * reflected;
+                rb.velocity = reflected;
+
+                IncreaseVelocity(percent);
+            }
+        }
+        else
+        {
             rb.velocity = reflected;
             IncreaseVelocity(percent);
-            rb.AddForce(-inwardSign * Vector3.right * nudgeForce);
         }
-        else{
-            rb.velocity = reflected;
-            IncreaseVelocity(percent);
-        }
-        
+
     }
 
-    public void ChangeVelocity(Vector3 velocity){
+    public void ChangeVelocityDirection(Vector3 direction)
+    {
+        float magnitude = rb.velocity.magnitude;
+        GameManager.instance.ApplyForceToVelocity(rb, magnitude * direction, 10000);
+    }
+
+    public void ChangeVelocity(Vector3 velocity)
+    {
         rb.velocity = Vector3.zero;
         GameManager.instance.ApplyForceToVelocity(rb, velocity, 1000000);
     }
@@ -216,7 +262,6 @@ public class BallPhysics : MonoBehaviour
         {
             return;
         }
-        paddle.GetComponentInChildren<AimArrow>().CanHit = true;
         StartCoroutine(SetKinematic(1));
         transform.SetParent(paddle.transform);
         paddle.GetComponentInChildren<AimArrow>().Aiming = true;
@@ -234,7 +279,8 @@ public class BallPhysics : MonoBehaviour
     }
 
     public void Launch(float power, Vector3 direction)
-    {   Debug.Log("Launched");
+    {
+        Debug.Log("Launched");
         isOut = false;
         isBoundToPaddle = false;
         if (rb.isKinematic)

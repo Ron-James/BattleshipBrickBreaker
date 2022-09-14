@@ -17,6 +17,10 @@ public class Bomb : MonoBehaviour
     bool isActive;
     bool player1 = true;
     Rigidbody rb;
+    BombLauncher currentLauncher;
+
+    public BombLauncher CurrentLauncher { get => currentLauncher; set => currentLauncher = value; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,14 +34,19 @@ public class Bomb : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(currentLauncher != null){
+            if(!isActive){
+                transform.position = currentLauncher.FirePoint.position;
+            }
+        }
     }
     public void Explode()
     {
+        rb.isKinematic = true;
         //Gizmos.color = Color.red;
         //Gizmos.DrawSphere(transform.position, explosionRadius);
         Debug.Log("Exploded " + gameObject.name);
-        fuseBurn.Pause();
+        fuseBurn.Stop();
         fuseSound.StopSource();
         explosionSound.PlayOnce();
         isActive = false;
@@ -59,18 +68,19 @@ public class Bomb : MonoBehaviour
             }
         }
         StartCoroutine(ExplosionEffect());
+        
     }
     private void OnDisable()
     {
         StopAllCoroutines();
     }
-    public void EnableBomb(Vector3 position)
+    public void EnableBomb(Transform firePoint)
     {
         fuseBurn.Play();
         fuseSound.PlayLoop();
-        transform.position = position;
-        Debug.Log(position + " Bomb position");
-        
+        transform.position = firePoint.position;
+        currentLauncher = firePoint.gameObject.GetComponentInParent<BombLauncher>();
+        rb.isKinematic = false;
         bombCollider.enabled = true;
         meshRenderer.enabled = true;
         //transform.SetParent(actives.transform);
@@ -80,6 +90,8 @@ public class Bomb : MonoBehaviour
         transform.SetParent(inactives.transform);
         rb.useGravity = false;
         rb.velocity = Vector3.zero;
+        currentLauncher = null;
+        rb.isKinematic = true;
         transform.localPosition = Vector3.zero;
         bombCollider.enabled = false;
         meshRenderer.enabled = false;
@@ -103,14 +115,15 @@ public class Bomb : MonoBehaviour
 
     public void LaunchBomb(Vector3 target, float height, bool Player1)
     {
-
+        
+        currentLauncher = null;
+        transform.SetParent(null);
         //Debug.Log(target + " Bomb Target");
         player1 = Player1;
-        isActive = true;
-        transform.SetParent(null);
         Vector3 launchVelocity = CalculateLaunchVelocity(height, target);
-        GetComponent<Rigidbody>().useGravity = true;
         GetComponent<Rigidbody>().velocity = launchVelocity;
+        GetComponent<Rigidbody>().useGravity = true;
+        isActive = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -120,6 +133,7 @@ public class Bomb : MonoBehaviour
             case "BombTrigger":
                 if (isActive)
                 {
+                    Debug.Log(other.gameObject.name + " triggered by");
                     Explode();
                 }
                 break;
@@ -128,10 +142,17 @@ public class Bomb : MonoBehaviour
     }
     IEnumerator ExplosionEffect()
     {
+        rb.isKinematic = true;
+
         float duration = explosion.main.duration;
         float time = 0;
-        explosion.transform.position = transform.position + (2 * Vector3.up);
+        Vector3 position = transform.position;
+        position.y = 5f;
+        explosion.transform.position = position;
         explosion.Play();
+        GetComponent<MeshRenderer>().enabled = false;
+        fuseSound.StopSource();
+        fuseBurn.Stop();
         while (true)
         {
             if (time >= duration)
@@ -139,11 +160,13 @@ public class Bomb : MonoBehaviour
                 explosion.Stop();
                 GetComponent<Collider>().enabled = false;
                 GetComponent<MeshRenderer>().enabled = false;
+                explosion.transform.position = transform.position + (2 * Vector3.up);
                 DisableBomb();
                 break;
             }
             else
             {
+                explosion.transform.position = position;
                 time += Time.deltaTime;
                 yield return null;
             }

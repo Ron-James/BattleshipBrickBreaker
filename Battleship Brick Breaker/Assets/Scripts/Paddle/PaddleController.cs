@@ -104,7 +104,6 @@ public class PaddleController : MonoBehaviour
     {
         transform.position = defaultPos;
         slider.value = 0;
-        ballAim.CanHit = false;
         ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
         ballAim.CanLaunch = false;
         ball.GetComponent<CollisionVelocityControl>().LargestMagnitude = 0;

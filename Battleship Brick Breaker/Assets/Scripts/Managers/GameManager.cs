@@ -49,9 +49,15 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] float initialVelocity = 21f;
     [SerializeField] float maxBallVelocity = 45f;
     [SerializeField] float maxExtraBalls;
+    [SerializeField] float maxAimTime = 10f;
 
     [Header("Tap Colliders")]
     [SerializeField] LayerMask tapColliders;
+
+    [Header("Control Buttons")]
+    [SerializeField] FloatingText p1CannonFloatingText;
+    [SerializeField] FloatingText p2CannonFloatingText;
+
     public static bool gameOver;
 
 
@@ -72,6 +78,9 @@ public class GameManager : Singleton<GameManager>
     public float InitialOutPenalty { get => initialOutPenalty; set => initialOutPenalty = value; }
     public float OutPenaltyIncrease { get => outPenaltyIncrease; set => outPenaltyIncrease = value; }
     public float MaxExtraBalls { get => maxExtraBalls; set => maxExtraBalls = value; }
+    public float MaxAimTime { get => maxAimTime; set => maxAimTime = value; }
+    public FloatingText P1CannonFloatingText { get => p1CannonFloatingText; set => p1CannonFloatingText = value; }
+    public FloatingText P2CannonFloatingText { get => p2CannonFloatingText; set => p2CannonFloatingText = value; }
 
 
     // Start is called before the first frame update

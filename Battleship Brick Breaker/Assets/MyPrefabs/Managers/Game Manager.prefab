@@ -64,22 +64,21 @@ MonoBehaviour:
   paddle2: {fileID: 0}
   powerUpDropRate: 7
   doubleTapTime: 0.5
-  maxTapDistance: 30
   cannonballHitPenalty: 6
   bombHitPenalty: 7
-  minBombLaunchDistance: 10
-  bombPowerUpTime: 7
-  bombCountDownTime: 7
-  initialVelocity: 22
-  maxBallVelocity: 35
-  randomReturnDistance: 60
   initialOutPenalty: 3
   outPenaltyIncrease: 1
-  maxExtraBalls: 0
-  outPenalty: 5
+  minBombLaunchDistance: 10
+  bombPowerUpTime: 7
+  initialVelocity: 15
+  maxBallVelocity: 30
+  maxExtraBalls: 3
+  maxAimTime: 25
   tapColliders:
     serializedVersion: 2
     m_Bits: 2048
+  p1CannonFloatingText: {fileID: 0}
+  p2CannonFloatingText: {fileID: 0}
   countDownSound:
     clip: {fileID: 8300000, guid: 1af5cb5ae2d82a9459ee92a673840016, type: 3}
     src: {fileID: 3868835740620070553}
