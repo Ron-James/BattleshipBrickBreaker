@@ -20,6 +20,7 @@ public class PaddleButtonController : MonoBehaviour
     [SerializeField] float maxSpeed = 1f;
     [SerializeField] float currentSpeed;
     [SerializeField] BoxCollider paddleCollider;
+    [SerializeField] float speedModifier = 1f;
     Vector3 defPos;
     [SerializeField] float currentDirection = 1;
     [SerializeField] BoxCollider[] barriers = new BoxCollider[2];
@@ -32,6 +33,9 @@ public class PaddleButtonController : MonoBehaviour
 
 
     PaddleController paddleController;
+
+    public float SpeedModifier { get => speedModifier; set => speedModifier = value; }
+
     public void UpdateButtonInput()
     {
 
@@ -184,12 +188,11 @@ public class PaddleButtonController : MonoBehaviour
         float speed = iniSpeed;
         currentSpeed = speed;
         Vector3 target = transform.position;
-        float rate = (maxSpeed - iniSpeed) / (duration / Time.deltaTime);
         while (true)
         {
             time += Time.deltaTime;
             float ratio = time / duration;
-            speed = speedUpCurve.Evaluate(ratio) * maxSpeed;
+            speed = speedUpCurve.Evaluate(ratio) * maxSpeed * speedModifier;
             currentSpeed = speed;
             if (!upButtonDown && !downButtonDown)
             {
@@ -215,9 +218,9 @@ public class PaddleButtonController : MonoBehaviour
                     target = maxPoint;
                 }
 
-                if (speed >= maxSpeed)
+                if (speed >= maxSpeed * speedModifier)
                 {
-                    speed = maxSpeed;
+                    speed = maxSpeed * speedModifier;
                     currentSpeed = speed;
                     if (currentDirection == -1)
                     {

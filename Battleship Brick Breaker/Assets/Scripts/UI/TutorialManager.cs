@@ -49,7 +49,7 @@ public class TutorialManager : Singleton<TutorialManager>
             tutorialPrompts = GetComponentsInChildren<TutorialPrompt>();
             bombPowerUp.DisableBoth();
             cannonLaunch.DisableBoth();
-            moveTut.EnableBoth();
+            moveTut.DisableBoth();
             ballLaunch.EnableBoth();
         }
 

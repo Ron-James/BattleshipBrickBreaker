@@ -828,6 +828,7 @@ MonoBehaviour:
   fireButtonLeft: {fileID: 3096722080112091163}
   ammoIndicator: {fileID: 4134540432272985303}
   ammoIndicatorLeft: {fileID: 1533297240084086269}
+  ammoFloatingText: {fileID: 0}
   ammo: 0
   player1: 0
   aim: {fileID: 708519051436734366}
@@ -855,8 +856,9 @@ MonoBehaviour:
   trippleCannonTextFlashTime: 2
   ballSpdIncrease: 1.1
   ballSizeUpgrade: 1.5
-  colliderLargeSize: 1.5
+  colliderLargeSize: 15
   currentPowerUps: 00000000000000
+  powerUpWeights: 070000000200000004000000060000000c0000000400000005000000
 --- !u!114 &7793019395018041438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -927,8 +929,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -936,8 +938,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 2
-      outSlope: 2
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0

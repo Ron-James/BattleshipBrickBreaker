@@ -14,15 +14,10 @@ public class BrickHealth : MonoBehaviour
         Explosion = 5
     }
     [SerializeField] float maxHealth = 3f;
-    [SerializeField] bool objective = false;
-    [SerializeField] bool ammo = false;
-    [SerializeField] bool powerUp = false;
-    [SerializeField] bool split = false;
     [SerializeField] BrickType brickType;
 
     [SerializeField] GameObject crack;
     [SerializeField] GameObject feedbackOverlay;
-    [SerializeField] bool tutorial;
 
 
     public float currentHealth;

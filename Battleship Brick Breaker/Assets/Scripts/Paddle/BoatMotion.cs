@@ -12,9 +12,6 @@ public class BoatMotion : MonoBehaviour
     [SerializeField] float deltaRotationZ = 5;
     [SerializeField] float rockPeriodZ = 5f;
 
-    [Header("Bouy Force (Y-Axis Motion)")] 
-    [SerializeField] float bouyPeriod = 1f;
-    [SerializeField] float bouyAmplitude = 10f;
 
     [Header("isStopped")]
     [SerializeField] bool isStopped;
@@ -30,7 +27,6 @@ public class BoatMotion : MonoBehaviour
     Vector3 defaultRotation;
     Vector3 defaulPosition;
     Coroutine rock;
-    Coroutine bouy;
     // Start is called before the first frame update
     void Start()
     {

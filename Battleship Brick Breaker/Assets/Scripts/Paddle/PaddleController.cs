@@ -11,17 +11,12 @@ public class PaddleController : MonoBehaviour
         button = 1
     }
     [SerializeField] Slider slider;
-    [SerializeField] float maxZ = 21.3f;
-    [SerializeField] float speed;
     [SerializeField] Transform ballPosition;
     [SerializeField] bool isStopped = false;
     [SerializeField] bool player1;
-    [SerializeField] bool aiPlayer = false;
     [SerializeField] Transform backboard;
     [SerializeField] BallPhysics ball;
 
-    [SerializeField] bool isHandicapped;
-    [SerializeField] float handicapTimeRemaining = 0;
     public ControlScheme controlScheme = ControlScheme.slider;
 
 
@@ -44,8 +39,6 @@ public class PaddleController : MonoBehaviour
     public bool Player1 { get => player1; set => player1 = value; }
     public BallPhysics Ball { get => ball; set => ball = value; }
     public Transform BallPosition { get => ballPosition; set => ballPosition = value; }
-
-    public bool IsHandicapped { get => isHandicapped; set => isHandicapped = value; }
 
 
     private void Awake()
@@ -74,7 +67,7 @@ public class PaddleController : MonoBehaviour
     void Start()
     {
 
-        handicapTimeRemaining = 0;
+
 
         defaultPos = transform.position;
         paddleWidth = transform.localScale.z;

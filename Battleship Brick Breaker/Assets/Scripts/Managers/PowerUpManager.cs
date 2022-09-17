@@ -4,8 +4,14 @@ using UnityEngine;
 using System;
 
 public struct MinMaxWeightPair{
-    int min;
-    int max;
+    public int min;
+    public int max;
+
+    public MinMaxWeightPair(int min, int max)
+    {
+        this.min = min;
+        this.max = max;
+    }
 }
 public class PowerUpManager : MonoBehaviour
 {
@@ -35,6 +41,7 @@ public class PowerUpManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         player1 = GetComponent<PaddleController>().Player1;
         paddleSoundBox = GetComponentInChildren<PaddleSoundBox>();
         paddleLength = coll.gameObject.transform.localScale.z;
@@ -48,11 +55,88 @@ public class PowerUpManager : MonoBehaviour
         ResetCurrentPowerUps();
     }
 
-    public List<MinMaxWeightPair> CalculateMinMaxPairs(){
-        
+    public List<MinMaxWeightPair> CalculateMinMaxPairs(out int totalWeight){
         List<MinMaxWeightPair> pairs = new List<MinMaxWeightPair>(6);
+        totalWeight = 0;
+        if(NumberOfOpenPowerUps() == 0){
+            return pairs;
+        }
+        else{
+            int firstMax = powerUpWeights[IndexOfOpenPowerUp(1)];
+            MinMaxWeightPair first = new MinMaxWeightPair(0, firstMax - 1);
+            pairs.Add(first);
+            totalWeight += first.max;
 
+            int openPowerUpsTotal = NumberOfOpenPowerUps();
+            if(openPowerUpsTotal == 1){
+                return pairs;
+            }
+            else{
+                int prevMax = first.max;
+                for(int loop = 2; loop <= openPowerUpsTotal; loop++){
+                    int currentMin = prevMax + 1;
+                    int currentWeight = powerUpWeights[IndexOfOpenPowerUp(loop)];
+                    int currentMax = currentMin + (currentWeight - 1);
+                    totalWeight += currentMax;
+                    prevMax = currentMax;
+                    MinMaxWeightPair current = new MinMaxWeightPair(currentMin, currentMax);
+                    pairs.Add(current);
+                }
+            }
+            
+
+        }
+        
+        
         return pairs;
+    }
+    public int GetTotalWeight(){
+        int total = 0;
+        for(int loop = 0; loop < currentPowerUps.Length; loop++){
+            if(currentPowerUps[loop] == false){
+                total += powerUpWeights[loop];
+            }
+            else{
+                continue;
+            }
+        }
+        return total;
+    }
+    public int CalculatePowerUpDrop(int random){
+        int total;
+        List<MinMaxWeightPair> pairs = CalculateMinMaxPairs(out total);
+        if(pairs.Count == 0 || random > total || random < 0){
+            return -1;
+        }
+        else if(pairs.Count == 1){
+            return 0;
+        }
+        else{
+            for(int loop = 0; loop < pairs.Count; loop++){
+                if(random >= pairs[loop].min && random <= pairs[loop].max){
+                    return IndexOfOpenPowerUp(loop + 1);
+                }
+                else{
+                    continue;
+                }
+            }
+
+            return 0;
+        }
+    }
+
+    public int FirstOpenPowerUp(){
+        for (int loop = 0; loop < currentPowerUps.Length; loop++)
+        {
+            if(currentPowerUps[loop] == false){
+                return loop;
+            }
+            else{
+                continue;
+            }
+        }
+
+        return -1;
     }
     public void ResetCurrentPowerUps()
     {

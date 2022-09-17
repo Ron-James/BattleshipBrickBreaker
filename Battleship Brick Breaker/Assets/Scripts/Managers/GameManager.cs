@@ -86,6 +86,12 @@ public class GameManager : Singleton<GameManager>
     // Start is called before the first frame update
     void Start()
     {
+
+        Debug.Log(RandomOpenPowerUp(paddle1.GetComponent<PowerUpManager>()).ToString() + " Random Power Up");
+        Debug.Log(RandomOpenPowerUp(paddle1.GetComponent<PowerUpManager>()).ToString() + " Random Power Up");
+        Debug.Log(RandomOpenPowerUp(paddle1.GetComponent<PowerUpManager>()).ToString() + " Random Power Up");
+        Debug.Log(RandomOpenPowerUp(paddle1.GetComponent<PowerUpManager>()).ToString() + " Random Power Up");
+        
         TurnOffAllObjIndicators();
         p1ObjIndicators = p1Indicators.GetComponentsInChildren<ObjBrickIndicator>();
         p2ObjIndicators = p2Indicators.GetComponentsInChildren<ObjBrickIndicator>();
@@ -122,9 +128,9 @@ public class GameManager : Singleton<GameManager>
     }
     public int RandomOpenPowerUp(PowerUpManager powerUpManager){
         int length = powerUpManager.NumberOfOpenPowerUps();
-        int random = Random.Range(1, length + 1);
+        int random = Random.Range(0, powerUpManager.GetTotalWeight());
 
-        int index = powerUpManager.IndexOfOpenPowerUp(random);
+        int index = powerUpManager.CalculatePowerUpDrop(random);
         return index;
 
     }
@@ -353,6 +359,7 @@ public class GameManager : Singleton<GameManager>
                 {
                     gameOver = true;
                     winScreen.Open(false);
+                    PauseManager.instance.PauseGameplay();
                 }
                 break;
         }

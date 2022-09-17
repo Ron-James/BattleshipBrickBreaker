@@ -14,13 +14,6 @@ public class BallPhysics : MonoBehaviour
     [SerializeField] Vector3 lastVelocity;
     [SerializeField] Vector3 oldVelocity;
     [SerializeField] bool isOut = false;
-    [SerializeField] float nudgeForce = 2f;
-
-
-    [Header("Power Up Things")]
-    public bool catcher = false;
-    public bool onFire = false;
-    public float fireDamage = 2;
 
     [Header("Sounds")]
     [SerializeField] Sound generalHit;

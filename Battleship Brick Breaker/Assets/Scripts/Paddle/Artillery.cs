@@ -12,14 +12,14 @@ public class Artillery : MonoBehaviour
     [SerializeField] Transform[] firePoints = new Transform[3];
     [SerializeField] bool canFire = true;
 
-    [SerializeField] float bulletGravity = -10;
+    
     [SerializeField] float bulletHeight = 5f;
 
     [SerializeField] Button fireButton;
     [SerializeField] Button fireButtonLeft;
     [SerializeField] TextMeshProUGUI ammoIndicator;
     [SerializeField] TextMeshProUGUI ammoIndicatorLeft;
-    [SerializeField] FloatingText ammoFloatingText;
+
 
 
     [SerializeField] int ammo = 0;
