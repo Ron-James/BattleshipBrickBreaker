@@ -118,15 +118,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d54a066f27b364d8b1f05d58a67c68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
-  objective: 0
-  ammo: 0
-  powerUp: 0
-  split: 0
+  maxHealth: 1
   brickType: 0
   crack: {fileID: 5782873998842689765}
   feedbackOverlay: {fileID: 7719518380441849734}
-  tutorial: 0
   currentHealth: 0
   brickEffects: {fileID: 5785987585224941544}
   isBroken: 0

@@ -67,9 +67,29 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 19800008, guid: fafeb973cad62304ba2abdc5dfafbf8f, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 18
+    - target: {fileID: 19800000, guid: fafeb973cad62304ba2abdc5dfafbf8f, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800002, guid: fafeb973cad62304ba2abdc5dfafbf8f, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800004, guid: fafeb973cad62304ba2abdc5dfafbf8f, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800006, guid: fafeb973cad62304ba2abdc5dfafbf8f, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800010, guid: fafeb973cad62304ba2abdc5dfafbf8f, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800012, guid: fafeb973cad62304ba2abdc5dfafbf8f, type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19900000, guid: fafeb973cad62304ba2abdc5dfafbf8f, type: 3}
       propertyPath: m_Materials.Array.size
@@ -84,10 +104,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19900006, guid: fafeb973cad62304ba2abdc5dfafbf8f, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 19900008, guid: fafeb973cad62304ba2abdc5dfafbf8f, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}

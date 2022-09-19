@@ -70,7 +70,7 @@ MonoBehaviour:
   outPenaltyIncrease: 1
   minBombLaunchDistance: 10
   bombPowerUpTime: 7
-  initialVelocity: 15
+  initialVelocity: 16
   maxBallVelocity: 30
   maxExtraBalls: 3
   maxAimTime: 25
