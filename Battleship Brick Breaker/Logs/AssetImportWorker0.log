@@ -404,3 +404,37 @@ Received Import Request.
   path: Assets/Scenes/Rules.unity
   artifactKey: Guid(eb34d7e8e256e7b4eaba4789956447c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scenes/Rules.unity using Guid(eb34d7e8e256e7b4eaba4789956447c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3244649b13ae6093524fab8786db91d4') in 0.017058 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 344.179754 seconds.
+  path: Assets/Sprites/UI/cannon.png
+  artifactKey: Guid(bd643cc7bed360c42ba242f2dd83b8a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/UI/cannon.png using Guid(bd643cc7bed360c42ba242f2dd83b8a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1fa89be67c737919b747f0dfbac3820') in 0.430236 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/UI/Slider_head.png
+  artifactKey: Guid(367a3d9cdaaabff44b4068ea62ce024b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/UI/Slider_head.png using Guid(367a3d9cdaaabff44b4068ea62ce024b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4f3b1e69161e05eab703170a456eda4') in 0.062401 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Sprites/UI/Menu Background.png
+  artifactKey: Guid(ac6d1f94344f08d41a91164109e72ef3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/UI/Menu Background.png using Guid(ac6d1f94344f08d41a91164109e72ef3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94c8da0515b0ed0a082e0100c0a148f2') in 0.039530 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Sprites/UI/cannonFlipped_Fire.png
+  artifactKey: Guid(bcf834d42d1fa9749b3375442006ba4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/UI/cannonFlipped_Fire.png using Guid(bcf834d42d1fa9749b3375442006ba4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a846d364b77784ad673a42c544f05d22') in 0.054187 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/UI/Pause-icon.png
+  artifactKey: Guid(cb8ff5caa5b302b41ba876a8f44b17f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/UI/Pause-icon.png using Guid(cb8ff5caa5b302b41ba876a8f44b17f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '545f8077867ea4617d3ad92af35014a8') in 0.046936 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

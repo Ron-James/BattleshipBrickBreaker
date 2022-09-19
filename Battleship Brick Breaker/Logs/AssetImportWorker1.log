@@ -386,3 +386,33 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 3914.366475 seconds.
+  path: Assets/Sprites/UI/cannon_fire.png
+  artifactKey: Guid(12d7a4505fb7ddd44be2bea3ca11dac9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/UI/cannon_fire.png using Guid(12d7a4505fb7ddd44be2bea3ca11dac9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f918306d28f48b7ff92cfdb234330d8') in 0.411148 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/UI/cannonFlipped.png
+  artifactKey: Guid(910495bcbf99480478ba33be91acddb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/UI/cannonFlipped.png using Guid(910495bcbf99480478ba33be91acddb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22a4ab3c0b5341ce309a6abbca9a3a11') in 0.076136 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Sprites/UI/Tutorial launch.png
+  artifactKey: Guid(edc6c89e0921d8c4fb7cd1f9168a81fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/UI/Tutorial launch.png using Guid(edc6c89e0921d8c4fb7cd1f9168a81fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9a0e4ea8b1ac8c03d1c61a2694deb36') in 0.043851 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Sprites/UI/PowerUp.png
+  artifactKey: Guid(98c7e921cbe8371429b19a7566957291) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/UI/PowerUp.png using Guid(98c7e921cbe8371429b19a7566957291) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '343622a18c9b34fb8568874542021428') in 0.026358 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Sprites/UI/e527bb0bacd2e37b0ff4652c12aa6432.png
+  artifactKey: Guid(6541e2618310e8c469a24d7b1bd2c97e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/UI/e527bb0bacd2e37b0ff4652c12aa6432.png using Guid(6541e2618310e8c469a24d7b1bd2c97e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb2c73d1451227a8acacf7257cffdce7') in 0.100236 seconds 
