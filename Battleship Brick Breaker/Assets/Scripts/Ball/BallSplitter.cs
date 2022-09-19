@@ -23,7 +23,7 @@ public class BallSplitter : MonoBehaviour
 
     public void SplitBall(int times){
         for (int loop = 0; loop < times; loop++){
-            ExtraBallManager.instance.SpawnExtraBall(transform.position, GameManager.instance.InitialVelocity, ballPhysics.RightSide);
+            ExtraBallManager.instance.SpawnExtraBall(transform.position, ballPhysics.RightSide);
         }
     }
 }

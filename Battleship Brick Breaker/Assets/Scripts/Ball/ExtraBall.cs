@@ -34,7 +34,7 @@ public class ExtraBall : MonoBehaviour
         }
     }
 
-    public void EnableBall(bool player1, Vector3 position, float speed){
+    public void EnableBall(bool player1, Vector3 position){
         GetComponent<MeshRenderer>().enabled = true;
         GetComponent<Collider>().enabled = true;
         transform.SetParent(null);

@@ -19,8 +19,8 @@ public class ExtraBallManager : Singleton<ExtraBallManager>
         
     }
 
-    public void SpawnExtraBall(Vector3 position, float velocity, bool player1){
+    public void SpawnExtraBall(Vector3 position, bool player1){
         ExtraBall ball = inactives.GetComponentsInChildren<ExtraBall>()[0];
-        ball.EnableBall(player1, position, velocity);
+        ball.EnableBall(player1, position);
     }
 }

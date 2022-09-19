@@ -62,10 +62,10 @@ MonoBehaviour:
   p2Barriers: {fileID: 0}
   paddle1: {fileID: 0}
   paddle2: {fileID: 0}
-  powerUpDropRate: 7
+  powerUpDropRate: 4
   doubleTapTime: 0.5
   cannonballHitPenalty: 6
-  bombHitPenalty: 7
+  bombHitPenalty: 8
   initialOutPenalty: 3
   outPenaltyIncrease: 1
   minBombLaunchDistance: 10

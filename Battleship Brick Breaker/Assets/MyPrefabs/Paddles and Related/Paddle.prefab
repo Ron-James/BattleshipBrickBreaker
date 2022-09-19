@@ -683,16 +683,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 0}
-  maxZ: 19.5
-  speed: 1
   ballPosition: {fileID: 6373049539359807064}
   isStopped: 0
   player1: 0
-  aiPlayer: 0
   backboard: {fileID: 0}
   ball: {fileID: 0}
-  isHandicapped: 0
-  handicapTimeRemaining: 0
   controlScheme: 0
 --- !u!120 &6638625632157264791
 LineRenderer:
@@ -822,13 +817,11 @@ MonoBehaviour:
   - {fileID: 6324211643525676442}
   - {fileID: 2901781522588312798}
   canFire: 1
-  bulletGravity: -9.81
   bulletHeight: 10
   fireButton: {fileID: 494920396548854065}
   fireButtonLeft: {fileID: 3096722080112091163}
   ammoIndicator: {fileID: 4134540432272985303}
   ammoIndicatorLeft: {fileID: 1533297240084086269}
-  ammoFloatingText: {fileID: 0}
   ammo: 0
   player1: 0
   aim: {fileID: 708519051436734366}
@@ -973,12 +966,13 @@ MonoBehaviour:
     m_RotationOrder: 4
   maxPoint: {x: 0, y: 0, z: 0}
   minPoint: {x: 0, y: 0, z: 0}
-  speedUpDuration: 0.1
-  slowDownDuration: 0.15
+  speedUpDuration: 0.3
+  slowDownDuration: 0.1
   initialSpeed: 0
-  maxSpeed: 25
+  maxSpeed: 22
   currentSpeed: 0
   paddleCollider: {fileID: 577732273106080975}
+  speedModifier: 1
   currentDirection: 1
   barriers:
   - {fileID: 0}
@@ -1964,8 +1958,6 @@ MonoBehaviour:
   rockPeriodX: 10
   deltaRotationZ: 7
   rockPeriodZ: 5
-  bouyPeriod: 1
-  bouyAmplitude: 2
   isStopped: 0
   restoreZSpeed: 1
   sinkSpeed: 5
