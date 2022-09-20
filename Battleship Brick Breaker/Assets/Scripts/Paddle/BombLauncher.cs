@@ -268,7 +268,7 @@ public class BombLauncher : MonoBehaviour
     public void OnBallOut()
     {
         ResetBombLauncher();
-        bombButton.SetActive(false);
+        SetBombButtonActive(false);
         SetBombButtonActive(false);
         if (launchSequence != null)
         {

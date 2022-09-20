@@ -234,6 +234,10 @@ public class BallPhysics : MonoBehaviour
 
     }
 
+    public void HaltBall(){
+        Vector3 velocity = 0.0001f * Vector3.one;
+        GameManager.instance.ApplyForceToVelocity(rb, velocity, Mathf.Infinity);
+    }
     public void BindToPaddle()
     {
         if (paddle == null)

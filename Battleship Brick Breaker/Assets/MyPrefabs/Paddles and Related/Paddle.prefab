@@ -824,8 +824,10 @@ MonoBehaviour:
   ammoIndicatorLeft: {fileID: 1533297240084086269}
   ammo: 0
   player1: 0
+  snowThrowFrequency: 0.5
   aim: {fileID: 708519051436734366}
   paddleSoundBox: {fileID: 8915089541948805016}
+  snowThrowerTime: 0
 --- !u!114 &2851118410620596682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -966,13 +968,14 @@ MonoBehaviour:
     m_RotationOrder: 4
   maxPoint: {x: 0, y: 0, z: 0}
   minPoint: {x: 0, y: 0, z: 0}
-  speedUpDuration: 0.3
+  speedUpDuration: 0.4
   slowDownDuration: 0.1
   initialSpeed: 0
   maxSpeed: 20
   currentSpeed: 0
   paddleCollider: {fileID: 577732273106080975}
   speedModifier: 1
+  snowSlowDownTime: 0
   currentDirection: 1
   barriers:
   - {fileID: 0}
