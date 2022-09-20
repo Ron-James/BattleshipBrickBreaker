@@ -120,6 +120,10 @@ public class BombLauncher : MonoBehaviour
                 Debug.Log(SettingsManager.instance.ActiveBombButton(player1).name);
                 SettingsManager.instance.ActiveBombButton(player1).GetComponent<ButtonPrompt>().StartFadeFlash();
             }
+            else{
+                TutorialManager.instance.bombPowerUp.ClosePrompt(player1);
+                SettingsManager.instance.ActiveBombButton(player1).GetComponent<ButtonPrompt>().StopFadeFlash();
+            }
         }
         Bomb bomb = inactiveBombs.GetComponentInChildren<Bomb>();
         bomb.EnableBomb(firePoint);
@@ -187,6 +191,7 @@ public class BombLauncher : MonoBehaviour
         if(TutorialManager.instance.isTutorial){
             TutorialManager.instance.bombPowerUp.SetAcknowledge(player1, true);
             TutorialManager.instance.bombPowerUp.ClosePrompt(player1);
+            SettingsManager.instance.ActiveBombButton(player1).GetComponent<ButtonPrompt>().StopFadeFlash();
         }
 
 

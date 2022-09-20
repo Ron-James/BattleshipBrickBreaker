@@ -98,8 +98,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.50276, y: 2.26, z: 1}
-  m_Center: {x: 1.7513798, y: 0, z: 0}
+  m_Size: {x: 0.0001, y: 2.26, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5283952328135087482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1964,6 +1964,30 @@ MonoBehaviour:
   isStopped: 0
   restoreZSpeed: 1
   sinkSpeed: 5
+  sinkCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   soundBox: {fileID: 8915089541948805016}
 --- !u!1 &8557525220366035146
 GameObject:

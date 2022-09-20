@@ -891,3 +891,7 @@ Received Import Request.
   path: Assets/Scenes/Menu/ReflectionProbe-0.exr
   artifactKey: Guid(12ab04fdb778bea4485fcf9189dea6e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Scenes/Menu/ReflectionProbe-0.exr using Guid(12ab04fdb778bea4485fcf9189dea6e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32cf5e52a1b3eacccfbb478807d69104') in 0.077565 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

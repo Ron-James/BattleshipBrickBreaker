@@ -176,7 +176,10 @@ public class AimArrow : MonoBehaviour
                 }
                 if(TutorialManager.instance.isTutorial){
                     TutorialManager.instance.ballLaunch.ClosePrompt(player1);
-                    TutorialManager.instance.moveTut.OpenPrompt(player1);
+                    if(!TutorialManager.instance.moveTut.HasAcknowledged(player1)){
+                        TutorialManager.instance.moveTut.OpenPrompt(player1);
+                    }
+                    
                 }
                 IgnoreBalls(false);
                 direction = (aimPoint.position - GetComponent<RectTransform>().position).normalized;

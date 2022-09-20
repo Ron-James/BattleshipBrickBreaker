@@ -909,3 +909,49 @@ Received Import Request.
   path: Assets/Sprites/Textures/ball_purple_red_texture.png
   artifactKey: Guid(aa5de5dcc07fa2a47bebfdf2ff0abfab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Sprites/Textures/ball_purple_red_texture.png using Guid(aa5de5dcc07fa2a47bebfdf2ff0abfab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f93eefffa1abc6461cd8868d49ba374') in 0.136842 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 138.756716 seconds.
+  path: Assets/EffectExamples/Magic Effects/Textures/Ramp03.png
+  artifactKey: Guid(02893ea4ea3a2be419d65586df89bcf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Magic Effects/Textures/Ramp03.png using Guid(02893ea4ea3a2be419d65586df89bcf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04fc8abcfb5867b6592b0c6db9b0d42f') in 0.363605 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Textures/Red_Coral_Scaled.png
+  artifactKey: Guid(ba3e31390c64ea54384eed6fb50a900e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Textures/Red_Coral_Scaled.png using Guid(ba3e31390c64ea54384eed6fb50a900e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46d1fabea0d33f9501fa0cd16d9efba9') in 0.038773 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.979841 seconds.
+  path: Assets/Sprites/Brick Sprites/StoneTexture_Cracked.png
+  artifactKey: Guid(f3a8380a39eac4f418b15a8f1de50601) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/StoneTexture_Cracked.png using Guid(f3a8380a39eac4f418b15a8f1de50601) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30a9202d154ecefc293503f8aa34c2ab') in 0.039987 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Sprites/Brick Sprites/Transparent Masked Brick Sprites/StoneTexture_new.png
+  artifactKey: Guid(59a41d275fbf24244a0fe2b4bde6de08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/Transparent Masked Brick Sprites/StoneTexture_new.png using Guid(59a41d275fbf24244a0fe2b4bde6de08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fb9a0233fed740d8e2cbc0edd6d1199') in 0.044003 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Free Assets/Stylized_Pirate_Ship/StylShip_MatTextures/StylShip_Decks_NormalOpenGL.png
+  artifactKey: Guid(012c250c89873984e898ac1180fd014c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Assets/Stylized_Pirate_Ship/StylShip_MatTextures/StylShip_Decks_NormalOpenGL.png using Guid(012c250c89873984e898ac1180fd014c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ebfcaa929e9617a5869154b361b6bff') in 0.230911 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Free Assets/Stylized_Pirate_Ship/StylShip_MatTextures/StylShip_Decks_AlbedoTransparency.png
+  artifactKey: Guid(c79e44000f525b143b44b961c3446b53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Assets/Stylized_Pirate_Ship/StylShip_MatTextures/StylShip_Decks_AlbedoTransparency.png using Guid(c79e44000f525b143b44b961c3446b53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d485b4735135b59ca3189b35ab14ec8') in 0.079917 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Sprites/Brick Sprites/StoneTexture_new.png
+  artifactKey: Guid(56b15a319e1abd34d92e96981d871c71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/StoneTexture_new.png using Guid(56b15a319e1abd34d92e96981d871c71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e6f53ec3c5b04b3d9fbd97fe7d3c3d5') in 0.061750 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

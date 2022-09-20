@@ -19,6 +19,7 @@ public class BoatMotion : MonoBehaviour
     [Header("Sink Motion")]
     [SerializeField] float restoreZSpeed = 1f;
     [SerializeField] float sinkSpeed = 0.1f;
+    [SerializeField] AnimationCurve sinkCurve;
 
     [Header("Sounds")]
     [SerializeField] PaddleSoundBox soundBox;
@@ -57,25 +58,28 @@ public class BoatMotion : MonoBehaviour
         }
     }
 
-    public void SinkShip()
+    public void SinkShip(float duration)
     {
-        StartCoroutine(Sink(sinkSpeed));
+        StartCoroutine(Sink(sinkSpeed, duration));
     }
 
     private void OnDisable()
     {
         StopAllCoroutines();
     }
-    IEnumerator Sink(float speed)
+    IEnumerator Sink(float maxSpeed, float duration)
     {
         Vector3 startPos = transform.localPosition;
         soundBox.boatSink.PlayOnce();
-
+        float time = 0;
         Vector3 target = transform.localPosition;
-        target.y -= 20;
+        target.y -= 30;
         while (true)
         {
-            if (!GetComponentInParent<HandicapController>().isHandicapped)
+            time += Time.deltaTime;
+            float ratio = time/duration;
+            float speed = sinkCurve.Evaluate(ratio) * maxSpeed;
+            if (time >= duration)
             {
                 transform.localPosition = startPos;
                 break;

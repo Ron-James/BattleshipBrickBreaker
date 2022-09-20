@@ -33,7 +33,7 @@ public class HandicapController : MonoBehaviour
         isHandicapped = true;
         if (sink)
         {
-            GetComponentInChildren<BoatMotion>().SinkShip();
+            GetComponentInChildren<BoatMotion>().SinkShip(handicapTime);
         }
 
         GetComponent<Artillery>().CanFire = false;

@@ -266,6 +266,8 @@ public class PowerUpManager : MonoBehaviour
                 }
                 break;
             case 6: // triple cannon
+                GameObject cannonBtn = SettingsManager.instance.ActiveCannonButton(player1);
+                cannonBtn.GetComponent<CannonButton>().TripleCannonIndicator.SetActive(true);
                 tripleCannonText.FlashText(trippleCannonTextFlashTime);
                 currentPowerUps[powerUp] = true;
                 break;
@@ -276,6 +278,8 @@ public class PowerUpManager : MonoBehaviour
 
     public void ResetPowerUp()
     {
+        GameObject cannonBtn = SettingsManager.instance.ActiveCannonButton(player1);
+        cannonBtn.GetComponent<CannonButton>().TripleCannonIndicator.SetActive(false);
         ResetCurrentPowerUps();
         ResetPaddleLength();
         ball.GetComponent<BallPhysics>().ResetSize();

@@ -65,11 +65,14 @@ MonoBehaviour:
   powerUpDropRate: 4
   doubleTapTime: 0.5
   cannonballHitPenalty: 6
-  bombHitPenalty: 8
+  bombHitPenalty: 10
   initialOutPenalty: 3
   outPenaltyIncrease: 1
-  minBombLaunchDistance: 10
-  bombPowerUpTime: 7
+  snowSlowDownMultiplier: 0.4
+  snowSlowDuration: 0.35
+  snowThrowerTime: 7
+  minBombLaunchDistance: 12
+  bombPowerUpTime: 6
   initialVelocity: 16
   maxBallVelocity: 30
   maxExtraBalls: 3
