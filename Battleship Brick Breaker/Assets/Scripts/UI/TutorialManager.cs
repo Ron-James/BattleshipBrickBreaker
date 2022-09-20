@@ -94,7 +94,7 @@ public class TutorialManager : Singleton<TutorialManager>
             {
                 if (p1CannonPrompt.gameObject.activeSelf)
                 {
-                    p1CannonPrompt.SwitchButtonPrompt(false);
+                    p1CannonPrompt.StartFadeFlash();
                     Debug.Log("Should prompt here");
                 }
 
@@ -103,7 +103,7 @@ public class TutorialManager : Singleton<TutorialManager>
             {
                 if (p1CannonPromptLeft.gameObject.activeSelf)
                 {
-                    p1CannonPrompt.SwitchButtonPrompt(false);
+                    p1CannonPrompt.StartFadeFlash();
                     Debug.Log("Should prompt here");
                 }
             }
@@ -115,14 +115,14 @@ public class TutorialManager : Singleton<TutorialManager>
             if (SettingsManager.p2Right)
             {
                 if(p2CannonPrompt.gameObject.activeSelf){
-                    p2CannonPrompt.SwitchButtonPrompt(false);
+                    p2CannonPrompt.StartFadeFlash();
                 }
                 
             }
             else
             {
                 if(p2CannonPromptLeft.gameObject.activeSelf){
-                    p2CannonPromptLeft.SwitchButtonPrompt(false);
+                    p2CannonPromptLeft.StartFadeFlash();
                 }
                 
             }
@@ -137,11 +137,11 @@ public class TutorialManager : Singleton<TutorialManager>
             if (SettingsManager.p1Right)
             {
                 Debug.Log("Should prompt here");
-                p1CannonPrompt.SwitchButtonPrompt(true);
+                p1CannonPrompt.StopFadeFlash();
             }
             else
             {
-                p1CannonPromptLeft.SwitchButtonPrompt(true);
+                p1CannonPromptLeft.StopFadeFlash();
             }
 
 
@@ -150,11 +150,11 @@ public class TutorialManager : Singleton<TutorialManager>
         {
             if (SettingsManager.p2Right)
             {
-                p2CannonPrompt.SwitchButtonPrompt(true);
+                p2CannonPrompt.StopFadeFlash();
             }
             else
             {
-                p2CannonPromptLeft.SwitchButtonPrompt(true);
+                p2CannonPromptLeft.StopFadeFlash();
             }
 
 

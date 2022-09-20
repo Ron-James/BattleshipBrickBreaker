@@ -40,6 +40,9 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] float bombHitPenalty = 7f;
     [SerializeField] float initialOutPenalty;
     [SerializeField] float outPenaltyIncrease;
+    [SerializeField] float snowSlowDownMultiplier = 0.4f;
+    [SerializeField] float snowSlowDuration = 0.35f;
+    [SerializeField] float snowThrowerTime = 7f;
 
     [Header("Bomb Constants")]
     [SerializeField] float minBombLaunchDistance = 18f;
@@ -81,12 +84,15 @@ public class GameManager : Singleton<GameManager>
     public float MaxAimTime { get => maxAimTime; set => maxAimTime = value; }
     public FloatingText P1CannonFloatingText { get => p1CannonFloatingText; set => p1CannonFloatingText = value; }
     public FloatingText P2CannonFloatingText { get => p2CannonFloatingText; set => p2CannonFloatingText = value; }
+    public float SnowSlowDownMultiplier { get => snowSlowDownMultiplier; set => snowSlowDownMultiplier = value; }
+    public float SnowSlowDuration { get => snowSlowDuration; set => snowSlowDuration = value; }
+    public float SnowThrowerTime { get => snowThrowerTime; set => snowThrowerTime = value; }
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        Time.timeScale = 1;
         Debug.Log(RandomOpenPowerUp(paddle1.GetComponent<PowerUpManager>()).ToString() + " Random Power Up");
         Debug.Log(RandomOpenPowerUp(paddle1.GetComponent<PowerUpManager>()).ToString() + " Random Power Up");
         Debug.Log(RandomOpenPowerUp(paddle1.GetComponent<PowerUpManager>()).ToString() + " Random Power Up");
@@ -359,7 +365,7 @@ public class GameManager : Singleton<GameManager>
                 {
                     gameOver = true;
                     winScreen.Open(false);
-                    PauseManager.instance.PauseGameplay();
+                    Time.timeScale = 0;
                 }
                 break;
         }

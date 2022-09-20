@@ -21,6 +21,8 @@ public class PaddleButtonController : MonoBehaviour
     [SerializeField] float currentSpeed;
     [SerializeField] BoxCollider paddleCollider;
     [SerializeField] float speedModifier = 1f;
+
+    public float snowSlowDownTime;
     Vector3 defPos;
     [SerializeField] float currentDirection = 1;
     [SerializeField] BoxCollider[] barriers = new BoxCollider[2];
@@ -32,7 +34,9 @@ public class PaddleButtonController : MonoBehaviour
     [SerializeField] bool downButtonDown;
 
 
+
     PaddleController paddleController;
+    Coroutine snowSlower;
 
     public float SpeedModifier { get => speedModifier; set => speedModifier = value; }
 
@@ -78,14 +82,36 @@ public class PaddleButtonController : MonoBehaviour
 
     }
 
+    public void AddSnowSlowTime(float duration){
+        snowSlowDownTime += duration;
+        if(snowSlowDownTime > 0){
+            if(snowSlower == null){
+                snowSlower = StartCoroutine(SnowSlowDown());
+            }
+        }
 
+    }
 
-
+    IEnumerator SnowSlowDown(){
+        speedModifier = GameManager.instance.SnowSlowDownMultiplier;
+        while(true){
+            snowSlowDownTime -= Time.deltaTime;
+            if(snowSlowDownTime <= 0){
+                speedModifier = 1;
+                snowSlower = null;
+                break;
+            }
+            else{
+                yield return null;
+            }
+        }
+    }
 
     public void ApplyButtonInput()
     {
         if (upButtonDown && !downButtonDown)
         {
+            TutorialManager.instance.moveTut.SetAcknowledge(true, paddleController.Player1);
             currentDirection = 1;
             if (move == null)
             {
@@ -102,6 +128,7 @@ public class PaddleButtonController : MonoBehaviour
         }
         else if (!upButtonDown && downButtonDown)
         {
+            TutorialManager.instance.moveTut.SetAcknowledge(true, paddleController.Player1);
             currentDirection = -1;
             if (move == null)
             {
@@ -146,7 +173,7 @@ public class PaddleButtonController : MonoBehaviour
         float rate = speed / (duration / Time.deltaTime);
         while (true)
         {
-            time += Time.deltaTime;
+            time += Time.fixedDeltaTime;
             float ratio = time / duration;
             speed = slowDownCurve.Evaluate(ratio) * iniSpeed;
             currentSpeed = speed;
@@ -174,10 +201,10 @@ public class PaddleButtonController : MonoBehaviour
                 {
                     target = maxPoint;
                 }
-                transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.fixedDeltaTime);
 
                 
-                yield return null;
+                yield return new WaitForFixedUpdate();
             }
         }
     }
@@ -190,7 +217,7 @@ public class PaddleButtonController : MonoBehaviour
         Vector3 target = transform.position;
         while (true)
         {
-            time += Time.deltaTime;
+            time += Time.fixedDeltaTime;
             float ratio = time / duration;
             speed = speedUpCurve.Evaluate(ratio) * maxSpeed * speedModifier;
             currentSpeed = speed;
@@ -230,16 +257,16 @@ public class PaddleButtonController : MonoBehaviour
                     {
                         target = maxPoint;
                     }
-                    transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+                    transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.fixedDeltaTime);
                 }
                 else
                 {
 
-                    transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+                    transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.fixedDeltaTime);
                     currentSpeed = speed;
                 }
-
-                yield return null;
+                //yield return null;
+                yield return new WaitForFixedUpdate();
             }
         }
     }

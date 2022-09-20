@@ -12,7 +12,7 @@ public class SceneController : Singleton<SceneController>
     // Start is called before the first frame update
     void Start()
     {
-
+        loadingScreen.SetActive(false);
     }
 
     // Update is called once per frame

@@ -16,7 +16,6 @@ public class ButtonPrompt : MonoBehaviour
     void Start()
     {
         fadeFlash = null;
-        isStopped = true;
     }
 
     // Update is called once per frame
@@ -26,18 +25,23 @@ public class ButtonPrompt : MonoBehaviour
 
         }
     }
-
-    public void SwitchButtonPrompt(bool stopped){
-        isStopped = stopped;
-        if(!isStopped){
-            if(fadeFlash == null ){
-                fadeFlash = StartCoroutine(FadeFlash(flashPeriod, maxAlpha));
-            }
+    public void StopFadeFlash(){
+        isStopped = true;
+    }
+    public void StartFadeFlash(){
+        
+        isStopped = false;
+        if(fadeFlash == null){
+            fadeFlash = StartCoroutine(FadeFlash(flashPeriod, maxAlpha));
             
         }
         
     }
+    private void OnDisable(){
+        StopAllCoroutines();
+    }
     IEnumerator FadeFlash(float period, float maxAlpha){
+        Debug.Log("Start Fade Flash");
         prompt.gameObject.SetActive(true);
         Color defaultColor = prompt.color;
         Color color = prompt.color;
@@ -45,7 +49,7 @@ public class ButtonPrompt : MonoBehaviour
         float w = (1 / period) * 2 * Mathf.PI;
         while(true){
             if(isStopped){
-                Debug.Log("Should Stop here");
+                Debug.Log("stopping here");
                 prompt.color = defaultColor;
                 prompt.gameObject.SetActive(false);
                 fadeFlash = null;

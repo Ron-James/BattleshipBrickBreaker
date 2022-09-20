@@ -43,7 +43,8 @@ public class ExtraBall : MonoBehaviour
         Vector3 direction = Vector3.right;
         direction = Quaternion.AngleAxis(Random.Range(-360, 361), Vector3.up) * direction;
         rb.isKinematic = false;
-        GameManager.instance.ApplyForceToVelocity(rb, direction * GameManager.instance.InitialVelocity, 10000);
+        rb.velocity = Vector3.zero;
+        GameManager.instance.ApplyForceToVelocity(rb, direction.normalized * GameManager.instance.InitialVelocity, 10000);
         inPlay = true;
     }
     public void DisableBall(){

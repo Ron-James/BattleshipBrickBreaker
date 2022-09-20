@@ -25,6 +25,7 @@ public class BrickHealth : MonoBehaviour
     public bool isBroken = false;
     [Header("Audio")]
     [SerializeField] Sound hitSound;
+    [SerializeField] Sound breakSound;
     [SerializeField] UnityEvent OnBrickBreak;
     [SerializeField] UnityEvent OnBrickCrack;
     // Start is called before the first frame update
@@ -33,6 +34,7 @@ public class BrickHealth : MonoBehaviour
     {
         
         hitSound.src = GetComponent<AudioSource>();
+        breakSound.src = GetComponent<AudioSource>();
         currentHealth = maxHealth;
         if (crack != null)
         {
@@ -48,12 +50,7 @@ public class BrickHealth : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        switch (other.collider.tag)
-        {
-            case "Ball":
-                hitSound.PlayOnce();
-                break;
-        }
+        
     }
 
     public void TakeDamge(float amount, bool player1)
@@ -68,10 +65,12 @@ public class BrickHealth : MonoBehaviour
         {
             BreakBrick(player1);
             OnBrickBreak.Invoke();
+            breakSound.PlayOnce();
             
         }
         else
         {
+            hitSound.PlayOnce();
             StartCoroutine(FlashOverlay(0.3f));
         }
     }

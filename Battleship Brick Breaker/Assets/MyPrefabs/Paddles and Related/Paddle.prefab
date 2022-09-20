@@ -969,7 +969,7 @@ MonoBehaviour:
   speedUpDuration: 0.3
   slowDownDuration: 0.1
   initialSpeed: 0
-  maxSpeed: 22
+  maxSpeed: 20
   currentSpeed: 0
   paddleCollider: {fileID: 577732273106080975}
   speedModifier: 1
