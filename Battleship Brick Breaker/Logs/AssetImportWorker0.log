@@ -15,7 +15,7 @@ D:/Unity Projects/BattleShipBRickBreaker - copy/BattleshipBrickBreaker/Battleshi
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-9735
+6171
 Successfully changed project path to: D:/Unity Projects/BattleShipBRickBreaker - copy/BattleshipBrickBreaker/Battleship Brick Breaker
 D:/Unity Projects/BattleShipBRickBreaker - copy/BattleshipBrickBreaker/Battleship Brick Breaker
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ D:/Unity Projects/BattleShipBRickBreaker - copy/BattleshipBrickBreaker/Battleshi
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 78.71 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 85.32 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.6f1 (7da38d85baf6)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/Resources/UnitySubsystems
@@ -65,94 +65,94 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56648
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56316
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007076 seconds.
+Registered in 0.006897 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 80.09 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 78.75 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.554 seconds
+- Completed reload, in  0.517 seconds
 Domain Reload Profiling:
-	ReloadAssembly (555ms)
-		BeginReloadAssembly (61ms)
+	ReloadAssembly (518ms)
+		BeginReloadAssembly (58ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (399ms)
-			LoadAssemblies (59ms)
+		EndReloadAssembly (372ms)
+			LoadAssemblies (56ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (80ms)
+			SetupTypeCache (79ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (20ms)
-			SetupLoadedEditorAssemblies (257ms)
+			RebuildScriptCaches (19ms)
+			SetupLoadedEditorAssemblies (233ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (45ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (80ms)
+				RefreshPlugins (79ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (79ms)
-				ProcessInitializeOnLoadMethodAttributes (51ms)
+				ProcessInitializeOnLoadAttributes (73ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006565 seconds.
+Registered in 0.006757 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleShipBRickBreaker - copy\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleShipBRickBreaker - copy\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.83 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.78 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.996 seconds
+- Completed reload, in  0.975 seconds
 Domain Reload Profiling:
-	ReloadAssembly (997ms)
-		BeginReloadAssembly (198ms)
+	ReloadAssembly (975ms)
+		BeginReloadAssembly (202ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (123ms)
-		EndReloadAssembly (703ms)
-			LoadAssemblies (75ms)
+			CreateAndSetChildDomain (131ms)
+		EndReloadAssembly (682ms)
+			LoadAssemblies (70ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
 			SetupTypeCache (198ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (42ms)
-			SetupLoadedEditorAssemblies (355ms)
+			RebuildScriptCaches (44ms)
+			SetupLoadedEditorAssemblies (338ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (13ms)
+				InitializePlatformSupportModulesInManaged (16ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (83ms)
-				ProcessInitializeOnLoadAttributes (210ms)
-				ProcessInitializeOnLoadMethodAttributes (36ms)
-				AfterProcessingInitializeOnLoad (12ms)
+				BeforeProcessingInitializeOnLoad (82ms)
+				ProcessInitializeOnLoadAttributes (200ms)
+				ProcessInitializeOnLoadMethodAttributes (31ms)
+				AfterProcessingInitializeOnLoad (7ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
 Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.77 ms, found 3 plugins.
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.85 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3734 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 43 unused Assets / (1.4 MB). Loaded Objects now: 4188.
-Memory consumption went from 216.1 MB to 214.8 MB.
-Total: 3.191200 ms (FindLiveObjects: 0.266500 ms CreateObjectMapping: 0.104400 ms MarkObjects: 2.508200 ms  DeleteObjects: 0.311500 ms)
+Unloading 3736 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 43 unused Assets / (293.4 KB). Loaded Objects now: 4191.
+Memory consumption went from 214.1 MB to 213.8 MB.
+Total: 2.915100 ms (FindLiveObjects: 0.250100 ms CreateObjectMapping: 0.094300 ms MarkObjects: 2.429000 ms  DeleteObjects: 0.141000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -167,731 +167,211 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 233241.304763 seconds.
-  path: Assets/Materials/Target Material.mat
-  artifactKey: Guid(3313e0700cf864547a406df10a3a7997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Target Material.mat using Guid(3313e0700cf864547a406df10a3a7997) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0af90457a36f66b7edcea6dc1628494') in 0.208833 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.005209 seconds.
-  path: Assets/Models/Wedge.fbx
-  artifactKey: Guid(7d7101ee48333d445b38a698329a8023) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Wedge.fbx using Guid(7d7101ee48333d445b38a698329a8023) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec6adacb4778ddee95a9c427e3a9ee03') in 0.063468 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8595.780949 seconds.
-  path: Assets/Fonts/8bitOperatorPlus-Bold SDF.asset
-  artifactKey: Guid(d9078ad6db54240448ea30eabd1539e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/8bitOperatorPlus-Bold SDF.asset using Guid(d9078ad6db54240448ea30eabd1539e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd95fafba97be1d400d9a43d81744e4fb') in 0.110390 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.003066 seconds.
-  path: Assets/Fonts/8bitOperatorPlus8-Bold.ttf
-  artifactKey: Guid(421e6ff614fc43f469f4c859dee1b94c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/8bitOperatorPlus8-Bold.ttf using Guid(421e6ff614fc43f469f4c859dee1b94c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd73153294efea32be5f3db11f7f2e43') in 0.036708 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Fonts/Pirates Kids.otf
-  artifactKey: Guid(be1b696b2414a484fae99ca2ffd11da1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Pirates Kids.otf using Guid(be1b696b2414a484fae99ca2ffd11da1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7df1687d7cff3a219e9f306b0dce305f') in 0.034140 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Fonts/Piratekeg_i.ttf
-  artifactKey: Guid(649f06434103488489fcc384193b32f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Piratekeg_i.ttf using Guid(649f06434103488489fcc384193b32f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19b98a9ca2cac6d16c65354e47363a21') in 0.036496 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Fonts/Piratekeg_i SDF.asset
-  artifactKey: Guid(4948dc906a922884b8e3c2c8e2ecd1f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Piratekeg_i SDF.asset using Guid(4948dc906a922884b8e3c2c8e2ecd1f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29ce57d8ac256e334189b46dee3670e9') in 0.104685 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Fonts/PixelPirate.ttf
-  artifactKey: Guid(38c9ce8ea10f0f44aa8ac1dbd1ed271c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/PixelPirate.ttf using Guid(38c9ce8ea10f0f44aa8ac1dbd1ed271c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c11a719c23e6427be753054235555f96') in 0.060974 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Fonts/8bitOperatorPlusSC-Bold.ttf
-  artifactKey: Guid(cbe85aeeded4b014094597848f36c4ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/8bitOperatorPlusSC-Bold.ttf using Guid(cbe85aeeded4b014094597848f36c4ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eddbe0b0039080a437ad43ad7ee8d222') in 0.058295 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Fonts/Pirates Kids SDF.asset
-  artifactKey: Guid(e8794cdbac22637488e243439ebe8a4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/Pirates Kids SDF.asset using Guid(e8794cdbac22637488e243439ebe8a4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '667ca4b94875201b9d2da34cb7fb795b') in 0.048044 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Fonts/8bitOperatorPlus-Regular SDF.asset
-  artifactKey: Guid(2180ce9dfdcab104b92d6c4f03bd12cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/8bitOperatorPlus-Regular SDF.asset using Guid(2180ce9dfdcab104b92d6c4f03bd12cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e1834ad6dade6f206c79661b8bf97c1') in 0.101255 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Fonts/PixelPirate SDF.asset
-  artifactKey: Guid(d4fe511e340eee54d8d72f96b38a279f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Fonts/PixelPirate SDF.asset using Guid(d4fe511e340eee54d8d72f96b38a279f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a14ab437b7c3b8614766673dad68bb6') in 0.066347 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 14.932499 seconds.
-  path: Assets/MyPrefabs/Brick Group (5).prefab
-  artifactKey: Guid(1ab1d3b840c33cc45aa35cbe3537bfea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyPrefabs/Brick Group (5).prefab using Guid(1ab1d3b840c33cc45aa35cbe3537bfea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcfcc9c0f483c080c567a75ddf499399') in 0.936963 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006342 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleShipBRickBreaker - copy\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleShipBRickBreaker - copy\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.79 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.856 seconds
-Domain Reload Profiling:
-	ReloadAssembly (857ms)
-		BeginReloadAssembly (142ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (54ms)
-		EndReloadAssembly (636ms)
-			LoadAssemblies (74ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (198ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (41ms)
-			SetupLoadedEditorAssemblies (288ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (19ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (69ms)
-				ProcessInitializeOnLoadAttributes (162ms)
-				ProcessInitializeOnLoadMethodAttributes (28ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 1.95 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3673 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 32 unused Assets / (1.3 MB). Loaded Objects now: 4239.
-Memory consumption went from 215.4 MB to 214.1 MB.
-Total: 3.295800 ms (FindLiveObjects: 0.267600 ms CreateObjectMapping: 0.088300 ms MarkObjects: 2.609000 ms  DeleteObjects: 0.329900 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007161 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleShipBRickBreaker - copy\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleShipBRickBreaker - copy\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.79 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.805 seconds
-Domain Reload Profiling:
-	ReloadAssembly (806ms)
-		BeginReloadAssembly (116ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (33ms)
-		EndReloadAssembly (602ms)
-			LoadAssemblies (76ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (195ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (29ms)
-			SetupLoadedEditorAssemblies (271ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (18ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (63ms)
-				ProcessInitializeOnLoadAttributes (155ms)
-				ProcessInitializeOnLoadMethodAttributes (26ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 2.42 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3673 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 32 unused Assets / (1.3 MB). Loaded Objects now: 4242.
-Memory consumption went from 215.4 MB to 214.1 MB.
-Total: 3.203900 ms (FindLiveObjects: 0.252900 ms CreateObjectMapping: 0.181300 ms MarkObjects: 2.446400 ms  DeleteObjects: 0.321800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007909 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleShipBRickBreaker - copy\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleShipBRickBreaker - copy\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.79 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.867 seconds
-Domain Reload Profiling:
-	ReloadAssembly (867ms)
-		BeginReloadAssembly (131ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (36ms)
-		EndReloadAssembly (650ms)
-			LoadAssemblies (89ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (226ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (34ms)
-			SetupLoadedEditorAssemblies (277ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (18ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (71ms)
-				ProcessInitializeOnLoadAttributes (154ms)
-				ProcessInitializeOnLoadMethodAttributes (25ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 1.91 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3673 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 32 unused Assets / (1.3 MB). Loaded Objects now: 4245.
-Memory consumption went from 215.4 MB to 214.1 MB.
-Total: 2.822000 ms (FindLiveObjects: 0.247600 ms CreateObjectMapping: 0.091600 ms MarkObjects: 2.189800 ms  DeleteObjects: 0.292300 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.007379 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleShipBRickBreaker - copy\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleShipBRickBreaker - copy\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.62 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.838 seconds
-Domain Reload Profiling:
-	ReloadAssembly (839ms)
-		BeginReloadAssembly (120ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (34ms)
-		EndReloadAssembly (639ms)
-			LoadAssemblies (81ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (215ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (35ms)
-			SetupLoadedEditorAssemblies (279ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (19ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (68ms)
-				ProcessInitializeOnLoadAttributes (157ms)
-				ProcessInitializeOnLoadMethodAttributes (25ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 2.72 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3673 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 32 unused Assets / (1.3 MB). Loaded Objects now: 4248.
-Memory consumption went from 215.4 MB to 214.1 MB.
-Total: 3.210800 ms (FindLiveObjects: 0.292400 ms CreateObjectMapping: 0.091900 ms MarkObjects: 2.496500 ms  DeleteObjects: 0.329000 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009209 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleShipBRickBreaker - copy\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleShipBRickBreaker - copy\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 1.21 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.982 seconds
-Domain Reload Profiling:
-	ReloadAssembly (983ms)
-		BeginReloadAssembly (140ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (36ms)
-		EndReloadAssembly (729ms)
-			LoadAssemblies (100ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (241ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (37ms)
-			SetupLoadedEditorAssemblies (324ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (23ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (84ms)
-				ProcessInitializeOnLoadAttributes (180ms)
-				ProcessInitializeOnLoadMethodAttributes (27ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 2.00 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3673 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 32 unused Assets / (1.3 MB). Loaded Objects now: 4251.
-Memory consumption went from 215.5 MB to 214.1 MB.
-Total: 3.173900 ms (FindLiveObjects: 0.252000 ms CreateObjectMapping: 0.092800 ms MarkObjects: 2.534500 ms  DeleteObjects: 0.293700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006508 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleShipBRickBreaker - copy\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleShipBRickBreaker - copy\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.79 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.829 seconds
-Domain Reload Profiling:
-	ReloadAssembly (830ms)
-		BeginReloadAssembly (123ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (35ms)
-		EndReloadAssembly (619ms)
-			LoadAssemblies (83ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (195ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (32ms)
-			SetupLoadedEditorAssemblies (279ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (19ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (67ms)
-				ProcessInitializeOnLoadAttributes (157ms)
-				ProcessInitializeOnLoadMethodAttributes (27ms)
-				AfterProcessingInitializeOnLoad (7ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 2.47 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3673 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 32 unused Assets / (1.3 MB). Loaded Objects now: 4254.
-Memory consumption went from 215.5 MB to 214.1 MB.
-Total: 3.453900 ms (FindLiveObjects: 0.325400 ms CreateObjectMapping: 0.089300 ms MarkObjects: 2.475000 ms  DeleteObjects: 0.563400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006898 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleShipBRickBreaker - copy\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleShipBRickBreaker - copy\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.80 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.827 seconds
-Domain Reload Profiling:
-	ReloadAssembly (827ms)
-		BeginReloadAssembly (123ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (34ms)
-		EndReloadAssembly (621ms)
-			LoadAssemblies (81ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (197ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (31ms)
-			SetupLoadedEditorAssemblies (286ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (18ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (75ms)
-				ProcessInitializeOnLoadAttributes (159ms)
-				ProcessInitializeOnLoadMethodAttributes (26ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
-Platform modules already initialized, skipping
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 2.79 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3673 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 32 unused Assets / (1.3 MB). Loaded Objects now: 4257.
-Memory consumption went from 215.5 MB to 214.1 MB.
-Total: 3.720700 ms (FindLiveObjects: 0.279500 ms CreateObjectMapping: 0.088600 ms MarkObjects: 2.976800 ms  DeleteObjects: 0.374400 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006541 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleShipBRickBreaker - copy\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
-Symbol file LoadedFromMemory doesn't match image D:\Unity Projects\BattleShipBRickBreaker - copy\BattleshipBrickBreaker\Battleship Brick Breaker\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 0.70 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.830 seconds
-Domain Reload Profiling:
-	ReloadAssembly (831ms)
-		BeginReloadAssembly (116ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (33ms)
-		EndReloadAssembly (634ms)
-			LoadAssemblies (81ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (194ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (37ms)
-			SetupLoadedEditorAssemblies (284ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (19ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (71ms)
-				ProcessInitializeOnLoadAttributes (158ms)
-				ProcessInitializeOnLoadMethodAttributes (26ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 2.30 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3673 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 32 unused Assets / (1.3 MB). Loaded Objects now: 4260.
-Memory consumption went from 215.5 MB to 214.1 MB.
-Total: 3.216200 ms (FindLiveObjects: 0.274800 ms CreateObjectMapping: 0.080900 ms MarkObjects: 2.479500 ms  DeleteObjects: 0.380200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 1689.028010 seconds.
-  path: Assets/Sound Files/170146__timgormly__8-bit-explosion.aiff
-  artifactKey: Guid(43762d9b0f7daad48b95ab36daabf461) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sound Files/170146__timgormly__8-bit-explosion.aiff using Guid(43762d9b0f7daad48b95ab36daabf461) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f773e1339e0c21dc0679b7c521395b02') in 0.228380 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Sound Files/Barrel_Break.wav
-  artifactKey: Guid(1b49d04544d95614f92424cb1f589a91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sound Files/Barrel_Break.wav using Guid(1b49d04544d95614f92424cb1f589a91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2435e7aff9f64231342010b5479d33c5') in 0.050348 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Sound Files/laserShoot.wav
-  artifactKey: Guid(8410c29cfcdc7224b9c8255303a5e960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sound Files/laserShoot.wav using Guid(8410c29cfcdc7224b9c8255303a5e960) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd97de9b460e8a8a4779e3a511f7dd7b') in 0.080930 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Sound Files/explosion.wav
-  artifactKey: Guid(1ac8e4aeeb431534b8cd69f09e614dd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sound Files/explosion.wav using Guid(1ac8e4aeeb431534b8cd69f09e614dd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cc817c3137b3c898cb2873d903166fd') in 0.036286 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Sound Files/Objective Brick Break.wav
-  artifactKey: Guid(9b1f485934af2f944b1f9759ec43b951) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sound Files/Objective Brick Break.wav using Guid(9b1f485934af2f944b1f9759ec43b951) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad979be6fb03d25dc88538502f596223') in 0.038049 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Sound Files/530354__danielpodlovics__stone.wav
-  artifactKey: Guid(b514c64e8fe8f1c4ebd819d62c505bc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sound Files/530354__danielpodlovics__stone.wav using Guid(b514c64e8fe8f1c4ebd819d62c505bc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01d59fcebec63314371636897cd282bd') in 0.037525 seconds 
+  Time since last request: 320143.131620 seconds.
+  path: Assets/MyTextures/Red_Coral_Scaled2.png
+  artifactKey: Guid(a36f43070d1292441af125886ecc22e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MyTextures/Red_Coral_Scaled2.png using Guid(a36f43070d1292441af125886ecc22e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c0bf759d8a8bf425b48c0e04f9fb466') in 0.340624 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000024 seconds.
-  path: Assets/Sound Files/ocean-waves.wav
-  artifactKey: Guid(b688338007e575c438b4265f476544f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sound Files/ocean-waves.wav using Guid(b688338007e575c438b4265f476544f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55dd8de794fb91c6117638d162b3e3b8') in 0.023532 seconds 
+  path: Assets/MyTextures/Red_Coral_Scaled.png
+  artifactKey: Guid(ba3e31390c64ea54384eed6fb50a900e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MyTextures/Red_Coral_Scaled.png using Guid(ba3e31390c64ea54384eed6fb50a900e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82929e65af21ace3ef37d33b07e3c44e') in 0.046834 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Sound Files/splash-jumping-a.wav
-  artifactKey: Guid(468346760e52bf043ba653305291ebf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sound Files/splash-jumping-a.wav using Guid(468346760e52bf043ba653305291ebf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a58779418351c7e47740c417c1ef5245') in 0.022685 seconds 
+  Time since last request: 0.201098 seconds.
+  path: Assets/Materials/Brick Materials
+  artifactKey: Guid(37fd8b221f9c9404ba279365c333cd10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials using Guid(37fd8b221f9c9404ba279365c333cd10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81e514f994bbfca3f844bbe1a2fd51be') in 0.007067 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.042961 seconds.
+  path: Assets/Materials/Brick Materials/Ammo.mat
+  artifactKey: Guid(24404bc0e0c55244086b3ea0ffd80826) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Ammo.mat using Guid(24404bc0e0c55244086b3ea0ffd80826) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83bd9003a5be009ad3a8dcd60c2e3d5c') in 0.079022 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Materials/Brick Materials/Objective Brick.mat
+  artifactKey: Guid(de81f906f55bf3a4490f810e26eb852c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Objective Brick.mat using Guid(de81f906f55bf3a4490f810e26eb852c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed086fe33137441165da2668575c2113') in 0.022058 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000021 seconds.
-  path: Assets/Sound Files/Snap_My_Butt.wav
-  artifactKey: Guid(048477a769c4b6144972067697ec89af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sound Files/Snap_My_Butt.wav using Guid(048477a769c4b6144972067697ec89af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efcbda7b420d2e4ae25519a52591b65f') in 0.022191 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Sound Files/513693__kasparsj__impact-stone.wav
-  artifactKey: Guid(2dfc629bb378733458413873ebaff511) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sound Files/513693__kasparsj__impact-stone.wav using Guid(2dfc629bb378733458413873ebaff511) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'caef4c99fc87f33c6d6d7023fd2cf519') in 0.042873 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Sound Files/Wood_hit.wav
-  artifactKey: Guid(7094c65c50b92804280bf92e41b56153) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sound Files/Wood_hit.wav using Guid(7094c65c50b92804280bf92e41b56153) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06e8cfeea4c06138c415a2f2ce05fa2d') in 0.029052 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Sound Files/PowerUpBreak_SFX.wav
-  artifactKey: Guid(22be238be2a6f894084c9f2e11ca7681) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sound Files/PowerUpBreak_SFX.wav using Guid(22be238be2a6f894084c9f2e11ca7681) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7d8f2dcb264232d361c44c5df8b609d') in 0.026515 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Sound Files/hitHurt.wav
-  artifactKey: Guid(9bc49429cbaf3894b8ff18a5827391e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sound Files/hitHurt.wav using Guid(9bc49429cbaf3894b8ff18a5827391e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f93d6ec9a93d6580a280e51f3b377d6') in 0.024019 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Sound Files/jump.wav
-  artifactKey: Guid(513f4ceddae4b894e92aa76ce4af5834) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sound Files/jump.wav using Guid(513f4ceddae4b894e92aa76ce4af5834) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc7e05556a46c3551b48f746f8707631') in 0.030212 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Sound Files/Metal_Ping.wav
-  artifactKey: Guid(8f114034ad89990419976c3eb35000bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sound Files/Metal_Ping.wav using Guid(8f114034ad89990419976c3eb35000bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a4b91cf2bfb0c1fc1bf487dd9bde487') in 0.058530 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 16.609817 seconds.
-  path: Assets/MyPrefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab
-  artifactKey: Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyPrefabs/Bricks/Basic Brick (Small Square) [1] Variant.prefab using Guid(39b837627a235634c882139082bdffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3165de3d03c25b6501f03241ff37f1a9') in 0.191285 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/MyPrefabs/Bricks/Basic Brick [1].prefab
-  artifactKey: Guid(6cb226225a379bb4a9d4d14d15edfee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyPrefabs/Bricks/Basic Brick [1].prefab using Guid(6cb226225a379bb4a9d4d14d15edfee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68fe4b906b1b5647380197b5d534bbeb') in 0.048511 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/MyPrefabs/Bricks/Powerup Brick Variant.prefab
-  artifactKey: Guid(0ee3ab5b00e63e247ae20649f36d6608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyPrefabs/Bricks/Powerup Brick Variant.prefab using Guid(0ee3ab5b00e63e247ae20649f36d6608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aec5b20289cd65208d6090ff3ca89cf2') in 0.053794 seconds 
+  path: Assets/Materials/Brick Materials/Red Coral.mat
+  artifactKey: Guid(3772da2f670088649b96153837b236e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Red Coral.mat using Guid(3772da2f670088649b96153837b236e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4be90cb9e1a9976315119483fe3e1e7f') in 0.069968 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000028 seconds.
-  path: Assets/MyPrefabs/Bricks/Explosion Brick Variant 2.prefab
-  artifactKey: Guid(df0d82aec765ff54490f52f07cc43437) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyPrefabs/Bricks/Explosion Brick Variant 2.prefab using Guid(df0d82aec765ff54490f52f07cc43437) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f837e37a2be2b4d18b30a497f971305') in 0.103715 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/MyPrefabs/Bricks/Basic Brick [3] (Small Square) Variant.prefab
-  artifactKey: Guid(8f48e9a960a8fac478efda8cfc29d4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyPrefabs/Bricks/Basic Brick [3] (Small Square) Variant.prefab using Guid(8f48e9a960a8fac478efda8cfc29d4c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4627ae4301630349d140e316224fd8f2') in 0.040414 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 19.617486 seconds.
-  path: Assets/MyPrefabs/Bricks/Explosion Brick Variant.prefab
-  artifactKey: Guid(661fa8077b6fb644d9f2b760b2babddd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/MyPrefabs/Bricks/Explosion Brick Variant.prefab using Guid(661fa8077b6fb644d9f2b760b2babddd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4c97c72bfd52f1aab0230822e763bee') in 0.085914 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1257.139097 seconds.
-  path: Assets/Materials/Brick Materials/Backboard.mat
-  artifactKey: Guid(da24fb13a4bbce349927880eeb662b7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Brick Materials/Backboard.mat using Guid(da24fb13a4bbce349927880eeb662b7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7be6ede57c75fa8e42480f9a48790d7d') in 0.246718 seconds 
+  path: Assets/Materials/Brick Materials/Explosion Brick.mat
+  artifactKey: Guid(a601d927bc919354c9fceccf85f63a61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Explosion Brick.mat using Guid(a601d927bc919354c9fceccf85f63a61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '103e1da485e3f8fb95c331c007809929') in 0.067328 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000027 seconds.
-  path: Assets/Materials/Brick Materials/Stone.mat
-  artifactKey: Guid(a25d9e88b29ab6e459ba0e4ecf035cf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Brick Materials/Stone.mat using Guid(a25d9e88b29ab6e459ba0e4ecf035cf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e28e8fff83eafd5dbbbf619500583b28') in 0.077020 seconds 
+  path: Assets/Materials/Brick Materials/Orange Coral.mat
+  artifactKey: Guid(639c8256c3993e34f931f7593a7ad8fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Orange Coral.mat using Guid(639c8256c3993e34f931f7593a7ad8fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15d5445f2685ef32ed125cfea0c6c035') in 0.076942 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Materials/Brick Materials/Explosion Brick_Orange.mat
-  artifactKey: Guid(d375d4879e44db548ba4450e7a9e361d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Brick Materials/Explosion Brick_Orange.mat using Guid(d375d4879e44db548ba4450e7a9e361d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d5a434ccecc3be186028256d408b94d') in 0.024297 seconds 
+  Time since last request: 0.000026 seconds.
+  path: Assets/Materials/Brick Materials/Blue_Coral.mat
+  artifactKey: Guid(0df328b0b925fc54e8b9c1a72a238f54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Blue_Coral.mat using Guid(0df328b0b925fc54e8b9c1a72a238f54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3f44e1386b62a5236b00c494f97c720') in 0.056333 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Materials/Brick Materials/Split Brick.mat
-  artifactKey: Guid(2430ea59680cf35469ec2be6455d5253) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/Brick Materials/Split Brick.mat using Guid(2430ea59680cf35469ec2be6455d5253) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fc74d9cce221f8e8779a76b6019d0e2') in 0.023405 seconds 
+  Time since last request: 5.349786 seconds.
+  path: Assets/Shared/Environment/Textures/MetalTrim_Normal.tif
+  artifactKey: Guid(2927ac255e81f184b8459509e4b3dce4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shared/Environment/Textures/MetalTrim_Normal.tif using Guid(2927ac255e81f184b8459509e4b3dce4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '49d5c74ef0e34e60efaecf3e527d344e') in 0.318325 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.671404 seconds.
-  path: Assets/Sprites/Brick Sprites/Red_Coral.png
-  artifactKey: Guid(9aec0e4cdf883e7469a377668f5370dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/Brick Sprites/Red_Coral.png using Guid(9aec0e4cdf883e7469a377668f5370dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85d600d50ae00851af3f19a81b29cf32') in 0.124567 seconds 
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Textures/Ocean.png
+  artifactKey: Guid(1dff03e92993fa2489eedb583ff32ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Textures/Ocean.png using Guid(1dff03e92993fa2489eedb583ff32ad8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f878dbaf14dcd31deff134f008b3820') in 0.020735 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000017 seconds.
+  Time since last request: 0.000040 seconds.
+  path: Assets/MyTextures/New_Coral_Textured_Bricks/Orange_brick.png
+  artifactKey: Guid(6db087227d5f6e543a7d8ae52a540cab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MyTextures/New_Coral_Textured_Bricks/Orange_brick.png using Guid(6db087227d5f6e543a7d8ae52a540cab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a6a5130dc653a5da6f606b0fe6cdee8') in 0.021205 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/MyTextures/Rotated Water/Ocean_90.png
+  artifactKey: Guid(0841bf7eeafcf4c4bbeda11916c8e7b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MyTextures/Rotated Water/Ocean_90.png using Guid(0841bf7eeafcf4c4bbeda11916c8e7b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '713e46d46b6a1c591d3ada30db861d3d') in 0.272907 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/EffectExamples/Misc Effects/Textures/noise.tif
+  artifactKey: Guid(c15eacd99a1861b4a8084a53a657bbb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Misc Effects/Textures/noise.tif using Guid(c15eacd99a1861b4a8084a53a657bbb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad8c5827ca14bbfdda1024d8ced63a0c') in 0.213755 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Sprites/Brick Sprites/Orange Coral.png
+  artifactKey: Guid(af8fe3eee915c0248aa772c575a47c88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/Orange Coral.png using Guid(af8fe3eee915c0248aa772c575a47c88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4002fc5f8816b891993e12d35a50f457') in 0.068975 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.369443 seconds.
+  path: Assets/Sprites/Brick Sprites/explosion brick_Orange_cracked.png
+  artifactKey: Guid(dfca8c5503416664ebe7dcffd05f88e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/explosion brick_Orange_cracked.png using Guid(dfca8c5503416664ebe7dcffd05f88e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8eb666c52147d30736c33b8be3ea95e') in 0.188384 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.187161 seconds.
+  path: Assets/MyTextures/New_Coral_Textured_Bricks/Red_brick.png
+  artifactKey: Guid(c8e77ce1a3a2eed459ec2f54eea7474d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MyTextures/New_Coral_Textured_Bricks/Red_brick.png using Guid(c8e77ce1a3a2eed459ec2f54eea7474d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd87d551be9ac289159ff3eddabf326d') in 0.073986 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Brick Sprites/Transparent Masked Brick Sprites/Red_Coral.png
+  artifactKey: Guid(ad7430011673c564b85d329f2444e0d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/Transparent Masked Brick Sprites/Red_Coral.png using Guid(ad7430011673c564b85d329f2444e0d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4479969fe342b7fda7c0c632719b177') in 0.050495 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
   path: Assets/Scenes/Rules/ReflectionProbe-0.exr
   artifactKey: Guid(56a282b653989124aba0f0dcc766044d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Rules/ReflectionProbe-0.exr using Guid(56a282b653989124aba0f0dcc766044d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b97e82f8af25b4a873324d8ef4a29252') in 0.096961 seconds 
+Start importing Assets/Scenes/Rules/ReflectionProbe-0.exr using Guid(56a282b653989124aba0f0dcc766044d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd9c9672275c087ba4cc79e69f5383e9') in 0.056729 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Scenes/Menu/ReflectionProbe-0.exr
+  artifactKey: Guid(12ab04fdb778bea4485fcf9189dea6e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menu/ReflectionProbe-0.exr using Guid(12ab04fdb778bea4485fcf9189dea6e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '529d3bc615f009cfdfc0bdaf5fe0ef29') in 0.029780 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Sprites/Brick Sprites/Cracked/Red_coral_cracked.png
+  artifactKey: Guid(aa5ab9ff7cd1faa4aa3bb5ad947a128b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/Cracked/Red_coral_cracked.png using Guid(aa5ab9ff7cd1faa4aa3bb5ad947a128b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7476af33d7321ef438bedf12ba9f5022') in 0.035636 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.751351 seconds.
+  path: Assets/Cartoon_Texture_Pack/ROCKS/ROCKS_Cliff/Textures/Rocks_Cliff_A_Normal.png
+  artifactKey: Guid(b886935015f014443933dd953d7e8b3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cartoon_Texture_Pack/ROCKS/ROCKS_Cliff/Textures/Rocks_Cliff_A_Normal.png using Guid(b886935015f014443933dd953d7e8b3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1580e0afb95c54365f23bcc0cf986d17') in 0.272807 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000022 seconds.
-  path: Assets/Scenes/Menu/ReflectionProbe-0.exr
-  artifactKey: Guid(12ab04fdb778bea4485fcf9189dea6e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Menu/ReflectionProbe-0.exr using Guid(12ab04fdb778bea4485fcf9189dea6e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32cf5e52a1b3eacccfbb478807d69104') in 0.077565 seconds 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+  path: Assets/Cartoon_Texture_Pack/ROOF/ROOF_Hay/Textures/Roof_Hay_Basecolor.png
+  artifactKey: Guid(542840ef7c5c42c46a0fe3c49b7cc5ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cartoon_Texture_Pack/ROOF/ROOF_Hay/Textures/Roof_Hay_Basecolor.png using Guid(542840ef7c5c42c46a0fe3c49b7cc5ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '664b9643c6d593d0627aa917a5dcc362') in 0.132815 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Cartoon_Texture_Pack/ROOF/ROOF_Hay/Textures/Roof_Hay_Height.png
+  artifactKey: Guid(dfdafc2a7e29f4045abb5b53632d3e70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cartoon_Texture_Pack/ROOF/ROOF_Hay/Textures/Roof_Hay_Height.png using Guid(dfdafc2a7e29f4045abb5b53632d3e70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7cfccabc9c56ceeb89a870c1d5c7f99') in 0.124321 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Cartoon_Texture_Pack/ROCKS/ROCKS_Cliff/Textures/Rocks_Cliff_B_Height.png
+  artifactKey: Guid(3474203d2bc187940ab3d3022d6556c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cartoon_Texture_Pack/ROCKS/ROCKS_Cliff/Textures/Rocks_Cliff_B_Height.png using Guid(3474203d2bc187940ab3d3022d6556c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33fcf57f40f9c6fd8d637a01b91a1b15') in 0.179869 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Cartoon_Texture_Pack/ROOF/ROOF_Hay/Textures/Roof_Hay_Metallic.png
+  artifactKey: Guid(96d42bf1dc034de40bff3429b1e76cae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cartoon_Texture_Pack/ROOF/ROOF_Hay/Textures/Roof_Hay_Metallic.png using Guid(96d42bf1dc034de40bff3429b1e76cae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da996c7be455509bf43ef8665320d8e1') in 0.237083 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Cartoon_Texture_Pack/ROCKS/ROCKS_Cliff/Textures/Rocks_Cliff_B_Basecolor_A.png
+  artifactKey: Guid(58780efb29e14bd4d8015aa66cf60699) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cartoon_Texture_Pack/ROCKS/ROCKS_Cliff/Textures/Rocks_Cliff_B_Basecolor_A.png using Guid(58780efb29e14bd4d8015aa66cf60699) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '517faa64de291d56f427553bcb18afb5') in 0.179471 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.040166 seconds.
+  path: Assets/Cartoon_Texture_Pack/GRASS/GRASS_Flower/GRASS_Flower_Tint_02/Texture/Grass_Flower_Tint_02_FlowerRed_B_metallic.png
+  artifactKey: Guid(7f5000f355ed0c345b28f13a66f0f426) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cartoon_Texture_Pack/GRASS/GRASS_Flower/GRASS_Flower_Tint_02/Texture/Grass_Flower_Tint_02_FlowerRed_B_metallic.png using Guid(7f5000f355ed0c345b28f13a66f0f426) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0377a0279e8d07e954e33abd8580bdc1') in 0.206472 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.228257 seconds.
+  path: Assets/Cartoon_Texture_Pack/GRASS/GRASS_Flower/GRASS_Flower_Tint_02/Texture/Grass_Flower_Tint_02_FlowerRed_A_Normal.png
+  artifactKey: Guid(b662c5a252f7b8d4e8fa2fcc8f76ebbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cartoon_Texture_Pack/GRASS/GRASS_Flower/GRASS_Flower_Tint_02/Texture/Grass_Flower_Tint_02_FlowerRed_A_Normal.png using Guid(b662c5a252f7b8d4e8fa2fcc8f76ebbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc71bb57cc62b8560860308b14f4a83b') in 0.314358 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Cartoon_Texture_Pack/GRASS/GRASS_Flower/GRASS_Flower_Tint_02/Texture/Grass_Flower_Tint_02_FlowerRed_A_Basecolor.png
+  artifactKey: Guid(1458b2e4ed79022448a67f1b5a189ae9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cartoon_Texture_Pack/GRASS/GRASS_Flower/GRASS_Flower_Tint_02/Texture/Grass_Flower_Tint_02_FlowerRed_A_Basecolor.png using Guid(1458b2e4ed79022448a67f1b5a189ae9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f14066c5817f8353426e1631d3036b7') in 0.117092 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 30.135059 seconds.
+  path: Assets/Cartoon_Texture_Pack/GRASS/GRASS_Flower/GRASS_Flower_Tint_02/Texture/Grass_Flower_Tint_02_Rocks_Basecolor.png
+  artifactKey: Guid(91ea5d8940fb7fd4c963e672324628a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cartoon_Texture_Pack/GRASS/GRASS_Flower/GRASS_Flower_Tint_02/Texture/Grass_Flower_Tint_02_Rocks_Basecolor.png using Guid(91ea5d8940fb7fd4c963e672324628a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '345753d498bb3ce6652b992317b41c06') in 0.583588 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Shared/Sprites/Info.png
+  artifactKey: Guid(2969d90b86698124696637a6df64a112) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Shared/Sprites/Info.png using Guid(2969d90b86698124696637a6df64a112) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a311ee35902c99963f8582709d47102') in 0.315568 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Sprites/Brick Sprites/Cracked/Green_coral_cracked.png
+  artifactKey: Guid(c8f0e581c72981d4089c92c5e90da5a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/Cracked/Green_coral_cracked.png using Guid(c8f0e581c72981d4089c92c5e90da5a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85fc344caa94d5e30b3af5f058f0d9ce') in 0.156581 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Sprites/Brick Sprites/Green Coral_Cracked.png
+  artifactKey: Guid(ac6ca206aeb0fcb47a7f9b5d7016d104) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/Green Coral_Cracked.png using Guid(ac6ca206aeb0fcb47a7f9b5d7016d104) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63badbeff8c554927060a61aa8bae06d') in 0.101486 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Cartoon_Texture_Pack/GRASS/GRASS_Flower/GRASS_Flower_Tint_02/Texture/Grass_Flower_Tint_02_Rocks_Normal.png
+  artifactKey: Guid(28d422e66a342d74eba89cea2546b6cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cartoon_Texture_Pack/GRASS/GRASS_Flower/GRASS_Flower_Tint_02/Texture/Grass_Flower_Tint_02_Rocks_Normal.png using Guid(28d422e66a342d74eba89cea2546b6cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f671755148e89dd7893de1e6775226b') in 0.732870 seconds 

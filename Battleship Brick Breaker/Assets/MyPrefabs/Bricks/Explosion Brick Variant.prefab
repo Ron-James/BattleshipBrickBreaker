@@ -84,6 +84,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7885875656764031725, guid: df0d82aec765ff54490f52f07cc43437,
         type: 3}
+      propertyPath: hitSound.clip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7885875656764031725, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: breakSound.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e4c93368d7fefb4f93b1be64049822b, type: 3}
+    - target: {fileID: 7885875656764031725, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
       propertyPath: OnBrickBreak.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
