@@ -271,6 +271,11 @@ public class PowerUpManager : MonoBehaviour
                 tripleCannonText.FlashText(trippleCannonTextFlashTime);
                 currentPowerUps[powerUp] = true;
                 break;
+            
+            case 7:
+                GetComponent<Artillery>().AddSnowThrowerTime(100000);
+                currentPowerUps[powerUp] = true;
+            break;
             default:
                 return;
         }
@@ -287,6 +292,7 @@ public class PowerUpManager : MonoBehaviour
         slimeBall.SetActive(false);
         GameManager.instance.ControlBarriers(player1, false);
         tripleCannonText.FlashText(0);
+        GetComponent<Artillery>().StopSnowThrower();
     }
 
     public void OnBallOut()

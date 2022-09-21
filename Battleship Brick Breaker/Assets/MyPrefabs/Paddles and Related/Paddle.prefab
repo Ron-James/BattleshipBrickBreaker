@@ -824,7 +824,7 @@ MonoBehaviour:
   ammoIndicatorLeft: {fileID: 0}
   ammo: 0
   player1: 1
-  snowThrowFrequency: 3
+  snowThrowFrequency: 1.4
   aim: {fileID: 708519051436734366}
   paddleSoundBox: {fileID: 8915089541948805016}
   snowThrowerTime: 0
@@ -852,8 +852,8 @@ MonoBehaviour:
   ballSpdIncrease: 1.1
   ballSizeUpgrade: 1.5
   colliderLargeSize: 15
-  currentPowerUps: 00000000000000
-  powerUpWeights: 070000000200000004000000060000000c0000000400000005000000
+  currentPowerUps: 0000000000000000
+  powerUpWeights: 070000000200000004000000060000000f00000004000000050000000f000000
 --- !u!114 &7793019395018041438
 MonoBehaviour:
   m_ObjectHideFlags: 0

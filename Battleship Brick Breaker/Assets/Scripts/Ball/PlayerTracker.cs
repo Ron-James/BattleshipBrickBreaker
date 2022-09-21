@@ -153,7 +153,7 @@ public class PlayerTracker : MonoBehaviour
     }
 
     public void BuffBallDamage(float duration){
-        buffTime = duration;
+        buffTime += duration;
         if(buffCoroutine == null){
             buffCoroutine = StartCoroutine(BuffDamage());
         }

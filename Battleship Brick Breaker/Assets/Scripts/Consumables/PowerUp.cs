@@ -12,7 +12,8 @@ public enum Power
     barrier = 3,
     bomb = 4,
     split = 5,
-    tripleCannon = 6
+    tripleCannon = 6,
+    snow = 7
 
 }
 public class PowerUp : MonoBehaviour
@@ -126,6 +127,9 @@ public class PowerUp : MonoBehaviour
                 break;
             case 6:
                 powerUpText.text = "Triple Cannon";
+                break;
+            case 7:
+                powerUpText.text = "Snow Balls";
                 break;
             
 

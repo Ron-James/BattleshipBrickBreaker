@@ -68,8 +68,8 @@ MonoBehaviour:
   bombHitPenalty: 10
   initialOutPenalty: 3
   outPenaltyIncrease: 1
-  snowSlowDownMultiplier: 0.4
-  snowSlowDuration: 0.35
+  snowSlowDownMultiplier: 0.5
+  snowSlowDuration: 0.4
   snowThrowerTime: 7
   minBombLaunchDistance: 12
   bombPowerUpTime: 6

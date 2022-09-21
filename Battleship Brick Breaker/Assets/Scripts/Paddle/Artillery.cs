@@ -158,6 +158,10 @@ public class Artillery : MonoBehaviour
         }
     }
 
+    public void StopSnowThrower(){
+        snowThrowerTime = 0;
+    }
+
     IEnumerator SnowBallThrow(float frequency){
         float throwTime = 0;
 
