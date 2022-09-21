@@ -163,6 +163,9 @@ MonoBehaviour:
   currentOwner: 0
   player1Material: {fileID: 2100000, guid: 6b9752a185a2f384086e9cbc241e0de6, type: 2}
   player2Material: {fileID: 2100000, guid: 66896bec796ec2a46894ebf9e77b853e, type: 2}
+  isBuffed: 0
+  fireParticles: {fileID: 1481963653096828936}
+  buffTime: 0
 --- !u!114 &4528959823049472435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,8 +515,15 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.minScalar
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400000, guid: 3df2db25d0e8c43499712fa1808b0960, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3df2db25d0e8c43499712fa1808b0960, type: 3}
+--- !u!198 &1481963653096828936 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19800000, guid: 3df2db25d0e8c43499712fa1808b0960,
+    type: 3}
+  m_PrefabInstance: {fileID: 1481963653112426440}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1481963653112034632 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 3df2db25d0e8c43499712fa1808b0960,

@@ -293,6 +293,7 @@ public class PowerUpManager : MonoBehaviour
         GameManager.instance.ControlBarriers(player1, false);
         tripleCannonText.FlashText(0);
         GetComponent<Artillery>().StopSnowThrower();
+        GameManager.instance.GetPaddle(player1).Ball.GetComponent<PlayerTracker>().ResetBuffDamage();
     }
 
     public void OnBallOut()

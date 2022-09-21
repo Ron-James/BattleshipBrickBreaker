@@ -54,6 +54,8 @@ public class Bullet : MonoBehaviour
                             paddle.gameObject.GetComponentInChildren<PaddleSoundBox>().boatHit.PlayOnce();
                             GameManager.instance.ChangeAllBalls(player1);
                             DisableBullet();
+                            GameManager.instance.GetPaddle(player1).Ball.GetComponent<PlayerTracker>().BuffBallDamage(5);
+                            
                         }
                         else if(bulletType == BulletType.snow){
                             other.gameObject.GetComponentInParent<PaddleButtonController>().AddSnowSlowTime(GameManager.instance.SnowSlowDuration);

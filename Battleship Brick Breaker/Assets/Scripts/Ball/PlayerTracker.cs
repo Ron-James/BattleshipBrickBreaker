@@ -172,6 +172,7 @@ public class PlayerTracker : MonoBehaviour
                 fireParticles.Stop();
                 isBuffed = false;
                 buffCoroutine = null;
+                buffTime = 0;
                 break;
             }
             else{

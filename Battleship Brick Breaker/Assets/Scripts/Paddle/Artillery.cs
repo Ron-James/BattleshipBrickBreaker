@@ -171,6 +171,7 @@ public class Artillery : MonoBehaviour
 
             if(snowThrowerTime <= 0){
                 snowThrower = null;
+                snowThrowerTime = 0;
                 break;
             }
             else{
