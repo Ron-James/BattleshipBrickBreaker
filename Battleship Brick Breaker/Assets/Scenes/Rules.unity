@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 112040180}
   - component: {fileID: 112040179}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Descrtiption
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -306,8 +306,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00096703, y: -14.5876}
-  m_SizeDelta: {x: 315.56, y: 87.8247}
+  m_AnchoredPosition: {x: 1.0831, y: -14.7019}
+  m_SizeDelta: {x: 302.5515, y: 59.4111}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &112040179
 MonoBehaviour:
@@ -331,8 +331,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Grants cannon balls to sink your enemies!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 30340e538dc80124db33606d67cbb262, type: 2}
+  m_sharedMaterial: {fileID: 7127798377076259685, guid: 30340e538dc80124db33606d67cbb262,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -356,14 +357,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 26.4
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -464,7 +465,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9aec0e4cdf883e7469a377668f5370dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c8e77ce1a3a2eed459ec2f54eea7474d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -494,7 +495,7 @@ GameObject:
   - component: {fileID: 120423731}
   - component: {fileID: 120423730}
   m_Layer: 5
-  m_Name: Basic Bricks
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -517,8 +518,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13, y: 33.5}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: 33.5}
+  m_SizeDelta: {x: 302.1215, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &120423730
 MonoBehaviour:
@@ -542,8 +543,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Objective Bricks
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 30340e538dc80124db33606d67cbb262, type: 2}
+  m_sharedMaterial: {fileID: 7127798377076259685, guid: 30340e538dc80124db33606d67cbb262,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -573,7 +575,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -603,7 +605,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -52.505188, y: -15.00724, z: -52.132233, w: 7.7625275}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -752,6 +754,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123884548}
   m_CullTransparentMesh: 1
+--- !u!1 &198546979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 198546980}
+  m_Layer: 5
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &198546980
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198546979}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1773896976}
+  - {fileID: 455649469}
+  - {fileID: 1574316911}
+  - {fileID: 458638565}
+  m_Father: {fileID: 1320890562}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 1.8921967}
+  m_SizeDelta: {x: 1879.765, y: 934.21716}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &279636379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,7 +1119,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -394, y: -53.77194}
+  m_AnchoredPosition: {x: -394, y: 34}
   m_SizeDelta: {x: 244.2669, y: 272.1542}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &320164767
@@ -1367,11 +1409,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1052322641}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 406.25, y: -234}
+  m_AnchoredPosition: {x: 406.25, y: -136}
   m_SizeDelta: {x: 142.5804, y: 142.5804}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &402420394
@@ -1425,7 +1467,7 @@ GameObject:
   - component: {fileID: 455649471}
   - component: {fileID: 455649470}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Menu Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1438,18 +1480,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455649468}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 279636380}
-  m_Father: {fileID: 1320890562}
-  m_RootOrder: 3
+  m_Father: {fileID: 198546980}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -522}
+  m_AnchoredPosition: {x: 696, y: -386.8922}
   m_SizeDelta: {x: 240.0928, y: 55.2144}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &455649470
@@ -1571,17 +1613,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458638564}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1208533703}
-  m_RootOrder: 1
+  m_Father: {fileID: 198546980}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 65, y: 494}
+  m_AnchoredPosition: {x: 65, y: 396.10782}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &458638566
@@ -1606,8 +1648,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Rules
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 30340e538dc80124db33606d67cbb262, type: 2}
+  m_sharedMaterial: {fileID: 7127798377076259685, guid: 30340e538dc80124db33606d67cbb262,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1637,7 +1680,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1716,8 +1759,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000022888, y: 0.00052261}
-  m_SizeDelta: {x: 367.94, y: 187.41}
+  m_AnchoredPosition: {x: 2.2428, y: -1.446}
+  m_SizeDelta: {x: 353.2776, y: 184.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &632060116
 MonoBehaviour:
@@ -1743,8 +1786,9 @@ MonoBehaviour:
     your ship or by sinking their ship with a bomb or cannon ball. This will change
     the ball's color.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 30340e538dc80124db33606d67cbb262, type: 2}
+  m_sharedMaterial: {fileID: 7127798377076259685, guid: 30340e538dc80124db33606d67cbb262,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1768,14 +1812,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.5
+  m_fontSize: 25.45
   m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1830,7 +1874,7 @@ GameObject:
   - component: {fileID: 666103132}
   - component: {fileID: 666103131}
   m_Layer: 5
-  m_Name: Basic Brick Description (1)
+  m_Name: PowerUp Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1850,13 +1894,13 @@ RectTransform:
   m_Children:
   - {fileID: 1721516755}
   - {fileID: 993383283}
-  m_Father: {fileID: 1320890562}
-  m_RootOrder: 5
+  m_Father: {fileID: 1574316911}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -727.5, y: -211}
-  m_SizeDelta: {x: 375.4541, y: 117}
+  m_AnchoredPosition: {x: 0.38061523, y: -126}
+  m_SizeDelta: {x: 218.253, y: 117}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &666103131
 MonoBehaviour:
@@ -1954,7 +1998,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d3f63beac230597408e4c3f99c69ad82, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4fb2f4e43a94dc54592e20d7ded4874c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1984,7 +2028,7 @@ GameObject:
   - component: {fileID: 700695599}
   - component: {fileID: 700695598}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Descrtiption
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2007,8 +2051,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00092316, y: -15.1404}
-  m_SizeDelta: {x: 324.99, y: 86.7191}
+  m_AnchoredPosition: {x: 0.9587, y: -19.8814}
+  m_SizeDelta: {x: 304.1299, y: 68.626}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &700695598
 MonoBehaviour:
@@ -2032,8 +2076,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Made from wood, destroy 9 before your opponent to win the game!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 30340e538dc80124db33606d67cbb262, type: 2}
+  m_sharedMaterial: {fileID: 7127798377076259685, guid: 30340e538dc80124db33606d67cbb262,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2057,14 +2102,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 20.65
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2321,11 +2366,11 @@ RectTransform:
   - {fileID: 1210512403}
   - {fileID: 1745908954}
   m_Father: {fileID: 1208533703}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 23.5, y: 250}
+  m_AnchoredPosition: {x: 23.5, y: 209}
   m_SizeDelta: {x: 1405, y: 117}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &849337317
@@ -2363,8 +2408,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0007019, y: -0.000013351}
-  m_SizeDelta: {x: 244.27, y: 272.15}
+  m_AnchoredPosition: {x: -5.4071, y: -0.000013351}
+  m_SizeDelta: {x: 233.4573, y: 272.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &849337319
 MonoBehaviour:
@@ -2389,8 +2434,9 @@ MonoBehaviour:
   m_text: Tap the cannon button to fire a cannon ball at your opponent. Sink their
     ship to take control of their brick breaker and disarm their abilities
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 30340e538dc80124db33606d67cbb262, type: 2}
+  m_sharedMaterial: {fileID: 7127798377076259685, guid: 30340e538dc80124db33606d67cbb262,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2414,14 +2460,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
+  m_fontSize: 26.45
   m_fontSizeBase: 25
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2476,7 +2522,7 @@ GameObject:
   - component: {fileID: 856298779}
   - component: {fileID: 856298778}
   m_Layer: 5
-  m_Name: Basic Bricks
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2499,8 +2545,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13, y: 33.5}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -0.0013561, y: 38.891}
+  m_SizeDelta: {x: 394.67, y: 39.218}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &856298778
 MonoBehaviour:
@@ -2524,8 +2570,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Power-Up Bricks
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 30340e538dc80124db33606d67cbb262, type: 2}
+  m_sharedMaterial: {fileID: 7127798377076259685, guid: 30340e538dc80124db33606d67cbb262,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2555,7 +2602,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2585,7 +2632,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -52.505188, y: -15.00724, z: -52.132233, w: 7.7625275}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2650,9 +2697,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 87.4
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7.16
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2718,7 +2765,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -341.5, y: -234}
+  m_AnchoredPosition: {x: -341.5, y: -146.22806}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &931008855
@@ -2795,7 +2842,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 372, y: -53.772}
+  m_AnchoredPosition: {x: 372, y: 44.228}
   m_SizeDelta: {x: 244.2669, y: 272.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &932553242
@@ -2955,8 +3002,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00027323, y: -12.4431}
-  m_SizeDelta: {x: 375.45, y: 92.1113}
+  m_AnchoredPosition: {x: -0.0010343, y: -16.715}
+  m_SizeDelta: {x: 200, y: 83.567}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &993383284
 MonoBehaviour:
@@ -2980,8 +3027,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Grab power ups with your ship to gain their benefits!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 30340e538dc80124db33606d67cbb262, type: 2}
+  m_sharedMaterial: {fileID: 7127798377076259685, guid: 30340e538dc80124db33606d67cbb262,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3005,10 +3053,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 23.45
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -3067,7 +3115,7 @@ GameObject:
   - component: {fileID: 996247716}
   - component: {fileID: 996247715}
   m_Layer: 5
-  m_Name: Basic Bricks
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3090,8 +3138,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13, y: 33.5}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0.00044155, y: 38.378174}
+  m_SizeDelta: {x: 315.56, y: 31.5712}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &996247715
 MonoBehaviour:
@@ -3115,8 +3163,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ammo Bricks
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 30340e538dc80124db33606d67cbb262, type: 2}
+  m_sharedMaterial: {fileID: 7127798377076259685, guid: 30340e538dc80124db33606d67cbb262,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3146,7 +3195,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -3176,7 +3225,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -52.505188, y: -15.00724, z: -52.132233, w: 7.7625275}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3335,7 +3384,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1052322641}
   m_Layer: 5
-  m_Name: Paddle Tut
+  m_Name: Paddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3355,12 +3404,12 @@ RectTransform:
   m_Children:
   - {fileID: 931008854}
   - {fileID: 1097764825}
+  - {fileID: 402420393}
   - {fileID: 1247147556}
   - {fileID: 1919041303}
-  - {fileID: 402420393}
   - {fileID: 776754504}
   m_Father: {fileID: 1208533703}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3609,21 +3658,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208533702}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.09501188, y: 0.3940887, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1773896976}
-  - {fileID: 458638565}
   - {fileID: 807002424}
   - {fileID: 1052322641}
-  m_Father: {fileID: 1320890562}
-  m_RootOrder: 0
+  m_Father: {fileID: 1773896976}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.7456993}
   m_SizeDelta: {x: 445.2, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1210512402
@@ -3735,7 +3782,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1574316911}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3872,7 +3919,7 @@ RectTransform:
   m_Children:
   - {fileID: 1044953713}
   m_Father: {fileID: 1052322641}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4023,7 +4070,7 @@ GameObject:
   - component: {fileID: 1300828369}
   - component: {fileID: 1300828368}
   m_Layer: 5
-  m_Name: Launch Tut (1)
+  m_Name: Swapping Players
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4047,8 +4094,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -369.25, y: 405}
-  m_SizeDelta: {x: 367.9422, y: 187.4138}
+  m_AnchoredPosition: {x: -369.25, y: 402.10663}
+  m_SizeDelta: {x: 367.9422, y: 181.627}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1300828368
 MonoBehaviour:
@@ -4136,10 +4183,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -4180,12 +4227,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1208533703}
-  - {fileID: 1721693291}
-  - {fileID: 1890471647}
-  - {fileID: 455649469}
-  - {fileID: 1574316911}
-  - {fileID: 666103130}
+  - {fileID: 198546980}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4252,7 +4294,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: af8fe3eee915c0248aa772c575a47c88, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6db087227d5f6e543a7d8ae52a540cab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4352,8 +4394,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000022888, y: 0.00052261}
-  m_SizeDelta: {x: 367.94, y: 187.41}
+  m_AnchoredPosition: {x: 1.4378, y: -4.3126}
+  m_SizeDelta: {x: 350.6875, y: 178.7838}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1471394782
 MonoBehaviour:
@@ -4378,8 +4420,9 @@ MonoBehaviour:
   m_text: 'Tap anywhere above the buttons when the arrow appears side to launch your
     brick breaking ball into the arena. '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 30340e538dc80124db33606d67cbb262, type: 2}
+  m_sharedMaterial: {fileID: 7127798377076259685, guid: 30340e538dc80124db33606d67cbb262,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4403,14 +4446,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.75
+  m_fontSize: 29.75
   m_fontSizeBase: 26.5
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4465,7 +4508,7 @@ GameObject:
   - component: {fileID: 1493853403}
   - component: {fileID: 1493853402}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Descrtiption
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4488,8 +4531,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00013733, y: -12.5626}
-  m_SizeDelta: {x: 394.66, y: 91.8749}
+  m_AnchoredPosition: {x: 1.0842, y: -19.6089}
+  m_SizeDelta: {x: 372.9791, y: 77.7823}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1493853402
 MonoBehaviour:
@@ -4514,8 +4557,9 @@ MonoBehaviour:
   m_text: Green coral guarentees a power-up drop while the explsoion bricks deal
     damage to surrounding bricks
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 30340e538dc80124db33606d67cbb262, type: 2}
+  m_sharedMaterial: {fileID: 7127798377076259685, guid: 30340e538dc80124db33606d67cbb262,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4539,14 +4583,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 22.2
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4601,7 +4645,7 @@ GameObject:
   - component: {fileID: 1574316913}
   - component: {fileID: 1574316912}
   m_Layer: 5
-  m_Name: Image
+  m_Name: PowerUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4614,18 +4658,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1574316910}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 666103130}
   - {fileID: 1215160147}
-  m_Father: {fileID: 1320890562}
-  m_RootOrder: 4
+  m_Father: {fileID: 198546980}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -730, y: -76}
+  m_AnchoredPosition: {x: -649.2802, y: -86.89219}
   m_SizeDelta: {x: 217.49, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1574316912
@@ -4701,8 +4746,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000022888, y: 0.00052261}
-  m_SizeDelta: {x: 367.94, y: 187.41}
+  m_AnchoredPosition: {x: 0.0001, y: 0.00052261}
+  m_SizeDelta: {x: 356.1411, y: 187.41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1595536107
 MonoBehaviour:
@@ -4727,8 +4772,9 @@ MonoBehaviour:
   m_text: Tap and hold the arrow buttons to move your ship left and right. Bounce
     the ball off your ship to keep it in play!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 30340e538dc80124db33606d67cbb262, type: 2}
+  m_sharedMaterial: {fileID: 7127798377076259685, guid: 30340e538dc80124db33606d67cbb262,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4752,14 +4798,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31
+  m_fontSize: 31.2
   m_fontSizeBase: 31
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4814,7 +4860,7 @@ GameObject:
   - component: {fileID: 1721516757}
   - component: {fileID: 1721516756}
   m_Layer: 5
-  m_Name: Basic Bricks
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4837,8 +4883,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13, y: 33.5}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0.00089169, y: 41.784}
+  m_SizeDelta: {x: 218.25, y: 33.432}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1721516756
 MonoBehaviour:
@@ -4862,8 +4908,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Power-Ups
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 30340e538dc80124db33606d67cbb262, type: 2}
+  m_sharedMaterial: {fileID: 7127798377076259685, guid: 30340e538dc80124db33606d67cbb262,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4893,7 +4940,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -4923,7 +4970,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -8.729858, y: -15.00724, z: -9.644318, w: 7.7625275}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4962,56 +5009,20 @@ RectTransform:
   m_GameObject: {fileID: 1721693290}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.09501188, y: 0.3940887, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 357359361}
   - {fileID: 1142153077}
   - {fileID: 1812476584}
   - {fileID: 805788154}
-  m_Father: {fileID: 1320890562}
-  m_RootOrder: 1
+  m_Father: {fileID: 1773896976}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 211}
+  m_AnchoredPosition: {x: 0, y: 66.24937}
   m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1725746891
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1725746892}
-  m_Layer: 5
-  m_Name: Cannon (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!224 &1725746892
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1725746891}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1890471647}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 608.1, y: -80.000015}
-  m_SizeDelta: {x: 372, y: 229.475}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1745908953
 GameObject:
@@ -5196,14 +5207,16 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10.525, y: 2.5375, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1208533703}
+  m_Children:
+  - {fileID: 1721693291}
+  - {fileID: 1208533703}
+  m_Father: {fileID: 198546980}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -53.57202}
-  m_SizeDelta: {x: 178.6, y: 411.88}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 178.6, y: 368.1644}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1773896977
 MonoBehaviour:
@@ -5307,44 +5320,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!1 &1890471646
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1890471647}
-  m_Layer: 5
-  m_Name: Cannon and bomb
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!224 &1890471647
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1890471646}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1963621664}
-  - {fileID: 1725746892}
-  m_Father: {fileID: 1320890562}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -280.59998, y: -344}
-  m_SizeDelta: {x: 736, y: 389.475}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1900466861
 GameObject:
   m_ObjectHideFlags: 0
@@ -5357,7 +5332,7 @@ GameObject:
   - component: {fileID: 1900466864}
   - component: {fileID: 1900466863}
   m_Layer: 5
-  m_Name: Basic Bricks
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5380,8 +5355,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13, y: 33.5}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0.002121, y: 35.0639}
+  m_SizeDelta: {x: 375.45, y: 38.0714}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1900466863
 MonoBehaviour:
@@ -5405,8 +5380,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Basic Bricks
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 30340e538dc80124db33606d67cbb262, type: 2}
+  m_sharedMaterial: {fileID: 7127798377076259685, guid: 30340e538dc80124db33606d67cbb262,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5430,13 +5406,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 38.05
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -5466,7 +5442,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -8.729858, y: -15.00724, z: -9.644318, w: 7.7625275}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5512,7 +5488,7 @@ RectTransform:
   m_Children:
   - {fileID: 123884549}
   m_Father: {fileID: 1052322641}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5569,7 +5545,7 @@ GameObject:
   - component: {fileID: 1957906252}
   - component: {fileID: 1957906251}
   m_Layer: 5
-  m_Name: Launch Tut
+  m_Name: Launch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5634,42 +5610,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957906249}
   m_CullTransparentMesh: 1
---- !u!1 &1963621663
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1963621664}
-  m_Layer: 5
-  m_Name: Cannon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!224 &1963621664
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1963621663}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1890471647}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -182, y: -80.000015}
-  m_SizeDelta: {x: 372, y: 229.475}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2069906877
 GameObject:
   m_ObjectHideFlags: 0
@@ -5682,7 +5622,7 @@ GameObject:
   - component: {fileID: 2069906880}
   - component: {fileID: 2069906879}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Descrtiption
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5705,8 +5645,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00027323, y: -12.4431}
-  m_SizeDelta: {x: 375.45, y: 92.1113}
+  m_AnchoredPosition: {x: 0.00027323, y: -18.163315}
+  m_SizeDelta: {x: 375.45, y: 80.6709}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2069906879
 MonoBehaviour:
@@ -5730,8 +5670,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Made out of coral or stone, break these for a possible power-up drop!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 30340e538dc80124db33606d67cbb262, type: 2}
+  m_sharedMaterial: {fileID: 7127798377076259685, guid: 30340e538dc80124db33606d67cbb262,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5755,14 +5696,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 24.95
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -5791,7 +5732,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 1.5960693, y: 0.4514389, z: 0.095703125, w: -0.29994202}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5840,8 +5781,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0007019, y: -0.0005683899}
-  m_SizeDelta: {x: 244.27, y: 272.15}
+  m_AnchoredPosition: {x: 0.5104, y: -3.1919}
+  m_SizeDelta: {x: 228.2068, y: 265.7673}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2113063527
 MonoBehaviour:
@@ -5866,8 +5807,9 @@ MonoBehaviour:
   m_text: Tap and hold the bomb button when it appears to power up a bomb throw.
     Bombs  can destroy multiple bricks in one hit or sink your opponents ship
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 30340e538dc80124db33606d67cbb262, type: 2}
+  m_sharedMaterial: {fileID: 7127798377076259685, guid: 30340e538dc80124db33606d67cbb262,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5891,14 +5833,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
+  m_fontSize: 27.25
   m_fontSizeBase: 26
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

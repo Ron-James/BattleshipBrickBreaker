@@ -14,10 +14,16 @@ public class Bullet : MonoBehaviour
     [SerializeField] GameObject inactives;
     [SerializeField] BulletType bulletType = BulletType.cannon;
 
+
+    MeshRenderer meshRenderer;
+    [SerializeField] Material cannonBallMaterial;
+    [SerializeField] Material snowBallMaterial;
+
     Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
+        meshRenderer = GetComponent<MeshRenderer>();
         isActive = false;
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
@@ -50,7 +56,7 @@ public class Bullet : MonoBehaviour
                             DisableBullet();
                         }
                         else if(bulletType == BulletType.snow){
-                            other.gameObject.GetComponent<PaddleButtonController>().AddSnowSlowTime(GameManager.instance.SnowSlowDuration);
+                            other.gameObject.GetComponentInParent<PaddleButtonController>().AddSnowSlowTime(GameManager.instance.SnowSlowDuration);
                             DisableBullet();
                         }
                         
@@ -77,6 +83,7 @@ public class Bullet : MonoBehaviour
     public void EnableBullet(Vector3 position, bool player, BulletType type)
     {
         bulletType = type;
+        UpdateMaterial();
         player1 = player;
         transform.position = position;
     
@@ -106,5 +113,19 @@ public class Bullet : MonoBehaviour
         Vector3 velocityXZ = dispXZ / (Mathf.Sqrt(-2 * height / gravity) + Mathf.Sqrt(2 * (dispY - height) / gravity));
 
         return velocityXZ + velocityY;
+    }
+
+    public void UpdateMaterial(){
+        switch((int) bulletType){
+            case 0:
+                meshRenderer.material = cannonBallMaterial;
+            break;
+            case 1:
+                meshRenderer.material = snowBallMaterial;
+            break;
+            default:
+                meshRenderer.material = cannonBallMaterial;
+            break;
+        }
     }
 }

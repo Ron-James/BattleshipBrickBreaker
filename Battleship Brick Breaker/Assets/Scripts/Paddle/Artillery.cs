@@ -69,7 +69,9 @@ public class Artillery : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Space) && player1 ==  true){
+            AddSnowThrowerTime(10f);
+        }
     }
     public void Fire()
     {

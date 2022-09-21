@@ -351,3 +351,205 @@ Received Import Request.
   path: Assets/EffectExamples/Magic Effects/Textures/IceNormals.tif
   artifactKey: Guid(78e71b9e097c52e4cba00d81ed4dbe74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/EffectExamples/Magic Effects/Textures/IceNormals.tif using Guid(78e71b9e097c52e4cba00d81ed4dbe74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7d76b00482e591633e193979f98c60a') in 0.223588 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2196.590447 seconds.
+  path: Assets/MyTextures/New_Coral_Textured_Bricks/GreenTExture.png
+  artifactKey: Guid(96e41896d52b9c94aacf42072a2c610c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MyTextures/New_Coral_Textured_Bricks/GreenTExture.png using Guid(96e41896d52b9c94aacf42072a2c610c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e8fd47b3f531876a57e62e73ade170e') in 0.061572 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.690021 seconds.
+  path: Assets/Cartoon_Texture_Pack/WALLS/WALL_Stone/Textures/Wall_Stone_C_Height.png
+  artifactKey: Guid(11a916f74a93ba74dbe74f6742bc177e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cartoon_Texture_Pack/WALLS/WALL_Stone/Textures/Wall_Stone_C_Height.png using Guid(11a916f74a93ba74dbe74f6742bc177e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0348c1f641b417f59413e5a7c34ebf27') in 0.203933 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Free Assets/JMO Assets/WarFX/Desktop/Textures/Misc/WFX_T_Debris Generic.tga
+  artifactKey: Guid(b23528b172bf0ab459d12b978186714c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Assets/JMO Assets/WarFX/Desktop/Textures/Misc/WFX_T_Debris Generic.tga using Guid(b23528b172bf0ab459d12b978186714c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6fd15b0f7f78881f9fa6828ec1c494f') in 0.033782 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Free Assets/JMO Assets/WarFX/Mobile/Textures/Flames/WFXM_T_FlamesBig.tga
+  artifactKey: Guid(c75eb77b7d09e4e42a99f9adf75e32cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Assets/JMO Assets/WarFX/Mobile/Textures/Flames/WFXM_T_FlamesBig.tga using Guid(c75eb77b7d09e4e42a99f9adf75e32cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9a8dfe1be2da7cb00a482a9be40596a') in 0.035205 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Free Assets/JMO Assets/WarFX/Mobile/Textures/Bullet Holes/WFXM_T_BulletHoles Generic.tga
+  artifactKey: Guid(2aa9c70524e11f647be7f37d87fde7a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Assets/JMO Assets/WarFX/Mobile/Textures/Bullet Holes/WFXM_T_BulletHoles Generic.tga using Guid(2aa9c70524e11f647be7f37d87fde7a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2a398be011c2372ecf0f9261b948f71') in 0.035174 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Free Assets/JMO Assets/WarFX/Desktop/Textures/Flames/WFX_T_FlamesBig.tga
+  artifactKey: Guid(630c7e341b44a8943bcef0e113fa837b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Assets/JMO Assets/WarFX/Desktop/Textures/Flames/WFX_T_FlamesBig.tga using Guid(630c7e341b44a8943bcef0e113fa837b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '564fcb290c85370bc3d541bd3493b0a6') in 0.067241 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Free Assets/JMO Assets/WarFX/Desktop/Textures/Misc/WFX_T_GlowPalet A8.png
+  artifactKey: Guid(e9047c31f56e6314284348d24247f9fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Assets/JMO Assets/WarFX/Desktop/Textures/Misc/WFX_T_GlowPalet A8.png using Guid(e9047c31f56e6314284348d24247f9fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ab79ee021383f86a05f781ac8451c3b') in 0.033589 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Free Assets/JMO Assets/WarFX/Demo/UI Canvas/WFX Demo Logo.png
+  artifactKey: Guid(9162d39dfff8eee418769488b7282343) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Assets/JMO Assets/WarFX/Demo/UI Canvas/WFX Demo Logo.png using Guid(9162d39dfff8eee418769488b7282343) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9e117736e8dd6b4bbd7704e4d3cfb73') in 0.060248 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Free Assets/JMO Assets/WarFX/Mobile/Textures/Misc/WFXM_T_GlowCircle A8.png
+  artifactKey: Guid(7c2db9e29dacb944d83a81c1168acd36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Free Assets/JMO Assets/WarFX/Mobile/Textures/Misc/WFXM_T_GlowCircle A8.png using Guid(7c2db9e29dacb944d83a81c1168acd36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52c2eef6b42407938d8d49b2b9671e5b') in 0.044308 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.246636 seconds.
+  path: Assets/Materials/Brick Materials/Cracked/Exlosive.mat
+  artifactKey: Guid(2c8de9ad7f9764248aeb08492fcd2846) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Cracked/Exlosive.mat using Guid(2c8de9ad7f9764248aeb08492fcd2846) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc776adc5ae194ee424ffc1d73fb3d91') in 0.190814 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Materials/Brick Materials/Cracked/Green_Coral 1.mat
+  artifactKey: Guid(bcc9897f4b2234b45892b6097a39e7b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Cracked/Green_Coral 1.mat using Guid(bcc9897f4b2234b45892b6097a39e7b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c04861713c4c19da4d5e99445ecdd356') in 0.158275 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Materials/Brick Materials/Cracked/Red_Coral.mat
+  artifactKey: Guid(ede95fa0306ea1d44be2f10858c97d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Cracked/Red_Coral.mat using Guid(ede95fa0306ea1d44be2f10858c97d6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16db03a4dc70d2989440328da2f1b104') in 0.023610 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Materials/Brick Materials/Cracked/Wood.mat
+  artifactKey: Guid(b81831c69f487084682cf5ed13589f38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Cracked/Wood.mat using Guid(b81831c69f487084682cf5ed13589f38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e7c4af969c28fbbbcae3067c4930945') in 0.022329 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 353.772416 seconds.
+  path: Assets/MyTextures/New_Coral_Textured_Bricks/Green.png
+  artifactKey: Guid(4fb2f4e43a94dc54592e20d7ded4874c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MyTextures/New_Coral_Textured_Bricks/Green.png using Guid(4fb2f4e43a94dc54592e20d7ded4874c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb7434d6576ed9496bf6386a98e26272') in 0.077588 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.376219 seconds.
+  path: Assets/Sprites/Brick Sprites/StoneTexture_Cracked.png
+  artifactKey: Guid(f3a8380a39eac4f418b15a8f1de50601) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/StoneTexture_Cracked.png using Guid(f3a8380a39eac4f418b15a8f1de50601) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '223ac47329d3a5da62443c893be8f447') in 0.037470 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Props_3D/Textures/texture_scroll_MaskMap.png
+  artifactKey: Guid(5643f9e3e6a8a40edb6c4c344d5ce13e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Props_3D/Textures/texture_scroll_MaskMap.png using Guid(5643f9e3e6a8a40edb6c4c344d5ce13e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1040c8782ba003f6ae79e2dcf29b3bb9') in 0.078942 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Props_3D/Textures/texture_scroll_lowpoly_MaskMap.png
+  artifactKey: Guid(970ae338aa3d048caa5d5a01e9199121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Props_3D/Textures/texture_scroll_lowpoly_MaskMap.png using Guid(970ae338aa3d048caa5d5a01e9199121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10db64db7944550104efa820e9926c23') in 0.080265 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Props_3D/Textures/texture_scroll_Normal.png
+  artifactKey: Guid(44972920e8352415288a6a8c6f83ace8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Props_3D/Textures/texture_scroll_Normal.png using Guid(44972920e8352415288a6a8c6f83ace8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b8efd231fc10437709fff5038115c86') in 0.057471 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.317425 seconds.
+  path: Assets/EffectExamples/Magic Effects/Textures/EarthCrackAlbedo.tif
+  artifactKey: Guid(8127d72dd65a1454082d10767b2fcad4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EffectExamples/Magic Effects/Textures/EarthCrackAlbedo.tif using Guid(8127d72dd65a1454082d10767b2fcad4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce96eb3204b213130fcd3832d7629fd4') in 0.107065 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/Brick Sprites/explosion brick_cracked.png
+  artifactKey: Guid(65872b9331d0788459f3dfa3dc63be14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Brick Sprites/explosion brick_cracked.png using Guid(65872b9331d0788459f3dfa3dc63be14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '320edfc5ec02f8f1ccc29aa65d226d5a') in 0.022615 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.371691 seconds.
+  path: Assets/MyTextures/New_Coral_Textured_Bricks/Crack.png
+  artifactKey: Guid(e84581823d460604a8a8a8a48fcb7ee3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MyTextures/New_Coral_Textured_Bricks/Crack.png using Guid(e84581823d460604a8a8a8a48fcb7ee3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4671e0fa3eda814395c368629d9a9782') in 0.022991 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.165080 seconds.
+  path: Assets/Scenes/Main/Lightmap-0_comp_dir.png
+  artifactKey: Guid(d23ce938ae7d9b24bb791e4a71d3388f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Main/Lightmap-0_comp_dir.png using Guid(d23ce938ae7d9b24bb791e4a71d3388f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae02428bf38b8b0b9ada6611704f35f4') in 0.172080 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Scenes/Main/Lightmap-1_comp_dir.png
+  artifactKey: Guid(930c85f85f52ab0498118329c192ee2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Main/Lightmap-1_comp_dir.png using Guid(930c85f85f52ab0498118329c192ee2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f0e89e3b1a1dd09fd847c71872472c1') in 0.113549 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Scenes/Level 1/Lightmap-1_comp_light.exr
+  artifactKey: Guid(597a7114fcdf64d4f87494e6d59a9fb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level 1/Lightmap-1_comp_light.exr using Guid(597a7114fcdf64d4f87494e6d59a9fb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '717f5181b27690d0ebc1f4c693709386') in 0.101777 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Scenes/Level 1/Lightmap-3_comp_dir.png
+  artifactKey: Guid(80650d6e2164a0b4faf267c50fc46da5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level 1/Lightmap-3_comp_dir.png using Guid(80650d6e2164a0b4faf267c50fc46da5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dba1d950645f24973b8aa4d51e3258c3') in 0.030258 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Scenes/Level 1/Lightmap-4_comp_light.exr
+  artifactKey: Guid(f520cfdb2bce61f4ab010a8725a4a790) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level 1/Lightmap-4_comp_light.exr using Guid(f520cfdb2bce61f4ab010a8725a4a790) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75a6f8deadea8d17871657df26a7bb76') in 0.033008 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.193582 seconds.
+  path: Assets/Scenes/Level 1/Lightmap-5_comp_light.exr
+  artifactKey: Guid(dad49c8293479e549baeca0a116a77cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level 1/Lightmap-5_comp_light.exr using Guid(dad49c8293479e549baeca0a116a77cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34ca40b865743a49eb613e598e3de416') in 0.042407 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Scenes/Level 1/Lightmap-7_comp_dir.png
+  artifactKey: Guid(b071c13eef98277448c1d52763d75195) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level 1/Lightmap-7_comp_dir.png using Guid(b071c13eef98277448c1d52763d75195) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a04305d1eec2ecfa55e4228cfc6fb255') in 0.028152 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Cartoon_Texture_Pack/_MaterialLibrary/Material_Library_Reference.png
+  artifactKey: Guid(3a6463e0803a8e845b99b863dde00116) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cartoon_Texture_Pack/_MaterialLibrary/Material_Library_Reference.png using Guid(3a6463e0803a8e845b99b863dde00116) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4def5e8c3f89c6e3abc7fc75cc7ae5f') in 0.584424 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.661150 seconds.
+  path: Assets/MyTextures/New_Coral_Textured_Bricks/Red_brick.png
+  artifactKey: Guid(c8e77ce1a3a2eed459ec2f54eea7474d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MyTextures/New_Coral_Textured_Bricks/Red_brick.png using Guid(c8e77ce1a3a2eed459ec2f54eea7474d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '775f9b6a494b22817a8a74507fe8de11') in 0.041366 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 52.485652 seconds.
+  path: Assets/Materials/Brick Materials/Feedback/Basic Brick Feedback [3].mat
+  artifactKey: Guid(9af0e12b88a76d54684af61118d17bba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Feedback/Basic Brick Feedback [3].mat using Guid(9af0e12b88a76d54684af61118d17bba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e90523d641eb743491f40de68192c70') in 0.357389 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Materials/Brick Materials/Feedback/Basic Brick Feedback Powerup.mat
+  artifactKey: Guid(5d5ee71b73393bb4aa4a6ba890d1bb38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Feedback/Basic Brick Feedback Powerup.mat using Guid(5d5ee71b73393bb4aa4a6ba890d1bb38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b568036c811bd535667494d4b9b03b2') in 0.073584 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Materials/Brick Materials/Feedback/General.mat
+  artifactKey: Guid(aeaef1260a6a7d841ac722a836439e53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Brick Materials/Feedback/General.mat using Guid(aeaef1260a6a7d841ac722a836439e53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72669e8179b860a9e348c905cbf5a4f4') in 0.064945 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

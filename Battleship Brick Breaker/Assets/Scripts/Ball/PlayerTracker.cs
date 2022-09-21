@@ -20,7 +20,11 @@ public class PlayerTracker : MonoBehaviour
     [SerializeField] CurrentOwner currentOwner;
     [SerializeField] Material player1Material;
     [SerializeField] Material player2Material;
+    [SerializeField] bool isBuffed;
+    [SerializeField] ParticleSystem fireParticles;
+    [SerializeField] float buffTime;
 
+    Coroutine buffCoroutine;
     public Owner Owner1 { get => owner; set => owner = value; }
     public CurrentOwner CurrentOwner1 { get => currentOwner; set => currentOwner = value; }
 
@@ -46,6 +50,7 @@ public class PlayerTracker : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
+
         switch (other.collider.tag)
         {
             case "Paddle":
@@ -59,11 +64,18 @@ public class PlayerTracker : MonoBehaviour
                 }
                 break;
             case "Brick":
-                if(currentOwner == CurrentOwner.player1){
-                    other.collider.GetComponent<BrickHealth>().TakeDamge(1, true);
+                float damage = 1f;
+                if(isBuffed){
+                    damage = 2;
                 }
                 else{
-                    other.collider.GetComponent<BrickHealth>().TakeDamge(1, false);
+                    damage = 1;
+                }
+                if(currentOwner == CurrentOwner.player1){
+                    other.collider.GetComponent<BrickHealth>().TakeDamge(damage, true);
+                }
+                else{
+                    other.collider.GetComponent<BrickHealth>().TakeDamge(damage, false);
                 }
                 break;
         }
@@ -138,6 +150,35 @@ public class PlayerTracker : MonoBehaviour
                 break;
         }
 
+    }
+
+    public void BuffBallDamage(float duration){
+        buffTime = duration;
+        if(buffCoroutine == null){
+            buffCoroutine = StartCoroutine(BuffDamage());
+        }
+    }
+
+    public void ResetBuffDamage(){
+        buffTime = 0;
+    }
+
+    IEnumerator BuffDamage(){
+        isBuffed = true;
+        fireParticles.Play();
+        while(true){
+            buffTime -= Time.fixedDeltaTime;
+            if(buffTime <= 0){
+                fireParticles.Stop();
+                isBuffed = false;
+                buffCoroutine = null;
+                break;
+            }
+            else{
+
+                yield return new WaitForFixedUpdate();
+            }
+        }
     }
 
 

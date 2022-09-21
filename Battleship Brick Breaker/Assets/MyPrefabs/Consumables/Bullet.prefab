@@ -115,6 +115,9 @@ MonoBehaviour:
   player1: 1
   actives: {fileID: 0}
   inactives: {fileID: 0}
+  bulletType: 0
+  cannonBallMaterial: {fileID: 2100000, guid: 4ff920c769925264490dedb819798215, type: 2}
+  snowBallMaterial: {fileID: 2100000, guid: c008107aebf64134d89eb94895cd958d, type: 2}
 --- !u!54 &2103561784038928715
 Rigidbody:
   m_ObjectHideFlags: 0
