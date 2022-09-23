@@ -194,7 +194,7 @@ public class Artillery : MonoBehaviour
     }
     public void AddAmmo(int amount)
     {
-        Debug.Log(SettingsManager.instance.ActiveCannonButton(player1).GetComponentInChildren<FloatingText>().gameObject.name);
+        //Debug.Log(SettingsManager.instance.ActiveCannonButton(player1).GetComponentInChildren<FloatingText>().gameObject.name);
         FloatingText floatingText = SettingsManager.instance.ActiveCannonButton(player1).GetComponentInChildren<FloatingText>();
         if(floatingText != null){
             if(amount > 0){

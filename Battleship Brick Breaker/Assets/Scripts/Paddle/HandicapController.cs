@@ -45,8 +45,8 @@ public class HandicapController : MonoBehaviour
         {
             if (handicapTime <= 0)
             {
-                handicapTime = 0;
                 isHandicapped = false;
+                handicapTime = 0;
                 handicapRoutine = null;
                 aimArrow.IgnoreBalls(false);
                 aimArrow.CanLaunch = true;
@@ -54,6 +54,9 @@ public class HandicapController : MonoBehaviour
                 paddleController.IsStopped = false;
                 paddleController.Slider.interactable = true;
 
+                if(paddleController.Ball.IsBoundToPaddle){
+                    aimArrow.StartOscillation();
+                }
 
 
                 break;

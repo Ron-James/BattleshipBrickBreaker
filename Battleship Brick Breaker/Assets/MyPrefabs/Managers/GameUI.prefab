@@ -904,8 +904,8 @@ MonoBehaviour:
   - {fileID: 3763725456397759719}
   - {fileID: 3313004964768054850}
   player2BombButtons:
-  - {fileID: 121393648444037446}
   - {fileID: 310939931746759063}
+  - {fileID: 121393648444037446}
   initialVelocity: {fileID: 0}
 --- !u!1 &2296565078725373538
 GameObject:

@@ -9,7 +9,7 @@ public class AimArrow : MonoBehaviour
     [SerializeField] bool player1;
     [SerializeField] Transform ballPos;
     [SerializeField] Transform aimPoint;
-    
+
     [SerializeField] Collider paddleCollider;
 
     [Header("Aiming angles and speed")]
@@ -40,12 +40,13 @@ public class AimArrow : MonoBehaviour
     public Coroutine LaunchPenalty1 { get => launchPenalty; set => launchPenalty = value; }
 
 
-    
 
-    private void OnDisable() {
+
+    private void OnDisable()
+    {
         StopAllCoroutines();
     }
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,42 +56,52 @@ public class AimArrow : MonoBehaviour
         outPenaltyTime = GameManager.instance.InitialOutPenalty;
         lastAimDirection = Vector3.zero;
         arrow = GetComponent<Image>();
-        if(player1){
+        if (player1)
+        {
             sign = -1;
         }
-        else{
+        else
+        {
             sign = -1;
         }
         aiming = true;
         canLaunch = true;
         ResetRotation();
         transform.position = ballPos.position;
+        StartOscillation();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(canLaunch && aiming && oscillator == null){
+        if (canLaunch && aiming && oscillator == null)
+        {
             //oscillator = StartCoroutine(Oscillate(aimPeriod, CanHit));
         }
 
-        if(ballPhysics.IsBoundToPaddle){
-            if(!handicapController.isHandicapped){
-                if(oscillator == null){
+        if (ballPhysics.IsBoundToPaddle)
+        {
+            if (!handicapController.isHandicapped)
+            {
+                if (oscillator == null)
+                {
                     oscillator = StartCoroutine(Oscillate(aimPeriod, GameManager.instance.MaxAimTime));
                 }
             }
         }
 
-        
+
     }
 
-    public void ResetRotation(){
+    public void ResetRotation()
+    {
         float straight = 180;
-        if(player1) {
+        if (player1)
+        {
             straight = 0;
         }
-        else{
+        else
+        {
             straight = 180;
         }
         transform.eulerAngles = new Vector3(90, -90, straight);
@@ -136,19 +147,33 @@ public class AimArrow : MonoBehaviour
         }
     }
 
-    public void IgnoreBalls(bool ignore){
+    public void IgnoreBalls(bool ignore)
+    {
         GameObject[] balls = GameObject.FindGameObjectsWithTag("Ball");
-        foreach(GameObject ball in balls){
+        foreach (GameObject ball in balls)
+        {
             Physics.IgnoreCollision(paddleCollider, ball.GetComponent<SphereCollider>(), ignore);
         }
-        
+
     }
-    IEnumerator Oscillate(float period, float maxTime){
-        
+
+    public void StartOscillation()
+    {
+        if (oscillator == null)
+        {
+            oscillator = StartCoroutine(Oscillate(aimPeriod, GameManager.instance.MaxAimTime));
+        }
+        else{
+            return;
+        }
+    }
+    IEnumerator Oscillate(float period, float maxTime)
+    {
+
         arrow.enabled = true;
-        transform.position = GetComponentInParent<PaddleController>().Ball.transform.position;
+        transform.position = GetComponentInParent<PaddleController>().BallPosition.position;
         float time = 0;
-        float w = (1/period) * 2 * Mathf.PI;
+        float w = (1 / period) * 2 * Mathf.PI;
         float straight = 180;
         int touchIndex;
         Vector3 touchPos;
@@ -156,30 +181,39 @@ public class AimArrow : MonoBehaviour
         GetComponentInParent<PaddleController>().IsStopped = true;
         GetComponentInParent<BombLauncher>().canLaunch = false;
         Vector3 direction = (aimPoint.position - GetComponent<RectTransform>().position).normalized;
-        if(player1) {
+        if (player1)
+        {
             straight = 0;
         }
-        else{
+        else
+        {
             straight = 180;
         }
-        
+
         IgnoreBalls(true);
-        
-        while(true){
-            if(GetComponentInParent<HandicapController>().isHandicapped){
+
+        while (true)
+        {
+            if (GetComponentInParent<HandicapController>().isHandicapped)
+            {
                 oscillator = null;
                 break;
             }
-            if((ClickInField() && Input.GetMouseButtonDown(0)) || GameManager.instance.TouchInField(out touchIndex, out touchPos, player1) || time >= maxTime){
-                if(paddleController.controlScheme == PaddleController.ControlScheme.slider){
+            if ((ClickInField() && Input.GetMouseButtonDown(0)) || GameManager.instance.TouchInField(out touchIndex, out touchPos, player1) || time >= maxTime)
+            {
+                Debug.Log("Tapped pls what");
+                if (paddleController.controlScheme == PaddleController.ControlScheme.slider)
+                {
                     paddleController.Slider.interactable = true;
                 }
-                if(TutorialManager.instance.isTutorial){
+                if (TutorialManager.instance.isTutorial)
+                {
                     TutorialManager.instance.ballLaunch.ClosePrompt(player1);
-                    if(!TutorialManager.instance.moveTut.HasAcknowledged(player1)){
+                    if (!TutorialManager.instance.moveTut.HasAcknowledged(player1))
+                    {
                         TutorialManager.instance.moveTut.OpenPrompt(player1);
                     }
-                    
+
                 }
                 IgnoreBalls(false);
                 direction = (aimPoint.position - GetComponent<RectTransform>().position).normalized;
@@ -189,11 +223,10 @@ public class AimArrow : MonoBehaviour
                 aiming = false;
                 oscillator = null;
                 ballPhysics.Launch(GameManager.instance.InitialVelocity, sign * direction);
-        
-                yield return new WaitForFixedUpdate();
                 break;
             }
-            else{
+            else
+            {
                 float zRot = straight - (maxAngle * Mathf.Sin(w * time));
                 Vector3 angles = new Vector3(90, -90, zRot);
                 angles.z = zRot;
@@ -205,18 +238,20 @@ public class AimArrow : MonoBehaviour
         }
     }
 
-    IEnumerator BombLauncherDelay(float time){
+    IEnumerator BombLauncherDelay(float time)
+    {
         yield return new WaitForSeconds(time);
         GetComponentInParent<BombLauncher>().canLaunch = true;
-        
+
     }
 
-    public void OnBallOut(){
+    public void OnBallOut()
+    {
         aiming = true;
         canLaunch = false;
 
-        
-        
+
+
 
     }
 

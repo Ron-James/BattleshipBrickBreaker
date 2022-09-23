@@ -74,19 +74,10 @@ public class BallPhysics : MonoBehaviour
             Debug.Log("Clamp Velocity");
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, GameManager.instance.MaxBallVelocity);
         }
-        if (transform.parent != null && rb.velocity.magnitude > 0 && paddle != null)
-        {
-            //BindToPaddle();
-        }
     }
     // Update is called once per frame
     void Update()
     {
-
-        if (transform.parent == null && rb.velocity.magnitude == 0)
-        {
-            rb.velocity = lastVelocity;
-        }
 
     }
     public void IncreaseSize(float percent)
@@ -240,6 +231,7 @@ public class BallPhysics : MonoBehaviour
     }
     public void BindToPaddle()
     {
+        isBoundToPaddle = true;
         if (paddle == null)
         {
             return;
@@ -247,7 +239,7 @@ public class BallPhysics : MonoBehaviour
         rb.isKinematic = true;
         rb.velocity = Vector3.zero;
         transform.SetParent(paddle.transform);
-        isBoundToPaddle = true;
+        
         transform.position = paddle.GetComponent<PaddleController>().BallPosition.position;
 
 

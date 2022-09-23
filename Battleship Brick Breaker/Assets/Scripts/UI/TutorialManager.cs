@@ -88,15 +88,14 @@ public class TutorialManager : Singleton<TutorialManager>
     }
     public void EnableCannonPrompt(bool player1)
     {
+        Debug.Log("prompt pls");
         if (player1)
         {
             if (SettingsManager.p1Right)
             {
-                if (p1CannonPrompt.gameObject.activeSelf)
-                {
-                    p1CannonPrompt.StartFadeFlash();
-                    Debug.Log("Should prompt here");
-                }
+                p1CannonPrompt.StartFadeFlash();
+                
+                
 
             }
             else

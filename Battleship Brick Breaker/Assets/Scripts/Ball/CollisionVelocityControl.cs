@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class CollisionVelocityControl : MonoBehaviour
 {
+    
     Vector3 lastVelocity;
     Vector3 oldVelocity;
     Vector3 lastCollVelocity;
     public float largestMagnitude;
     Rigidbody rb;
+
+    BallPhysics ballPhysics;
+
 
     public float LargestMagnitude { get => largestMagnitude; set => largestMagnitude = value; }
     public Vector3 LastVelocity { get => lastVelocity; set => lastVelocity = value; }
@@ -19,6 +23,7 @@ public class CollisionVelocityControl : MonoBehaviour
         largestMagnitude = 0;
         lastVelocity = Vector3.zero;
         rb = GetComponent<Rigidbody>();
+        ballPhysics = GetComponent<BallPhysics>();
     }
 
     // Update is called once per frame
@@ -28,21 +33,30 @@ public class CollisionVelocityControl : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (!rb.isKinematic && transform.parent == null)
+        
+        if (transform.parent == null)
         {
-            oldVelocity = lastVelocity;
-            lastVelocity = rb.velocity;
-            if (Mathf.Abs(rb.velocity.magnitude) > largestMagnitude)
+            if (!rb.isKinematic)
             {
-                largestMagnitude = rb.velocity.magnitude;
+                oldVelocity = lastVelocity;
+                lastVelocity = rb.velocity;
+                if (Mathf.Abs(rb.velocity.magnitude) > largestMagnitude)
+                {
+                    largestMagnitude = rb.velocity.magnitude;
+                }
             }
         }
 
-        if(!GetComponent<BallPhysics>().IsOut){
-            if(rb.velocity.magnitude < largestMagnitude){
+        if (!ballPhysics.IsBoundToPaddle)
+        {
+            if (rb.velocity.magnitude < largestMagnitude)
+            {
                 GameManager.instance.ApplyForceToVelocity(rb, lastVelocity.normalized * largestMagnitude, 10000);
             }
+
+
         }
+
 
     }
     private void OnCollisionExit(Collision other)
