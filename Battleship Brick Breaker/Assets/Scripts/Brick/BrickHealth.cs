@@ -32,7 +32,7 @@ public class BrickHealth : MonoBehaviour
 
     void Start()
     {
-        
+        feedbackOverlay.SetActive(false);
         hitSound.src = GetComponent<AudioSource>();
         breakSound.src = GetComponent<AudioSource>();
         currentHealth = maxHealth;

@@ -6,16 +6,35 @@ using TMPro;
 public class TextFlash : MonoBehaviour
 {
     [SerializeField] TextMeshPro text;
+    [SerializeField] TextMeshProUGUI UItext;
     [SerializeField] Color flashColor;
     [SerializeField] float flashDuration;
     [SerializeField] float flashPeriod;
     [SerializeField] Sound flashSound;
     [SerializeField] float currentFlashTime = 0;
     Coroutine flashCoroutine;
+
+    public Color FlashColor { get => flashColor; set => flashColor = value; }
+    public float FlashDuration { get => flashDuration; set => flashDuration = value; }
+
     // Start is called before the first frame update
     void Start()
     {
-        text.enabled = false;
+        SetTextActive(false);
+
+    }
+
+    public void SetTextActive(bool active)
+    {
+        if (text != null)
+        {
+            text.enabled = active;
+        }
+
+        if (UItext != null)
+        {
+            UItext.enabled = active;
+        }
     }
 
     // Update is called once per frame
@@ -24,43 +43,69 @@ public class TextFlash : MonoBehaviour
 
     }
 
-    public void FlashText(float duration)
+    public void StopTextFlash()
     {
-        float time = Mathf.Abs(duration);
-        if (time > 0)
+        currentFlashTime = 0;
+    }
+
+    public void FlashText()
+    {
+
+        if (flashCoroutine == null)
         {
-            if (flashCoroutine == null)
-            {
-                flashCoroutine = StartCoroutine(Flash(time, flashPeriod, flashColor));
-            }
-            else
-            {
-                return;
-            }
+            flashCoroutine = StartCoroutine(Flash(flashDuration, flashPeriod, FlashColor));
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    public void ChangeColor(Color color)
+    {
+        if (text != null)
+        {
+            text.color = color;
+        }
+
+        if (UItext != null)
+        {
+            UItext.color = color;
+        }
+    }
+
+    public Color TextColor()
+    {
+        if (text != null)
+        {
+            return text.color;
+        }
+
+        else if (UItext != null)
+        {
+            return UItext.color;
         }
         else{
-            currentFlashTime = 0;
+            return flashColor;
         }
-
-
-
-
     }
+
+
     IEnumerator Flash(float duration, float period, Color color)
     {
         flashSound.PlayLoop();
-        text.enabled = true;
+        SetTextActive(true);
         currentFlashTime = duration;
         float flashTime = 0;
         int count = 0;
-        Color defaultColor = text.color;
+        Color defaultColor = TextColor();
         while (true)
         {
             if (currentFlashTime <= 0)
             {
                 flashCoroutine = null;
-                text.color = defaultColor;
-                text.enabled = false;
+                ChangeColor(defaultColor);
+                SetTextActive(false);
                 flashSound.StopSource();
                 break;
             }
@@ -75,11 +120,11 @@ public class TextFlash : MonoBehaviour
                 }
                 if (count % 2 == 0)
                 {
-                    text.color = defaultColor;
+                    ChangeColor(defaultColor);
                 }
                 else
                 {
-                    text.color = color;
+                    ChangeColor(color);
                 }
                 yield return null;
             }

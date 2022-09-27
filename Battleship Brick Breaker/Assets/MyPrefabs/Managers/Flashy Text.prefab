@@ -188,13 +188,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1275408497212576566}
+  UItext: {fileID: 0}
   flashColor: {r: 1, g: 0, b: 0, a: 1}
-  flashDuration: 5
-  flashPeriod: 0.2
+  flashDuration: 3
+  flashPeriod: 0.3
   flashSound:
     clip: {fileID: 8300000, guid: 564639d8adc8d7e4f8ea47061313d752, type: 3}
     src: {fileID: 7125137937803615237}
-    volume: 0.1
+    volume: 0.4
+  currentFlashTime: 0
 --- !u!82 &7125137937803615237
 AudioSource:
   m_ObjectHideFlags: 0

@@ -234,7 +234,7 @@ MonoBehaviour:
   inactives: {fileID: 0}
   meshRenderer: {fileID: 7221396140976061946}
   bombCollider: {fileID: 2771190952205941659}
-  explosionRadius: 3
+  explosionRadius: 4.5
   brickDamage: 1
   explosion: {fileID: 5059086540429498191}
   fuseBurn: {fileID: 6766523307177846877}
@@ -242,10 +242,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 6e4c93368d7fefb4f93b1be64049822b, type: 3}
     src: {fileID: 6650255280627594074}
     volume: 0.5
+    soundCategory: 0
   fuseSound:
     clip: {fileID: 8300000, guid: d3ddb7edd720e6743bde39fa7bae519f, type: 3}
     src: {fileID: 2565217288707100248}
     volume: 0.3
+    soundCategory: 0
 --- !u!54 &8335541559573409208
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -396,7 +398,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9166920874957118511}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -1.68}
   m_LocalScale: {x: 11.298535, y: 11.298533, z: 11.298533}
   m_ConstrainProportionsScale: 0

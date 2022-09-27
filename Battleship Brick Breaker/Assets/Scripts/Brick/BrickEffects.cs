@@ -10,6 +10,9 @@ public class BrickEffects : MonoBehaviour
     [SerializeField] ParticleSystem splash;
     [SerializeField] Sound splashSound;
     [SerializeField] float fallSpeed;
+    [SerializeField] AnimationCurve fallCurve;
+    [SerializeField] float fallTime = 2f;
+    [SerializeField] float fallDistance = 3.5f;
     Rigidbody rb;
     Vector3 defaulPos;
 
@@ -30,6 +33,11 @@ public class BrickEffects : MonoBehaviour
         splash.Stop();
     }
 
+    public void EnableBasic(){
+        meshRenderer.enabled = true;
+        sinkBrick.SetActive(false);
+        cracked.SetActive(false);
+    }
 
     public void EnableCrackBrick(){
         meshRenderer.enabled = false;
@@ -49,28 +57,33 @@ public class BrickEffects : MonoBehaviour
         cracked.SetActive(false);
     }
     public void StartSinkBrick(){
-        StartCoroutine(SinkBrick());
+        StartCoroutine(SinkBrick(fallTime, fallDistance));
     }
-    IEnumerator SinkBrick(){
+    IEnumerator SinkBrick(float duration, float fallDistance){
         float time = 0;
         EnableSinkBrick();
         Vector3 target = transform.position;
-        target.y = -4f;
-        rb.isKinematic = false;
-        rb.useGravity = true;
+        target.y = -Mathf.Abs(fallDistance);
+        //rb.isKinematic = false;
+        //rb.useGravity = true;
+
         
         while(true){
-            if(time >= 3f){
+            time += Time.deltaTime;
+            float ratio = time / duration;
+            float speed = fallCurve.Evaluate(ratio) * fallSpeed;
+            if(transform.position.y >= target.y){
                 DisableAll();
                 transform.position = defaulPos;
-                rb.isKinematic = false;
-                rb.useGravity = false;
+                Splash();
+                //rb.isKinematic = false;
+                //rb.useGravity = false;
                 break;
             }   
             else{
                 //Debug.Log(transform.position.y + "brick height");
-                time += Time.fixedDeltaTime;
-                yield return new WaitForFixedUpdate();
+                transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+                yield return null;
             }
         }
     }
@@ -86,11 +99,13 @@ public class BrickEffects : MonoBehaviour
         splash.Play();
         splashSound.PlayOnce();
     }
+    /*
     private void OnTriggerEnter(Collider other) {
         switch(other.tag){
             case "Backboard":
-                Splash();
+                //Splash();
                 break;
         }
     }
+    */
 }

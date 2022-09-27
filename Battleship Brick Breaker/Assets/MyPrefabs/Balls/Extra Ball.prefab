@@ -21,12 +21,12 @@ PrefabInstance:
         type: 3}
       propertyPath: player1Material
       value: 
-      objectReference: {fileID: 2100000, guid: ff5fd951295276d45aa198ff766789dc, type: 2}
+      objectReference: {fileID: 2100000, guid: ea36d4df0679fc843bd3f7cd041f8e5c, type: 2}
     - target: {fileID: 2056922785459137483, guid: 0ddc0804c463a1a40a86b5a104730498,
         type: 3}
       propertyPath: player2Material
       value: 
-      objectReference: {fileID: 2100000, guid: 3b24c5a79b749e941a9de824637025bd, type: 2}
+      objectReference: {fileID: 2100000, guid: 950989bc25011af4d8ff507820b48e25, type: 2}
     - target: {fileID: 2723910455624439903, guid: 0ddc0804c463a1a40a86b5a104730498,
         type: 3}
       propertyPath: onBallOut.m_PersistentCalls.m_Calls.Array.size
@@ -186,7 +186,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ff5fd951295276d45aa198ff766789dc, type: 2}
+      objectReference: {fileID: 2100000, guid: 950989bc25011af4d8ff507820b48e25, type: 2}
     - target: {fileID: 5703676189701985225, guid: 0ddc0804c463a1a40a86b5a104730498,
         type: 3}
       propertyPath: m_RootOrder

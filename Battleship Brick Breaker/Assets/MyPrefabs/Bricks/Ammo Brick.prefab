@@ -119,14 +119,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 2
-  objective: 0
-  ammo: 1
-  powerUp: 0
-  split: 0
   brickType: 2
   crack: {fileID: 2274248625170567146}
   feedbackOverlay: {fileID: 8206763928425918820}
-  tutorial: 0
   currentHealth: 0
   brickEffects: {fileID: 0}
   isBroken: 0
@@ -134,6 +129,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 01db32cbb13d64f4eb2daf2b438b3295, type: 3}
     src: {fileID: 0}
     volume: 0.1
+    soundCategory: 0
+  breakSound:
+    clip: {fileID: 0}
+    src: {fileID: 0}
+    volume: 0.1
+    soundCategory: 0
   OnBrickBreak:
     m_PersistentCalls:
       m_Calls:
@@ -280,7 +281,34 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 468346760e52bf043ba653305291ebf2, type: 3}
     src: {fileID: 2857006227020834954}
     volume: 0.4
-  fallSpeed: 0
+    soundCategory: 0
+  fallSpeed: 2
+  fallCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  fallTime: 2
+  fallDistance: 3.5
 --- !u!54 &1641206490536385249
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -399,7 +427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8309572481240216230
 Transform:
   m_ObjectHideFlags: 0
@@ -496,7 +524,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4198702775581941999
 Transform:
   m_ObjectHideFlags: 0
@@ -592,7 +620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5473821963190519227
 Transform:
   m_ObjectHideFlags: 0

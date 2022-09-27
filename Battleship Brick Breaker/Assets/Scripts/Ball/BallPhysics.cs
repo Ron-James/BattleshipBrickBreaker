@@ -24,6 +24,8 @@ public class BallPhysics : MonoBehaviour
     bool isBoundToPaddle;
     Collider ballCollider;
 
+    [SerializeField] Vector3 velocityCache;
+
 
 
 
@@ -37,6 +39,7 @@ public class BallPhysics : MonoBehaviour
 
     void Start()
     {
+        velocityCache = Vector3.zero;
         rb = GetComponent<Rigidbody>();
         IgnoreBallCollisions();
         ballCollider = GetComponent<Collider>();
@@ -64,6 +67,17 @@ public class BallPhysics : MonoBehaviour
             oldVelocity = lastVelocity;
             lastVelocity = rb.velocity;
         }
+    }
+
+
+    public void PauseBall(){
+        velocityCache = rb.velocity;
+        rb.isKinematic = true;
+    }
+
+    public void ResumeBall(){
+        rb.isKinematic = false;
+        rb.velocity = velocityCache;
     }
     private void FixedUpdate()
     {
@@ -115,8 +129,8 @@ public class BallPhysics : MonoBehaviour
                 PaddleController paddle = other.collider.gameObject.GetComponentInParent<PaddleController>();
                 if (paddle.gameObject.GetComponent<PowerUpManager>().catcher && GetComponent<PlayerTracker>().GetMainOwner() != 0)
                 {
-
-                    if (!paddle.gameObject.GetComponentInChildren<AimArrow>().Aiming)
+                    /*
+                    if (!paddle.gameObject.GetComponentInChildren<AimArrow>().IsAiming)
                     {
                         if (other.GetContact(0).normal == (Vector3.right * inwardSign))
                         {
@@ -125,6 +139,7 @@ public class BallPhysics : MonoBehaviour
                         }
 
                     }
+                    */
 
                 }
                 IncreaseVelocity(bounciness);
@@ -253,7 +268,7 @@ public class BallPhysics : MonoBehaviour
         }
         StartCoroutine(SetKinematic(1));
         transform.SetParent(paddle.transform);
-        paddle.GetComponentInChildren<AimArrow>().Aiming = true;
+        //paddle.GetComponentInChildren<AimArrow>().IsAiming = true;
     }
 
     IEnumerator SetKinematic(int frames)

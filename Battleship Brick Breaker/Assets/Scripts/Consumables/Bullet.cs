@@ -13,11 +13,11 @@ public class Bullet : MonoBehaviour
     [SerializeField] GameObject actives;
     [SerializeField] GameObject inactives;
     [SerializeField] BulletType bulletType = BulletType.cannon;
+    [SerializeField] GameObject cannonBall;
+    [SerializeField] GameObject snowBall;
 
 
     MeshRenderer meshRenderer;
-    [SerializeField] Material cannonBallMaterial;
-    [SerializeField] Material snowBallMaterial;
 
     Rigidbody rb;
     // Start is called before the first frame update
@@ -101,7 +101,8 @@ public class Bullet : MonoBehaviour
         GetComponent<Collider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
         transform.SetParent(inactives.transform);
-
+        cannonBall.SetActive(false);
+        snowBall.SetActive(false);
         isActive = false;
     }
 
@@ -120,13 +121,16 @@ public class Bullet : MonoBehaviour
     public void UpdateMaterial(){
         switch((int) bulletType){
             case 0:
-                meshRenderer.material = cannonBallMaterial;
+                cannonBall.SetActive(true);
+                snowBall.SetActive(false);
             break;
             case 1:
-                meshRenderer.material = snowBallMaterial;
+                cannonBall.SetActive(false);
+                snowBall.SetActive(true);
             break;
             default:
-                meshRenderer.material = cannonBallMaterial;
+                cannonBall.SetActive(true);
+                snowBall.SetActive(false);
             break;
         }
     }

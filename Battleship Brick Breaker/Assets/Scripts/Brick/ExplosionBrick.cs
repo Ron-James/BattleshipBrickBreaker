@@ -6,6 +6,7 @@ public class ExplosionBrick : MonoBehaviour
 {
     [SerializeField] ParticleSystem explosion;
     [SerializeField] float radius;
+    [SerializeField] float damage = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,7 @@ public class ExplosionBrick : MonoBehaviour
         StartCoroutine(PlayParticleEffect());
         foreach(Collider element in colliders){
             if(element.GetComponent<BrickHealth>() != null){
-                element.GetComponent<BrickHealth>().TakeDamge(1, player1);
+                element.GetComponent<BrickHealth>().TakeDamge(damage, player1);
             }
         }
     }

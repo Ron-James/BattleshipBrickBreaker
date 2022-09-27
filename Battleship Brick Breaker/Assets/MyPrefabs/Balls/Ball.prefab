@@ -35,8 +35,8 @@ Transform:
   m_GameObject: {fileID: 5703676189701985220}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6424084387761137920}
   - {fileID: 5322217225067115002}
@@ -146,7 +146,9 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 9bc49429cbaf3894b8ff18a5827391e7, type: 3}
     src: {fileID: 0}
     volume: 0.1
+    soundCategory: 0
   rb: {fileID: 0}
+  velocityCache: {x: 0, y: 0, z: 0}
 --- !u!114 &2056922785459137483
 MonoBehaviour:
   m_ObjectHideFlags: 0

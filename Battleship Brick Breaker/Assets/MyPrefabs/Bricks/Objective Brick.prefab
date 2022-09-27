@@ -101,8 +101,8 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
 --- !u!4 &6196136230718556930
 Transform:
   m_ObjectHideFlags: 0
@@ -310,10 +310,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 7094c65c50b92804280bf92e41b56153, type: 3}
     src: {fileID: 0}
     volume: 0.1
+    soundCategory: 0
   breakSound:
     clip: {fileID: 0}
     src: {fileID: 0}
     volume: 0.1
+    soundCategory: 0
   OnBrickBreak:
     m_PersistentCalls:
       m_Calls:
@@ -460,7 +462,34 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 468346760e52bf043ba653305291ebf2, type: 3}
     src: {fileID: -7863900061298784009}
     volume: 0.1
-  fallSpeed: 0
+    soundCategory: 0
+  fallSpeed: 2
+  fallCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  fallTime: 2
+  fallDistance: 3.5
 --- !u!54 &3601669455289368508
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -494,8 +523,8 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
 --- !u!4 &4273277986351699289
 Transform:
   m_ObjectHideFlags: 0
@@ -591,8 +620,8 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
 --- !u!4 &1851008091893435051
 Transform:
   m_ObjectHideFlags: 0

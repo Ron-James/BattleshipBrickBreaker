@@ -28,8 +28,6 @@ public class TutorialManager : Singleton<TutorialManager>
     [SerializeField] ButtonPrompt p1CannonPromptLeft;
     [SerializeField] ButtonPrompt p2CannonPromptLeft;
 
-    [SerializeField] TutorialPrompt [] cannonPrompts = new TutorialPrompt[2];
-    [SerializeField] TutorialPrompt [] bombPrompts = new TutorialPrompt[2];
 
     public BrickHealth[] bricks;
     public LaunchTutorial launchTutorialP1 = LaunchTutorial.None;
@@ -88,7 +86,6 @@ public class TutorialManager : Singleton<TutorialManager>
     }
     public void EnableCannonPrompt(bool player1)
     {
-        Debug.Log("prompt pls");
         if (player1)
         {
             if (SettingsManager.p1Right)

@@ -7,9 +7,11 @@ public class HandicapController : MonoBehaviour
 {
     public bool isHandicapped;
     [SerializeField] float handicapTime = 0;
+    [SerializeField] float maxHandicapTime = 15f;
     Coroutine handicapRoutine;
     PaddleController paddleController;
     AimArrow aimArrow;
+    HandicapClock handicapClock;
 
     public Coroutine HandicapRoutine { get => HandicapRoutine; set => HandicapRoutine = value; }
 
@@ -19,6 +21,7 @@ public class HandicapController : MonoBehaviour
     {
         aimArrow = GetComponentInChildren<AimArrow>();
         paddleController = GetComponent<PaddleController>();
+        handicapClock = GetComponentInChildren<HandicapClock>();
         isHandicapped = false;
     }
 
@@ -72,9 +75,15 @@ public class HandicapController : MonoBehaviour
     public void AddHandicapTime(float time, bool sink)
     {
         handicapTime += time;
-        if (handicapTime > 0 && handicapRoutine == null)
+        Mathf.Clamp(handicapTime, 0, maxHandicapTime);
+        if (handicapTime > 0)
         {
-            handicapRoutine = StartCoroutine(HandicapPeriod(sink));
+            handicapClock.StartClockCount(handicapTime);
+            if(handicapRoutine == null){
+                handicapRoutine = StartCoroutine(HandicapPeriod(sink));
+            }   
+            
+
         }
     }
 

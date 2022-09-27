@@ -34,6 +34,7 @@ public class PowerUpManager : MonoBehaviour
     [SerializeField] int [] powerUpWeights = new int[6];
     float paddleLength;
     PaddleSoundBox paddleSoundBox;
+    Artillery artillery;
     bool player1;
 
     public bool[] CurrentPowerUps { get => currentPowerUps; set => currentPowerUps = value; }
@@ -41,7 +42,7 @@ public class PowerUpManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        artillery = GetComponent<Artillery>();
         player1 = GetComponent<PaddleController>().Player1;
         paddleSoundBox = GetComponentInChildren<PaddleSoundBox>();
         paddleLength = coll.gameObject.transform.localScale.z;
@@ -268,8 +269,9 @@ public class PowerUpManager : MonoBehaviour
             case 6: // triple cannon
                 GameObject cannonBtn = SettingsManager.instance.ActiveCannonButton(player1);
                 cannonBtn.GetComponent<CannonButton>().TripleCannonIndicator.SetActive(true);
-                tripleCannonText.FlashText(trippleCannonTextFlashTime);
+                tripleCannonText.FlashText();
                 currentPowerUps[powerUp] = true;
+                artillery.Fire();
                 break;
             
             case 7:
@@ -291,9 +293,12 @@ public class PowerUpManager : MonoBehaviour
         catcher = false;
         slimeBall.SetActive(false);
         GameManager.instance.ControlBarriers(player1, false);
-        tripleCannonText.FlashText(0);
+        tripleCannonText.StopTextFlash();
         GetComponent<Artillery>().StopSnowThrower();
         GameManager.instance.GetPaddle(player1).Ball.GetComponent<PlayerTracker>().ResetBuffDamage();
+        if(TutorialManager.instance.isTutorial){
+            TutorialManager.instance.bombPowerUp.ClosePrompt(player1);
+        }
     }
 
     public void OnBallOut()

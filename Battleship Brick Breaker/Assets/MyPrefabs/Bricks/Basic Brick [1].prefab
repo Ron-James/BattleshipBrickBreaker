@@ -129,10 +129,12 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 5687ac18d74621f4fac320514a0b3aa2, type: 3}
     src: {fileID: 0}
     volume: 0.4
+    soundCategory: 0
   breakSound:
     clip: {fileID: 0}
     src: {fileID: 0}
     volume: 0.6
+    soundCategory: 0
   OnBrickBreak:
     m_PersistentCalls:
       m_Calls:
@@ -295,7 +297,34 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 468346760e52bf043ba653305291ebf2, type: 3}
     src: {fileID: 2751039613586611402}
     volume: 0.4
-  fallSpeed: 0
+    soundCategory: 0
+  fallSpeed: 0.1
+  fallCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  fallTime: 2
+  fallDistance: 3.5
 --- !u!1 &4081134066315390152
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7377944451621018458
 Transform:
   m_ObjectHideFlags: 0
@@ -411,7 +440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4115446715010658223
 Transform:
   m_ObjectHideFlags: 0
@@ -592,7 +621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1623927221917161589
 Transform:
   m_ObjectHideFlags: 0
@@ -602,7 +631,7 @@ Transform:
   m_GameObject: {fileID: 7719518380441849734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.001, y: 1.001, z: 1.01}
+  m_LocalScale: {x: 1.01, y: 1.01, z: 1.01}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5535610842768684486}

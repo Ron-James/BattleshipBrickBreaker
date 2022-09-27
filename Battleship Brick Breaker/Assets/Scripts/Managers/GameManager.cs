@@ -16,6 +16,7 @@ public class GameManager : Singleton<GameManager>
      
 
     [SerializeField] WinScreen winScreen;
+    [SerializeField] WinnerTextManager winnerTextManager;
     [SerializeField] TextMeshProUGUI countDownTime;
 
     [Header("Objective Indicators")]
@@ -92,7 +93,6 @@ public class GameManager : Singleton<GameManager>
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 1;
         Debug.Log(RandomOpenPowerUp(paddle1.GetComponent<PowerUpManager>()).ToString() + " Random Power Up");
         Debug.Log(RandomOpenPowerUp(paddle1.GetComponent<PowerUpManager>()).ToString() + " Random Power Up");
         Debug.Log(RandomOpenPowerUp(paddle1.GetComponent<PowerUpManager>()).ToString() + " Random Power Up");
@@ -111,7 +111,32 @@ public class GameManager : Singleton<GameManager>
 
         if (Input.GetKeyDown(KeyCode.K))
         {
-            SpawnPowerup(Vector3.zero, true, 5);
+            WinGame(true);
+        }
+    }
+
+    public void WinGame(bool player1){
+        winnerTextManager.StartWinTextSequence(player1);
+        PauseAllBalls();
+        GetPaddle(true).IsStopped = true;
+        GetPaddle(false).IsStopped = true;
+    }
+
+    public void PauseAllBalls(){
+        GameObject [] balls = GameObject.FindGameObjectsWithTag("Ball");
+        foreach(GameObject ball in balls){
+            if(ball.GetComponent<BallPhysics>() != null){
+                ball.GetComponent<BallPhysics>().PauseBall();
+            }
+        }
+    }
+
+    public void ResumeAllBalls(){
+        GameObject [] balls = GameObject.FindGameObjectsWithTag("Ball");
+        foreach(GameObject ball in balls){
+            if(ball.GetComponent<BallPhysics>() != null){
+                ball.GetComponent<BallPhysics>().ResumeBall();
+            }
         }
     }
 
@@ -355,7 +380,7 @@ public class GameManager : Singleton<GameManager>
                 if (p1Score >= objScore)
                 {
                     gameOver = true;
-                    winScreen.Open(true);
+                    WinGame(player1);
                 }
                 break;
             case false:
@@ -364,8 +389,7 @@ public class GameManager : Singleton<GameManager>
                 if (p2Score >= objScore)
                 {
                     gameOver = true;
-                    winScreen.Open(false);
-                    Time.timeScale = 0;
+                    WinGame(player1);
                 }
                 break;
         }

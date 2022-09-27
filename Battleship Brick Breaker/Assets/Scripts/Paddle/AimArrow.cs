@@ -21,10 +21,11 @@ public class AimArrow : MonoBehaviour
 
     [Header("Out Penalty Time")]
     [SerializeField] float outPenaltyTime = 1f;
-    [SerializeField] bool aiming;
+    [SerializeField] bool isAiming;
     [SerializeField] bool canLaunch;
     int sign;
     public Vector3 lastAimDirection;
+    float aimTime;
     Coroutine oscillator;
     Coroutine launchPenalty;
     Touch lastTouchInField;
@@ -33,8 +34,9 @@ public class AimArrow : MonoBehaviour
     BallPhysics ballPhysics;
     HandicapController handicapController;
     PaddleController paddleController;
+    
 
-    public bool Aiming { get => aiming; set => aiming = value; }
+    public bool IsAiming { get => isAiming; set => isAiming = value; }
     public bool CanLaunch { get => canLaunch; set => canLaunch = value; }
 
     public Coroutine LaunchPenalty1 { get => launchPenalty; set => launchPenalty = value; }
@@ -64,7 +66,7 @@ public class AimArrow : MonoBehaviour
         {
             sign = -1;
         }
-        aiming = true;
+        
         canLaunch = true;
         ResetRotation();
         transform.position = ballPos.position;
@@ -74,11 +76,6 @@ public class AimArrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canLaunch && aiming && oscillator == null)
-        {
-            //oscillator = StartCoroutine(Oscillate(aimPeriod, CanHit));
-        }
-
         if (ballPhysics.IsBoundToPaddle)
         {
             if (!handicapController.isHandicapped)
@@ -169,10 +166,11 @@ public class AimArrow : MonoBehaviour
     }
     IEnumerator Oscillate(float period, float maxTime)
     {
-
+        isAiming = true;
         arrow.enabled = true;
         transform.position = GetComponentInParent<PaddleController>().BallPosition.position;
         float time = 0;
+        aimTime = maxTime;
         float w = (1 / period) * 2 * Mathf.PI;
         float straight = 180;
         int touchIndex;
@@ -197,10 +195,12 @@ public class AimArrow : MonoBehaviour
             if (GetComponentInParent<HandicapController>().isHandicapped)
             {
                 oscillator = null;
+                arrow.enabled = false;
                 break;
             }
-            if ((ClickInField() && Input.GetMouseButtonDown(0)) || GameManager.instance.TouchInField(out touchIndex, out touchPos, player1) || time >= maxTime)
+            if ((GameManager.instance.TouchInField(out touchIndex, out touchPos, player1) || aimTime <= 0))
             {
+                isAiming = false;
                 Debug.Log("Tapped pls what");
                 if (paddleController.controlScheme == PaddleController.ControlScheme.slider)
                 {
@@ -220,7 +220,7 @@ public class AimArrow : MonoBehaviour
                 GetComponentInParent<PaddleController>().IsStopped = false;
                 StartCoroutine(BombLauncherDelay(0.2f));
                 arrow.enabled = false;
-                aiming = false;
+                
                 oscillator = null;
                 ballPhysics.Launch(GameManager.instance.InitialVelocity, sign * direction);
                 break;
@@ -233,11 +233,15 @@ public class AimArrow : MonoBehaviour
                 transform.eulerAngles = angles;
                 direction = (aimPoint.position - GetComponent<RectTransform>().position).normalized;
                 time += Time.deltaTime;
+                aimTime -= Time.deltaTime;
                 yield return null;
             }
         }
     }
-
+    
+    public void StopAiming(){
+        aimTime = 0;
+    }
     IEnumerator BombLauncherDelay(float time)
     {
         yield return new WaitForSeconds(time);
@@ -247,7 +251,7 @@ public class AimArrow : MonoBehaviour
 
     public void OnBallOut()
     {
-        aiming = true;
+        
         canLaunch = false;
 
 
