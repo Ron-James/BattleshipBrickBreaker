@@ -16,14 +16,12 @@ public class Bullet : MonoBehaviour
     [SerializeField] GameObject cannonBall;
     [SerializeField] GameObject snowBall;
 
-
-    MeshRenderer meshRenderer;
+    
 
     Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
         isActive = false;
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
@@ -90,7 +88,7 @@ public class Bullet : MonoBehaviour
         transform.position = position;
     
         GetComponent<Collider>().enabled = true;
-        GetComponent<MeshRenderer>().enabled = true;
+        
         transform.SetParent(actives.transform);
     }
     public void DisableBullet()

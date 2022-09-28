@@ -26,6 +26,9 @@ public class BallPhysics : MonoBehaviour
 
     [SerializeField] Vector3 velocityCache;
 
+    float velocityIncreaseAmount;
+    [SerializeField] float velocityIncreaseRate = 0.2f; 
+
 
 
 
@@ -142,7 +145,9 @@ public class BallPhysics : MonoBehaviour
                     */
 
                 }
-                IncreaseVelocity(bounciness);
+                //IncreaseVelocity(bounciness);
+                ChangeVelocityMagnitude(bounciness);
+                //AddToVelocity(velocityIncreaseRate);
                 break;
             case "Ball":
 
@@ -180,14 +185,16 @@ public class BallPhysics : MonoBehaviour
             {
                 direction = 1;
             }
-            Debug.Log("Rotated Velocity");
+            //Debug.Log("Rotated Velocity");
             Debug.Log(reflected.normalized + " initial");
 
             reflected = Quaternion.AngleAxis(direction * angle, Vector3.up) * reflected;
             rb.velocity = reflected;
 
             IncreaseVelocity(percent);
+            //ChangeVelocityMagnitude(percent);
             //rb.AddForce(-inwardSign * Vector3.right * nudgeForce, ForceMode.Impulse);
+            //AddToVelocity(velocityIncreaseRate);
             Debug.Log(reflected.normalized + " final velocity");
         }
         else if (diffX <= 0.05f)
@@ -199,18 +206,24 @@ public class BallPhysics : MonoBehaviour
                 rb.velocity = reflected;
 
                 IncreaseVelocity(percent);
+                //AddToVelocity(velocityIncreaseRate);
+                
             }
             else{
                 reflected = Quaternion.AngleAxis(angle, Vector3.up) * reflected;
                 rb.velocity = reflected;
 
                 IncreaseVelocity(percent);
+                //AddToVelocity(velocityIncreaseRate);
+                //ChangeVelocityMagnitude(percent);
             }
         }
         else
         {
             rb.velocity = reflected;
             IncreaseVelocity(percent);
+            //ChangeVelocityMagnitude(percent);
+            //AddToVelocity(velocityIncreaseRate);
         }
 
     }
@@ -221,11 +234,7 @@ public class BallPhysics : MonoBehaviour
         GameManager.instance.ApplyForceToVelocity(rb, magnitude * direction, 10000);
     }
 
-    public void ChangeVelocity(Vector3 velocity)
-    {
-        rb.velocity = Vector3.zero;
-        GameManager.instance.ApplyForceToVelocity(rb, velocity, 1000000);
-    }
+    
     private void OnDisable()
     {
         StopAllCoroutines();
@@ -237,9 +246,20 @@ public class BallPhysics : MonoBehaviour
         //newMag = Mathf.Clamp(newMag, -GameManager.instance.MaxBallVelocity, GameManager.instance.MaxBallVelocity);
         //rb.velocity = newMag * direction;
         GameManager.instance.ApplyForceToVelocity(rb, newMag * direction, 1000);
+        Vector3.ClampMagnitude(rb.velocity, newMag);
 
     }
-
+    public void AddToVelocity(float amount){
+        Vector3 direction = rb.velocity.normalized;
+        float newMag = rb.velocity.magnitude + amount;
+        Debug.Log(rb.velocity.magnitude + "inital velocity " + newMag + " final velocity");
+        //newMag = Mathf.Clamp(newMag, -GameManager.instance.MaxBallVelocity, GameManager.instance.MaxBallVelocity);
+        //rb.velocity = newMag * direction;
+        GameManager.instance.ApplyForceToVelocity(rb, newMag * direction, 1000);
+        Vector3.ClampMagnitude(rb.velocity, newMag);
+        Debug.Log(rb.velocity.magnitude + " actual velocity");
+    }
+    
     public void HaltBall(){
         Vector3 velocity = 0.0001f * Vector3.one;
         GameManager.instance.ApplyForceToVelocity(rb, velocity, Mathf.Infinity);
@@ -271,6 +291,22 @@ public class BallPhysics : MonoBehaviour
         //paddle.GetComponentInChildren<AimArrow>().IsAiming = true;
     }
 
+    public void ChangeVelocityMagnitude(float percent){
+        Vector3 current = lastVelocity;
+        int sign = 1;
+        float magnitude = percent * current.magnitude;
+        float difference = magnitude - current.magnitude;
+        if(difference < 0){
+            sign = -1;
+        }
+        else{
+            sign = 1;
+        }
+        float force = Mathf.Abs(difference) * rb.mass;
+
+        rb.AddForce(sign * force * current.normalized, ForceMode.Force);
+        //Debug.Log(force + " Force " + rb.velocity.magnitude + " velocity Changed");
+    }
     IEnumerator SetKinematic(int frames)
     {
         rb.isKinematic = true;
@@ -284,7 +320,7 @@ public class BallPhysics : MonoBehaviour
 
     public void Launch(float power, Vector3 direction)
     {
-        Debug.Log("Launched");
+        //Debug.Log("Launched");
         isOut = false;
         isBoundToPaddle = false;
         if (rb.isKinematic)

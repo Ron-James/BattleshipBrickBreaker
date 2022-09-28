@@ -26,6 +26,9 @@ public class PaddleButtonController : MonoBehaviour
     Vector3 defPos;
     [SerializeField] float currentDirection = 1;
     [SerializeField] BoxCollider[] barriers = new BoxCollider[2];
+    [SerializeField] GameObject bigIce;
+    [SerializeField] GameObject regularIce;
+
 
 
     Rigidbody rb;
@@ -36,6 +39,7 @@ public class PaddleButtonController : MonoBehaviour
 
 
     PaddleController paddleController;
+    PowerUpManager powerUpManager;
     Coroutine snowSlower;
 
     public float SpeedModifier { get => speedModifier; set => speedModifier = value; }
@@ -55,12 +59,15 @@ public class PaddleButtonController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        powerUpManager = GetComponent<PowerUpManager>();
+        rb = GetComponent<Rigidbody>();
         CalculateMaximumValues();
         paddleController = GetComponent<PaddleController>();
         upButtonDown = false;
         downButtonDown = false;
         slowDown = null;
         move = null;
+        DisableSlowEffect();
         //rb = GetComponent<Rigidbody>();
 
     }
@@ -92,13 +99,31 @@ public class PaddleButtonController : MonoBehaviour
 
     }
 
+    public void EnableSlowEffect(){
+        if(powerUpManager.IsLarge()){
+            bigIce.SetActive(true);
+            regularIce.SetActive(false);
+        }
+        else{
+            bigIce.SetActive(false);
+            regularIce.SetActive(true);
+        }
+    }
+
+    public void DisableSlowEffect(){
+        bigIce.SetActive(false);
+        regularIce.SetActive(false);
+    }
+
     IEnumerator SnowSlowDown(){
         speedModifier = GameManager.instance.SnowSlowDownMultiplier;
+        EnableSlowEffect();
         while(true){
             snowSlowDownTime -= Time.deltaTime;
             if(snowSlowDownTime <= 0){
                 speedModifier = 1;
                 snowSlower = null;
+                DisableSlowEffect();
                 break;
             }
             else{
@@ -201,8 +226,8 @@ public class PaddleButtonController : MonoBehaviour
                 {
                     target = maxPoint;
                 }
-                transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.fixedDeltaTime);
-
+                Vector3 position = Vector3.MoveTowards(transform.position, target, speed * Time.fixedDeltaTime);
+                rb.MovePosition(position);
                 
                 yield return new WaitForFixedUpdate();
             }
@@ -262,7 +287,8 @@ public class PaddleButtonController : MonoBehaviour
                 else
                 {
 
-                    transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.fixedDeltaTime);
+                    Vector3 position = Vector3.MoveTowards(transform.position, target, speed * Time.fixedDeltaTime);
+                    rb.MovePosition(position);
                     currentSpeed = speed;
                 }
                 //yield return null;

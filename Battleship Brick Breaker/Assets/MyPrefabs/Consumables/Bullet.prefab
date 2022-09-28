@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6732076065682558252}
   - component: {fileID: 2551162925668253953}
   - component: {fileID: 4098005361963491952}
-  - component: {fileID: 30173248493185325}
   m_Layer: 0
   m_Name: Snowball
   m_TagString: Untagged
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &30173248493185325
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3975974389064725085}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.4999999
-  m_Center: {x: 0, y: 0.00000047683713, z: 0}
 --- !u!1 &4479446478358816564
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +94,6 @@ GameObject:
   - component: {fileID: 5510427965814446138}
   - component: {fileID: 8754072690529105063}
   - component: {fileID: 3122236001020303873}
-  - component: {fileID: 6743548818941601973}
   m_Layer: 0
   m_Name: CannonBall
   m_TagString: Untagged
@@ -181,19 +166,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &6743548818941601973
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4479446478358816564}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.4999999
-  m_Center: {x: 0, y: 0.00000047683713, z: 0}
 --- !u!1 &8187749438637071597
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,8 +286,6 @@ MonoBehaviour:
   bulletType: 0
   cannonBall: {fileID: 4479446478358816564}
   snowBall: {fileID: 3975974389064725085}
-  cannonBallMaterial: {fileID: 2100000, guid: 4ff920c769925264490dedb819798215, type: 2}
-  snowBallMaterial: {fileID: 2100000, guid: c008107aebf64134d89eb94895cd958d, type: 2}
 --- !u!54 &2103561784038928715
 Rigidbody:
   m_ObjectHideFlags: 0

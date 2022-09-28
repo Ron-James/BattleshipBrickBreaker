@@ -201,7 +201,7 @@ public class AimArrow : MonoBehaviour
             if ((GameManager.instance.TouchInField(out touchIndex, out touchPos, player1) || aimTime <= 0))
             {
                 isAiming = false;
-                Debug.Log("Tapped pls what");
+                
                 if (paddleController.controlScheme == PaddleController.ControlScheme.slider)
                 {
                     paddleController.Slider.interactable = true;

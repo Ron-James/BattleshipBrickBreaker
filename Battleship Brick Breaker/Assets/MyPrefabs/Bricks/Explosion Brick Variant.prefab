@@ -17,6 +17,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a601d927bc919354c9fceccf85f63a61, type: 2}
+    - target: {fileID: 2150905251250546385, guid: df0d82aec765ff54490f52f07cc43437,
+        type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3122499831411242097, guid: df0d82aec765ff54490f52f07cc43437,
         type: 3}
       propertyPath: m_RootOrder
@@ -80,7 +85,7 @@ PrefabInstance:
     - target: {fileID: 7885875656764031725, guid: df0d82aec765ff54490f52f07cc43437,
         type: 3}
       propertyPath: maxHealth
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7885875656764031725, guid: df0d82aec765ff54490f52f07cc43437,
         type: 3}

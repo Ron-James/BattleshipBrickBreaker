@@ -98,6 +98,12 @@ public class BrickEffects : MonoBehaviour
         splash.transform.position = splashPos;
         splash.Play();
         splashSound.PlayOnce();
+        StartCoroutine(SplashDelay(5f));
+    }
+
+    IEnumerator SplashDelay(float time){
+        yield return new WaitForSeconds(time);
+        splash.Stop();
     }
     /*
     private void OnTriggerEnter(Collider other) {

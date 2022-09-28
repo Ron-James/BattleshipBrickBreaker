@@ -310,5 +310,9 @@ public class PowerUpManager : MonoBehaviour
         currentPowerUps[4] = false;
     }
 
+    public bool IsLarge(){
+        return currentPowerUps[0];
+    }
+
 
 }
