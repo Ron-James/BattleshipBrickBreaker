@@ -35,7 +35,7 @@ public class Bullet : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Hit " + other.gameObject.name);
+
         switch (other.tag)
         {
             case "Paddle":

@@ -34,6 +34,7 @@ public class AimArrow : MonoBehaviour
     BallPhysics ballPhysics;
     HandicapController handicapController;
     PaddleController paddleController;
+    BombLauncher bombLauncher;
     
 
     public bool IsAiming { get => isAiming; set => isAiming = value; }
@@ -52,6 +53,7 @@ public class AimArrow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        bombLauncher = GetComponentInParent<BombLauncher>();
         handicapController = GetComponentInParent<HandicapController>();
         ballPhysics = ball.GetComponent<BallPhysics>();
         paddleController = GetComponentInParent<PaddleController>();
@@ -164,20 +166,21 @@ public class AimArrow : MonoBehaviour
             return;
         }
     }
+    IEnumerator PaddleMoveDelay(float time){
+        yield return new WaitForSeconds(time);
+        paddleController.IsStopped = false;
+    }
     IEnumerator Oscillate(float period, float maxTime)
     {
         isAiming = true;
         arrow.enabled = true;
-        transform.position = GetComponentInParent<PaddleController>().BallPosition.position;
+        transform.position = paddleController.BallPosition.position;
         float time = 0;
         aimTime = maxTime;
         float w = (1 / period) * 2 * Mathf.PI;
         float straight = 180;
-        int touchIndex;
-        Vector3 touchPos;
-        GetComponentInParent<PaddleController>().Slider.interactable = false;
-        GetComponentInParent<PaddleController>().IsStopped = true;
-        GetComponentInParent<BombLauncher>().canLaunch = false;
+        paddleController.IsStopped = true;
+        bombLauncher.canLaunch = false;
         Vector3 direction = (aimPoint.position - GetComponent<RectTransform>().position).normalized;
         if (player1)
         {
@@ -192,13 +195,13 @@ public class AimArrow : MonoBehaviour
 
         while (true)
         {
-            if (GetComponentInParent<HandicapController>().isHandicapped)
+            if (handicapController.isHandicapped)
             {
                 oscillator = null;
                 arrow.enabled = false;
                 break;
             }
-            if ((GameManager.instance.TouchInField(out touchIndex, out touchPos, player1) || aimTime <= 0))
+            if (aimTime <= 0)
             {
                 isAiming = false;
                 
@@ -217,8 +220,8 @@ public class AimArrow : MonoBehaviour
                 }
                 IgnoreBalls(false);
                 direction = (aimPoint.position - GetComponent<RectTransform>().position).normalized;
-                GetComponentInParent<PaddleController>().IsStopped = false;
-                StartCoroutine(BombLauncherDelay(0.2f));
+                StartCoroutine(PaddleMoveDelay(0.1f));
+                StartCoroutine(BombLauncherDelay(0.1f));
                 arrow.enabled = false;
                 
                 oscillator = null;

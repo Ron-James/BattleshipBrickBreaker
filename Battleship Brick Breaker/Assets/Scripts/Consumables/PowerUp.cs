@@ -77,10 +77,12 @@ public class PowerUp : MonoBehaviour
         transform.SetParent(actives);
         if (RightSided)
         {
+            powerUpText.transform.eulerAngles = new Vector3(90f, 0, 90f);
             target = new Vector3(100, 3f, position.z);
         }
         else
         {
+            powerUpText.transform.eulerAngles = new Vector3(90f, 0, -90f);
             target = new Vector3(-100, 3f, position.z);
         }
         transform.position = new Vector3(position.x, 3f, position.z);

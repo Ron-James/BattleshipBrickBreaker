@@ -75,7 +75,9 @@ public class HandicapController : MonoBehaviour
     public void AddHandicapTime(float time, bool sink)
     {
         handicapTime += time;
-        Mathf.Clamp(handicapTime, 0, maxHandicapTime);
+        if(handicapTime > maxHandicapTime){
+            handicapTime = maxHandicapTime;
+        }
         if (handicapTime > 0)
         {
             handicapClock.StartClockCount(handicapTime);

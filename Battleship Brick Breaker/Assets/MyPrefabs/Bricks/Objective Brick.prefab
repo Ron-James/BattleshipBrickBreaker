@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7d54a066f27b364d8b1f05d58a67c68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 4
+  maxHealth: 3
   brickType: 3
   crack: {fileID: 2004270093959879294}
   feedbackOverlay: {fileID: 7618574980520447648}
@@ -312,7 +312,7 @@ MonoBehaviour:
     volume: 0.1
     soundCategory: 0
   breakSound:
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 1b49d04544d95614f92424cb1f589a91, type: 3}
     src: {fileID: 0}
     volume: 0.1
     soundCategory: 0

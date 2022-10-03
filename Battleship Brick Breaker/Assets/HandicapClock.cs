@@ -27,12 +27,15 @@ public class HandicapClock : MonoBehaviour
     }
 
     public void StartClockCount(float time){
-        timeRemaining += time;
+        StopClock();
+        timeRemaining = time;
         lastStartTime = timeRemaining;
+        Debug.Log("Clock Time Added "+  time + " Time Remaining " + timeRemaining);
         if(timeRemaining > 0){
             if(clockRoutine == null){
                 clockRoutine = StartCoroutine(StartClock());
             }
+            
         }
     }
 

@@ -29,7 +29,8 @@ public class BallPhysics : MonoBehaviour
     float velocityIncreaseAmount;
     [SerializeField] float velocityIncreaseRate = 0.2f; 
 
-
+    bool justHitPaddle;
+    //Coroutine justHitPaddleRoutine;
 
 
 
@@ -42,6 +43,8 @@ public class BallPhysics : MonoBehaviour
 
     void Start()
     {
+        justHitPaddle = false;
+        //justHitPaddleRoutine = null;
         velocityCache = Vector3.zero;
         rb = GetComponent<Rigidbody>();
         IgnoreBallCollisions();
@@ -117,7 +120,10 @@ public class BallPhysics : MonoBehaviour
         }
 
     }
-
+    IEnumerator justHitPaddleDelay(float time){
+        yield return new WaitForSeconds(time);
+        justHitPaddle = false;
+    }
     private void OnCollisionEnter(Collision other)
     {
         switch (other.collider.tag)
@@ -128,25 +134,14 @@ public class BallPhysics : MonoBehaviour
                 Reflect(other, bounciness);
                 break;
             case "Paddle":
-                generalHit.PlayOnce();
-                PaddleController paddle = other.collider.gameObject.GetComponentInParent<PaddleController>();
-                if (paddle.gameObject.GetComponent<PowerUpManager>().catcher && GetComponent<PlayerTracker>().GetMainOwner() != 0)
-                {
-                    /*
-                    if (!paddle.gameObject.GetComponentInChildren<AimArrow>().IsAiming)
-                    {
-                        if (other.GetContact(0).normal == (Vector3.right * inwardSign))
-                        {
-                            PaddleCatch();
-                            Debug.Log("Catch");
-                        }
-
-                    }
-                    */
+                if(!justHitPaddle){
+                    generalHit.PlayOnce();
+                    justHitPaddle = true;
+                    StartCoroutine(justHitPaddleDelay(0.1f));
 
                 }
-                //IncreaseVelocity(bounciness);
-                ChangeVelocityMagnitude(bounciness);
+                IncreaseVelocity(bounciness);
+                //ChangeVelocityMagnitude(bounciness);
                 //AddToVelocity(velocityIncreaseRate);
                 break;
             case "Ball":
@@ -179,11 +174,11 @@ public class BallPhysics : MonoBehaviour
             int direction = 1;
             if (lastVelocity.x > 0)
             {
-                direction = -1;
+                direction = 1;
             }
             else
             {
-                direction = 1;
+                direction = -1;
             }
             //Debug.Log("Rotated Velocity");
             Debug.Log(reflected.normalized + " initial");
@@ -191,11 +186,11 @@ public class BallPhysics : MonoBehaviour
             reflected = Quaternion.AngleAxis(direction * angle, Vector3.up) * reflected;
             rb.velocity = reflected;
 
-            IncreaseVelocity(percent);
+            
             //ChangeVelocityMagnitude(percent);
             //rb.AddForce(-inwardSign * Vector3.right * nudgeForce, ForceMode.Impulse);
             //AddToVelocity(velocityIncreaseRate);
-            Debug.Log(reflected.normalized + " final velocity");
+            //Debug.Log(reflected.normalized + " final velocity");
         }
         else if (diffX <= 0.05f)
         {
@@ -205,7 +200,7 @@ public class BallPhysics : MonoBehaviour
                 reflected = Quaternion.AngleAxis(-1 * angle, Vector3.up) * reflected;
                 rb.velocity = reflected;
 
-                IncreaseVelocity(percent);
+                
                 //AddToVelocity(velocityIncreaseRate);
                 
             }
@@ -213,7 +208,7 @@ public class BallPhysics : MonoBehaviour
                 reflected = Quaternion.AngleAxis(angle, Vector3.up) * reflected;
                 rb.velocity = reflected;
 
-                IncreaseVelocity(percent);
+                
                 //AddToVelocity(velocityIncreaseRate);
                 //ChangeVelocityMagnitude(percent);
             }
@@ -221,11 +216,11 @@ public class BallPhysics : MonoBehaviour
         else
         {
             rb.velocity = reflected;
-            IncreaseVelocity(percent);
+            
             //ChangeVelocityMagnitude(percent);
             //AddToVelocity(velocityIncreaseRate);
         }
-
+        IncreaseVelocity(percent);
     }
 
     public void ChangeVelocityDirection(Vector3 direction)
@@ -247,6 +242,7 @@ public class BallPhysics : MonoBehaviour
         //rb.velocity = newMag * direction;
         GameManager.instance.ApplyForceToVelocity(rb, newMag * direction, 1000);
         Vector3.ClampMagnitude(rb.velocity, newMag);
+        
 
     }
     public void AddToVelocity(float amount){

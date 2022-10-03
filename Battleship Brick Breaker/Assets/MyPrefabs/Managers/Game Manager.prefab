@@ -72,9 +72,9 @@ MonoBehaviour:
   snowSlowDownMultiplier: 0.6
   snowSlowDuration: 0.85
   snowThrowerTime: 7
-  minBombLaunchDistance: 15
+  minBombLaunchDistance: 16
   bombPowerUpTime: 8
-  initialVelocity: 16
+  initialVelocity: 16.5
   maxBallVelocity: 30
   maxExtraBalls: 3
   maxAimTime: 25

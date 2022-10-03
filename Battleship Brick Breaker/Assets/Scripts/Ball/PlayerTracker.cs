@@ -18,8 +18,12 @@ public class PlayerTracker : MonoBehaviour
 
     [SerializeField] Owner owner;
     [SerializeField] CurrentOwner currentOwner;
-    [SerializeField] Material player1Material;
-    [SerializeField] Material player2Material;
+    [SerializeField] GameObject p1Ball;
+    [SerializeField] GameObject p2Ball;
+    [SerializeField] GameObject p1BallExtra;
+    [SerializeField] GameObject p2BallExtra;
+
+
     [SerializeField] bool isBuffed;
     [SerializeField] ParticleSystem fireParticles;
     [SerializeField] float buffTime;
@@ -41,6 +45,7 @@ public class PlayerTracker : MonoBehaviour
     void Start()
     {
         ResetOwner();
+        UpdateMaterial();
     }
 
     // Update is called once per frame
@@ -71,6 +76,7 @@ public class PlayerTracker : MonoBehaviour
                 else{
                     damage = 1;
                 }
+                Debug.Log("Damage Brick is " + damage + other.collider.name);
                 if(currentOwner == CurrentOwner.player1){
                     other.collider.GetComponent<BrickHealth>().TakeDamge(damage, true);
                 }
@@ -89,6 +95,51 @@ public class PlayerTracker : MonoBehaviour
                 break;
         }
     }
+
+    public void UpdateMaterial(){
+        if(owner == Owner.player1){
+            if(currentOwner == CurrentOwner.player1){
+                p1Ball.SetActive(true);
+                p2Ball.SetActive(false);
+                p1BallExtra.SetActive(false);
+                p2BallExtra.SetActive(false);
+            }
+            else{
+                p1Ball.SetActive(false);
+                p2Ball.SetActive(false);
+                p1BallExtra.SetActive(false);
+                p2BallExtra.SetActive(true);
+            }
+        }
+        else if(owner == Owner.player2){
+            if(currentOwner == CurrentOwner.player1){
+                p1Ball.SetActive(false);
+                p2Ball.SetActive(false);
+                p1BallExtra.SetActive(true);
+                p2BallExtra.SetActive(false);
+            }
+            else{
+                p1Ball.SetActive(false);
+                p2Ball.SetActive(true);
+                p1BallExtra.SetActive(false);
+                p2BallExtra.SetActive(false);
+            }
+        }
+        else{
+            if(currentOwner == CurrentOwner.player1){
+                p1Ball.SetActive(false);
+                p2Ball.SetActive(false);
+                p1BallExtra.SetActive(true);
+                p2BallExtra.SetActive(false);
+            }
+            else{
+                p1Ball.SetActive(false);
+                p2Ball.SetActive(false);
+                p1BallExtra.SetActive(false);
+                p2BallExtra.SetActive(true);
+            }
+        }
+    }
     public void ResetOwner()
     {
         if (GetMainOwner() == 0)
@@ -98,11 +149,11 @@ public class PlayerTracker : MonoBehaviour
         currentOwner = (CurrentOwner)((int)owner);
         if (owner == Owner.player1)
         {
-            GetComponent<MeshRenderer>().material = player1Material;
+            UpdateMaterial();
         }
         else if (owner == Owner.player2)
         {
-            GetComponent<MeshRenderer>().material = player2Material;
+            UpdateMaterial();
         }
     }
     public void SwitchCurrentOwner()
@@ -111,11 +162,13 @@ public class PlayerTracker : MonoBehaviour
         {
             case 1:
                 currentOwner = CurrentOwner.player2;
-                GetComponent<MeshRenderer>().material = player2Material;
+                //GetComponent<MeshRenderer>().material = player2Material;
+                UpdateMaterial();
                 break;
             case 2:
                 currentOwner = CurrentOwner.player1;
-                GetComponent<MeshRenderer>().material = player1Material;
+                //GetComponent<MeshRenderer>().material = player1Material;
+                UpdateMaterial();
                 break;
         }
     }
@@ -125,12 +178,12 @@ public class PlayerTracker : MonoBehaviour
         if (player1)
         {
             currentOwner = CurrentOwner.player1;
-            GetComponent<MeshRenderer>().material = player1Material;
+            UpdateMaterial();
         }
         else
         {
             currentOwner = CurrentOwner.player2;
-            GetComponent<MeshRenderer>().material = player2Material;
+            UpdateMaterial();
         }
     }
 
